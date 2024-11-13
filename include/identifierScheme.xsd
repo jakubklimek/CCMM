@@ -1,6 +1,6 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:ccmm="https://www.techlib.org/ontologies/czech-core-metadata-model/"
-           targetNamespace="https://www.techlib.org/ontologies/czech-core-metadata-model/"
+           xmlns:ccmm="https://www.techlib.cz/ontologies/czech-core-metadata-model/"
+           targetNamespace="https://www.techlib.cz/ontologies/czech-core-metadata-model/"
            elementFormDefault="qualified"
            attributeFormDefault="unqualified">
 
