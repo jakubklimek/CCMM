@@ -1,8 +1,8 @@
 
 <ccmm:dataset 
-    xmlns:ccmm="https://www.techlib.org/ontologies/czech-core-metadata-model/"
+    xmlns:ccmm="https://www.techlib.cz/ontologies/czech-core-metadata-model/"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="https://www.techlib.org/ontologies/czech-core-metadata-model/ ccmm-104.xsd">
+    xsi:schemaLocation="https://www.techlib.cz/ontologies/czech-core-metadata-model/ ccmm-104.xsd">
 
     <ccmm:identifier identifierScheme="DOI">10.5281/zenodo.14001488</ccmm:identifier>
     <ccmm:alternateIdentifiers>
