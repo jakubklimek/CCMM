@@ -62,7 +62,7 @@
             <ccmm:localIdentifier identifierScheme="cordis" valueURI="https://cordis.europa.eu/project/id/874457">894457</ccmm:localIdentifier>
             <ccmm:alternateIdentifier identifierScheme="DOI">10.3030/874465</ccmm:alternateIdentifier>
             <ccmm:alternateIdentifier identifierScheme="URL">https://app.dimensions.ai/details/grant/grant.8586176</ccmm:alternateIdentifier>
-            <ccmm:awardTitle>Motion Powered 3D Printed Self-Healable Energy Storage</ccmm:awardTitle>
+            <ccmm:awardTitle lang="en">Motion Powered 3D Printed Self-Healable Energy Storage</ccmm:awardTitle>
             <ccmm:fundingProgram>H2020</ccmm:fundingProgram>
             <ccmm:funder>
                 <ccmm:organizationName>European Commission</ccmm:organizationName>
@@ -92,15 +92,34 @@
         
     </ccmm:subjects>
 
-    <ccmm:termsOfUse>
+    <ccmm:termsOfUseList>
         <ccmm:accessRights rightsURI="http://purl.org/coar/access_right/c_16ec">restricted access</ccmm:accessRights>
-        <ccmm:rights rightsType="license" rightsURI="https://creativecommons.org/licenses/by-nc/4.0/">CC-BY-4.0</ccmm:rights>
-        <ccmm:rights rightsType="personalData" rightsURI="https://data.gov.cz/podm%C3%ADnky-u%C5%BEit%C3%AD/nen%C3%AD-specifikov%C3%A1no-zda-obsahuje-osobn%C3%AD-%C3%BAdaje/">Není specifikováno, zda obsahuje osobní údaje.</ccmm:rights>
-    </ccmm:termsOfUse>
+        <ccmm:license rightsURI="https://creativecommons.org/licenses/by-nc/4.0/">CC-BY-4.0</ccmm:license>
+        <ccmm:otherRights rightsType="personalData" rightsURI="https://www.techlib.cz/ontologies/czech-core-metadata-model/terms-of-use/neobsahuje-osobni-udaje">Neobsahuje osobní údaje.</ccmm:otherRights>
+    </ccmm:termsOfUseList>
 
     <ccmm:timeReferences>
         <ccmm:publicationYear>2022</ccmm:publicationYear>
-        <ccmm:date dateType="collected">2010/2020</ccmm:date>
-        <ccmm:date dateType="timeCoverage">2010/2020</ccmm:date>
+        <ccmm:timeReference timeReferenceType="collected">
+            <ccmm:dateRange>
+                <ccmm:startDate>2010</ccmm:startDate>
+                <ccmm:endDate>2011</ccmm:endDate>
+            </ccmm:dateRange>
+        </ccmm:timeReference>
+
+        <ccmm:timeReference timeReferenceType="timeCoverage">
+            <ccmm:dateRange>
+                <ccmm:startDate>2005</ccmm:startDate>
+                <ccmm:endDate>2010</ccmm:endDate>
+            </ccmm:dateRange>
+        </ccmm:timeReference>
+
     </ccmm:timeReferences>
+
+    <ccmm:relatedResources/>
+
+    <ccmm:distributions/>
+    <ccmm:geolocations/>
+
+
 </ccmm:dataset>
