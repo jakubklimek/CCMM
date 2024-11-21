@@ -5,7 +5,6 @@
 
     <ccmm:identifier identifierScheme="DOI">10.5281/zenodo.3338675</ccmm:identifier>
     <ccmm:alternateIdentifiers>
-        <ccmm:alternateIdentifier identifierScheme="handle">20.500.11956/110038</ccmm:alternateIdentifier>
         <ccmm:alternateIdentifier identifierScheme="URL">https://zenodo.org/records/3338675</ccmm:alternateIdentifier>
         <ccmm:alternateIdentifier identifierScheme="oai">oai:zenodo.org:3338675</ccmm:alternateIdentifier>
     </ccmm:alternateIdentifiers>
