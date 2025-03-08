@@ -11,7 +11,7 @@ Directory /cs contains Czech version of CCMM Application Profile specification. 
 
 Directory /en contains English version of CCMM Application Profile specification. Specification is available on https://eosc-cz.github.io/CCMM/en/.
 
-# Resources
+## Resources
 
 Directory resources/ contains data specification in json format. It also contained file with the full content of the Dataspecer project, which is too large for GitHub repository, therefore it is not part of the directory.
 
