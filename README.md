@@ -1,2 +1,1 @@
-# CCMM
-Czech core metadata model
+Tento dokument byl vygenerován 8. 3. 2025 13:44:08.

@@ -1,0 +1,469 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "id": "@id",
+    "type": "@type",
+    "Datová sada": "http://www.w3.org/ns/dcat#Dataset",
+    "publication_year": {
+      "@id": "relatedItemPublicationYear",
+      "@type": "http://www.w3.org/2001/XMLSchema#gYear"
+    },
+    "description": {
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "version": {
+      "@id": "http://www.w3.org/ns/dcat#version",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "other_language": {
+      "@id": "language",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "primary_language": {
+      "@id": "language",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "alternate_title": {
+      "@id": "alternativeTitle",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "abstract": {
+      "@id": "http://purl.org/dc/terms/abstract",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "resource_type": {
+      "@id": "resourceType",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "title": {
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "identifier": {
+      "@id": "http://purl.org/dc/terms/identifier",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "has_location": {
+      "@id": "http://purl.org/dc/terms/spatial",
+      "@container": "@set",
+      "@context": {
+        "Location": "http://purl.org/dc/terms/Location",
+        "ohraničení_oblasti": {
+          "@id": "http://www.w3.org/ns/dcat#bbox",
+          "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+        },
+        "location_name": {
+          "@id": "http://purl.org/dc/terms/title",
+          "@type": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "relation_to_dataset": {
+          "@id": null,
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+        },
+        "geometry": {
+          "@id": "http://www.w3.org/ns/locn#geometry",
+          "@type": "@id"
+        },
+        "has_related_object_identifier": {
+          "@id": null,
+          "@container": "@set",
+          "@context": {
+            "Resource": "http://www.w3.org/2000/01/rdf-schema#Resource",
+            "relation_type": {
+              "@id": null,
+              "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+            },
+            "type": {
+              "@id": "resourceType",
+              "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+            },
+            "title": {
+              "@id": "relatedItemTitle",
+              "@type": "http://www.w3.org/2001/XMLSchema#string"
+            },
+            "identifier": {
+              "@id": "identifier",
+              "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+            },
+            "qualified_relation": {
+              "@id": null,
+              "@container": "@set",
+              "@context": {
+                "Resource to Agent Relationship": "http://www.w3.org/ns/dcat#Relationship",
+                "sehraná_role": {
+                  "@id": "http://www.w3.org/ns/dcat#hadRole",
+                  "@container": "@set",
+                  "@type": "@id"
+                },
+                "relation": {
+                  "@id": "http://purl.org/dc/terms/relation",
+                  "@container": "@set",
+                  "@context": {
+                    "Agent": "http://xmlns.com/foaf/0.1/Agent",
+                    "external_identifier": {
+                      "@id": null,
+                      "@type": "http://www.w3.org/2001/XMLSchema#string"
+                    },
+                    "kontaktní_bod": {
+                      "@id": "http://www.w3.org/ns/dcat#contactPoint",
+                      "@container": "@set",
+                      "@context": {
+                        "Contact details": {
+                          "@id": null
+                        },
+                        "phone": {
+                          "@id": null,
+                          "@type": "http://www.w3.org/2001/XMLSchema#string"
+                        },
+                        "email": {
+                          "@id": null,
+                          "@type": "http://www.w3.org/2001/XMLSchema#string"
+                        },
+                        "data_box": {
+                          "@id": null,
+                          "@type": "http://www.w3.org/2001/XMLSchema#string"
+                        },
+                        "has_address": {
+                          "@id": "http://www.w3.org/2006/vcard/ns#hasAddress",
+                          "@container": "@set",
+                          "@type": "@id"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "has_time_reference": {
+              "@id": null,
+              "@container": "@set",
+              "@context": {
+                "Time reference": {
+                  "@id": null
+                },
+                "date_information": {
+                  "@id": "dateInformation",
+                  "@type": "http://www.w3.org/2001/XMLSchema#string"
+                },
+                "date_type": {
+                  "@id": "dateType",
+                  "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+                },
+                "date": {
+                  "@id": "dateValue",
+                  "@type": "http://www.w3.org/2001/XMLSchema#date"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "provenance": {
+      "@id": "http://purl.org/dc/terms/provenance",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "qualified_relation": {
+      "@id": "http://www.w3.org/ns/dcat#qualifiedRelation",
+      "@container": "@set",
+      "@context": {
+        "Resource to Agent Relationship": "http://www.w3.org/ns/dcat#Relationship",
+        "sehraná_role": {
+          "@id": "http://www.w3.org/ns/dcat#hadRole",
+          "@container": "@set",
+          "@type": "@id"
+        },
+        "relation": {
+          "@id": "http://purl.org/dc/terms/relation",
+          "@container": "@set",
+          "@context": {
+            "Agent": "http://xmlns.com/foaf/0.1/Agent",
+            "external_identifier": {
+              "@id": null,
+              "@type": "http://www.w3.org/2001/XMLSchema#string"
+            },
+            "kontaktní_bod": {
+              "@id": "http://www.w3.org/ns/dcat#contactPoint",
+              "@container": "@set",
+              "@context": {
+                "Contact details": {
+                  "@id": null
+                },
+                "phone": {
+                  "@id": null,
+                  "@type": "http://www.w3.org/2001/XMLSchema#string"
+                },
+                "email": {
+                  "@id": null,
+                  "@type": "http://www.w3.org/2001/XMLSchema#string"
+                },
+                "data_box": {
+                  "@id": null,
+                  "@type": "http://www.w3.org/2001/XMLSchema#string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "has_time_reference": {
+      "@id": null,
+      "@container": "@set",
+      "@context": {
+        "Time reference": {
+          "@id": null
+        },
+        "date_information": {
+          "@id": "dateInformation",
+          "@type": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "date_type": {
+          "@id": "dateType",
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+        },
+        "date": {
+          "@id": "dateValue",
+          "@type": "http://www.w3.org/2001/XMLSchema#date"
+        }
+      }
+    },
+    "has_subject": {
+      "@id": "hasSubject",
+      "@container": "@set",
+      "@context": {
+        "Subject": "Subject",
+        "definition": {
+          "@id": "http://www.w3.org/2004/02/skos/core#definition",
+          "@type": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "title": {
+          "@id": "http://purl.org/dc/terms/title",
+          "@type": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "classification_code": {
+          "@id": "subjectClassificationCode",
+          "@type": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "in_subject_scheme": {
+          "@id": null,
+          "@container": "@set",
+          "@type": "@id"
+        }
+      }
+    },
+    "has_validation_result": {
+      "@id": null,
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "has_distribution": {
+      "@id": null,
+      "@container": "@set",
+      "@context": {
+        "Distribuce": "http://www.w3.org/ns/dcat#Distribution",
+        "title": {
+          "@id": "http://purl.org/dc/terms/title",
+          "@type": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      }
+    },
+    "has_funding_reference": {
+      "@id": "hasFundingReference",
+      "@container": "@set",
+      "@context": {
+        "Funding reference": "FundingReference",
+        "funding_program": {
+          "@id": null,
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+        },
+        "award_title": {
+          "@id": "awardTitle",
+          "@type": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "local_identifier": {
+          "@id": "awardNumber",
+          "@type": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "has_funder": {
+          "@id": "hasFunderIdentifier",
+          "@container": "@set",
+          "@context": {
+            "Funder identifier": "FunderIdentifier",
+            "funder_identifier_scheme_uri": {
+              "@id": "funderIdentifierSchemeUri",
+              "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+            },
+            "funder_identifier_type": {
+              "@id": "funderIdentifierType",
+              "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+            }
+          }
+        }
+      }
+    },
+    "has_terms_of_use": {
+      "@id": "hasVersion",
+      "@container": "@set",
+      "@context": {
+        "Terms of use": "Rights",
+        "description": {
+          "@id": "http://purl.org/dc/terms/description",
+          "@type": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "license": {
+          "@id": "http://purl.org/dc/terms/license",
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+        },
+        "access_rights": {
+          "@id": null,
+          "@type": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "kontaktní_bod": {
+          "@id": "http://www.w3.org/ns/dcat#contactPoint",
+          "@container": "@set",
+          "@context": {
+            "Agent": "http://xmlns.com/foaf/0.1/Agent",
+            "external_identifier": {
+              "@id": null,
+              "@type": "http://www.w3.org/2001/XMLSchema#string"
+            },
+            "kontaktní_bod": {
+              "@id": "http://www.w3.org/ns/dcat#contactPoint",
+              "@container": "@set",
+              "@context": {
+                "Contact details": {
+                  "@id": null
+                },
+                "phone": {
+                  "@id": null,
+                  "@type": "http://www.w3.org/2001/XMLSchema#string"
+                },
+                "email": {
+                  "@id": null,
+                  "@type": "http://www.w3.org/2001/XMLSchema#string"
+                },
+                "data_box": {
+                  "@id": null,
+                  "@type": "http://www.w3.org/2001/XMLSchema#string"
+                },
+                "has_address": {
+                  "@id": "http://www.w3.org/2006/vcard/ns#hasAddress",
+                  "@container": "@set",
+                  "@type": "@id"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "has_related_resource": {
+      "@id": null,
+      "@container": "@set",
+      "@context": {
+        "Resource": "http://www.w3.org/2000/01/rdf-schema#Resource",
+        "relation_type": {
+          "@id": null,
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+        },
+        "type": {
+          "@id": "resourceType",
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+        },
+        "title": {
+          "@id": "relatedItemTitle",
+          "@type": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "identifier": {
+          "@id": "identifier",
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+        },
+        "qualified_relation": {
+          "@id": null,
+          "@container": "@set",
+          "@context": {
+            "Resource to Agent Relationship": "http://www.w3.org/ns/dcat#Relationship",
+            "sehraná_role": {
+              "@id": "http://www.w3.org/ns/dcat#hadRole",
+              "@container": "@set",
+              "@type": "@id"
+            },
+            "relation": {
+              "@id": "http://purl.org/dc/terms/relation",
+              "@container": "@set",
+              "@context": {
+                "Agent": "http://xmlns.com/foaf/0.1/Agent",
+                "external_identifier": {
+                  "@id": null,
+                  "@type": "http://www.w3.org/2001/XMLSchema#string"
+                },
+                "kontaktní_bod": {
+                  "@id": "http://www.w3.org/ns/dcat#contactPoint",
+                  "@container": "@set",
+                  "@context": {
+                    "Contact details": {
+                      "@id": null
+                    },
+                    "phone": {
+                      "@id": null,
+                      "@type": "http://www.w3.org/2001/XMLSchema#string"
+                    },
+                    "email": {
+                      "@id": null,
+                      "@type": "http://www.w3.org/2001/XMLSchema#string"
+                    },
+                    "data_box": {
+                      "@id": null,
+                      "@type": "http://www.w3.org/2001/XMLSchema#string"
+                    },
+                    "has_address": {
+                      "@id": "http://www.w3.org/2006/vcard/ns#hasAddress",
+                      "@container": "@set",
+                      "@type": "@id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "has_time_reference": {
+          "@id": null,
+          "@container": "@set",
+          "@context": {
+            "Time reference": {
+              "@id": null
+            },
+            "date_information": {
+              "@id": "dateInformation",
+              "@type": "http://www.w3.org/2001/XMLSchema#string"
+            },
+            "date_type": {
+              "@id": "dateType",
+              "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+            },
+            "date": {
+              "@id": "dateValue",
+              "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+          }
+        }
+      }
+    },
+    "has_alternate_identifier": {
+      "@id": "hasAlternateIdentifier",
+      "@container": "@set",
+      "@context": {
+        "Alternate identifier": "AlternateIdentifier",
+        "alternate_identifier_type": {
+          "@id": "alternateIdentifierType",
+          "@type": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      }
+    }
+  }
+}

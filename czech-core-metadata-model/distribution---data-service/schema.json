@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://techlib.cz/specification/ccmm/distribution---data-service/schema.json",
+  "title": "Distribution - data service",
+  "description": "Physical embodiment of the dataset as a particular data service. ",
+  "type": "object",
+  "required": [
+
+  ],
+  "properties": {
+    "description": {
+      "title": "Description",
+      "description": "A free-text account of the Distribution.",
+      "type": "array",
+      "items": {
+        "title": "Řetězec",
+        "type": "string"
+      }
+    },
+    "specification": {
+      "title": "specification",
+      "description": "An established standard to which the distribution conforms.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri"
+      }
+    },
+    "documentation": {
+      "title": "documentation",
+      "description": "A page or document about this Distribution.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri"
+      }
+    },
+    "služba_pro_přístup_k_datům": {
+      "title": "služba pro přístup k datům",
+      "description": "Umístění či přístupový bod zpřístupňující distribuci datové sady.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri"
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "id": "@id",
+    "type": "@type",
+    "Katalogizační záznam": "http://www.w3.org/ns/dcat#CatalogRecord",
+    "date_updated": {
+      "@id": "http://purl.org/dc/terms/modified",
+      "@type": "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "date_created": {
+      "@id": "http://purl.org/dc/terms/created",
+      "@type": "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "language": {
+      "@id": "http://purl.org/dc/terms/language",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "describes": {
+      "@id": null,
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "qualified_relation": {
+      "@id": null,
+      "@container": "@set",
+      "@context": {
+        "Metadata to agent relationship": {
+          "@id": null
+        },
+        "relation": {
+          "@id": "http://purl.org/dc/terms/relation",
+          "@container": "@set",
+          "@context": {
+            "Agent": "http://xmlns.com/foaf/0.1/Agent",
+            "external_identifier": {
+              "@id": null,
+              "@type": "http://www.w3.org/2001/XMLSchema#string"
+            },
+            "kontaktní_bod": {
+              "@id": "http://www.w3.org/ns/dcat#contactPoint",
+              "@container": "@set",
+              "@context": {
+                "Contact details": {
+                  "@id": null
+                },
+                "phone": {
+                  "@id": null,
+                  "@type": "http://www.w3.org/2001/XMLSchema#string"
+                },
+                "undefined": {
+                  "@id": null,
+                  "@type": "http://www.w3.org/2001/XMLSchema#string"
+                },
+                "data_box": {
+                  "@id": null,
+                  "@type": "http://www.w3.org/2001/XMLSchema#string"
+                }
+              }
+            }
+          }
+        },
+        "sehraná_role": {
+          "@id": "http://www.w3.org/ns/dcat#hadRole",
+          "@container": "@set",
+          "@type": "@id"
+        }
+      }
+    },
+    "original_repository": {
+      "@id": null,
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "local_identifier": {
+      "@id": "http://purl.org/dc/terms/source",
+      "@type": "@id"
+    },
+    "conforms_to_standard": {
+      "@id": "http://purl.org/dc/terms/conformsTo",
+      "@container": "@set",
+      "@type": "@id"
+    }
+  }
+}

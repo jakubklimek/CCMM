@@ -1,0 +1,30 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "id": "@id",
+    "type": "@type",
+    "Distribution - data service": {
+      "@id": null
+    },
+    "description": {
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "specification": {
+      "@id": "http://purl.org/dc/terms/conformsTo",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "documentation": {
+      "@id": "http://xmlns.com/foaf/0.1/page",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "služba_pro_přístup_k_datům": {
+      "@id": "http://www.w3.org/ns/dcat#accessService",
+      "@container": "@set",
+      "@type": "@id"
+    }
+  }
+}

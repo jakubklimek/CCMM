@@ -1,0 +1,42 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "id": "@id",
+    "type": "@type",
+    "Distribution - downloadable file": {
+      "@id": null
+    },
+    "checksum": {
+      "@id": "http://spdx.org/rdf/terms#checksumValue",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "byte_size": {
+      "@id": "http://www.w3.org/ns/dcat#byteSize",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "format": {
+      "@id": "http://purl.org/dc/terms/format",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "conforms_to_schema": {
+      "@id": "http://purl.org/dc/terms/conformsTo",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "typ_média": {
+      "@id": "http://www.w3.org/ns/dcat#mediaType",
+      "@type": "@id"
+    },
+    "přístupová_adresa": {
+      "@id": "http://www.w3.org/ns/dcat#accessURL",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "url_souboru_ke_stažení": {
+      "@id": "http://www.w3.org/ns/dcat#downloadURL",
+      "@container": "@set",
+      "@type": "@id"
+    }
+  }
+}

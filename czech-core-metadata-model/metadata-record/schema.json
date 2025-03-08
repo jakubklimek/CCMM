@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://techlib.cz/specification/ccmm/metadata-record/schema.json",
+  "title": "Katalogizační záznam",
+  "description": "Záznam v datovém katalogu popisující jednu datovou sadu či datovou službu.",
+  "type": "object",
+  "required": [
+
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "iri"
+    },
+    "type": {
+      "oneOf": [
+        {
+          "const": "Katalogizační záznam"
+        },
+        {
+          "type": "array",
+          "contains": {
+            "const": "Katalogizační záznam"
+          },
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "date_updated": {
+      "title": "Date updated",
+      "description": "Date on which the resource was changed.",
+      "type": "array",
+      "items": {
+        "title": "Datum",
+        "type": "string",
+        "format": "date"
+      }
+    },
+    "date_created": {
+      "title": "Date Created",
+      "description": "The date on which the metadata record was created.",
+      "type": "string",
+      "format": "date"
+    },
+    "language": {
+      "title": "Language",
+      "description": "Language of the metadata record",
+      "type": "array",
+      "items": {
+        "title": "Řetězec",
+        "type": "string"
+      }
+    },
+    "describes": {
+      "title": "describes",
+      "description": "Dataset described by the metadata record.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri"
+      }
+    },
+    "qualified_relation": {
+      "title": "qualified relation",
+      "description": "Attachment of resource to the relationship.",
+      "type": "array",
+      "items": {
+        "title": "Metadata to agent relationship",
+        "description": "Relationship between metadata record and agent.",
+        "type": "object",
+        "required": [
+          "relation",
+          "sehraná_role"
+        ],
+        "properties": {
+          "relation": {
+            "title": "relation",
+            "description": "The resource related to the source resource.",
+            "type": "array",
+            "items": {
+              "title": "Agent",
+              "description": "Any entity carrying out actions with respect to the entities Catalogue and the Catalogued Resources.",
+              "type": "object",
+              "required": [
+
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "iri"
+                },
+                "type": {
+                  "oneOf": [
+                    {
+                      "const": "Agent"
+                    },
+                    {
+                      "type": "array",
+                      "contains": {
+                        "const": "Agent"
+                      },
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ]
+                },
+                "external_identifier": {
+                  "title": "Undefined",
+                  "type": "array",
+                  "items": {
+                    "title": "Řetězec",
+                    "type": "string"
+                  }
+                },
+                "kontaktní_bod": {
+                  "title": "kontaktní bod",
+                  "description": "Relevantní kontaktní informace pro katalogizovaný zdroj. Doporučuje se použít slovník VCard.",
+                  "type": "array",
+                  "items": {
+                    "title": "Contact details",
+                    "description": "Contact details such as telephone, e-mail address etc.",
+                    "type": "object",
+                    "required": [
+
+                    ],
+                    "properties": {
+                      "phone": {
+                        "title": "Undefined",
+                        "type": "array",
+                        "items": {
+                          "title": "Řetězec",
+                          "type": "string"
+                        }
+                      },
+                      "undefined": {
+                        "title": "Undefined",
+                        "type": "array",
+                        "items": {
+                          "title": "Řetězec",
+                          "type": "string"
+                        }
+                      },
+                      "data_box": {
+                        "title": "Undefined",
+                        "type": "array",
+                        "items": {
+                          "title": "Řetězec",
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "sehraná_role": {
+            "title": "sehraná role",
+            "description": "Funkce entity či agenta ve vztahu k jiné entitě či zdroji.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "iri"
+            }
+          }
+        }
+      }
+    },
+    "original_repository": {
+      "title": "original repository",
+      "description": "Link to the repository from which the metadata were originally stored and curated.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri"
+      }
+    },
+    "local_identifier": {
+      "title": "Local identifier",
+      "description": "Local identifier of original metadata record in any metadata catalogue.",
+      "type": "string",
+      "format": "iri"
+    },
+    "conforms_to_standard": {
+      "title": "Conforms to standard",
+      "description": "An established standard to which the metadata record conforms.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "iri"
+      }
+    }
+  }
+}

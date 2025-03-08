@@ -1,0 +1,1335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1" elementFormDefault="unqualified" xmlns:c="https://schemas.dataspecer.com/xsd/core/" xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
+  <xs:import namespace="https://schemas.dataspecer.com/xsd/core/" schemaLocation="./2022-07.xsd"/>
+  <xs:complexType name="datová_sada" sawsdl:modelReference="http://www.w3.org/ns/dcat#Dataset">
+    <xs:annotation>
+      <xs:documentation xml:lang="ar">
+        قائمة بيانات - قائمة بيانات منشورة أو مجموعة من قبل مصدر ما و متاح الوصول إليها أو تحميلها
+      </xs:documentation>
+      <xs:documentation xml:lang="cs">
+        Datová sada - Kolekce dat poskytovaná či řízená jedním zdrojem, která je k dispozici pro přístup či stažení v jednom či více formátech.
+      </xs:documentation>
+      <xs:documentation xml:lang="da">
+        Datasæt - En samling af data, udgivet eller udvalgt og arrangeret af en enkelt kilde og som er til råde for adgang til eller download af i en eller flere repræsentationer.
+      </xs:documentation>
+      <xs:documentation xml:lang="el">
+        Σύνολο Δεδομένων - Μία συλλογή από δεδομένα, δημοσιευμένη ή επιμελημένη από μία και μόνο πηγή, διαθέσιμη δε προς πρόσβαση ή μεταφόρτωση σε μία ή περισσότερες μορφές.
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Dataset - A collection of data, published or curated by a single source, and available for access or download in one or more representations.
+      </xs:documentation>
+      <xs:documentation xml:lang="es">
+        Conjunto de datos - Una colección de datos, publicados o conservados por una única fuente, y disponibles para ser accedidos o descargados en uno o más formatos.
+      </xs:documentation>
+      <xs:documentation xml:lang="fr">
+        Jeu de données - Une collection de données, publiée ou élaborée par une seule source, et disponible pour accès ou téléchargement dans un ou plusieurs formats.
+      </xs:documentation>
+      <xs:documentation xml:lang="it">
+        Dataset - Raccolta di dati, pubblicati o curati da un'unica fonte, disponibili per l'accesso o il download in uno o più formati.
+      </xs:documentation>
+      <xs:documentation xml:lang="ja">
+        データセット - 1つのエージェントによって公開またはキュレートされ、1つ以上の形式でアクセスまたはダウンロードできるデータの集合。
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="c:iri"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="publication_year" type="xs:gYear" sawsdl:modelReference="relatedItemPublicationYear">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Publication year
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            The year when the item was or will be made publicly available.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="unbounded" name="description" type="xs:string" sawsdl:modelReference="http://purl.org/dc/terms/description">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Description
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            A free-text account of the Dataset.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="version" type="xs:string" sawsdl:modelReference="http://www.w3.org/ns/dcat#version">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Version
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            The version indicator (name or identifier) of a resource.
+          </xs:documentation>
+          <xs:documentation xml:lang="es">
+            El indicador de versión (nombre o identificador) del recurso.
+          </xs:documentation>
+          <xs:documentation xml:lang="it">
+            L'indicatore di versione (un nome o un identificatore) di una risorsa.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="unbounded" name="other_language" type="xs:string" sawsdl:modelReference="language">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Other language
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            The primary language of the resource.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="primary_language" type="xs:string" sawsdl:modelReference="language">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Other language
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            The primary language of the resource.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="alternate_title" type="xs:string" sawsdl:modelReference="alternativeTitle">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Alternate title
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="abstract" type="xs:string" sawsdl:modelReference="http://purl.org/dc/terms/abstract">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Abstract - Dataset abstract.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="resource_type" type="xs:anyURI" sawsdl:modelReference="resourceType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Resource type
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            A description of the resource. 
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="title" type="xs:string" sawsdl:modelReference="http://purl.org/dc/terms/title http://purl.org/dc/terms/title">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Title
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            A name given to the resource.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="unbounded" name="identifier" type="xs:anySimpleType" sawsdl:modelReference="http://purl.org/dc/terms/identifier http://purl.org/dc/terms/identifier">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Identifier - The Identifier is a unique string that identifies a resource. For DataCite, this MUST be a DIgital Object Identifier (DOI). The format should be 10.21384/foo.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="has_location" sawsdl:modelReference="http://purl.org/dc/terms/spatial http://purl.org/dc/terms/spatial">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            has location - The geographical area covered by the dataset.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType sawsdl:modelReference="http://purl.org/dc/terms/Location Geolocation">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              Location - Spatial region, named place or geometry representation of a place related to the dataset. 
+            </xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element minOccurs="0" ref="c:iri"/>
+            <xs:element minOccurs="0" name="ohraničení_oblasti" type="xs:anySimpleType" sawsdl:modelReference="http://www.w3.org/ns/dcat#bbox">
+              <xs:annotation>
+                <xs:documentation xml:lang="cs">
+                  ohraničení oblasti
+                </xs:documentation>
+                <xs:documentation xml:lang="da">
+                  bounding box
+                </xs:documentation>
+                <xs:documentation xml:lang="en">
+                  bbox - Bounding box of the location geometry.
+                </xs:documentation>
+                <xs:documentation xml:lang="es">
+                  cuadro delimitador
+                </xs:documentation>
+                <xs:documentation xml:lang="it">
+                  quadro di delimitazione
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="location_name" type="xs:string" sawsdl:modelReference="http://purl.org/dc/terms/title">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Location name
+                </xs:documentation>
+                <xs:documentation xml:lang="en">
+                  Name of the spatial location.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="relation_to_dataset" type="xs:anyURI">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Relation to dataset
+                </xs:documentation>
+                <xs:documentation xml:lang="en">
+                  Type of relation of the spatial location to the dataset.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" name="geometry" sawsdl:modelReference="http://www.w3.org/ns/locn#geometry">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  geometry - The corresponding geometry for a resource.
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType sawsdl:modelReference="http://www.w3.org/ns/locn#Geometry">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">
+                    Geometry - The Geometry class provides the means to identify a location as a point, line, polygon, etc. expressed using coordinates in some coordinate reference system.
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                  <xs:element minOccurs="0" ref="c:iri"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="has_related_object_identifier">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  has related object identifier - Relation to the existing spatial object.
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType sawsdl:modelReference="http://www.w3.org/2000/01/rdf-schema#Resource Resource">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">
+                    Resource - Resource represents any resource, physical or digital, that is related to the described dataset. 
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                  <xs:element minOccurs="0" ref="c:iri"/>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="relation_type" type="xs:anyURI">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="en">
+                        Undefined
+                      </xs:documentation>
+                      <xs:documentation xml:lang="en">
+                        Relation type
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="type" type="xs:anyURI" sawsdl:modelReference="resourceType http://purl.org/dc/terms/type">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="en">
+                        Type - A description of the resource. Gets the value from controlled list https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/resourceTypeGeneral/.
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="title" type="xs:string" sawsdl:modelReference="relatedItemTitle http://purl.org/dc/terms/title">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="en">
+                        Title
+                      </xs:documentation>
+                      <xs:documentation xml:lang="en">
+                        A name given to the Catalogue Record.
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="identifier" type="xs:anyURI" sawsdl:modelReference="identifier http://purl.org/dc/terms/identifier">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="en">
+                        Identifier - An unambiguous reference to the resource within a given context.
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="qualified_relation">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="en">
+                        qualified relation - Attachment of resource to the relationship.
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType sawsdl:modelReference="http://www.w3.org/ns/dcat#Relationship">
+                      <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                          Resource to Agent Relationship - An association class for attaching additional information to a relationship between Dataset and Agent.
+                        </xs:documentation>
+                      </xs:annotation>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" ref="c:iri"/>
+                        <xs:element maxOccurs="unbounded" name="sehraná_role" sawsdl:modelReference="http://www.w3.org/ns/dcat#hadRole">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="cs">
+                              sehraná role - Funkce entity či agenta ve vztahu k jiné entitě či zdroji.
+                            </xs:documentation>
+                            <xs:documentation xml:lang="da">
+                              havde rolle - Den funktion en entitet eller aktør har i forhold til en anden ressource.
+                            </xs:documentation>
+                            <xs:documentation xml:lang="en">
+                              had role - The function of an entity or agent with respect to another entity or resource.
+                            </xs:documentation>
+                            <xs:documentation xml:lang="es">
+                              La función de una entidad o agente con respecto a otra entidad o recurso.
+                            </xs:documentation>
+                            <xs:documentation xml:lang="it">
+                              tiene rol - La funzione di un'entità o un agente rispetto ad un'altra entità o risorsa.
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:complexType sawsdl:modelReference="http://www.w3.org/2004/02/skos/core#Concept">
+                            <xs:annotation>
+                              <xs:documentation xml:lang="en">
+                                Resource agent role type - An idea or notion; a unit of thought.
+                              </xs:documentation>
+                            </xs:annotation>
+                            <xs:sequence>
+                              <xs:element minOccurs="0" ref="c:iri"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element maxOccurs="unbounded" name="relation" sawsdl:modelReference="http://purl.org/dc/terms/relation">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                              relation
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:complexType sawsdl:modelReference="http://xmlns.com/foaf/0.1/Agent">
+                            <xs:annotation>
+                              <xs:documentation xml:lang="en">
+                                Agent - Any entity carrying out actions with respect to the entities Catalogue and the Catalogued Resources.
+                              </xs:documentation>
+                            </xs:annotation>
+                            <xs:sequence>
+                              <xs:element minOccurs="0" ref="c:iri"/>
+                              <xs:element minOccurs="0" maxOccurs="unbounded" name="external_identifier" type="xs:string">
+                                <xs:annotation>
+                                  <xs:documentation xml:lang="en">
+                                    Undefined
+                                  </xs:documentation>
+                                  <xs:documentation xml:lang="en">
+                                    External identifier
+                                  </xs:documentation>
+                                </xs:annotation>
+                              </xs:element>
+                              <xs:element minOccurs="0" maxOccurs="unbounded" name="kontaktní_bod" sawsdl:modelReference="http://www.w3.org/ns/dcat#contactPoint">
+                                <xs:annotation>
+                                  <xs:documentation xml:lang="ar">
+                                    عنوان اتصال - تربط قائمة البيانات بعنوان اتصال موصف  باستخدام VCard
+                                  </xs:documentation>
+                                  <xs:documentation xml:lang="cs">
+                                    kontaktní bod - Relevantní kontaktní informace pro katalogizovaný zdroj. Doporučuje se použít slovník VCard.
+                                  </xs:documentation>
+                                  <xs:documentation xml:lang="da">
+                                    kontaktpunkt - Relevante kontaktoplysninger for den katalogiserede ressource. Anvendelse af vCard anbefales.
+                                  </xs:documentation>
+                                  <xs:documentation xml:lang="el">
+                                    σημείο επικοινωνίας - Συνδέει ένα σύνολο δεδομένων με ένα σχετικό σημείο επικοινωνίας, μέσω VCard.
+                                  </xs:documentation>
+                                  <xs:documentation xml:lang="en">
+                                    contact point - Relevant contact information for the catalogued resource. Use of vCard is recommended.
+                                  </xs:documentation>
+                                  <xs:documentation xml:lang="es">
+                                    Punto de contacto - Información relevante de contacto para el recurso catalogado. Se recomienda el uso de vCard.
+                                  </xs:documentation>
+                                  <xs:documentation xml:lang="fr">
+                                    point de contact - Relie un jeu de données à une information de contact utile en utilisant VCard.
+                                  </xs:documentation>
+                                  <xs:documentation xml:lang="it">
+                                    punto di contatto - Informazioni di contatto rilevanti per la risorsa catalogata. Si raccomanda l'uso di vCard.
+                                  </xs:documentation>
+                                  <xs:documentation xml:lang="ja">
+                                    窓口 - データセットを、VCardを用いて提供されている適切な連絡先情報にリンクします。
+                                  </xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                  <xs:annotation>
+                                    <xs:documentation xml:lang="en">
+                                      Contact details - Contact details such as telephone, e-mail address etc.
+                                    </xs:documentation>
+                                  </xs:annotation>
+                                  <xs:sequence>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="phone" type="xs:string">
+                                      <xs:annotation>
+                                        <xs:documentation xml:lang="en">
+                                          Undefined
+                                        </xs:documentation>
+                                        <xs:documentation xml:lang="en">
+                                          Phone
+                                        </xs:documentation>
+                                      </xs:annotation>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="email" type="xs:string">
+                                      <xs:annotation>
+                                        <xs:documentation xml:lang="en">
+                                          Undefined
+                                        </xs:documentation>
+                                        <xs:documentation xml:lang="en">
+                                          Email
+                                        </xs:documentation>
+                                      </xs:annotation>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="data_box" type="xs:string">
+                                      <xs:annotation>
+                                        <xs:documentation xml:lang="en">
+                                          Undefined
+                                        </xs:documentation>
+                                        <xs:documentation xml:lang="en">
+                                          Data box
+                                        </xs:documentation>
+                                      </xs:annotation>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" maxOccurs="unbounded" name="has_address" sawsdl:modelReference="http://www.w3.org/2006/vcard/ns#hasAddress">
+                                      <xs:annotation>
+                                        <xs:documentation xml:lang="en">
+                                          has address - To specify the components of the delivery address for the object
+                                        </xs:documentation>
+                                      </xs:annotation>
+                                      <xs:complexType sawsdl:modelReference="http://www.w3.org/ns/locn#Address">
+                                        <xs:annotation>
+                                          <xs:documentation xml:lang="en">
+                                            Address - An &#34;address representation&#34; as conceptually defined by the INSPIRE Address Representation data type. The locn:addressId property may be used to link this locn:Address to other representations.
+                                          </xs:documentation>
+                                        </xs:annotation>
+                                        <xs:sequence>
+                                          <xs:element minOccurs="0" ref="c:iri"/>
+                                        </xs:sequence>
+                                      </xs:complexType>
+                                    </xs:element>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="has_time_reference">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="en">
+                        has time reference
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                          Time reference - A date on which something relative to the resource has happened.
+                        </xs:documentation>
+                      </xs:annotation>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="date_information" type="xs:string" sawsdl:modelReference="dateInformation">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                              Date information
+                            </xs:documentation>
+                            <xs:documentation xml:lang="en">
+                              Additional information to the date in text form.
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="date_type" type="xs:anyURI" sawsdl:modelReference="dateType">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                              Date type
+                            </xs:documentation>
+                            <xs:documentation xml:lang="en">
+                              Type of the date.
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="date" type="xs:date" sawsdl:modelReference="dateValue">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                              Date - A point or period of time associated with an event in the lifecycle of the resource.
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="provenance" sawsdl:modelReference="http://purl.org/dc/terms/provenance">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            provenance - A statement about the lineage of a Dataset.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType sawsdl:modelReference="http://purl.org/dc/terms/ProvenanceStatement">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              Provenance Statement - Any changes in ownership and custody of a resource since its creation that are significant for its authenticity, integrity, and interpretation.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element minOccurs="0" ref="c:iri"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="qualified_relation" sawsdl:modelReference="http://www.w3.org/ns/dcat#qualifiedRelation">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            qualified relation - Attachment of resource to the relationship.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType sawsdl:modelReference="http://www.w3.org/ns/dcat#Relationship">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              Resource to Agent Relationship - An association class for attaching additional information to a relationship between Dataset and Agent.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element minOccurs="0" ref="c:iri"/>
+            <xs:element maxOccurs="unbounded" name="sehraná_role" sawsdl:modelReference="http://www.w3.org/ns/dcat#hadRole">
+              <xs:annotation>
+                <xs:documentation xml:lang="cs">
+                  sehraná role - Funkce entity či agenta ve vztahu k jiné entitě či zdroji.
+                </xs:documentation>
+                <xs:documentation xml:lang="da">
+                  havde rolle - Den funktion en entitet eller aktør har i forhold til en anden ressource.
+                </xs:documentation>
+                <xs:documentation xml:lang="en">
+                  had role - The function of an entity or agent with respect to another entity or resource.
+                </xs:documentation>
+                <xs:documentation xml:lang="es">
+                  La función de una entidad o agente con respecto a otra entidad o recurso.
+                </xs:documentation>
+                <xs:documentation xml:lang="it">
+                  tiene rol - La funzione di un'entità o un agente rispetto ad un'altra entità o risorsa.
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType sawsdl:modelReference="http://www.w3.org/2004/02/skos/core#Concept">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">
+                    Resource agent role type - An idea or notion; a unit of thought.
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                  <xs:element minOccurs="0" ref="c:iri"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="relation" sawsdl:modelReference="http://purl.org/dc/terms/relation">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  relation
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType sawsdl:modelReference="http://xmlns.com/foaf/0.1/Agent">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">
+                    Agent - Any entity carrying out actions with respect to the entities Catalogue and the Catalogued Resources.
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                  <xs:element minOccurs="0" ref="c:iri"/>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="external_identifier" type="xs:string">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="en">
+                        Undefined
+                      </xs:documentation>
+                      <xs:documentation xml:lang="en">
+                        External identifier
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="kontaktní_bod" sawsdl:modelReference="http://www.w3.org/ns/dcat#contactPoint">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="ar">
+                        عنوان اتصال - تربط قائمة البيانات بعنوان اتصال موصف  باستخدام VCard
+                      </xs:documentation>
+                      <xs:documentation xml:lang="cs">
+                        kontaktní bod - Relevantní kontaktní informace pro katalogizovaný zdroj. Doporučuje se použít slovník VCard.
+                      </xs:documentation>
+                      <xs:documentation xml:lang="da">
+                        kontaktpunkt - Relevante kontaktoplysninger for den katalogiserede ressource. Anvendelse af vCard anbefales.
+                      </xs:documentation>
+                      <xs:documentation xml:lang="el">
+                        σημείο επικοινωνίας - Συνδέει ένα σύνολο δεδομένων με ένα σχετικό σημείο επικοινωνίας, μέσω VCard.
+                      </xs:documentation>
+                      <xs:documentation xml:lang="en">
+                        contact point - Relevant contact information for the catalogued resource. Use of vCard is recommended.
+                      </xs:documentation>
+                      <xs:documentation xml:lang="es">
+                        Punto de contacto - Información relevante de contacto para el recurso catalogado. Se recomienda el uso de vCard.
+                      </xs:documentation>
+                      <xs:documentation xml:lang="fr">
+                        point de contact - Relie un jeu de données à une information de contact utile en utilisant VCard.
+                      </xs:documentation>
+                      <xs:documentation xml:lang="it">
+                        punto di contatto - Informazioni di contatto rilevanti per la risorsa catalogata. Si raccomanda l'uso di vCard.
+                      </xs:documentation>
+                      <xs:documentation xml:lang="ja">
+                        窓口 - データセットを、VCardを用いて提供されている適切な連絡先情報にリンクします。
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                          Contact details - Contact details such as telephone, e-mail address etc.
+                        </xs:documentation>
+                      </xs:annotation>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="phone" type="xs:string">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                              Undefined
+                            </xs:documentation>
+                            <xs:documentation xml:lang="en">
+                              Phone
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="email" type="xs:string">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                              Undefined
+                            </xs:documentation>
+                            <xs:documentation xml:lang="en">
+                              Email
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="data_box" type="xs:string">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                              Undefined
+                            </xs:documentation>
+                            <xs:documentation xml:lang="en">
+                              Data box
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="has_time_reference">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            has time reference
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              Time reference - A date on which something relative to the resource has happened.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="date_information" type="xs:string" sawsdl:modelReference="dateInformation">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Date information
+                </xs:documentation>
+                <xs:documentation xml:lang="en">
+                  Additional information to the date in text form.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="date_type" type="xs:anyURI" sawsdl:modelReference="dateType">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Date type
+                </xs:documentation>
+                <xs:documentation xml:lang="en">
+                  Type of the date.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="date" type="xs:date" sawsdl:modelReference="dateValue">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Date - A point or period of time associated with an event in the lifecycle of the resource.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="has_subject" sawsdl:modelReference="hasSubject">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            has subject
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType sawsdl:modelReference="Subject">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              Subject - Subject, keyword, classification code, or key phrase describing the resource.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element minOccurs="0" ref="c:iri"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="definition" type="xs:string" sawsdl:modelReference="http://www.w3.org/2004/02/skos/core#definition">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Definition
+                </xs:documentation>
+                <xs:documentation xml:lang="en">
+                  Definition of the subject.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="title" type="xs:string" sawsdl:modelReference="http://purl.org/dc/terms/title">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Title
+                </xs:documentation>
+                <xs:documentation xml:lang="en">
+                  Title of the subject
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="classification_code" type="xs:string" sawsdl:modelReference="subjectClassificationCode">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Classification code
+                </xs:documentation>
+                <xs:documentation xml:lang="en">
+                  The classification code used for the subject term in the subject scheme.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="in_subject_scheme">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  in subject scheme
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">
+                    Subject scheme - Collection of subjects (keywords, concepts, classification codes) curated by a single source.
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:sequence/>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="has_validation_result">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            has validation result
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              Validation result - Class describing the result of validation testing. It may include validation of metadata, data and/or web services accessing the data.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="has_distribution">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            has distribution
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType sawsdl:modelReference="http://www.w3.org/ns/dcat#Distribution">
+          <xs:annotation>
+            <xs:documentation xml:lang="ar">
+              التوزيع - شكل محدد لقائمة البيانات يمكن الوصول إليه. قائمة بيانات ما يمكن أن تكون متاحه باشكال و أنواع متعددة.  ملف يمكن تحميله أو واجهة برمجية يمكن من خلالها الوصول إلى البيانات هي أمثلة على ذلك.
+            </xs:documentation>
+            <xs:documentation xml:lang="cs">
+              Distribuce - Konkrétní reprezentace datové sady. Datová sada může být dostupná v různých serializacích, které se mohou navzájem lišit různými způsoby, mimo jiné přirozeným jazykem, media-typem či formátem, schematickou organizací, časovým a prostorovým rozlišením, úrovní detailu či profily (které mohou specifikovat některé či všechny tyto rozdíly).
+            </xs:documentation>
+            <xs:documentation xml:lang="da">
+              Distribution - En specifik repræsentation af et datasæt. Et datasæt kan være tilgængelig i mange serialiseringer der kan variere på forskellige vis, herunder sprog, medietype eller format, systemorganisering, tidslig- og geografisk opløsning, detaljeringsniveau eller profiler (der kan specificere en eller flere af ovenstående).
+            </xs:documentation>
+            <xs:documentation xml:lang="el">
+              Διανομή - Αναπαριστά μία συγκεκριμένη διαθέσιμη μορφή ενός συνόλου δεδομένων. Κάθε σύνολο δεδομενων μπορεί να είναι διαθέσιμο σε διαφορετικές μορφές, οι μορφές αυτές μπορεί να αναπαριστούν διαφορετικές μορφές αρχείων ή διαφορετικά σημεία διάθεσης. Παραδείγματα διανομών συμπεριλαμβάνουν ένα μεταφορτώσιμο αρχείο μορφής CSV, ένα API ή ένα RSS feed.
+            </xs:documentation>
+            <xs:documentation xml:lang="en">
+              Distribution - A specific representation of a dataset. A dataset might be available in multiple serializations that may differ in various ways, including natural language, media-type or format, schematic organization, temporal and spatial resolution, level of detail or profiles (which might specify any or all of the above).
+            </xs:documentation>
+            <xs:documentation xml:lang="es">
+              Distribución - Una representación específica de los datos. Cada conjunto de datos puede estar disponible en formas diferentes, las cuáles pueden variar en distintas formas, incluyendo el idioma, 'media-type' o formato, organización esquemática, resolución temporal y espacial, nivel de detalle o perfiles (que pueden especificar cualquiera o todas las diferencias anteriores).
+            </xs:documentation>
+            <xs:documentation xml:lang="fr">
+              Distribution - Représente une forme spécifique d'un jeu de données. Caque jeu de données peut être disponible sous différentes formes, celles-ci pouvant représenter différents formats du jeu de données ou différents endpoint. Des exemples de distribution sont des fichirs CSV, des API ou des flux RSS.
+            </xs:documentation>
+            <xs:documentation xml:lang="it">
+              Distribuzione - Rappresenta una forma disponibile e specifica del dataset. Ciascun dataset può essere disponibile in forme differenti, che possono rappresentare formati diversi o diversi punti di accesso per un dataset. Esempi di distribuzioni sono un file CSV scaricabile, una API o un RSS feed.
+            </xs:documentation>
+            <xs:documentation xml:lang="ja">
+              配信 - データセットの特定の利用可能な形式を表わします。各データセットは、異なる形式で利用できることがあり、これらの形式は、データセットの異なる形式や、異なるエンドポイントを表わす可能性があります。配信の例には、ダウンロード可能なCSVファイル、API、RSSフィードが含まれます。
+            </xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element minOccurs="0" ref="c:iri"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="title" type="xs:string" sawsdl:modelReference="http://purl.org/dc/terms/title">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Title
+                </xs:documentation>
+                <xs:documentation xml:lang="en">
+                  A name given to the distribution.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="has_funding_reference" sawsdl:modelReference="hasFundingReference">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            has funding reference
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType sawsdl:modelReference="FundingReference">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              Funding reference - Information about financial support (funding) for the resource being registered.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element minOccurs="0" ref="c:iri"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="funding_program" type="xs:anyURI">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Funding program
+                </xs:documentation>
+                <xs:documentation xml:lang="en">
+                  Reference to the specific funding program.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" name="award_title" type="xs:string" sawsdl:modelReference="awardTitle">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Award title
+                </xs:documentation>
+                <xs:documentation xml:lang="en">
+                   The human readable title or name of the award (grant).
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="local_identifier" type="xs:string" sawsdl:modelReference="awardNumber">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Local identifier
+                </xs:documentation>
+                <xs:documentation xml:lang="en">
+                  The code assigned by the funder to a sponsored award (grant).
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="has_funder" sawsdl:modelReference="hasFunderIdentifier">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  has funder
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType sawsdl:modelReference="FunderIdentifier">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">
+                    Funder identifier - Uniquely identifies a funding entity, according to various types.
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                  <xs:element minOccurs="0" ref="c:iri"/>
+                  <xs:element minOccurs="0" name="funder_identifier_scheme_uri" type="xs:anyURI" sawsdl:modelReference="funderIdentifierSchemeUri">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="en">
+                        Funder identifier scheme URI
+                      </xs:documentation>
+                      <xs:documentation xml:lang="en">
+                        The URI of the funder identifier scheme.
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="funder_identifier_type" type="xs:anyURI" sawsdl:modelReference="funderIdentifierType">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="en">
+                        Funder identifier type
+                      </xs:documentation>
+                      <xs:documentation xml:lang="en">
+                        The type of the funderIdentifier.
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="has_terms_of_use" sawsdl:modelReference="hasVersion">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            has terms of use
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType sawsdl:modelReference="Rights">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              Terms of use - Terms of use defines overall conditions and rights regarding access and usage  of dataset. 
+            </xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element minOccurs="0" ref="c:iri"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="description" type="xs:string" sawsdl:modelReference="http://purl.org/dc/terms/description">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Description - Descriptive text on details of rights and licensing.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="license" type="xs:anyURI" sawsdl:modelReference="http://purl.org/dc/terms/license">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  License - Information about licensing details of the resource.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="access_rights" type="xs:string">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Access rights
+                </xs:documentation>
+                <xs:documentation xml:lang="en">
+                  Information about who access the resource or an indication of its security status.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="kontaktní_bod" sawsdl:modelReference="http://www.w3.org/ns/dcat#contactPoint">
+              <xs:annotation>
+                <xs:documentation xml:lang="ar">
+                  عنوان اتصال - تربط قائمة البيانات بعنوان اتصال موصف  باستخدام VCard
+                </xs:documentation>
+                <xs:documentation xml:lang="cs">
+                  kontaktní bod - Relevantní kontaktní informace pro katalogizovaný zdroj. Doporučuje se použít slovník VCard.
+                </xs:documentation>
+                <xs:documentation xml:lang="da">
+                  kontaktpunkt - Relevante kontaktoplysninger for den katalogiserede ressource. Anvendelse af vCard anbefales.
+                </xs:documentation>
+                <xs:documentation xml:lang="el">
+                  σημείο επικοινωνίας - Συνδέει ένα σύνολο δεδομένων με ένα σχετικό σημείο επικοινωνίας, μέσω VCard.
+                </xs:documentation>
+                <xs:documentation xml:lang="en">
+                  has contact person - Contact person for the further details about the terms of use.
+                </xs:documentation>
+                <xs:documentation xml:lang="es">
+                  Punto de contacto - Información relevante de contacto para el recurso catalogado. Se recomienda el uso de vCard.
+                </xs:documentation>
+                <xs:documentation xml:lang="fr">
+                  point de contact - Relie un jeu de données à une information de contact utile en utilisant VCard.
+                </xs:documentation>
+                <xs:documentation xml:lang="it">
+                  punto di contatto - Informazioni di contatto rilevanti per la risorsa catalogata. Si raccomanda l'uso di vCard.
+                </xs:documentation>
+                <xs:documentation xml:lang="ja">
+                  窓口 - データセットを、VCardを用いて提供されている適切な連絡先情報にリンクします。
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType sawsdl:modelReference="http://xmlns.com/foaf/0.1/Agent">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">
+                    Agent - Any entity carrying out actions with respect to the entities Catalogue and the Catalogued Resources.
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                  <xs:element minOccurs="0" ref="c:iri"/>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="external_identifier" type="xs:string">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="en">
+                        Undefined
+                      </xs:documentation>
+                      <xs:documentation xml:lang="en">
+                        External identifier
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="kontaktní_bod" sawsdl:modelReference="http://www.w3.org/ns/dcat#contactPoint">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="ar">
+                        عنوان اتصال - تربط قائمة البيانات بعنوان اتصال موصف  باستخدام VCard
+                      </xs:documentation>
+                      <xs:documentation xml:lang="cs">
+                        kontaktní bod - Relevantní kontaktní informace pro katalogizovaný zdroj. Doporučuje se použít slovník VCard.
+                      </xs:documentation>
+                      <xs:documentation xml:lang="da">
+                        kontaktpunkt - Relevante kontaktoplysninger for den katalogiserede ressource. Anvendelse af vCard anbefales.
+                      </xs:documentation>
+                      <xs:documentation xml:lang="el">
+                        σημείο επικοινωνίας - Συνδέει ένα σύνολο δεδομένων με ένα σχετικό σημείο επικοινωνίας, μέσω VCard.
+                      </xs:documentation>
+                      <xs:documentation xml:lang="en">
+                        contact point - Relevant contact information for the catalogued resource. Use of vCard is recommended.
+                      </xs:documentation>
+                      <xs:documentation xml:lang="es">
+                        Punto de contacto - Información relevante de contacto para el recurso catalogado. Se recomienda el uso de vCard.
+                      </xs:documentation>
+                      <xs:documentation xml:lang="fr">
+                        point de contact - Relie un jeu de données à une information de contact utile en utilisant VCard.
+                      </xs:documentation>
+                      <xs:documentation xml:lang="it">
+                        punto di contatto - Informazioni di contatto rilevanti per la risorsa catalogata. Si raccomanda l'uso di vCard.
+                      </xs:documentation>
+                      <xs:documentation xml:lang="ja">
+                        窓口 - データセットを、VCardを用いて提供されている適切な連絡先情報にリンクします。
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                          Contact details - Contact details such as telephone, e-mail address etc.
+                        </xs:documentation>
+                      </xs:annotation>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="phone" type="xs:string">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                              Undefined
+                            </xs:documentation>
+                            <xs:documentation xml:lang="en">
+                              Phone
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="email" type="xs:string">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                              Undefined
+                            </xs:documentation>
+                            <xs:documentation xml:lang="en">
+                              Email
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="data_box" type="xs:string">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                              Undefined
+                            </xs:documentation>
+                            <xs:documentation xml:lang="en">
+                              Data box
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="has_address" sawsdl:modelReference="http://www.w3.org/2006/vcard/ns#hasAddress">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                              has address - To specify the components of the delivery address for the object
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:complexType sawsdl:modelReference="http://www.w3.org/ns/locn#Address">
+                            <xs:annotation>
+                              <xs:documentation xml:lang="en">
+                                Address - An &#34;address representation&#34; as conceptually defined by the INSPIRE Address Representation data type. The locn:addressId property may be used to link this locn:Address to other representations.
+                              </xs:documentation>
+                            </xs:annotation>
+                            <xs:sequence>
+                              <xs:element minOccurs="0" ref="c:iri"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="has_related_resource">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            has related resource
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType sawsdl:modelReference="http://www.w3.org/2000/01/rdf-schema#Resource Resource">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              Resource - Resource represents any resource, physical or digital, that is related to the described dataset. 
+            </xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element minOccurs="0" ref="c:iri"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="relation_type" type="xs:anyURI">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Undefined
+                </xs:documentation>
+                <xs:documentation xml:lang="en">
+                  Relation type
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="type" type="xs:anyURI" sawsdl:modelReference="resourceType http://purl.org/dc/terms/type">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Type - A description of the resource. Gets the value from controlled list https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/resourceTypeGeneral/.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="title" type="xs:string" sawsdl:modelReference="relatedItemTitle http://purl.org/dc/terms/title">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Title
+                </xs:documentation>
+                <xs:documentation xml:lang="en">
+                  A name given to the Catalogue Record.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="identifier" type="xs:anyURI" sawsdl:modelReference="identifier http://purl.org/dc/terms/identifier">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Identifier - An unambiguous reference to the resource within a given context.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="qualified_relation">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  qualified relation - Attachment of resource to the relationship.
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType sawsdl:modelReference="http://www.w3.org/ns/dcat#Relationship">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">
+                    Resource to Agent Relationship - An association class for attaching additional information to a relationship between Dataset and Agent.
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                  <xs:element minOccurs="0" ref="c:iri"/>
+                  <xs:element maxOccurs="unbounded" name="sehraná_role" sawsdl:modelReference="http://www.w3.org/ns/dcat#hadRole">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="cs">
+                        sehraná role - Funkce entity či agenta ve vztahu k jiné entitě či zdroji.
+                      </xs:documentation>
+                      <xs:documentation xml:lang="da">
+                        havde rolle - Den funktion en entitet eller aktør har i forhold til en anden ressource.
+                      </xs:documentation>
+                      <xs:documentation xml:lang="en">
+                        had role - The function of an entity or agent with respect to another entity or resource.
+                      </xs:documentation>
+                      <xs:documentation xml:lang="es">
+                        La función de una entidad o agente con respecto a otra entidad o recurso.
+                      </xs:documentation>
+                      <xs:documentation xml:lang="it">
+                        tiene rol - La funzione di un'entità o un agente rispetto ad un'altra entità o risorsa.
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType sawsdl:modelReference="http://www.w3.org/2004/02/skos/core#Concept">
+                      <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                          Resource agent role type - An idea or notion; a unit of thought.
+                        </xs:documentation>
+                      </xs:annotation>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" ref="c:iri"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element maxOccurs="unbounded" name="relation" sawsdl:modelReference="http://purl.org/dc/terms/relation">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="en">
+                        relation
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType sawsdl:modelReference="http://xmlns.com/foaf/0.1/Agent">
+                      <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                          Agent - Any entity carrying out actions with respect to the entities Catalogue and the Catalogued Resources.
+                        </xs:documentation>
+                      </xs:annotation>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" ref="c:iri"/>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="external_identifier" type="xs:string">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                              Undefined
+                            </xs:documentation>
+                            <xs:documentation xml:lang="en">
+                              External identifier
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="kontaktní_bod" sawsdl:modelReference="http://www.w3.org/ns/dcat#contactPoint">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="ar">
+                              عنوان اتصال - تربط قائمة البيانات بعنوان اتصال موصف  باستخدام VCard
+                            </xs:documentation>
+                            <xs:documentation xml:lang="cs">
+                              kontaktní bod - Relevantní kontaktní informace pro katalogizovaný zdroj. Doporučuje se použít slovník VCard.
+                            </xs:documentation>
+                            <xs:documentation xml:lang="da">
+                              kontaktpunkt - Relevante kontaktoplysninger for den katalogiserede ressource. Anvendelse af vCard anbefales.
+                            </xs:documentation>
+                            <xs:documentation xml:lang="el">
+                              σημείο επικοινωνίας - Συνδέει ένα σύνολο δεδομένων με ένα σχετικό σημείο επικοινωνίας, μέσω VCard.
+                            </xs:documentation>
+                            <xs:documentation xml:lang="en">
+                              contact point - Relevant contact information for the catalogued resource. Use of vCard is recommended.
+                            </xs:documentation>
+                            <xs:documentation xml:lang="es">
+                              Punto de contacto - Información relevante de contacto para el recurso catalogado. Se recomienda el uso de vCard.
+                            </xs:documentation>
+                            <xs:documentation xml:lang="fr">
+                              point de contact - Relie un jeu de données à une information de contact utile en utilisant VCard.
+                            </xs:documentation>
+                            <xs:documentation xml:lang="it">
+                              punto di contatto - Informazioni di contatto rilevanti per la risorsa catalogata. Si raccomanda l'uso di vCard.
+                            </xs:documentation>
+                            <xs:documentation xml:lang="ja">
+                              窓口 - データセットを、VCardを用いて提供されている適切な連絡先情報にリンクします。
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:complexType>
+                            <xs:annotation>
+                              <xs:documentation xml:lang="en">
+                                Contact details - Contact details such as telephone, e-mail address etc.
+                              </xs:documentation>
+                            </xs:annotation>
+                            <xs:sequence>
+                              <xs:element minOccurs="0" maxOccurs="unbounded" name="phone" type="xs:string">
+                                <xs:annotation>
+                                  <xs:documentation xml:lang="en">
+                                    Undefined
+                                  </xs:documentation>
+                                  <xs:documentation xml:lang="en">
+                                    Phone
+                                  </xs:documentation>
+                                </xs:annotation>
+                              </xs:element>
+                              <xs:element minOccurs="0" maxOccurs="unbounded" name="email" type="xs:string">
+                                <xs:annotation>
+                                  <xs:documentation xml:lang="en">
+                                    Undefined
+                                  </xs:documentation>
+                                  <xs:documentation xml:lang="en">
+                                    Email
+                                  </xs:documentation>
+                                </xs:annotation>
+                              </xs:element>
+                              <xs:element minOccurs="0" maxOccurs="unbounded" name="data_box" type="xs:string">
+                                <xs:annotation>
+                                  <xs:documentation xml:lang="en">
+                                    Undefined
+                                  </xs:documentation>
+                                  <xs:documentation xml:lang="en">
+                                    Data box
+                                  </xs:documentation>
+                                </xs:annotation>
+                              </xs:element>
+                              <xs:element minOccurs="0" maxOccurs="unbounded" name="has_address" sawsdl:modelReference="http://www.w3.org/2006/vcard/ns#hasAddress">
+                                <xs:annotation>
+                                  <xs:documentation xml:lang="en">
+                                    has address - To specify the components of the delivery address for the object
+                                  </xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType sawsdl:modelReference="http://www.w3.org/ns/locn#Address">
+                                  <xs:annotation>
+                                    <xs:documentation xml:lang="en">
+                                      Address - An &#34;address representation&#34; as conceptually defined by the INSPIRE Address Representation data type. The locn:addressId property may be used to link this locn:Address to other representations.
+                                    </xs:documentation>
+                                  </xs:annotation>
+                                  <xs:sequence>
+                                    <xs:element minOccurs="0" ref="c:iri"/>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="has_time_reference">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  has time reference
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">
+                    Time reference - A date on which something relative to the resource has happened.
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="date_information" type="xs:string" sawsdl:modelReference="dateInformation">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="en">
+                        Date information
+                      </xs:documentation>
+                      <xs:documentation xml:lang="en">
+                        Additional information to the date in text form.
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="date_type" type="xs:anyURI" sawsdl:modelReference="dateType">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="en">
+                        Date type
+                      </xs:documentation>
+                      <xs:documentation xml:lang="en">
+                        Type of the date.
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="date" type="xs:date" sawsdl:modelReference="dateValue">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="en">
+                        Date - A point or period of time associated with an event in the lifecycle of the resource.
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="has_alternate_identifier" sawsdl:modelReference="hasAlternateIdentifier">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            has alternate identifier
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType sawsdl:modelReference="AlternateIdentifier">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              Alternate identifier - An identifier other than the primary Identifier applied to the resource being registered. This may be any alphanumeric string which is unique within its domain of issue. May be used for local identifiers, a serial number of an instrument or an inventory number. The AlternateIdentifier should be an additional identifier for the same instance of the resource (i.e., same location, same file).
+            </xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element minOccurs="0" ref="c:iri"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="alternate_identifier_type" type="xs:string" sawsdl:modelReference="alternateIdentifierType">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  alternate identifier type - The type of the Alternate identifier.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="datová_sada" type="datová_sada"/>
+</xs:schema>
