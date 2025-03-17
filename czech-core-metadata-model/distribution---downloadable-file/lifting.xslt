@@ -55,6 +55,7 @@
         </id>
       </xsl:variable>
       <xsl:copy-of select="$id//@*"/>
+      <rdf:type rdf:resource="Distribution-DownloadableFile"/>
       <xsl:copy-of select="$arc"/>
       <xsl:for-each select="checksum">
         <ns0:checksumValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">

@@ -4,9 +4,7 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "id": "@id",
     "type": "@type",
-    "Distribution - downloadable file": {
-      "@id": null
-    },
+    "Distribution - downloadable file": "Distribution-DownloadableFile",
     "checksum": {
       "@id": "http://spdx.org/rdf/terms#checksumValue",
       "@type": "http://www.w3.org/2001/XMLSchema#string"

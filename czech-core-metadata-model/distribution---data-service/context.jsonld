@@ -4,9 +4,7 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "id": "@id",
     "type": "@type",
-    "Distribution - data service": {
-      "@id": null
-    },
+    "Distribution - data service": "Distribution-DataService",
     "description": {
       "@id": "http://purl.org/dc/terms/description",
       "@type": "http://www.w3.org/2001/XMLSchema#string"

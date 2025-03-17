@@ -8,12 +8,32 @@
 
   ],
   "properties": {
+    "id": {
+      "type": "string",
+      "format": "iri"
+    },
+    "type": {
+      "oneOf": [
+        {
+          "const": "Distribution - data service"
+        },
+        {
+          "type": "array",
+          "contains": {
+            "const": "Distribution - data service"
+          },
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
     "description": {
       "title": "Description",
       "description": "A free-text account of the Distribution.",
       "type": "array",
       "items": {
-        "title": "Řetězec",
+        "title": "String",
         "type": "string"
       }
     },
@@ -36,8 +56,8 @@
       }
     },
     "služba_pro_přístup_k_datům": {
-      "title": "služba pro přístup k datům",
-      "description": "Umístění či přístupový bod zpřístupňující distribuci datové sady.",
+      "title": "access service",
+      "description": "A site or end-point that gives access to the distribution of the dataset.",
       "type": "array",
       "items": {
         "type": "string",

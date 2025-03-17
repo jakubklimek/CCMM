@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1" elementFormDefault="unqualified" xmlns:c="https://schemas.dataspecer.com/xsd/core/" xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
-  <xs:import namespace="https://schemas.dataspecer.com/xsd/core/" schemaLocation="./2022-07.xsd"/>
+  <xs:import namespace="https://schemas.dataspecer.com/xsd/core/" schemaLocation="https://techlib.cz/specification/ccmm/dataset/2022-07.xsd"/>
   <xs:complexType name="katalogizační_záznam" sawsdl:modelReference="http://www.w3.org/ns/dcat#CatalogRecord">
     <xs:annotation>
       <xs:documentation xml:lang="ar">
@@ -35,7 +35,7 @@
       <xs:element minOccurs="0" ref="c:iri"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="date_updated" type="xs:date" sawsdl:modelReference="http://purl.org/dc/terms/modified">
         <xs:annotation>
-          <xs:documentation xml:lang="en">
+          <xs:documentation xml:lang="">
             Date updated
           </xs:documentation>
           <xs:documentation xml:lang="en">
@@ -57,7 +57,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="describes">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="describes" sawsdl:modelReference="describes">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             describes - Dataset described by the metadata record.
@@ -98,19 +98,20 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="qualified_relation">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="qualified_relation" sawsdl:modelReference="qualifiedRelation">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             qualified relation - Attachment of resource to the relationship.
           </xs:documentation>
         </xs:annotation>
-        <xs:complexType>
+        <xs:complexType sawsdl:modelReference="MetadataToAgentRelationship">
           <xs:annotation>
             <xs:documentation xml:lang="en">
               Metadata to agent relationship - Relationship between metadata record and agent.
             </xs:documentation>
           </xs:annotation>
           <xs:sequence>
+            <xs:element minOccurs="0" ref="c:iri"/>
             <xs:element maxOccurs="unbounded" name="relation" sawsdl:modelReference="http://purl.org/dc/terms/relation">
               <xs:annotation>
                 <xs:documentation xml:lang="en">
@@ -125,13 +126,10 @@
                 </xs:annotation>
                 <xs:sequence>
                   <xs:element minOccurs="0" ref="c:iri"/>
-                  <xs:element minOccurs="0" maxOccurs="unbounded" name="external_identifier" type="xs:string">
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="external_identifier" type="xs:string" sawsdl:modelReference="agentExternalIdentifier">
                     <xs:annotation>
                       <xs:documentation xml:lang="en">
-                        Undefined
-                      </xs:documentation>
-                      <xs:documentation xml:lang="en">
-                        External identifier
+                        External identifier - External identifer of an Agent.
                       </xs:documentation>
                     </xs:annotation>
                   </xs:element>
@@ -165,40 +163,32 @@
                         窓口 - データセットを、VCardを用いて提供されている適切な連絡先情報にリンクします。
                       </xs:documentation>
                     </xs:annotation>
-                    <xs:complexType>
+                    <xs:complexType sawsdl:modelReference="ContactDetails">
                       <xs:annotation>
                         <xs:documentation xml:lang="en">
                           Contact details - Contact details such as telephone, e-mail address etc.
                         </xs:documentation>
                       </xs:annotation>
                       <xs:sequence>
-                        <xs:element minOccurs="0" maxOccurs="unbounded" name="phone" type="xs:string">
+                        <xs:element minOccurs="0" ref="c:iri"/>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="phone" type="xs:string" sawsdl:modelReference="dataBox">
                           <xs:annotation>
                             <xs:documentation xml:lang="en">
-                              Undefined
-                            </xs:documentation>
-                            <xs:documentation xml:lang="en">
-                              Phone
+                              Phone - Code of the data box.
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element minOccurs="0" maxOccurs="unbounded" name="undefined" type="xs:string">
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="undefined" type="xs:string" sawsdl:modelReference="email">
                           <xs:annotation>
                             <xs:documentation xml:lang="en">
-                              Undefined
-                            </xs:documentation>
-                            <xs:documentation xml:lang="en">
-                              Email
+                              Email - Email address.
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
-                        <xs:element minOccurs="0" maxOccurs="unbounded" name="data_box" type="xs:string">
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="data_box" type="xs:string" sawsdl:modelReference="phone">
                           <xs:annotation>
                             <xs:documentation xml:lang="en">
-                              Undefined
-                            </xs:documentation>
-                            <xs:documentation xml:lang="en">
-                              Data box
+                              Data box - Phone number
                             </xs:documentation>
                           </xs:annotation>
                         </xs:element>
@@ -240,7 +230,7 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="original_repository">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="original_repository" sawsdl:modelReference="originalRepository">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             original repository - Link to the repository from which the metadata were originally stored and curated.

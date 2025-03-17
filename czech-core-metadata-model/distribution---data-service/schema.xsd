@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1" elementFormDefault="unqualified" xmlns:c="https://schemas.dataspecer.com/xsd/core/" xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
-  <xs:import namespace="https://schemas.dataspecer.com/xsd/core/" schemaLocation="./2022-07.xsd"/>
-  <xs:complexType name="distribution_-_data_service">
+  <xs:import namespace="https://schemas.dataspecer.com/xsd/core/" schemaLocation="https://techlib.cz/specification/ccmm/dataset/2022-07.xsd"/>
+  <xs:complexType name="distribution_-_data_service" sawsdl:modelReference="Distribution-DataService">
     <xs:annotation>
       <xs:documentation xml:lang="en">
         Distribution - data service - Physical embodiment of the dataset as a particular data service. 
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
+      <xs:element minOccurs="0" ref="c:iri"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="description" type="xs:string" sawsdl:modelReference="http://purl.org/dc/terms/description">
         <xs:annotation>
-          <xs:documentation xml:lang="en">
+          <xs:documentation xml:lang="">
             Description
           </xs:documentation>
           <xs:documentation xml:lang="en">

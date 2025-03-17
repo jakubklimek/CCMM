@@ -1,8 +1,8 @@
-Property https://ofn.gov.cz/association/1741436300397-fdf8-8626-9747 has no interpretation!
+Property https://ofn.gov.cz/attribute/1741436908235-53c8-91b1-bc8b has no interpretation!
 
-propertyToMatchCheckType@http://localhost:3001/data-specification-editor/assets/index-B9fkU9fC.js:1300:11833
-propertyToMatch@http://localhost:3001/data-specification-editor/assets/index-B9fkU9fC.js:1300:11155
-classToTemplate@http://localhost:3001/data-specification-editor/assets/index-B9fkU9fC.js:1300:10879
-fromRoots@http://localhost:3001/data-specification-editor/assets/index-B9fkU9fC.js:1300:8969
-$yt@http://localhost:3001/data-specification-editor/assets/index-B9fkU9fC.js:1300:8327
-generateToObject@http://localhost:3001/data-specification-editor/assets/index-B9fkU9fC.js:1300:32847
+propertyToMatchCheckType@http://localhost:3000/data-specification-editor/assets/index-Dbfxk0_n.js:1300:11833
+propertyToMatch@http://localhost:3000/data-specification-editor/assets/index-Dbfxk0_n.js:1300:11243
+classToTemplate@http://localhost:3000/data-specification-editor/assets/index-Dbfxk0_n.js:1300:10879
+fromRoots@http://localhost:3000/data-specification-editor/assets/index-Dbfxk0_n.js:1300:8969
+$yt@http://localhost:3000/data-specification-editor/assets/index-Dbfxk0_n.js:1300:8327
+generateToObject@http://localhost:3000/data-specification-editor/assets/index-Dbfxk0_n.js:1300:32847

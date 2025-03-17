@@ -12,7 +12,7 @@
   <xsl:template match="/sp:sparql">
     <xsl:apply-templates select="sp:results/sp:result"/>
   </xsl:template>
-  <xsl:template match="sp:result[sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;null&#34;]">
+  <xsl:template match="sp:result[sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;Distribution-DataService&#34;]">
     <distribution_-_data_service>
       <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1741437797507-6172-c53e-b582">
         <xsl:with-param name="id">

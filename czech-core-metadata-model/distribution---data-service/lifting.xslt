@@ -55,6 +55,7 @@
         </id>
       </xsl:variable>
       <xsl:copy-of select="$id//@*"/>
+      <rdf:type rdf:resource="Distribution-DataService"/>
       <xsl:copy-of select="$arc"/>
       <xsl:for-each select="description">
         <ns0:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">

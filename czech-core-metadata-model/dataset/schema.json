@@ -1,12 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://techlib.cz/specification/ccmm/dataset/schema.json",
-  "title": "Datová sada",
-  "description": "Kolekce dat poskytovaná či řízená jedním zdrojem, která je k dispozici pro přístup či stažení v jednom či více formátech.",
+  "title": "Dataset",
+  "description": "A collection of data, published or curated by a single source, and available for access or download in one or more representations.",
   "type": "object",
   "required": [
-    "description",
-    "other_language",
+    "descriptions",
+    "other_languages",
     "primary_language",
     "title",
     "identifier"
@@ -35,18 +35,14 @@
     "publication_year": {
       "title": "Publication year",
       "description": "The year when the item was or will be made publicly available.",
-      "type": "array",
-      "items": {
-        "title": "http://www.w3.org/2001/XMLSchema#gYear",
-        "type": "string"
-      }
+      "type": "string"
     },
-    "description": {
+    "descriptions": {
       "title": "Description",
       "description": "A free-text account of the Dataset.",
       "type": "array",
       "items": {
-        "title": "Řetězec",
+        "title": "String",
         "type": "string"
       }
     },
@@ -55,12 +51,12 @@
       "description": "The version indicator (name or identifier) of a resource.",
       "type": "string"
     },
-    "other_language": {
+    "other_languages": {
       "title": "Other language",
       "description": "The primary language of the resource.",
       "type": "array",
       "items": {
-        "title": "Řetězec",
+        "title": "String",
         "type": "string"
       }
     },
@@ -69,32 +65,24 @@
       "description": "The primary language of the resource.",
       "type": "string"
     },
-    "alternate_title": {
+    "alternate_titles": {
       "title": "Alternate title",
       "type": "array",
       "items": {
-        "title": "Řetězec",
+        "title": "String",
         "type": "string"
       }
     },
     "abstract": {
       "title": "Abstract",
       "description": "Dataset abstract.",
-      "type": "array",
-      "items": {
-        "title": "Řetězec",
-        "type": "string"
-      }
+      "type": "string"
     },
     "resource_type": {
       "title": "Resource type",
       "description": "A description of the resource. ",
-      "type": "array",
-      "items": {
-        "title": "URI, IRI, URL",
-        "type": "string",
-        "format": "iri"
-      }
+      "type": "string",
+      "format": "iri"
     },
     "title": {
       "title": "Title",
@@ -104,13 +92,10 @@
     "identifier": {
       "title": "Identifier",
       "description": "The Identifier is a unique string that identifies a resource. For DataCite, this MUST be a DIgital Object Identifier (DOI). The format should be 10.21384/foo.",
-      "type": "array",
-      "items": {
-        "title": "http://www.w3.org/2000/01/rdf-schema#Literal",
-        "type": "string"
-      }
+      "type": "string",
+      "format": "iri"
     },
-    "has_location": {
+    "locations": {
       "title": "has location",
       "description": "The geographical area covered by the dataset.",
       "type": "array",
@@ -142,21 +127,21 @@
               }
             ]
           },
-          "ohraničení_oblasti": {
-            "title": "ohraničení oblasti",
+          "bbox": {
+            "title": "bbox",
             "description": "Bounding box of the location geometry.",
             "type": "string"
           },
-          "location_name": {
+          "location_names": {
             "title": "Location name",
             "description": "Name of the spatial location.",
             "type": "array",
             "items": {
-              "title": "Řetězec",
+              "title": "String",
               "type": "string"
             }
           },
-          "relation_to_dataset": {
+          "relations_to_dataset": {
             "title": "Relation to dataset",
             "description": "Type of relation of the spatial location to the dataset.",
             "type": "array",
@@ -172,7 +157,7 @@
             "type": "string",
             "format": "iri"
           },
-          "has_related_object_identifier": {
+          "related_objects_identifiers": {
             "title": "has related object identifier",
             "description": "Relation to the existing spatial object.",
             "type": "array",
@@ -191,42 +176,27 @@
                 "type": {
                   "title": "Type",
                   "description": "A description of the resource. Gets the value from controlled list https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/resourceTypeGeneral/.",
-                  "type": "array",
-                  "items": {
-                    "title": "URI, IRI, URL",
-                    "type": "string",
-                    "format": "iri"
-                  }
+                  "type": "string",
+                  "format": "iri"
                 },
                 "relation_type": {
-                  "title": "Undefined",
-                  "type": "array",
-                  "items": {
-                    "title": "URI, IRI, URL",
-                    "type": "string",
-                    "format": "iri"
-                  }
+                  "title": "Relation type",
+                  "description": "Type of the relation between Dataset and related resource.",
+                  "type": "string",
+                  "format": "iri"
                 },
                 "title": {
                   "title": "Title",
                   "description": "A name given to the Catalogue Record.",
-                  "type": "array",
-                  "items": {
-                    "title": "Řetězec",
-                    "type": "string"
-                  }
+                  "type": "string"
                 },
                 "identifier": {
                   "title": "Identifier",
                   "description": "An unambiguous reference to the resource within a given context.",
-                  "type": "array",
-                  "items": {
-                    "title": "URI, IRI, URL",
-                    "type": "string",
-                    "format": "iri"
-                  }
+                  "type": "string",
+                  "format": "iri"
                 },
-                "qualified_relation": {
+                "qualified_relations": {
                   "title": "qualified relation",
                   "description": "Attachment of resource to the relationship.",
                   "type": "array",
@@ -235,8 +205,8 @@
                     "description": "An association class for attaching additional information to a relationship between Dataset and Agent.",
                     "type": "object",
                     "required": [
-                      "sehraná_role",
-                      "relation"
+                      "roles",
+                      "relations"
                     ],
                     "properties": {
                       "id": {
@@ -259,16 +229,16 @@
                           }
                         ]
                       },
-                      "sehraná_role": {
-                        "title": "sehraná role",
-                        "description": "Funkce entity či agenta ve vztahu k jiné entitě či zdroji.",
+                      "roles": {
+                        "title": "had role",
+                        "description": "The function of an entity or agent with respect to another entity or resource.",
                         "type": "array",
                         "items": {
                           "type": "string",
                           "format": "iri"
                         }
                       },
-                      "relation": {
+                      "relations": {
                         "title": "relation",
                         "type": "array",
                         "items": {
@@ -299,17 +269,18 @@
                                 }
                               ]
                             },
-                            "external_identifier": {
-                              "title": "Undefined",
+                            "external_identifiers": {
+                              "title": "External identifier",
+                              "description": "External identifer of an Agent.",
                               "type": "array",
                               "items": {
-                                "title": "Řetězec",
+                                "title": "String",
                                 "type": "string"
                               }
                             },
-                            "kontaktní_bod": {
-                              "title": "kontaktní bod",
-                              "description": "Relevantní kontaktní informace pro katalogizovaný zdroj. Doporučuje se použít slovník VCard.",
+                            "contact_points": {
+                              "title": "contact point",
+                              "description": "Relevant contact information for the catalogued resource. Use of vCard is recommended.",
                               "type": "array",
                               "items": {
                                 "title": "Contact details",
@@ -319,31 +290,54 @@
 
                                 ],
                                 "properties": {
+                                  "id": {
+                                    "type": "string",
+                                    "format": "iri"
+                                  },
+                                  "type": {
+                                    "oneOf": [
+                                      {
+                                        "const": "Contact details"
+                                      },
+                                      {
+                                        "type": "array",
+                                        "contains": {
+                                          "const": "Contact details"
+                                        },
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      }
+                                    ]
+                                  },
                                   "phone": {
-                                    "title": "Undefined",
+                                    "title": "Phone",
+                                    "description": "Code of the data box.",
                                     "type": "array",
                                     "items": {
-                                      "title": "Řetězec",
+                                      "title": "String",
                                       "type": "string"
                                     }
                                   },
                                   "email": {
-                                    "title": "Undefined",
+                                    "title": "Email",
+                                    "description": "Email address.",
                                     "type": "array",
                                     "items": {
-                                      "title": "Řetězec",
+                                      "title": "String",
                                       "type": "string"
                                     }
                                   },
                                   "data_box": {
-                                    "title": "Undefined",
+                                    "title": "Data box",
+                                    "description": "Phone number",
                                     "type": "array",
                                     "items": {
-                                      "title": "Řetězec",
+                                      "title": "String",
                                       "type": "string"
                                     }
                                   },
-                                  "has_address": {
+                                  "addresses": {
                                     "title": "has address",
                                     "description": "To specify the components of the delivery address for the object",
                                     "type": "array",
@@ -361,7 +355,7 @@
                     }
                   }
                 },
-                "has_time_reference": {
+                "time_references": {
                   "title": "has time reference",
                   "type": "array",
                   "items": {
@@ -372,34 +366,42 @@
 
                     ],
                     "properties": {
+                      "id": {
+                        "type": "string",
+                        "format": "iri"
+                      },
+                      "type": {
+                        "oneOf": [
+                          {
+                            "const": "Time reference"
+                          },
+                          {
+                            "type": "array",
+                            "contains": {
+                              "const": "Time reference"
+                            },
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        ]
+                      },
                       "date_information": {
                         "title": "Date information",
                         "description": "Additional information to the date in text form.",
-                        "type": "array",
-                        "items": {
-                          "title": "Řetězec",
-                          "type": "string"
-                        }
+                        "type": "string"
                       },
                       "date_type": {
                         "title": "Date type",
                         "description": "Type of the date.",
-                        "type": "array",
-                        "items": {
-                          "title": "URI, IRI, URL",
-                          "type": "string",
-                          "format": "iri"
-                        }
+                        "type": "string",
+                        "format": "iri"
                       },
                       "date": {
                         "title": "Date",
                         "description": "A point or period of time associated with an event in the lifecycle of the resource.",
-                        "type": "array",
-                        "items": {
-                          "title": "Datum",
-                          "type": "string",
-                          "format": "date"
-                        }
+                        "type": "string",
+                        "format": "date"
                       }
                     }
                   }
@@ -419,7 +421,7 @@
         "format": "iri"
       }
     },
-    "qualified_relation": {
+    "qualified_relations": {
       "title": "qualified relation",
       "description": "Attachment of resource to the relationship.",
       "type": "array",
@@ -428,8 +430,8 @@
         "description": "An association class for attaching additional information to a relationship between Dataset and Agent.",
         "type": "object",
         "required": [
-          "sehraná_role",
-          "relation"
+          "roles",
+          "relations"
         ],
         "properties": {
           "id": {
@@ -452,16 +454,16 @@
               }
             ]
           },
-          "sehraná_role": {
-            "title": "sehraná role",
-            "description": "Funkce entity či agenta ve vztahu k jiné entitě či zdroji.",
+          "roles": {
+            "title": "had role",
+            "description": "The function of an entity or agent with respect to another entity or resource.",
             "type": "array",
             "items": {
               "type": "string",
               "format": "iri"
             }
           },
-          "relation": {
+          "relations": {
             "title": "relation",
             "type": "array",
             "items": {
@@ -492,17 +494,18 @@
                     }
                   ]
                 },
-                "external_identifier": {
-                  "title": "Undefined",
+                "external_identifiers": {
+                  "title": "External identifier",
+                  "description": "External identifer of an Agent.",
                   "type": "array",
                   "items": {
-                    "title": "Řetězec",
+                    "title": "String",
                     "type": "string"
                   }
                 },
-                "kontaktní_bod": {
-                  "title": "kontaktní bod",
-                  "description": "Relevantní kontaktní informace pro katalogizovaný zdroj. Doporučuje se použít slovník VCard.",
+                "contact_points": {
+                  "title": "contact point",
+                  "description": "Relevant contact information for the catalogued resource. Use of vCard is recommended.",
                   "type": "array",
                   "items": {
                     "title": "Contact details",
@@ -512,28 +515,60 @@
 
                     ],
                     "properties": {
+                      "id": {
+                        "type": "string",
+                        "format": "iri"
+                      },
+                      "type": {
+                        "oneOf": [
+                          {
+                            "const": "Contact details"
+                          },
+                          {
+                            "type": "array",
+                            "contains": {
+                              "const": "Contact details"
+                            },
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        ]
+                      },
                       "phone": {
-                        "title": "Undefined",
+                        "title": "Phone",
+                        "description": "Code of the data box.",
                         "type": "array",
                         "items": {
-                          "title": "Řetězec",
+                          "title": "String",
                           "type": "string"
                         }
                       },
                       "email": {
-                        "title": "Undefined",
+                        "title": "Email",
+                        "description": "Email address.",
                         "type": "array",
                         "items": {
-                          "title": "Řetězec",
+                          "title": "String",
                           "type": "string"
                         }
                       },
                       "data_box": {
-                        "title": "Undefined",
+                        "title": "Data box",
+                        "description": "Phone number",
                         "type": "array",
                         "items": {
-                          "title": "Řetězec",
+                          "title": "String",
                           "type": "string"
+                        }
+                      },
+                      "addresses": {
+                        "title": "has address",
+                        "description": "To specify the components of the delivery address for the object",
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "format": "iri"
                         }
                       }
                     }
@@ -545,7 +580,7 @@
         }
       }
     },
-    "has_time_reference": {
+    "time_references": {
       "title": "has time reference",
       "type": "array",
       "items": {
@@ -556,39 +591,47 @@
 
         ],
         "properties": {
+          "id": {
+            "type": "string",
+            "format": "iri"
+          },
+          "type": {
+            "oneOf": [
+              {
+                "const": "Time reference"
+              },
+              {
+                "type": "array",
+                "contains": {
+                  "const": "Time reference"
+                },
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
           "date_information": {
             "title": "Date information",
             "description": "Additional information to the date in text form.",
-            "type": "array",
-            "items": {
-              "title": "Řetězec",
-              "type": "string"
-            }
+            "type": "string"
           },
           "date_type": {
             "title": "Date type",
             "description": "Type of the date.",
-            "type": "array",
-            "items": {
-              "title": "URI, IRI, URL",
-              "type": "string",
-              "format": "iri"
-            }
+            "type": "string",
+            "format": "iri"
           },
           "date": {
             "title": "Date",
             "description": "A point or period of time associated with an event in the lifecycle of the resource.",
-            "type": "array",
-            "items": {
-              "title": "Datum",
-              "type": "string",
-              "format": "date"
-            }
+            "type": "string",
+            "format": "date"
           }
         }
       }
     },
-    "has_subject": {
+    "subjects": {
       "title": "has subject",
       "type": "array",
       "items": {
@@ -622,42 +665,27 @@
           "definition": {
             "title": "Definition",
             "description": "Definition of the subject.",
-            "type": "array",
-            "items": {
-              "title": "Řetězec",
-              "type": "string"
-            }
+            "type": "string"
           },
           "title": {
             "title": "Title",
             "description": "Title of the subject",
-            "type": "array",
-            "items": {
-              "title": "Řetězec",
-              "type": "string"
-            }
+            "type": "string"
           },
           "classification_code": {
             "title": "Classification code",
             "description": "The classification code used for the subject term in the subject scheme.",
-            "type": "array",
-            "items": {
-              "title": "Řetězec",
-              "type": "string"
-            }
+            "type": "string"
           },
           "in_subject_scheme": {
             "title": "in subject scheme",
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "iri"
-            }
+            "type": "string",
+            "format": "iri"
           }
         }
       }
     },
-    "has_validation_result": {
+    "validation_results": {
       "title": "has validation result",
       "type": "array",
       "items": {
@@ -665,12 +693,12 @@
         "format": "iri"
       }
     },
-    "has_distribution": {
+    "distributions": {
       "title": "has distribution",
       "type": "array",
       "items": {
-        "title": "Distribuce",
-        "description": "Konkrétní reprezentace datové sady. Datová sada může být dostupná v různých serializacích, které se mohou navzájem lišit různými způsoby, mimo jiné přirozeným jazykem, media-typem či formátem, schematickou organizací, časovým a prostorovým rozlišením, úrovní detailu či profily (které mohou specifikovat některé či všechny tyto rozdíly).",
+        "title": "Distribution",
+        "description": "A specific representation of a dataset. A dataset might be available in multiple serializations that may differ in various ways, including natural language, media-type or format, schematic organization, temporal and spatial resolution, level of detail or profiles (which might specify any or all of the above).",
         "type": "object",
         "required": [
 
@@ -699,16 +727,12 @@
           "title": {
             "title": "Title",
             "description": "A name given to the distribution.",
-            "type": "array",
-            "items": {
-              "title": "Řetězec",
-              "type": "string"
-            }
+            "type": "string"
           }
         }
       }
     },
-    "has_funding_reference": {
+    "funding_references": {
       "title": "has funding reference",
       "type": "array",
       "items": {
@@ -742,12 +766,8 @@
           "funding_program": {
             "title": "Funding program",
             "description": "Reference to the specific funding program.",
-            "type": "array",
-            "items": {
-              "title": "URI, IRI, URL",
-              "type": "string",
-              "format": "iri"
-            }
+            "type": "string",
+            "format": "iri"
           },
           "award_title": {
             "title": "Award title",
@@ -757,13 +777,9 @@
           "local_identifier": {
             "title": "Local identifier",
             "description": "The code assigned by the funder to a sponsored award (grant).",
-            "type": "array",
-            "items": {
-              "title": "Řetězec",
-              "type": "string"
-            }
+            "type": "string"
           },
-          "has_funder": {
+          "funders": {
             "title": "has funder",
             "type": "array",
             "items": {
@@ -812,7 +828,7 @@
         }
       }
     },
-    "has_terms_of_use": {
+    "terms_of_use": {
       "title": "has terms of use",
       "type": "array",
       "items": {
@@ -846,34 +862,26 @@
           "description": {
             "title": "Description",
             "description": "Descriptive text on details of rights and licensing.",
-            "type": "array",
-            "items": {
-              "title": "Řetězec",
-              "type": "string"
-            }
+            "type": "string"
           },
           "license": {
             "title": "License",
             "description": "Information about licensing details of the resource.",
-            "type": "array",
-            "items": {
-              "title": "URI, IRI, URL",
-              "type": "string",
-              "format": "iri"
-            }
+            "type": "string",
+            "format": "iri"
           },
           "access_rights": {
             "title": "Access rights",
             "description": "Information about who access the resource or an indication of its security status.",
             "type": "array",
             "items": {
-              "title": "Řetězec",
+              "title": "String",
               "type": "string"
             }
           },
-          "kontaktní_bod": {
-            "title": "kontaktní bod",
-            "description": "Relevantní kontaktní informace pro katalogizovaný zdroj. Doporučuje se použít slovník VCard.",
+          "contact_persons": {
+            "title": "has contact person",
+            "description": "Contact person for the further details about the terms of use.",
             "type": "array",
             "items": {
               "title": "Agent",
@@ -903,17 +911,18 @@
                     }
                   ]
                 },
-                "external_identifier": {
-                  "title": "Undefined",
+                "external_identifiers": {
+                  "title": "External identifier",
+                  "description": "External identifer of an Agent.",
                   "type": "array",
                   "items": {
-                    "title": "Řetězec",
+                    "title": "String",
                     "type": "string"
                   }
                 },
-                "kontaktní_bod": {
-                  "title": "kontaktní bod",
-                  "description": "Relevantní kontaktní informace pro katalogizovaný zdroj. Doporučuje se použít slovník VCard.",
+                "contact_points": {
+                  "title": "contact point",
+                  "description": "Relevant contact information for the catalogued resource. Use of vCard is recommended.",
                   "type": "array",
                   "items": {
                     "title": "Contact details",
@@ -923,31 +932,54 @@
 
                     ],
                     "properties": {
+                      "id": {
+                        "type": "string",
+                        "format": "iri"
+                      },
+                      "type": {
+                        "oneOf": [
+                          {
+                            "const": "Contact details"
+                          },
+                          {
+                            "type": "array",
+                            "contains": {
+                              "const": "Contact details"
+                            },
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        ]
+                      },
                       "phone": {
-                        "title": "Undefined",
+                        "title": "Phone",
+                        "description": "Code of the data box.",
                         "type": "array",
                         "items": {
-                          "title": "Řetězec",
+                          "title": "String",
                           "type": "string"
                         }
                       },
                       "email": {
-                        "title": "Undefined",
+                        "title": "Email",
+                        "description": "Email address.",
                         "type": "array",
                         "items": {
-                          "title": "Řetězec",
+                          "title": "String",
                           "type": "string"
                         }
                       },
                       "data_box": {
-                        "title": "Undefined",
+                        "title": "Data box",
+                        "description": "Phone number",
                         "type": "array",
                         "items": {
-                          "title": "Řetězec",
+                          "title": "String",
                           "type": "string"
                         }
                       },
-                      "has_address": {
+                      "addresses": {
                         "title": "has address",
                         "description": "To specify the components of the delivery address for the object",
                         "type": "array",
@@ -965,7 +997,7 @@
         }
       }
     },
-    "has_related_resource": {
+    "related_resources": {
       "title": "has related resource",
       "type": "array",
       "items": {
@@ -983,42 +1015,27 @@
           "type": {
             "title": "Type",
             "description": "A description of the resource. Gets the value from controlled list https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/resourceTypeGeneral/.",
-            "type": "array",
-            "items": {
-              "title": "URI, IRI, URL",
-              "type": "string",
-              "format": "iri"
-            }
+            "type": "string",
+            "format": "iri"
           },
           "relation_type": {
-            "title": "Undefined",
-            "type": "array",
-            "items": {
-              "title": "URI, IRI, URL",
-              "type": "string",
-              "format": "iri"
-            }
+            "title": "Relation type",
+            "description": "Type of the relation between Dataset and related resource.",
+            "type": "string",
+            "format": "iri"
           },
           "title": {
             "title": "Title",
             "description": "A name given to the Catalogue Record.",
-            "type": "array",
-            "items": {
-              "title": "Řetězec",
-              "type": "string"
-            }
+            "type": "string"
           },
           "identifier": {
             "title": "Identifier",
             "description": "An unambiguous reference to the resource within a given context.",
-            "type": "array",
-            "items": {
-              "title": "URI, IRI, URL",
-              "type": "string",
-              "format": "iri"
-            }
+            "type": "string",
+            "format": "iri"
           },
-          "qualified_relation": {
+          "qualified_relations": {
             "title": "qualified relation",
             "description": "Attachment of resource to the relationship.",
             "type": "array",
@@ -1027,8 +1044,8 @@
               "description": "An association class for attaching additional information to a relationship between Dataset and Agent.",
               "type": "object",
               "required": [
-                "sehraná_role",
-                "relation"
+                "roles",
+                "relations"
               ],
               "properties": {
                 "id": {
@@ -1051,16 +1068,16 @@
                     }
                   ]
                 },
-                "sehraná_role": {
-                  "title": "sehraná role",
-                  "description": "Funkce entity či agenta ve vztahu k jiné entitě či zdroji.",
+                "roles": {
+                  "title": "had role",
+                  "description": "The function of an entity or agent with respect to another entity or resource.",
                   "type": "array",
                   "items": {
                     "type": "string",
                     "format": "iri"
                   }
                 },
-                "relation": {
+                "relations": {
                   "title": "relation",
                   "type": "array",
                   "items": {
@@ -1091,17 +1108,18 @@
                           }
                         ]
                       },
-                      "external_identifier": {
-                        "title": "Undefined",
+                      "external_identifiers": {
+                        "title": "External identifier",
+                        "description": "External identifer of an Agent.",
                         "type": "array",
                         "items": {
-                          "title": "Řetězec",
+                          "title": "String",
                           "type": "string"
                         }
                       },
-                      "kontaktní_bod": {
-                        "title": "kontaktní bod",
-                        "description": "Relevantní kontaktní informace pro katalogizovaný zdroj. Doporučuje se použít slovník VCard.",
+                      "contact_points": {
+                        "title": "contact point",
+                        "description": "Relevant contact information for the catalogued resource. Use of vCard is recommended.",
                         "type": "array",
                         "items": {
                           "title": "Contact details",
@@ -1111,31 +1129,54 @@
 
                           ],
                           "properties": {
+                            "id": {
+                              "type": "string",
+                              "format": "iri"
+                            },
+                            "type": {
+                              "oneOf": [
+                                {
+                                  "const": "Contact details"
+                                },
+                                {
+                                  "type": "array",
+                                  "contains": {
+                                    "const": "Contact details"
+                                  },
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            },
                             "phone": {
-                              "title": "Undefined",
+                              "title": "Phone",
+                              "description": "Code of the data box.",
                               "type": "array",
                               "items": {
-                                "title": "Řetězec",
+                                "title": "String",
                                 "type": "string"
                               }
                             },
                             "email": {
-                              "title": "Undefined",
+                              "title": "Email",
+                              "description": "Email address.",
                               "type": "array",
                               "items": {
-                                "title": "Řetězec",
+                                "title": "String",
                                 "type": "string"
                               }
                             },
                             "data_box": {
-                              "title": "Undefined",
+                              "title": "Data box",
+                              "description": "Phone number",
                               "type": "array",
                               "items": {
-                                "title": "Řetězec",
+                                "title": "String",
                                 "type": "string"
                               }
                             },
-                            "has_address": {
+                            "addresses": {
                               "title": "has address",
                               "description": "To specify the components of the delivery address for the object",
                               "type": "array",
@@ -1153,7 +1194,7 @@
               }
             }
           },
-          "has_time_reference": {
+          "time_references": {
             "title": "has time reference",
             "type": "array",
             "items": {
@@ -1164,34 +1205,42 @@
 
               ],
               "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "iri"
+                },
+                "type": {
+                  "oneOf": [
+                    {
+                      "const": "Time reference"
+                    },
+                    {
+                      "type": "array",
+                      "contains": {
+                        "const": "Time reference"
+                      },
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ]
+                },
                 "date_information": {
                   "title": "Date information",
                   "description": "Additional information to the date in text form.",
-                  "type": "array",
-                  "items": {
-                    "title": "Řetězec",
-                    "type": "string"
-                  }
+                  "type": "string"
                 },
                 "date_type": {
                   "title": "Date type",
                   "description": "Type of the date.",
-                  "type": "array",
-                  "items": {
-                    "title": "URI, IRI, URL",
-                    "type": "string",
-                    "format": "iri"
-                  }
+                  "type": "string",
+                  "format": "iri"
                 },
                 "date": {
                   "title": "Date",
                   "description": "A point or period of time associated with an event in the lifecycle of the resource.",
-                  "type": "array",
-                  "items": {
-                    "title": "Datum",
-                    "type": "string",
-                    "format": "date"
-                  }
+                  "type": "string",
+                  "format": "date"
                 }
               }
             }
@@ -1199,7 +1248,7 @@
         }
       }
     },
-    "has_alternate_identifier": {
+    "alternate_identifiers": {
       "title": "has alternate identifier",
       "type": "array",
       "items": {
@@ -1233,11 +1282,7 @@
           "alternate_identifier_type": {
             "title": "alternate identifier type",
             "description": "The type of the Alternate identifier.",
-            "type": "array",
-            "items": {
-              "title": "Řetězec",
-              "type": "string"
-            }
+            "type": "string"
           }
         }
       }

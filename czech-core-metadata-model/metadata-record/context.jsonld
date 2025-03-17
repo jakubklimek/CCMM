@@ -18,43 +18,39 @@
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
     "describes": {
-      "@id": null,
+      "@id": "describes",
       "@container": "@set",
       "@type": "@id"
     },
     "qualified_relation": {
-      "@id": null,
+      "@id": "qualifiedRelation",
       "@container": "@set",
       "@context": {
-        "Metadata to agent relationship": {
-          "@id": null
-        },
+        "Metadata to agent relationship": "MetadataToAgentRelationship",
         "relation": {
           "@id": "http://purl.org/dc/terms/relation",
           "@container": "@set",
           "@context": {
             "Agent": "http://xmlns.com/foaf/0.1/Agent",
             "external_identifier": {
-              "@id": null,
+              "@id": "agentExternalIdentifier",
               "@type": "http://www.w3.org/2001/XMLSchema#string"
             },
             "kontaktní_bod": {
               "@id": "http://www.w3.org/ns/dcat#contactPoint",
               "@container": "@set",
               "@context": {
-                "Contact details": {
-                  "@id": null
-                },
+                "Contact details": "ContactDetails",
                 "phone": {
-                  "@id": null,
+                  "@id": "dataBox",
                   "@type": "http://www.w3.org/2001/XMLSchema#string"
                 },
                 "undefined": {
-                  "@id": null,
+                  "@id": "email",
                   "@type": "http://www.w3.org/2001/XMLSchema#string"
                 },
                 "data_box": {
-                  "@id": null,
+                  "@id": "phone",
                   "@type": "http://www.w3.org/2001/XMLSchema#string"
                 }
               }
@@ -69,7 +65,7 @@
       }
     },
     "original_repository": {
-      "@id": null,
+      "@id": "originalRepository",
       "@container": "@set",
       "@type": "@id"
     },
