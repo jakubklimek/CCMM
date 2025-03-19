@@ -1,0 +1,9 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "id": "@id",
+    "type": "@type",
+    "Resource agent role type": "http://www.w3.org/2004/02/skos/core#Concept"
+  }
+}

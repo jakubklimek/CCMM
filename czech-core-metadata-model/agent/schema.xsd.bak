@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1" elementFormDefault="unqualified" xmlns:c="https://schemas.dataspecer.com/xsd/core/" xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
+  <xs:include schemaLocation="../contact-details/schema.xsd"/>
+  <xs:import namespace="https://schemas.dataspecer.com/xsd/core/" schemaLocation="https://techlib.cz/specification/ccmm/person/2022-07.xsd"/>
+  <xs:complexType name="agent" sawsdl:modelReference="http://xmlns.com/foaf/0.1/Agent">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Agent - Any entity carrying out actions with respect to the entities Catalogue and the Catalogued Resources.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="c:iri"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="external_identifiers" type="xs:string" sawsdl:modelReference="agentExternalIdentifier">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            External identifier - External identifer of an Agent.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="contactPoint" type="contact_details" sawsdl:modelReference="http://www.w3.org/ns/dcat#contactPoint">
+        <xs:annotation>
+          <xs:documentation xml:lang="ar">
+            عنوان اتصال - تربط قائمة البيانات بعنوان اتصال موصف  باستخدام VCard
+          </xs:documentation>
+          <xs:documentation xml:lang="cs">
+            kontaktní bod - Relevantní kontaktní informace pro katalogizovaný zdroj. Doporučuje se použít slovník VCard.
+          </xs:documentation>
+          <xs:documentation xml:lang="da">
+            kontaktpunkt - Relevante kontaktoplysninger for den katalogiserede ressource. Anvendelse af vCard anbefales.
+          </xs:documentation>
+          <xs:documentation xml:lang="el">
+            σημείο επικοινωνίας - Συνδέει ένα σύνολο δεδομένων με ένα σχετικό σημείο επικοινωνίας, μέσω VCard.
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            contact point - Relevant contact information for the catalogued resource. Use of vCard is recommended.
+          </xs:documentation>
+          <xs:documentation xml:lang="es">
+            Punto de contacto - Información relevante de contacto para el recurso catalogado. Se recomienda el uso de vCard.
+          </xs:documentation>
+          <xs:documentation xml:lang="fr">
+            point de contact - Relie un jeu de données à une information de contact utile en utilisant VCard.
+          </xs:documentation>
+          <xs:documentation xml:lang="it">
+            punto di contatto - Informazioni di contatto rilevanti per la risorsa catalogata. Si raccomanda l'uso di vCard.
+          </xs:documentation>
+          <xs:documentation xml:lang="ja">
+            窓口 - データセットを、VCardを用いて提供されている適切な連絡先情報にリンクします。
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="agent" type="agent"/>
+</xs:schema>

@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://techlib.cz/specification/ccmm/location/schema.json",
+  "title": "Location",
+  "description": "Spatial region, named place or geometry representation of a place related to the dataset. ",
+  "type": "object",
+  "required": [
+
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "iri"
+    },
+    "type": {
+      "oneOf": [
+        {
+          "const": "Location"
+        },
+        {
+          "type": "array",
+          "contains": {
+            "const": "Location"
+          },
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "bbox": {
+      "title": "bbox",
+      "description": "Bounding box of the location geometry.",
+      "type": "string"
+    },
+    "location_name": {
+      "title": "Location name",
+      "description": "Name of the spatial location.",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      }
+    },
+    "dataset_relations": {
+      "title": "Relation to dataset",
+      "description": "Type of relation of the spatial location to the dataset.",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      }
+    },
+    "geometry": {
+      "$ref": "../geometry/schema.json"
+    },
+    "related_object_identifier": {
+      "title": "has related object identifier",
+      "description": "Relation to the existing spatial object.",
+      "type": "array",
+      "items": {
+        "$ref": "../resource/schema.json"
+      }
+    }
+  }
+}

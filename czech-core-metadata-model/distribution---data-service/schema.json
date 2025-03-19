@@ -33,17 +33,25 @@
       "description": "A free-text account of the Distribution.",
       "type": "array",
       "items": {
-        "title": "String",
-        "type": "string"
-      }
-    },
-    "specification": {
-      "title": "specification",
-      "description": "An established standard to which the distribution conforms.",
-      "type": "array",
-      "items": {
-        "type": "string",
-        "format": "iri"
+        "title": "Text",
+        "type": "object",
+        "additionalProperties": {
+          "title": "Hodnota v jiném jazyce",
+          "type": "string"
+        },
+        "required": [
+
+        ],
+        "properties": {
+          "cs": {
+            "title": "Hodnota v českém jazyce",
+            "type": "string"
+          },
+          "en": {
+            "title": "Hodnota v anglickém jazyce",
+            "type": "string"
+          }
+        }
       }
     },
     "documentation": {
@@ -51,17 +59,23 @@
       "description": "A page or document about this Distribution.",
       "type": "array",
       "items": {
-        "type": "string",
-        "format": "iri"
+        "$ref": "../documentation/schema.json"
       }
     },
-    "služba_pro_přístup_k_datům": {
+    "specification": {
+      "title": "specification",
+      "description": "An established standard to which the distribution conforms.",
+      "type": "array",
+      "items": {
+        "$ref": "../application-profile/schema.json"
+      }
+    },
+    "access_service": {
       "title": "access service",
       "description": "A site or end-point that gives access to the distribution of the dataset.",
       "type": "array",
       "items": {
-        "type": "string",
-        "format": "iri"
+        "$ref": "../data-service/schema.json"
       }
     }
   }

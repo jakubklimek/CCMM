@@ -53,164 +53,12 @@
         "type": "string"
       }
     },
-    "describes": {
-      "title": "describes",
-      "description": "Dataset described by the metadata record.",
-      "type": "array",
-      "items": {
-        "type": "string",
-        "format": "iri"
-      }
-    },
     "qualified_relation": {
       "title": "qualified relation",
       "description": "Attachment of resource to the relationship.",
       "type": "array",
       "items": {
-        "title": "Metadata to agent relationship",
-        "description": "Relationship between metadata record and agent.",
-        "type": "object",
-        "required": [
-          "relation",
-          "sehraná_role"
-        ],
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "iri"
-          },
-          "type": {
-            "oneOf": [
-              {
-                "const": "Metadata to agent relationship"
-              },
-              {
-                "type": "array",
-                "contains": {
-                  "const": "Metadata to agent relationship"
-                },
-                "items": {
-                  "type": "string"
-                }
-              }
-            ]
-          },
-          "relation": {
-            "title": "relation",
-            "description": "The resource related to the source resource.",
-            "type": "array",
-            "items": {
-              "title": "Agent",
-              "description": "Any entity carrying out actions with respect to the entities Catalogue and the Catalogued Resources.",
-              "type": "object",
-              "required": [
-
-              ],
-              "properties": {
-                "id": {
-                  "type": "string",
-                  "format": "iri"
-                },
-                "type": {
-                  "oneOf": [
-                    {
-                      "const": "Agent"
-                    },
-                    {
-                      "type": "array",
-                      "contains": {
-                        "const": "Agent"
-                      },
-                      "items": {
-                        "type": "string"
-                      }
-                    }
-                  ]
-                },
-                "external_identifier": {
-                  "title": "External identifier",
-                  "description": "External identifer of an Agent.",
-                  "type": "array",
-                  "items": {
-                    "title": "String",
-                    "type": "string"
-                  }
-                },
-                "kontaktní_bod": {
-                  "title": "contact point",
-                  "description": "Relevant contact information for the catalogued resource. Use of vCard is recommended.",
-                  "type": "array",
-                  "items": {
-                    "title": "Contact details",
-                    "description": "Contact details such as telephone, e-mail address etc.",
-                    "type": "object",
-                    "required": [
-
-                    ],
-                    "properties": {
-                      "id": {
-                        "type": "string",
-                        "format": "iri"
-                      },
-                      "type": {
-                        "oneOf": [
-                          {
-                            "const": "Contact details"
-                          },
-                          {
-                            "type": "array",
-                            "contains": {
-                              "const": "Contact details"
-                            },
-                            "items": {
-                              "type": "string"
-                            }
-                          }
-                        ]
-                      },
-                      "phone": {
-                        "title": "Phone",
-                        "description": "Code of the data box.",
-                        "type": "array",
-                        "items": {
-                          "title": "String",
-                          "type": "string"
-                        }
-                      },
-                      "undefined": {
-                        "title": "Email",
-                        "description": "Email address.",
-                        "type": "array",
-                        "items": {
-                          "title": "String",
-                          "type": "string"
-                        }
-                      },
-                      "data_box": {
-                        "title": "Data box",
-                        "description": "Phone number",
-                        "type": "array",
-                        "items": {
-                          "title": "String",
-                          "type": "string"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "sehraná_role": {
-            "title": "had role",
-            "description": "The function of an entity or agent with respect to another entity or resource.",
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "iri"
-            }
-          }
-        }
+        "$ref": "../metadata-to-agent-relationship/schema.json"
       }
     },
     "original_repository": {
@@ -218,23 +66,15 @@
       "description": "Link to the repository from which the metadata were originally stored and curated.",
       "type": "array",
       "items": {
-        "type": "string",
-        "format": "iri"
+        "$ref": "../repository/schema.json"
       }
-    },
-    "local_identifier": {
-      "title": "Local identifier",
-      "description": "Local identifier of original metadata record in any metadata catalogue.",
-      "type": "string",
-      "format": "iri"
     },
     "conforms_to_standard": {
       "title": "Conforms to standard",
       "description": "An established standard to which the metadata record conforms.",
       "type": "array",
       "items": {
-        "type": "string",
-        "format": "iri"
+        "$ref": "../application-profile/schema.json"
       }
     }
   }

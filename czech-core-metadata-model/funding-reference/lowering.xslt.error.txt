@@ -1,0 +1,8 @@
+Property https://ofn.gov.cz/attribute/1742235388348-183b-c86a-b5a4 has no interpretation!
+
+propertyToMatchCheckType@http://localhost:3000/data-specification-editor/assets/index-Dbfxk0_n.js:1300:11833
+propertyToMatch@http://localhost:3000/data-specification-editor/assets/index-Dbfxk0_n.js:1300:11243
+classToTemplate@http://localhost:3000/data-specification-editor/assets/index-Dbfxk0_n.js:1300:10879
+fromRoots@http://localhost:3000/data-specification-editor/assets/index-Dbfxk0_n.js:1300:8969
+$yt@http://localhost:3000/data-specification-editor/assets/index-Dbfxk0_n.js:1300:8327
+generateToObject@http://localhost:3000/data-specification-editor/assets/index-Dbfxk0_n.js:1300:32847

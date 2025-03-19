@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1" elementFormDefault="unqualified" xmlns:c="https://schemas.dataspecer.com/xsd/core/" xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
-  <xs:import namespace="https://schemas.dataspecer.com/xsd/core/" schemaLocation="https://techlib.cz/specification/ccmm/dataset/2022-07.xsd"/>
-  <xs:complexType name="katalogizační_záznam" sawsdl:modelReference="http://www.w3.org/ns/dcat#CatalogRecord">
+  <xs:include schemaLocation="../metadata-to-agent-relationship/schema.xsd"/>
+  <xs:include schemaLocation="../repository/schema.xsd"/>
+  <xs:include schemaLocation="../application-profile/schema.xsd"/>
+  <xs:import namespace="https://schemas.dataspecer.com/xsd/core/" schemaLocation="./2022-07.xsd"/>
+  <xs:complexType name="metadata_record" sawsdl:modelReference="http://www.w3.org/ns/dcat#CatalogRecord">
     <xs:annotation>
       <xs:documentation xml:lang="ar">
         سجل
@@ -35,7 +38,7 @@
       <xs:element minOccurs="0" ref="c:iri"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="date_updated" type="xs:date" sawsdl:modelReference="http://purl.org/dc/terms/modified">
         <xs:annotation>
-          <xs:documentation xml:lang="">
+          <xs:documentation xml:lang="en">
             Date updated
           </xs:documentation>
           <xs:documentation xml:lang="en">
@@ -57,279 +60,28 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="describes" sawsdl:modelReference="describes">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">
-            describes - Dataset described by the metadata record.
-          </xs:documentation>
-        </xs:annotation>
-        <xs:complexType sawsdl:modelReference="http://www.w3.org/ns/dcat#Dataset">
-          <xs:annotation>
-            <xs:documentation xml:lang="ar">
-              قائمة بيانات - قائمة بيانات منشورة أو مجموعة من قبل مصدر ما و متاح الوصول إليها أو تحميلها
-            </xs:documentation>
-            <xs:documentation xml:lang="cs">
-              Datová sada - Kolekce dat poskytovaná či řízená jedním zdrojem, která je k dispozici pro přístup či stažení v jednom či více formátech.
-            </xs:documentation>
-            <xs:documentation xml:lang="da">
-              Datasæt - En samling af data, udgivet eller udvalgt og arrangeret af en enkelt kilde og som er til råde for adgang til eller download af i en eller flere repræsentationer.
-            </xs:documentation>
-            <xs:documentation xml:lang="el">
-              Σύνολο Δεδομένων - Μία συλλογή από δεδομένα, δημοσιευμένη ή επιμελημένη από μία και μόνο πηγή, διαθέσιμη δε προς πρόσβαση ή μεταφόρτωση σε μία ή περισσότερες μορφές.
-            </xs:documentation>
-            <xs:documentation xml:lang="en">
-              Dataset - A collection of data, published or curated by a single source, and available for access or download in one or more representations.
-            </xs:documentation>
-            <xs:documentation xml:lang="es">
-              Conjunto de datos - Una colección de datos, publicados o conservados por una única fuente, y disponibles para ser accedidos o descargados en uno o más formatos.
-            </xs:documentation>
-            <xs:documentation xml:lang="fr">
-              Jeu de données - Une collection de données, publiée ou élaborée par une seule source, et disponible pour accès ou téléchargement dans un ou plusieurs formats.
-            </xs:documentation>
-            <xs:documentation xml:lang="it">
-              Dataset - Raccolta di dati, pubblicati o curati da un'unica fonte, disponibili per l'accesso o il download in uno o più formati.
-            </xs:documentation>
-            <xs:documentation xml:lang="ja">
-              データセット - 1つのエージェントによって公開またはキュレートされ、1つ以上の形式でアクセスまたはダウンロードできるデータの集合。
-            </xs:documentation>
-          </xs:annotation>
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="c:iri"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="qualified_relation" sawsdl:modelReference="qualifiedRelation">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="qualified_relation" type="metadata_to_agent_relationship" sawsdl:modelReference="qualifiedRelation">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             qualified relation - Attachment of resource to the relationship.
           </xs:documentation>
         </xs:annotation>
-        <xs:complexType sawsdl:modelReference="MetadataToAgentRelationship">
-          <xs:annotation>
-            <xs:documentation xml:lang="en">
-              Metadata to agent relationship - Relationship between metadata record and agent.
-            </xs:documentation>
-          </xs:annotation>
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="c:iri"/>
-            <xs:element maxOccurs="unbounded" name="relation" sawsdl:modelReference="http://purl.org/dc/terms/relation">
-              <xs:annotation>
-                <xs:documentation xml:lang="en">
-                  relation - The resource related to the source resource.
-                </xs:documentation>
-              </xs:annotation>
-              <xs:complexType sawsdl:modelReference="http://xmlns.com/foaf/0.1/Agent">
-                <xs:annotation>
-                  <xs:documentation xml:lang="en">
-                    Agent - Any entity carrying out actions with respect to the entities Catalogue and the Catalogued Resources.
-                  </xs:documentation>
-                </xs:annotation>
-                <xs:sequence>
-                  <xs:element minOccurs="0" ref="c:iri"/>
-                  <xs:element minOccurs="0" maxOccurs="unbounded" name="external_identifier" type="xs:string" sawsdl:modelReference="agentExternalIdentifier">
-                    <xs:annotation>
-                      <xs:documentation xml:lang="en">
-                        External identifier - External identifer of an Agent.
-                      </xs:documentation>
-                    </xs:annotation>
-                  </xs:element>
-                  <xs:element minOccurs="0" maxOccurs="unbounded" name="kontaktní_bod" sawsdl:modelReference="http://www.w3.org/ns/dcat#contactPoint">
-                    <xs:annotation>
-                      <xs:documentation xml:lang="ar">
-                        عنوان اتصال - تربط قائمة البيانات بعنوان اتصال موصف  باستخدام VCard
-                      </xs:documentation>
-                      <xs:documentation xml:lang="cs">
-                        kontaktní bod - Relevantní kontaktní informace pro katalogizovaný zdroj. Doporučuje se použít slovník VCard.
-                      </xs:documentation>
-                      <xs:documentation xml:lang="da">
-                        kontaktpunkt - Relevante kontaktoplysninger for den katalogiserede ressource. Anvendelse af vCard anbefales.
-                      </xs:documentation>
-                      <xs:documentation xml:lang="el">
-                        σημείο επικοινωνίας - Συνδέει ένα σύνολο δεδομένων με ένα σχετικό σημείο επικοινωνίας, μέσω VCard.
-                      </xs:documentation>
-                      <xs:documentation xml:lang="en">
-                        contact point - Relevant contact information for the catalogued resource. Use of vCard is recommended.
-                      </xs:documentation>
-                      <xs:documentation xml:lang="es">
-                        Punto de contacto - Información relevante de contacto para el recurso catalogado. Se recomienda el uso de vCard.
-                      </xs:documentation>
-                      <xs:documentation xml:lang="fr">
-                        point de contact - Relie un jeu de données à une information de contact utile en utilisant VCard.
-                      </xs:documentation>
-                      <xs:documentation xml:lang="it">
-                        punto di contatto - Informazioni di contatto rilevanti per la risorsa catalogata. Si raccomanda l'uso di vCard.
-                      </xs:documentation>
-                      <xs:documentation xml:lang="ja">
-                        窓口 - データセットを、VCardを用いて提供されている適切な連絡先情報にリンクします。
-                      </xs:documentation>
-                    </xs:annotation>
-                    <xs:complexType sawsdl:modelReference="ContactDetails">
-                      <xs:annotation>
-                        <xs:documentation xml:lang="en">
-                          Contact details - Contact details such as telephone, e-mail address etc.
-                        </xs:documentation>
-                      </xs:annotation>
-                      <xs:sequence>
-                        <xs:element minOccurs="0" ref="c:iri"/>
-                        <xs:element minOccurs="0" maxOccurs="unbounded" name="phone" type="xs:string" sawsdl:modelReference="dataBox">
-                          <xs:annotation>
-                            <xs:documentation xml:lang="en">
-                              Phone - Code of the data box.
-                            </xs:documentation>
-                          </xs:annotation>
-                        </xs:element>
-                        <xs:element minOccurs="0" maxOccurs="unbounded" name="undefined" type="xs:string" sawsdl:modelReference="email">
-                          <xs:annotation>
-                            <xs:documentation xml:lang="en">
-                              Email - Email address.
-                            </xs:documentation>
-                          </xs:annotation>
-                        </xs:element>
-                        <xs:element minOccurs="0" maxOccurs="unbounded" name="data_box" type="xs:string" sawsdl:modelReference="phone">
-                          <xs:annotation>
-                            <xs:documentation xml:lang="en">
-                              Data box - Phone number
-                            </xs:documentation>
-                          </xs:annotation>
-                        </xs:element>
-                      </xs:sequence>
-                    </xs:complexType>
-                  </xs:element>
-                </xs:sequence>
-              </xs:complexType>
-            </xs:element>
-            <xs:element maxOccurs="unbounded" name="sehraná_role" sawsdl:modelReference="http://www.w3.org/ns/dcat#hadRole">
-              <xs:annotation>
-                <xs:documentation xml:lang="cs">
-                  sehraná role - Funkce entity či agenta ve vztahu k jiné entitě či zdroji.
-                </xs:documentation>
-                <xs:documentation xml:lang="da">
-                  havde rolle - Den funktion en entitet eller aktør har i forhold til en anden ressource.
-                </xs:documentation>
-                <xs:documentation xml:lang="en">
-                  had role - The function of an entity or agent with respect to another entity or resource.
-                </xs:documentation>
-                <xs:documentation xml:lang="es">
-                  La función de una entidad o agente con respecto a otra entidad o recurso.
-                </xs:documentation>
-                <xs:documentation xml:lang="it">
-                  tiene rol - La funzione di un'entità o un agente rispetto ad un'altra entità o risorsa.
-                </xs:documentation>
-              </xs:annotation>
-              <xs:complexType sawsdl:modelReference="http://www.w3.org/2004/02/skos/core#Concept">
-                <xs:annotation>
-                  <xs:documentation xml:lang="en">
-                    Metadata agent role type - An idea or notion; a unit of thought.
-                  </xs:documentation>
-                </xs:annotation>
-                <xs:sequence>
-                  <xs:element minOccurs="0" ref="c:iri"/>
-                </xs:sequence>
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-        </xs:complexType>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="original_repository" sawsdl:modelReference="originalRepository">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="original_repository" type="repository" sawsdl:modelReference="originalRepository">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             original repository - Link to the repository from which the metadata were originally stored and curated.
           </xs:documentation>
         </xs:annotation>
-        <xs:complexType sawsdl:modelReference="http://www.w3.org/ns/dcat#Catalog">
-          <xs:annotation>
-            <xs:documentation xml:lang="ar">
-              فهرس قوائم البيانات - مجموعة من توصيفات قوائم البيانات
-            </xs:documentation>
-            <xs:documentation xml:lang="cs">
-              Katalog - Řízená kolekce metadat o datových sadách a datových službách
-            </xs:documentation>
-            <xs:documentation xml:lang="da">
-              Katalog - En udvalgt og arrangeret samling af metadata om ressourcer (fx datasæt og datatjenester i kontekst af et datakatalog). 
-            </xs:documentation>
-            <xs:documentation xml:lang="el">
-              Κατάλογος - Μια επιμελημένη συλλογή μεταδεδομένων περί συνόλων δεδομένων
-            </xs:documentation>
-            <xs:documentation xml:lang="en">
-              Repository - A curated collection of metadata about resources.
-            </xs:documentation>
-            <xs:documentation xml:lang="es">
-              Catálogo - Una colección curada de metadatos sobre recursos (por ejemplo, conjuntos de datos y servicios de datos en el contexto de un catálogo de datos).
-            </xs:documentation>
-            <xs:documentation xml:lang="fr">
-              Catalogue - Une collection élaborée de métadonnées sur les jeux de données
-            </xs:documentation>
-            <xs:documentation xml:lang="it">
-              Catalogo - Una raccolta curata di metadati sulle risorse (ad es. sui dataset e relativi servizi nel contesto di cataloghi di dati).
-            </xs:documentation>
-            <xs:documentation xml:lang="ja">
-              カタログ - データ・カタログは、データセットに関するキュレートされたメタデータの集合です。
-            </xs:documentation>
-          </xs:annotation>
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="c:iri"/>
-          </xs:sequence>
-        </xs:complexType>
       </xs:element>
-      <xs:element minOccurs="0" name="local_identifier" sawsdl:modelReference="http://purl.org/dc/terms/source">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">
-            Local identifier - Local identifier of original metadata record in any metadata catalogue.
-          </xs:documentation>
-        </xs:annotation>
-        <xs:complexType sawsdl:modelReference="http://www.w3.org/ns/dcat#CatalogRecord">
-          <xs:annotation>
-            <xs:documentation xml:lang="ar">
-              سجل
-            </xs:documentation>
-            <xs:documentation xml:lang="cs">
-              Katalogizační záznam - Záznam v datovém katalogu popisující jednu datovou sadu či datovou službu.
-            </xs:documentation>
-            <xs:documentation xml:lang="da">
-              Katalogpost - En post i et datakatalog der beskriver registreringen af et enkelt datasæt eller en datatjeneste.
-            </xs:documentation>
-            <xs:documentation xml:lang="el">
-              Καταγραφή καταλόγου - Μία καταγραφή ενός καταλόγου, η οποία περιγράφει ένα συγκεκριμένο σύνολο δεδομένων.
-            </xs:documentation>
-            <xs:documentation xml:lang="en">
-              Metadata Record - Description of the metadata record of the dataset. 
-            </xs:documentation>
-            <xs:documentation xml:lang="es">
-              Registro del catálogo - Un registro en un catálogo de datos que describe un solo conjunto de datos o un servicio de datos.
-            </xs:documentation>
-            <xs:documentation xml:lang="fr">
-              Registre du catalogue - Un registre du catalogue ou une entrée du catalogue, décrivant un seul jeu de données.
-            </xs:documentation>
-            <xs:documentation xml:lang="it">
-              Record di catalogo - Un record in un catalogo di dati che descrive un singolo dataset o servizio di dati.
-            </xs:documentation>
-            <xs:documentation xml:lang="ja">
-              カタログ・レコード - 1つのデータセットを記述したデータ・カタログ内のレコード。
-            </xs:documentation>
-          </xs:annotation>
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="c:iri"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="conforms_to_standard" sawsdl:modelReference="http://purl.org/dc/terms/conformsTo">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="conforms_to_standard" type="application_profile" sawsdl:modelReference="http://purl.org/dc/terms/conformsTo">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Conforms to standard - An established standard to which the metadata record conforms.
           </xs:documentation>
         </xs:annotation>
-        <xs:complexType sawsdl:modelReference="http://purl.org/dc/terms/Standard">
-          <xs:annotation>
-            <xs:documentation xml:lang="en">
-              Application profile - A standard or other specification to which a metadata record conforms.
-            </xs:documentation>
-          </xs:annotation>
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="c:iri"/>
-          </xs:sequence>
-        </xs:complexType>
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="katalogizační_záznam" type="katalogizační_záznam"/>
+  <xs:element name="metadata_record" type="metadata_record"/>
 </xs:schema>

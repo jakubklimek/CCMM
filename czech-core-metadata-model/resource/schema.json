@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://techlib.cz/specification/ccmm/resource/schema.json",
+  "title": "Resource",
+  "description": "Resource represents any resource, physical or digital, that is related to the described dataset. ",
+  "type": "object",
+  "required": [
+
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "iri"
+    },
+    "type": {
+      "title": "Type",
+      "description": "A description of the resource. Gets the value from controlled list https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/resourceTypeGeneral/.",
+      "type": "string"
+    },
+    "relationType": {
+      "title": "Relation type",
+      "description": "Type of the relation between Dataset and related resource.",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "description": "A name given to the Catalogue Record.",
+      "type": "string"
+    },
+    "identifier": {
+      "title": "Identifier",
+      "description": "An unambiguous reference to the resource within a given context.",
+      "type": "string"
+    },
+    "qualified_relation": {
+      "title": "qualified relation",
+      "description": "Attachment of resource to the relationship.",
+      "type": "array",
+      "items": {
+        "$ref": "../resource-to-agent-relationship/schema.json"
+      }
+    },
+    "time_reference": {
+      "title": "has time reference",
+      "type": "array",
+      "items": {
+        "$ref": "../time-reference/schema.json"
+      }
+    }
+  }
+}

@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1" elementFormDefault="unqualified" xmlns:c="https://schemas.dataspecer.com/xsd/core/" xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
-  <xs:import namespace="https://schemas.dataspecer.com/xsd/core/" schemaLocation="https://techlib.cz/specification/ccmm/dataset/2022-07.xsd"/>
-  <xs:complexType name="distribution_-_data_service" sawsdl:modelReference="Distribution-DataService">
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+  <xs:include schemaLocation="../documentation/schema.xsd"/>
+  <xs:include schemaLocation="../application-profile/schema.xsd"/>
+  <xs:include schemaLocation="../data-service/schema.xsd"/>
+  <xs:import namespace="https://schemas.dataspecer.com/xsd/core/" schemaLocation="./2022-07.xsd"/>
+  <xs:complexType name="langString">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute ref="xml:lang" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="distribution_data_service" sawsdl:modelReference="Distribution-DataService">
     <xs:annotation>
       <xs:documentation xml:lang="en">
         Distribution - data service - Physical embodiment of the dataset as a particular data service. 
@@ -9,9 +20,9 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element minOccurs="0" ref="c:iri"/>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="description" type="xs:string" sawsdl:modelReference="http://purl.org/dc/terms/description">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="description" type="langString" sawsdl:modelReference="http://purl.org/dc/terms/description">
         <xs:annotation>
-          <xs:documentation xml:lang="">
+          <xs:documentation xml:lang="en">
             Description
           </xs:documentation>
           <xs:documentation xml:lang="en">
@@ -19,41 +30,21 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="specification" sawsdl:modelReference="http://purl.org/dc/terms/conformsTo">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">
-            specification - An established standard to which the distribution conforms.
-          </xs:documentation>
-        </xs:annotation>
-        <xs:complexType sawsdl:modelReference="http://purl.org/dc/terms/Standard">
-          <xs:annotation>
-            <xs:documentation xml:lang="en">
-              Application profile - A standard or other specification to which a metadata record conforms.
-            </xs:documentation>
-          </xs:annotation>
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="c:iri"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="documentation" sawsdl:modelReference="http://xmlns.com/foaf/0.1/page">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="documentation" type="documentation" sawsdl:modelReference="http://xmlns.com/foaf/0.1/page">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             documentation - A page or document about this Distribution.
           </xs:documentation>
         </xs:annotation>
-        <xs:complexType sawsdl:modelReference="http://xmlns.com/foaf/0.1/Document">
-          <xs:annotation>
-            <xs:documentation xml:lang="en">
-              Documentation - A textual resource intended for human consumption that contains information about the data service.
-            </xs:documentation>
-          </xs:annotation>
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="c:iri"/>
-          </xs:sequence>
-        </xs:complexType>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="služba_pro_přístup_k_datům" sawsdl:modelReference="http://www.w3.org/ns/dcat#accessService">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="specification" type="application_profile" sawsdl:modelReference="http://purl.org/dc/terms/conformsTo">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            specification - An established standard to which the distribution conforms.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="access_service" type="data_service" sawsdl:modelReference="http://www.w3.org/ns/dcat#accessService">
         <xs:annotation>
           <xs:documentation xml:lang="cs">
             služba pro přístup k datům - Umístění či přístupový bod zpřístupňující distribuci datové sady.
@@ -71,30 +62,8 @@
             servizio di accesso ai dati - Un sito o end-point che dà accesso alla distribuzione del set di dati.
           </xs:documentation>
         </xs:annotation>
-        <xs:complexType sawsdl:modelReference="http://www.w3.org/ns/dcat#DataService">
-          <xs:annotation>
-            <xs:documentation xml:lang="cs">
-              Umístění či přístupový bod poskytující operace související s hledáním, přistupem k, či výkonem funkcí na datech či souvisejících zdrojích.
-            </xs:documentation>
-            <xs:documentation xml:lang="da">
-              Datatjeneste - Et websted eller endpoint der udstiller operationer relateret til opdagelse af, adgang til eller behandlende funktioner på data eller relaterede ressourcer.
-            </xs:documentation>
-            <xs:documentation xml:lang="en">
-              Data service - A collection of operations that provides access to one or more datasets or data processing functions.
-            </xs:documentation>
-            <xs:documentation xml:lang="es">
-              Servicio de datos - Un sitio o end-point que provee operaciones relacionadas a funciones de descubrimiento, acceso, o procesamiento de datos o recursos relacionados.
-            </xs:documentation>
-            <xs:documentation xml:lang="it">
-              Servizio di dati - Un sito o end-point che fornisce operazioni relative alla scoperta, all'accesso o all'elaborazione di funzioni su dati o risorse correlate.
-            </xs:documentation>
-          </xs:annotation>
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="c:iri"/>
-          </xs:sequence>
-        </xs:complexType>
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="distribution_-_data_service" type="distribution_-_data_service"/>
+  <xs:element name="distribution_data_service" type="distribution_data_service"/>
 </xs:schema>

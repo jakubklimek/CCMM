@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1"
+  elementFormDefault="unqualified" xmlns:c="https://schemas.dataspecer.com/xsd/core/"
+  xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace"
+    schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+  <xs:import namespace="https://schemas.dataspecer.com/xsd/core/"
+    schemaLocation="./2022-07.xsd"/>
+  <xs:include schemaLocation="../dataset/schema.xsd"/>
+  <xs:complexType name="alternate_title" sawsdl:modelReference="AlternateTitle">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Alternate title - Alternate title f the resource
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="c:iri"/>
+      <xs:element name="title" type="langString"
+        sawsdl:modelReference="http://purl.org/dc/terms/title">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Title
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            Alternate title name.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="type" type="xs:string"
+        sawsdl:modelReference="http://purl.org/dc/terms/type">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Type
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            Type of alternate title.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="alternate_title" type="alternate_title"/>
+</xs:schema>

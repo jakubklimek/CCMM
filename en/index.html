@@ -86,7 +86,7 @@
       <script class="remove">
         // All config options at https://respec.org/docs/
         var respecConfig = {
-          specStatus: "unofficial",
+          specStatus: "base",
           editors: [{ name: "Dataspecer", url: "https://dataspecer.com" }],
           //github: "some-org/mySpec",
           shortName: "todo",
@@ -103,6 +103,7 @@
     </style>
     </head>
     <body>
+      <p class="copyright"></p>
       <section id="abstract">
         <p>
           This file documents
@@ -272,6 +273,24 @@
                 </tr>
               </table>
             </section>
+              <section id="AlternateTitle">
+              <h4>Alternate title</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/profile/ccmm/AlternateTitle">https://techlib.cz/profile/ccmm/AlternateTitle</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Alternate title</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Alternate title f the resource</td>
+                </tr>
+              </table>
+            </section>
 
             <section id="Dataset">
               <h4>Dataset</h4>
@@ -321,65 +340,6 @@
                   <li><a href="#MetadataRecord.describes"></a></li>
               </ul>
 
-                <section id="Dataset.identifier">
-  <h4>Identifier</h4>
-
-  <table class="def">
-    <tr>
-      <td>IRI</td>
-      <td><a href="https://techlib.cz/profile/ccmm/Dataset.identifier">https://techlib.cz/profile/ccmm/Dataset.identifier</a></td>
-    </tr>
-    <tr>
-      <td>Label</td>
-      <td>Identifier</td>
-    </tr>
-    <tr>
-      <td>Definition</td>
-      <td>The Identifier is a unique string that identifies a resource. For DataCite, this MUST be a DIgital Object Identifier (DOI). The format should be 10.21384/foo.</td>
-    </tr>
-    <tr>
-      <td>Domain</td>
-      <td>
-        <a href="#Dataset">Dataset</a>
-
-              [1..1]
-
-      </td>
-    </tr>
-    <tr>
-      <td>Range</td>
-      <td>
-        <a href="https://datagov-cz.github.io/cache-slovniku/rdfs.ttl#Literal">Literal</a>
-
-              [1..*]
-
-    </td>
-    </tr>
-
-    <tr>
-      <td>Profiles</td>
-      <td>      
-      <a href="https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.identifier">identifier</a> (<a href="https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.identifier">https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.identifier</a>)
-          <br />
-                property
-      <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl#identifier">Identifier</a> (<a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a>)
-
-</td>
-    </tr>
-
-    <tr>
-      <td>Label from vocabulary</td>
-      <td>identifier</td>
-    </tr>
-
-    <tr>
-      <td>Definition from vocabulary</td>
-      <td>A unique identifier of the resource being described or cataloged.</td>
-    </tr>
-
-  </table>
-</section>
-
                 <section id="Dataset.title">
   <h4>Title</h4>
 
@@ -408,7 +368,7 @@
     <tr>
       <td>Range</td>
       <td>
-        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+        <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a>
 
               [1..1]
 
@@ -471,9 +431,9 @@
     <tr>
       <td>Range</td>
       <td>
-        <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
 
-              [0..*]
+              [0..1]
 
     </td>
     </tr>
@@ -493,61 +453,6 @@
     <tr>
       <td>Definition from vocabulary</td>
       <td>A description of the resource. Gets the value from controlled list https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/resourceTypeGeneral/.</td>
-    </tr>
-
-  </table>
-</section>
-
-                <section id="Dataset.abstract">
-  <h4>Abstract</h4>
-
-  <table class="def">
-    <tr>
-      <td>IRI</td>
-      <td><a href="https://techlib.cz/profile/ccmm/Dataset.abstract">https://techlib.cz/profile/ccmm/Dataset.abstract</a></td>
-    </tr>
-    <tr>
-      <td>Label</td>
-      <td>Abstract</td>
-    </tr>
-    <tr>
-      <td>Definition</td>
-      <td>Dataset abstract.</td>
-    </tr>
-    <tr>
-      <td>Domain</td>
-      <td>
-        <a href="#Dataset">Dataset</a>
-
-              [0..*]
-
-      </td>
-    </tr>
-    <tr>
-      <td>Range</td>
-      <td>
-        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
-
-              [0..*]
-
-    </td>
-    </tr>
-
-    <tr>
-      <td>Profiles</td>
-      <td>      property
-      <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl#abstract">Abstract</a> (<a href="http://purl.org/dc/terms/abstract">dcterms:abstract</a>)
-</td>
-    </tr>
-
-    <tr>
-      <td>Label from vocabulary</td>
-      <td>Abstract</td>
-    </tr>
-
-    <tr>
-      <td>Definition from vocabulary</td>
-      <td>A summary of the resource.</td>
     </tr>
 
   </table>
@@ -623,7 +528,7 @@
     <tr>
       <td>Range</td>
       <td>
-        <a href="#AlternateIdentifier">Alternate identifier</a>
+        <a href="plckn6gl38m7ufbi8u">plckn6gl38m7ufbi8u</a>
 
               [0..*]
 
@@ -731,7 +636,7 @@
       <td>
         <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
 
-              [1..*]
+              [0..*]
 
     </td>
     </tr>
@@ -784,7 +689,7 @@
     <tr>
       <td>Range</td>
       <td>
-        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+        <a href="https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/text">https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/text</a>
 
               [1..*]
 
@@ -912,7 +817,7 @@
       <td>
         <a href="http://www.w3.org/2001/XMLSchema#gYear">xsd:gYear</a>
 
-              [0..*]
+              [0..1]
 
     </td>
     </tr>
@@ -1429,83 +1334,36 @@
   </table>
 </section>
 
-
-            </section>
-            <section id="AlternateIdentifier">
-              <h4>Alternate identifier</h4>
-
-              <table class="def">
-                <tr>
-                  <td>IRI</td>
-                  <td><a href="https://techlib.cz/profile/ccmm/AlternateIdentifier">https://techlib.cz/profile/ccmm/AlternateIdentifier</a></td>
-                </tr>
-                <tr>
-                  <td>Label</td>
-                  <td>Alternate identifier</td>
-                </tr>
-                <tr>
-                  <td>Definition</td>
-                  <td>An identifier other than the primary Identifier applied to the resource being registered. This may be any alphanumeric string which is unique within its domain of issue. May be used for local identifiers, a serial number of an instrument or an inventory number. The AlternateIdentifier should be an additional identifier for the same instance of the resource (i.e., same location, same file).</td>
-                </tr>
-                <tr>
-                  <td>Profiles</td>
-                  <td>                  class
-                  <a href="https://michalmed.github.io/DataCite/en/#AlternateIdentifier">Alternate identifier</a> (<a href="https://techlib.cz/vocabulary/datacite/AlternateIdentifier">https://techlib.cz/vocabulary/datacite/AlternateIdentifier</a>)
-</td>
-                </tr>
-
-                <tr>
-                  <td>Label from vocabulary</td>
-                  <td>Alternate identifier</td>
-                </tr>
-
-                <tr>
-                  <td>Definition from vocabulary</td>
-                  <td>An identifier other than the primary Identifier applied to the resource being registered. This may be any alphanumeric string which is unique within its domain of issue. May be used for local identifiers, a serial number of an instrument or an inventory number. The AlternateIdentifier should be an additional identifier for the same instance of the resource (i.e., same location, same file).</td>
-                </tr>
-
-                <tr>
-                  <td>Usage note</td>
-                  <td>Alternate identifier in DataCite covers all other identifiers other than DOI. Use it for other identifers than DOI.</td>
-                </tr>
-              </table>
-
-              <p>Zpětné asociace</p>
-              <ul>
-                  <li><a href="#Dataset.hasAlternateIdentifier"></a></li>
-              </ul>
-
-                <section id="AlternateIdentifier.alternateIdentifierType">
-  <h4>alternate identifier type</h4>
+                <section id="Dataset.hasIdentifier">
+  <h4>has identifier</h4>
 
   <table class="def">
     <tr>
       <td>IRI</td>
-      <td><a href="https://techlib.cz/profile/ccmm/AlternateIdentifier.alternateIdentifierType">https://techlib.cz/profile/ccmm/AlternateIdentifier.alternateIdentifierType</a></td>
+      <td><a href="https://techlib.cz/profile/ccmm/Dataset.hasIdentifier">https://techlib.cz/profile/ccmm/Dataset.hasIdentifier</a></td>
     </tr>
     <tr>
       <td>Label</td>
-      <td>alternate identifier type</td>
+      <td>has identifier</td>
     </tr>
     <tr>
       <td>Definition</td>
-      <td>The type of the Alternate identifier.</td>
+      <td>has identifier</td>
     </tr>
     <tr>
       <td>Domain</td>
       <td>
-        <a href="#AlternateIdentifier">Alternate identifier</a>
+        <a href="#Dataset">Dataset</a>
 
-              [0..*]
-
+        
       </td>
     </tr>
     <tr>
       <td>Range</td>
       <td>
-        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+        <a href="#Identifier">Identifier</a>
 
-              [0..*]
+              [1..*]
 
     </td>
     </tr>
@@ -1513,19 +1371,118 @@
     <tr>
       <td>Profiles</td>
       <td>      property
-      <a href="https://michalmed.github.io/DataCite/en/#alternateIdentifierType">alternate identifier type</a> (<a href="https://techlib.cz/vocabulary/datacite/alternateIdentifierType">https://techlib.cz/vocabulary/datacite/alternateIdentifierType</a>)
+      <a href="#hasIdentifier">has identifier</a> (<a href="https://techlib.cz/profile/ccmm/hasIdentifier">https://techlib.cz/profile/ccmm/hasIdentifier</a>)
 </td>
     </tr>
 
     <tr>
       <td>Label from vocabulary</td>
-      <td>alternate identifier type</td>
+      <td>has identifier</td>
     </tr>
 
     <tr>
       <td>Definition from vocabulary</td>
-      <td>The type of the Alternate identifier.</td>
+      <td>has identifier</td>
     </tr>
+
+  </table>
+</section>
+
+                <section id="Dataset.isDescribedBy">
+  <h4>is described by</h4>
+
+  <table class="def">
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://techlib.cz/profile/ccmm/Dataset.isDescribedBy">https://techlib.cz/profile/ccmm/Dataset.isDescribedBy</a></td>
+    </tr>
+    <tr>
+      <td>Label</td>
+      <td>is described by</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>Inverse relation between dataset and metadata record.</td>
+    </tr>
+    <tr>
+      <td>Domain</td>
+      <td>
+        <a href="#Dataset">Dataset</a>
+
+        
+      </td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td>
+        <a href="#MetadataRecord">Metadata Record</a>
+
+              [1..*]
+
+    </td>
+    </tr>
+
+    <tr>
+      <td>Profiles</td>
+      <td>      property
+      <a href="#isDescribedBy">is described by</a> (<a href="https://techlib.cz/profile/ccmm/isDescribedBy">https://techlib.cz/profile/ccmm/isDescribedBy</a>)
+</td>
+    </tr>
+
+    <tr>
+      <td>Label from vocabulary</td>
+      <td>is described by</td>
+    </tr>
+
+    <tr>
+      <td>Definition from vocabulary</td>
+      <td>Inverse relation between dataset and metadata record.</td>
+    </tr>
+
+  </table>
+</section>
+
+                <section id="Dataset.hasAlternateTitle">
+  <h4>has alternate title</h4>
+
+  <table class="def">
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://techlib.cz/profile/ccmm/Dataset.hasAlternateTitle">https://techlib.cz/profile/ccmm/Dataset.hasAlternateTitle</a></td>
+    </tr>
+    <tr>
+      <td>Label</td>
+      <td>has alternate title</td>
+    </tr>
+    <tr>
+      <td>Domain</td>
+      <td>
+        <a href="#Dataset">Dataset</a>
+
+        
+      </td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td>
+        <a href="#AlternateTitle">Alternate title</a>
+
+        
+    </td>
+    </tr>
+
+    <tr>
+      <td>Profiles</td>
+      <td>      property
+      <a href="#hasAlternateTitle">has alternate title</a> (<a href="https://techlib.cz/profile/ccmm/hasAlternateTitle">https://techlib.cz/profile/ccmm/hasAlternateTitle</a>)
+</td>
+    </tr>
+
+    <tr>
+      <td>Label from vocabulary</td>
+      <td>has alternate title</td>
+    </tr>
+
 
   </table>
 </section>
@@ -1961,7 +1918,7 @@
     <tr>
       <td>Range</td>
       <td>
-        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+        <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a>
 
               [1..1]
 
@@ -2016,7 +1973,7 @@
     <tr>
       <td>Range</td>
       <td>
-        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+        <a href="https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/text">https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/text</a>
 
               [0..*]
 
@@ -2176,13 +2133,17 @@
     <tr>
       <td>Profiles</td>
       <td>      
-      <a href="#Dataset.identifier">Identifier</a> (<a href="https://techlib.cz/profile/ccmm/Dataset.identifier">https://techlib.cz/profile/ccmm/Dataset.identifier</a>)
+      <a href="#Dataset.title">Title</a> (<a href="https://techlib.cz/profile/ccmm/Dataset.title">https://techlib.cz/profile/ccmm/Dataset.title</a>)
           <br />
                 
-      <a href="https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.identifier">identifier</a> (<a href="https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.identifier">https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.identifier</a>)
+      <a href="https://mff-uk.github.io/specifications/dcat-ap/#Dataset.title">title</a> (<a href="https://mff-uk.github.io/specifications/dcat-ap/#Dataset.title">https://mff-uk.github.io/specifications/dcat-ap/#Dataset.title</a>)
+          <br />
+                
+      <a href="https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.title">title</a> (<a href="https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.title">https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.title</a>)
           <br />
                 property
-      <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl#identifier">Identifier</a> (<a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a>)
+      <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl#title">Title</a> (<a href="http://purl.org/dc/terms/title">dcterms:title</a>)
+
 
 
 </td>
@@ -2221,9 +2182,9 @@
     <tr>
       <td>Range</td>
       <td>
-        <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
 
-              [0..*]
+              [0..1]
 
     </td>
     </tr>
@@ -2276,9 +2237,9 @@
     <tr>
       <td>Range</td>
       <td>
-        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+        <a href="https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/text">https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/text</a>
 
-              [0..*]
+              [0..1]
 
     </td>
     </tr>
@@ -2429,7 +2390,7 @@
       <td>
         <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
 
-              [0..*]
+              [0..1]
 
     </td>
     </tr>
@@ -2585,7 +2546,7 @@
       <td>
         <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
 
-              [0..*]
+              [0..1]
 
     </td>
     </tr>
@@ -2593,13 +2554,17 @@
     <tr>
       <td>Profiles</td>
       <td>      
-      <a href="#Dataset.identifier">Identifier</a> (<a href="https://techlib.cz/profile/ccmm/Dataset.identifier">https://techlib.cz/profile/ccmm/Dataset.identifier</a>)
+      <a href="#Dataset.title">Title</a> (<a href="https://techlib.cz/profile/ccmm/Dataset.title">https://techlib.cz/profile/ccmm/Dataset.title</a>)
           <br />
                 
-      <a href="https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.identifier">identifier</a> (<a href="https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.identifier">https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.identifier</a>)
+      <a href="https://mff-uk.github.io/specifications/dcat-ap/#Dataset.title">title</a> (<a href="https://mff-uk.github.io/specifications/dcat-ap/#Dataset.title">https://mff-uk.github.io/specifications/dcat-ap/#Dataset.title</a>)
+          <br />
+                
+      <a href="https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.title">title</a> (<a href="https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.title">https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.title</a>)
           <br />
                 property
-      <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl#identifier">Identifier</a> (<a href="http://purl.org/dc/terms/identifier">dcterms:identifier</a>)
+      <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl#title">Title</a> (<a href="http://purl.org/dc/terms/title">dcterms:title</a>)
+
 
 
 </td>
@@ -2688,9 +2653,9 @@
     <tr>
       <td>Range</td>
       <td>
-        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+        <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a>
 
-              [0..*]
+              [0..1]
 
     </td>
     </tr>
@@ -2760,6 +2725,61 @@
               <ul>
                   <li><a href="#Dataset.hasValidationResult"></a></li>
               </ul>
+
+                <section id="ValidationResult.label">
+  <h4>Label</h4>
+
+  <table class="def">
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://techlib.cz/profile/ccmm/ValidationResult.label">https://techlib.cz/profile/ccmm/ValidationResult.label</a></td>
+    </tr>
+    <tr>
+      <td>Label</td>
+      <td>Label</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>Validation result label</td>
+    </tr>
+    <tr>
+      <td>Domain</td>
+      <td>
+        <a href="#ValidationResult">Validation result</a>
+
+              [0..*]
+
+      </td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td>
+        <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a>
+
+              [0..*]
+
+    </td>
+    </tr>
+
+    <tr>
+      <td>Profiles</td>
+      <td>      property
+      <a href="https://datagov-cz.github.io/cache-slovniku/rdfs.ttl#label">label</a> (<a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a>)
+</td>
+    </tr>
+
+    <tr>
+      <td>Label from vocabulary</td>
+      <td>label</td>
+    </tr>
+
+    <tr>
+      <td>Definition from vocabulary</td>
+      <td>A human-readable name for the subject.</td>
+    </tr>
+
+  </table>
+</section>
 
 
             </section>
@@ -2832,7 +2852,8 @@
       <td>
         <a href="#SubjectScheme">Subject scheme</a>
 
-        
+              [0..1]
+
     </td>
     </tr>
 
@@ -2882,7 +2903,7 @@
       <td>
         <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
 
-              [0..*]
+              [0..1]
 
     </td>
     </tr>
@@ -2935,9 +2956,9 @@
     <tr>
       <td>Range</td>
       <td>
-        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+        <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a>
 
-              [1..*]
+              [1..1]
 
     </td>
     </tr>
@@ -2990,9 +3011,9 @@
     <tr>
       <td>Range</td>
       <td>
-        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+        <a href="https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/text">https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/text</a>
 
-              [0..*]
+              [0..1]
 
     </td>
     </tr>
@@ -3070,6 +3091,7 @@
               <ul>
                   <li><a href="#Dataset.hasRelatedResource"></a></li>
                   <li><a href="#Location.hasRelatedObjectIdentifier"></a></li>
+                  <li><a href="#DataService.endpointUrl"></a></li>
               </ul>
 
                 <section id="Resource.identifier">
@@ -3100,9 +3122,9 @@
     <tr>
       <td>Range</td>
       <td>
-        <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
 
-              [0..*]
+              [0..1]
 
     </td>
     </tr>
@@ -3157,7 +3179,7 @@
       <td>
         <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
 
-              [0..*]
+              [0..1]
 
     </td>
     </tr>
@@ -3210,9 +3232,9 @@
     <tr>
       <td>Range</td>
       <td>
-        <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
 
-              [0..*]
+              [0..1]
 
     </td>
     </tr>
@@ -3265,9 +3287,9 @@
     <tr>
       <td>Range</td>
       <td>
-        <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
 
-              [0..*]
+              [0..1]
 
     </td>
     </tr>
@@ -3463,7 +3485,7 @@
       <td>
         <a href="http://www.w3.org/2001/XMLSchema#date">xsd:date</a>
 
-              [0..*]
+              [0..1]
 
     </td>
     </tr>
@@ -3516,9 +3538,9 @@
     <tr>
       <td>Range</td>
       <td>
-        <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
 
-              [0..*]
+              [0..1]
 
     </td>
     </tr>
@@ -3571,9 +3593,9 @@
     <tr>
       <td>Range</td>
       <td>
-        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+        <a href="https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/text">https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/text</a>
 
-              [0..*]
+              [0..1]
 
     </td>
     </tr>
@@ -3678,7 +3700,7 @@
       <td>
         <a href="#Agent">Agent</a>
 
-              [1..*]
+              [1..1]
 
     </td>
     </tr>
@@ -3740,7 +3762,7 @@
       <td>
         <a href="#ResourceAgentRoleType">Resource agent role type</a>
 
-              [1..*]
+              [1..1]
 
     </td>
     </tr>
@@ -4278,6 +4300,61 @@
                   <li><a href="#ContactDetails.hasAddress"></a></li>
               </ul>
 
+                <section id="Address.label">
+  <h4>Label</h4>
+
+  <table class="def">
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://techlib.cz/profile/ccmm/Address.label">https://techlib.cz/profile/ccmm/Address.label</a></td>
+    </tr>
+    <tr>
+      <td>Label</td>
+      <td>Label</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>Address label</td>
+    </tr>
+    <tr>
+      <td>Domain</td>
+      <td>
+        <a href="#Address">Address</a>
+
+              [0..*]
+
+      </td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td>
+        <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a>
+
+              [0..*]
+
+    </td>
+    </tr>
+
+    <tr>
+      <td>Profiles</td>
+      <td>      property
+      <a href="https://datagov-cz.github.io/cache-slovniku/rdfs.ttl#label">label</a> (<a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a>)
+</td>
+    </tr>
+
+    <tr>
+      <td>Label from vocabulary</td>
+      <td>label</td>
+    </tr>
+
+    <tr>
+      <td>Definition from vocabulary</td>
+      <td>A human-readable name for the subject.</td>
+    </tr>
+
+  </table>
+</section>
+
 
             </section>
             <section id="MetadataRecord">
@@ -4325,7 +4402,7 @@
 
               <p>Zpětné asociace</p>
               <ul>
-                  <li><a href="#MetadataRecord.localIdentifier"></a></li>
+                  <li><a href="#Dataset.isDescribedBy"></a></li>
               </ul>
 
                 <section id="MetadataRecord.conformsToStandard">
@@ -4381,64 +4458,6 @@
     <tr>
       <td>Definition from vocabulary</td>
       <td>An established standard to which the described resource conforms.</td>
-    </tr>
-
-  </table>
-</section>
-
-                <section id="MetadataRecord.localIdentifier">
-  <h4>Local identifier</h4>
-
-  <table class="def">
-    <tr>
-      <td>IRI</td>
-      <td><a href="https://techlib.cz/profile/ccmm/MetadataRecord.localIdentifier">https://techlib.cz/profile/ccmm/MetadataRecord.localIdentifier</a></td>
-    </tr>
-    <tr>
-      <td>Label</td>
-      <td>Local identifier</td>
-    </tr>
-    <tr>
-      <td>Definition</td>
-      <td>Local identifier of original metadata record in any metadata catalogue.</td>
-    </tr>
-    <tr>
-      <td>Domain</td>
-      <td>
-        <a href="#MetadataRecord">Metadata Record</a>
-
-        
-      </td>
-    </tr>
-    <tr>
-      <td>Range</td>
-      <td>
-        <a href="#MetadataRecord">Metadata Record</a>
-
-              [0..1]
-
-    </td>
-    </tr>
-
-    <tr>
-      <td>Profiles</td>
-      <td>      
-      <a href="https://mff-uk.github.io/specifications/dcat-ap/#CatalogueRecord.source">source</a> (<a href="https://mff-uk.github.io/specifications/dcat-ap/#CatalogueRecord.source">https://mff-uk.github.io/specifications/dcat-ap/#CatalogueRecord.source</a>)
-          <br />
-                property
-      <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl#source">Source</a> (<a href="http://purl.org/dc/terms/source">dcterms:source</a>)
-
-</td>
-    </tr>
-
-    <tr>
-      <td>Label from vocabulary</td>
-      <td>source</td>
-    </tr>
-
-    <tr>
-      <td>Definition from vocabulary</td>
-      <td>A related resource from which the described resource is derived.</td>
     </tr>
 
   </table>
@@ -4820,6 +4839,61 @@
                   <li><a href="#Distribution-DataService.specification"></a></li>
               </ul>
 
+                <section id="ApplicationProfile.label">
+  <h4>Label</h4>
+
+  <table class="def">
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://techlib.cz/profile/ccmm/ApplicationProfile.label">https://techlib.cz/profile/ccmm/ApplicationProfile.label</a></td>
+    </tr>
+    <tr>
+      <td>Label</td>
+      <td>Label</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>Label of application profile</td>
+    </tr>
+    <tr>
+      <td>Domain</td>
+      <td>
+        <a href="#ApplicationProfile">Application profile</a>
+
+              [0..*]
+
+      </td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td>
+        <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a>
+
+              [0..*]
+
+    </td>
+    </tr>
+
+    <tr>
+      <td>Profiles</td>
+      <td>      property
+      <a href="https://datagov-cz.github.io/cache-slovniku/rdfs.ttl#label">label</a> (<a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a>)
+</td>
+    </tr>
+
+    <tr>
+      <td>Label from vocabulary</td>
+      <td>label</td>
+    </tr>
+
+    <tr>
+      <td>Definition from vocabulary</td>
+      <td>A human-readable name for the subject.</td>
+    </tr>
+
+  </table>
+</section>
+
 
             </section>
             <section id="ProvenanceStatement">
@@ -4865,6 +4939,61 @@
               <ul>
                   <li><a href="#Dataset.provenance"></a></li>
               </ul>
+
+                <section id="ProvenanceStatement.label">
+  <h4>Label</h4>
+
+  <table class="def">
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://techlib.cz/profile/ccmm/ProvenanceStatement.label">https://techlib.cz/profile/ccmm/ProvenanceStatement.label</a></td>
+    </tr>
+    <tr>
+      <td>Label</td>
+      <td>Label</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>Provenance state label</td>
+    </tr>
+    <tr>
+      <td>Domain</td>
+      <td>
+        <a href="#ProvenanceStatement">Provenance Statement</a>
+
+              [0..*]
+
+      </td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td>
+        <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a>
+
+              [0..*]
+
+    </td>
+    </tr>
+
+    <tr>
+      <td>Profiles</td>
+      <td>      property
+      <a href="https://datagov-cz.github.io/cache-slovniku/rdfs.ttl#label">label</a> (<a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a>)
+</td>
+    </tr>
+
+    <tr>
+      <td>Label from vocabulary</td>
+      <td>label</td>
+    </tr>
+
+    <tr>
+      <td>Definition from vocabulary</td>
+      <td>A human-readable name for the subject.</td>
+    </tr>
+
+  </table>
+</section>
 
 
             </section>
@@ -4915,6 +5044,61 @@
               <ul>
                   <li><a href="#MetadataRecord.originalRepository"></a></li>
               </ul>
+
+                <section id="Repository.label">
+  <h4>Label</h4>
+
+  <table class="def">
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://techlib.cz/profile/ccmm/Repository.label">https://techlib.cz/profile/ccmm/Repository.label</a></td>
+    </tr>
+    <tr>
+      <td>Label</td>
+      <td>Label</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>Repository label</td>
+    </tr>
+    <tr>
+      <td>Domain</td>
+      <td>
+        <a href="#Repository">Repository</a>
+
+              [0..*]
+
+      </td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td>
+        <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a>
+
+              [0..*]
+
+    </td>
+    </tr>
+
+    <tr>
+      <td>Profiles</td>
+      <td>      property
+      <a href="https://datagov-cz.github.io/cache-slovniku/rdfs.ttl#label">label</a> (<a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a>)
+</td>
+    </tr>
+
+    <tr>
+      <td>Label from vocabulary</td>
+      <td>label</td>
+    </tr>
+
+    <tr>
+      <td>Definition from vocabulary</td>
+      <td>A human-readable name for the subject.</td>
+    </tr>
+
+  </table>
+</section>
 
 
             </section>
@@ -4987,7 +5171,7 @@
       <td>
         <a href="#MetadataAgentRoleType">Metadata agent role type</a>
 
-              [1..*]
+              [1..1]
 
     </td>
     </tr>
@@ -5049,7 +5233,7 @@
       <td>
         <a href="#Agent">Agent</a>
 
-              [1..*]
+              [1..1]
 
     </td>
     </tr>
@@ -5733,7 +5917,7 @@
     <tr>
       <td>Range</td>
       <td>
-        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+        <a href="https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/text">https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/text</a>
 
               [0..*]
 
@@ -5947,6 +6131,61 @@
                   <li><a href="#Distribution-DownloadableFile.accessUrl"></a></li>
               </ul>
 
+                <section id="File.label">
+  <h4>Label</h4>
+
+  <table class="def">
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://techlib.cz/profile/ccmm/File.label">https://techlib.cz/profile/ccmm/File.label</a></td>
+    </tr>
+    <tr>
+      <td>Label</td>
+      <td>Label</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>File label</td>
+    </tr>
+    <tr>
+      <td>Domain</td>
+      <td>
+        <a href="#File">File</a>
+
+              [0..*]
+
+      </td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td>
+        <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a>
+
+              [0..*]
+
+    </td>
+    </tr>
+
+    <tr>
+      <td>Profiles</td>
+      <td>      property
+      <a href="https://datagov-cz.github.io/cache-slovniku/rdfs.ttl#label">label</a> (<a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a>)
+</td>
+    </tr>
+
+    <tr>
+      <td>Label from vocabulary</td>
+      <td>label</td>
+    </tr>
+
+    <tr>
+      <td>Definition from vocabulary</td>
+      <td>A human-readable name for the subject.</td>
+    </tr>
+
+  </table>
+</section>
+
 
             </section>
             <section id="MediaType">
@@ -5996,6 +6235,61 @@
               <ul>
                   <li><a href="#Distribution-DownloadableFile.mediaType"></a></li>
               </ul>
+
+                <section id="MediaType.label">
+  <h4>Label</h4>
+
+  <table class="def">
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://techlib.cz/profile/ccmm/MediaType.label">https://techlib.cz/profile/ccmm/MediaType.label</a></td>
+    </tr>
+    <tr>
+      <td>Label</td>
+      <td>Label</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>Media type label</td>
+    </tr>
+    <tr>
+      <td>Domain</td>
+      <td>
+        <a href="#MediaType">Media Type</a>
+
+              [0..*]
+
+      </td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td>
+        <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a>
+
+              [0..*]
+
+    </td>
+    </tr>
+
+    <tr>
+      <td>Profiles</td>
+      <td>      property
+      <a href="https://datagov-cz.github.io/cache-slovniku/rdfs.ttl#label">label</a> (<a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a>)
+</td>
+    </tr>
+
+    <tr>
+      <td>Label from vocabulary</td>
+      <td>label</td>
+    </tr>
+
+    <tr>
+      <td>Definition from vocabulary</td>
+      <td>A human-readable name for the subject.</td>
+    </tr>
+
+  </table>
+</section>
 
 
             </section>
@@ -6047,6 +6341,123 @@
                   <li><a href="#Distribution-DataService.accessService"></a></li>
               </ul>
 
+                <section id="DataService.endpointUrl">
+  <h4>endpoint URL</h4>
+
+  <table class="def">
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://techlib.cz/profile/ccmm/DataService.endpointUrl">https://techlib.cz/profile/ccmm/DataService.endpointUrl</a></td>
+    </tr>
+    <tr>
+      <td>Label</td>
+      <td>endpoint URL</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>The root location or primary endpoint of the service (an IRI).</td>
+    </tr>
+    <tr>
+      <td>Domain</td>
+      <td>
+        <a href="#DataService">Data service</a>
+
+        
+      </td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td>
+        <a href="#Resource">Resource</a>
+
+              [1..*]
+
+    </td>
+    </tr>
+
+    <tr>
+      <td>Profiles</td>
+      <td>      
+      <a href="https://mff-uk.github.io/specifications/dcat-ap/#DataService.endpointUrl">endpoint URL</a> (<a href="https://mff-uk.github.io/specifications/dcat-ap/#DataService.endpointUrl">https://mff-uk.github.io/specifications/dcat-ap/#DataService.endpointUrl</a>)
+          <br />
+                
+      <a href="https://mff-uk.github.io/specifications/dcat-dap/#DataService.endpointUrl">endpoint URL</a> (<a href="https://mff-uk.github.io/specifications/dcat-dap/#DataService.endpointUrl">https://mff-uk.github.io/specifications/dcat-dap/#DataService.endpointUrl</a>)
+          <br />
+                property
+      <a href="https://www.w3.org/ns/dcat3.ttl#endpointURL">service end-point</a> (<a href="http://www.w3.org/ns/dcat#endpointURL">dcat:endpointURL</a>)
+
+
+</td>
+    </tr>
+
+    <tr>
+      <td>Label from vocabulary</td>
+      <td>endpoint URL</td>
+    </tr>
+
+    <tr>
+      <td>Definition from vocabulary</td>
+      <td>The root location or primary endpoint of the service (an IRI).</td>
+    </tr>
+
+  </table>
+</section>
+
+                <section id="DataService.label">
+  <h4>Label</h4>
+
+  <table class="def">
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://techlib.cz/profile/ccmm/DataService.label">https://techlib.cz/profile/ccmm/DataService.label</a></td>
+    </tr>
+    <tr>
+      <td>Label</td>
+      <td>Label</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>Data service label.</td>
+    </tr>
+    <tr>
+      <td>Domain</td>
+      <td>
+        <a href="#DataService">Data service</a>
+
+              [0..*]
+
+      </td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td>
+        <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a>
+
+              [0..*]
+
+    </td>
+    </tr>
+
+    <tr>
+      <td>Profiles</td>
+      <td>      property
+      <a href="https://www.w3.org/2006/vcard/ns#label">label</a> (<a href="http://www.w3.org/2006/vcard/ns#label">vcard:label</a>)
+</td>
+    </tr>
+
+    <tr>
+      <td>Label from vocabulary</td>
+      <td>label</td>
+    </tr>
+
+    <tr>
+      <td>Definition from vocabulary</td>
+      <td>This data property has been deprecated</td>
+    </tr>
+
+  </table>
+</section>
+
 
             </section>
             <section id="Documentation">
@@ -6093,6 +6504,61 @@
                   <li><a href="#Distribution-DataService.documentation"></a></li>
               </ul>
 
+                <section id="Documentation.label">
+  <h4>Label</h4>
+
+  <table class="def">
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://techlib.cz/profile/ccmm/Documentation.label">https://techlib.cz/profile/ccmm/Documentation.label</a></td>
+    </tr>
+    <tr>
+      <td>Label</td>
+      <td>Label</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>Documentation label</td>
+    </tr>
+    <tr>
+      <td>Domain</td>
+      <td>
+        <a href="#Documentation">Documentation</a>
+
+              [0..*]
+
+      </td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td>
+        <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a>
+
+              [0..*]
+
+    </td>
+    </tr>
+
+    <tr>
+      <td>Profiles</td>
+      <td>      property
+      <a href="https://datagov-cz.github.io/cache-slovniku/rdfs.ttl#label">label</a> (<a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a>)
+</td>
+    </tr>
+
+    <tr>
+      <td>Label from vocabulary</td>
+      <td>label</td>
+    </tr>
+
+    <tr>
+      <td>Definition from vocabulary</td>
+      <td>A human-readable name for the subject.</td>
+    </tr>
+
+  </table>
+</section>
+
 
             </section>
             <section id="SubjectScheme">
@@ -6134,6 +6600,61 @@
               <ul>
                   <li><a href="#Subject.inSubjectScheme"></a></li>
               </ul>
+
+                <section id="SubjectScheme.label">
+  <h4>Label</h4>
+
+  <table class="def">
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://techlib.cz/profile/ccmm/SubjectScheme.label">https://techlib.cz/profile/ccmm/SubjectScheme.label</a></td>
+    </tr>
+    <tr>
+      <td>Label</td>
+      <td>Label</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>Subject scheme label</td>
+    </tr>
+    <tr>
+      <td>Domain</td>
+      <td>
+        <a href="#SubjectScheme">Subject scheme</a>
+
+              [0..*]
+
+      </td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td>
+        <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a>
+
+              [0..*]
+
+    </td>
+    </tr>
+
+    <tr>
+      <td>Profiles</td>
+      <td>      property
+      <a href="https://datagov-cz.github.io/cache-slovniku/rdfs.ttl#label">label</a> (<a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a>)
+</td>
+    </tr>
+
+    <tr>
+      <td>Label from vocabulary</td>
+      <td>label</td>
+    </tr>
+
+    <tr>
+      <td>Definition from vocabulary</td>
+      <td>A human-readable name for the subject.</td>
+    </tr>
+
+  </table>
+</section>
 
 
             </section>
@@ -6217,7 +6738,7 @@
     <tr>
       <td>Range</td>
       <td>
-        <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
 
               [0..*]
 
@@ -6321,7 +6842,7 @@
     <tr>
       <td>Range</td>
       <td>
-        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+        <a href="https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/text">https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/text</a>
 
               [0..*]
 
@@ -6522,6 +7043,381 @@
               <ul>
                   <li><a href="#Location.geometry"></a></li>
               </ul>
+
+                <section id="Geometry.label">
+  <h4>Label</h4>
+
+  <table class="def">
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://techlib.cz/profile/ccmm/Geometry.label">https://techlib.cz/profile/ccmm/Geometry.label</a></td>
+    </tr>
+    <tr>
+      <td>Label</td>
+      <td>Label</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>Geometry label</td>
+    </tr>
+    <tr>
+      <td>Domain</td>
+      <td>
+        <a href="#Geometry">Geometry</a>
+
+              [0..*]
+
+      </td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td>
+        <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a>
+
+              [0..*]
+
+    </td>
+    </tr>
+
+    <tr>
+      <td>Profiles</td>
+      <td>      property
+      <a href="https://datagov-cz.github.io/cache-slovniku/rdfs.ttl#label">label</a> (<a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a>)
+</td>
+    </tr>
+
+    <tr>
+      <td>Label from vocabulary</td>
+      <td>label</td>
+    </tr>
+
+    <tr>
+      <td>Definition from vocabulary</td>
+      <td>A human-readable name for the subject.</td>
+    </tr>
+
+  </table>
+</section>
+
+
+            </section>
+            <section id="Identifier">
+              <h4>Identifier</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/profile/ccmm/Identifier">https://techlib.cz/profile/ccmm/Identifier</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Identifier</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>This is based on the UN/CEFACT Identifier class.</td>
+                </tr>
+                <tr>
+                  <td>Profiles</td>
+                  <td>                  
+                  <a href="https://mff-uk.github.io/specifications/dcat-ap/#Identifier">Identifier</a> (<a href="https://mff-uk.github.io/specifications/dcat-ap/#Identifier">https://mff-uk.github.io/specifications/dcat-ap/#Identifier</a>)
+                      <br />this profiles
+                                        class
+                  <a href="https://www.w3.org/ns/legacy_adms#Identifier">Identifier</a> (<a href="http://www.w3.org/ns/adms#Identifier">adms:Identifier</a>)
+
+</td>
+                </tr>
+
+                <tr>
+                  <td>Label from vocabulary</td>
+                  <td>Identifier</td>
+                </tr>
+
+                <tr>
+                  <td>Definition from vocabulary</td>
+                  <td>This is based on the UN/CEFACT Identifier class.</td>
+                </tr>
+
+              </table>
+
+              <p>Zpětné asociace</p>
+              <ul>
+                  <li><a href="#Dataset.hasIdentifier"></a></li>
+              </ul>
+
+                <section id="Identifier.value">
+  <h4>Value</h4>
+
+  <table class="def">
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://techlib.cz/profile/ccmm/Identifier.value">https://techlib.cz/profile/ccmm/Identifier.value</a></td>
+    </tr>
+    <tr>
+      <td>Label</td>
+      <td>Value</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>Value of the identifer within the given identifier scheme.</td>
+    </tr>
+    <tr>
+      <td>Domain</td>
+      <td>
+        <a href="#Identifier">Identifier</a>
+
+              [0..*]
+
+      </td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td>
+        <a href="https://datagov-cz.github.io/cache-slovniku/rdfs.ttl#Literal">Literal</a>
+
+              [1..1]
+
+    </td>
+    </tr>
+
+    <tr>
+      <td>Profiles</td>
+      <td>      
+      <a href="https://mff-uk.github.io/specifications/dcat-ap/#Identifier.notation">notation</a> (<a href="https://mff-uk.github.io/specifications/dcat-ap/#Identifier.notation">https://mff-uk.github.io/specifications/dcat-ap/#Identifier.notation</a>)
+          <br />
+                property
+      <a href="https://datagov-cz.github.io/cache-slovniku/skos.rdf#notation">notation</a> (<a href="http://www.w3.org/2004/02/skos/core#notation">skos:notation</a>)
+
+</td>
+    </tr>
+
+    <tr>
+      <td>Label from vocabulary</td>
+      <td>notation</td>
+    </tr>
+
+    <tr>
+      <td>Definition from vocabulary</td>
+      <td>A string that is an identifier in the context of the identifier scheme referenced by its datatype.</td>
+    </tr>
+
+  </table>
+</section>
+
+                <section id="Identifier.identifierScheme">
+  <h4>Identifier scheme</h4>
+
+  <table class="def">
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://techlib.cz/profile/ccmm/Identifier.identifierScheme">https://techlib.cz/profile/ccmm/Identifier.identifierScheme</a></td>
+    </tr>
+    <tr>
+      <td>Label</td>
+      <td>Identifier scheme</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>Scheme URI of the identifier.</td>
+    </tr>
+    <tr>
+      <td>Domain</td>
+      <td>
+        <a href="#Identifier">Identifier</a>
+
+              [0..*]
+
+      </td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td>
+        <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+              [1..1]
+
+    </td>
+    </tr>
+
+    <tr>
+      <td>Profiles</td>
+      <td>      
+      <a href="#Dataset.title">Title</a> (<a href="https://techlib.cz/profile/ccmm/Dataset.title">https://techlib.cz/profile/ccmm/Dataset.title</a>)
+          <br />
+                
+      <a href="https://mff-uk.github.io/specifications/dcat-ap/#Dataset.title">title</a> (<a href="https://mff-uk.github.io/specifications/dcat-ap/#Dataset.title">https://mff-uk.github.io/specifications/dcat-ap/#Dataset.title</a>)
+          <br />
+                
+      <a href="https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.title">title</a> (<a href="https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.title">https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.title</a>)
+          <br />
+                property
+      <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl#title">Title</a> (<a href="http://purl.org/dc/terms/title">dcterms:title</a>)
+
+
+
+</td>
+    </tr>
+
+
+
+  </table>
+</section>
+
+
+            </section>
+            <section id="AlternateTitle">
+              <h4>Alternate title</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/profile/ccmm/AlternateTitle">https://techlib.cz/profile/ccmm/AlternateTitle</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Alternate title</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Alternate title f the resource</td>
+                </tr>
+                <tr>
+                  <td>Profiles</td>
+                  <td>                  class
+                  <a href="#AlternateTitle">Alternate title</a> (<a href="https://techlib.cz/profile/ccmm/AlternateTitle">https://techlib.cz/profile/ccmm/AlternateTitle</a>)
+</td>
+                </tr>
+
+                <tr>
+                  <td>Label from vocabulary</td>
+                  <td>Alternate title</td>
+                </tr>
+
+                <tr>
+                  <td>Definition from vocabulary</td>
+                  <td>Alternate title f the resource</td>
+                </tr>
+
+              </table>
+
+              <p>Zpětné asociace</p>
+              <ul>
+                  <li><a href="#Dataset.hasAlternateTitle"></a></li>
+              </ul>
+
+                <section id="AlternateTitle.type">
+  <h4>Type</h4>
+
+  <table class="def">
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://techlib.cz/profile/ccmm/AlternateTitle.type">https://techlib.cz/profile/ccmm/AlternateTitle.type</a></td>
+    </tr>
+    <tr>
+      <td>Label</td>
+      <td>Type</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>Type of alternate title.</td>
+    </tr>
+    <tr>
+      <td>Domain</td>
+      <td>
+        <a href="#AlternateTitle">Alternate title</a>
+
+              [0..*]
+
+      </td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td>
+        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+
+              [0..1]
+
+    </td>
+    </tr>
+
+    <tr>
+      <td>Profiles</td>
+      <td>      property
+      <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl#type">Type</a> (<a href="http://purl.org/dc/terms/type">dcterms:type</a>)
+</td>
+    </tr>
+
+    <tr>
+      <td>Label from vocabulary</td>
+      <td>Type</td>
+    </tr>
+
+    <tr>
+      <td>Definition from vocabulary</td>
+      <td>The nature or genre of the resource.</td>
+    </tr>
+
+  </table>
+</section>
+
+                <section id="AlternateTitle.title">
+  <h4>Title</h4>
+
+  <table class="def">
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://techlib.cz/profile/ccmm/AlternateTitle.title">https://techlib.cz/profile/ccmm/AlternateTitle.title</a></td>
+    </tr>
+    <tr>
+      <td>Label</td>
+      <td>Title</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>Alternate title name.</td>
+    </tr>
+    <tr>
+      <td>Domain</td>
+      <td>
+        <a href="#AlternateTitle">Alternate title</a>
+
+              [0..*]
+
+      </td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td>
+        <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a>
+
+              [1..1]
+
+    </td>
+    </tr>
+
+    <tr>
+      <td>Profiles</td>
+      <td>      
+      <a href="https://mff-uk.github.io/specifications/dcat-ap/#ConceptScheme.title">Title</a> (<a href="https://mff-uk.github.io/specifications/dcat-ap/#ConceptScheme.title">https://mff-uk.github.io/specifications/dcat-ap/#ConceptScheme.title</a>)
+          <br />
+                property
+      <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl#title">Title</a> (<a href="http://purl.org/dc/terms/title">dcterms:title</a>)
+
+</td>
+    </tr>
+
+    <tr>
+      <td>Label from vocabulary</td>
+      <td>Title</td>
+    </tr>
+
+    <tr>
+      <td>Definition from vocabulary</td>
+      <td>A name of the concept scheme.</td>
+    </tr>
+
+  </table>
+</section>
 
 
             </section>
@@ -7031,6 +7927,124 @@
                   </tr>
               </table>
             </section>
+            <section id="hasIdentifier">
+
+              <h4>has identifier</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/profile/ccmm/hasIdentifier">https://techlib.cz/profile/ccmm/hasIdentifier</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>has identifier</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>has identifier</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="https://www.w3.org/ns/dcat3.ttl#Dataset">Dataset</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="https://www.w3.org/ns/legacy_adms#Identifier">Identifier</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="isDescribedBy">
+
+              <h4>is described by</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/profile/ccmm/isDescribedBy">https://techlib.cz/profile/ccmm/isDescribedBy</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>is described by</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Inverse relation between dataset and metadata record.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="https://www.w3.org/ns/dcat3.ttl#Dataset">Dataset</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="https://www.w3.org/ns/dcat3.ttl#CatalogRecord">Catalog Record</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+            <section id="hasAlternateTitle">
+
+              <h4>has alternate title</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/profile/ccmm/hasAlternateTitle">https://techlib.cz/profile/ccmm/hasAlternateTitle</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>has alternate title</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="https://www.w3.org/ns/dcat3.ttl#Dataset">Dataset</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="#AlternateTitle">Alternate title</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7125,6 +8139,7 @@
           <thead><tr><th>Prefix</th><th>Namespace IRI</th></tr></thead>
           <tbody>
               <tr><td><code>dcat</code></td><td><a href=http://www.w3.org/ns/dcat#><code>http://www.w3.org/ns/dcat#</code></a></td></tr>
+              <tr><td><code>rdf</code></td><td><a href=http://www.w3.org/1999/02/22-rdf-syntax-ns#><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></a></td></tr>
               <tr><td><code>dcterms</code></td><td><a href=http://purl.org/dc/terms/><code>http://purl.org/dc/terms/</code></a></td></tr>
               <tr><td><code>xsd</code></td><td><a href=http://www.w3.org/2001/XMLSchema#><code>http://www.w3.org/2001/XMLSchema#</code></a></td></tr>
               <tr><td><code>foaf</code></td><td><a href=http://xmlns.com/foaf/0.1/><code>http://xmlns.com/foaf/0.1/</code></a></td></tr>
@@ -7134,6 +8149,7 @@
               <tr><td><code>skos</code></td><td><a href=http://www.w3.org/2004/02/skos/core#><code>http://www.w3.org/2004/02/skos/core#</code></a></td></tr>
               <tr><td><code>locn</code></td><td><a href=http://www.w3.org/ns/locn#><code>http://www.w3.org/ns/locn#</code></a></td></tr>
               <tr><td><code>spdx</code></td><td><a href=http://spdx.org/rdf/terms#><code>http://spdx.org/rdf/terms#</code></a></td></tr>
+              <tr><td><code>adms</code></td><td><a href=http://www.w3.org/ns/adms#><code>http://www.w3.org/ns/adms#</code></a></td></tr>
           </tbody>
         </table>
       </section>

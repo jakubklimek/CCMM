@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1" elementFormDefault="unqualified" xmlns:c="https://schemas.dataspecer.com/xsd/core/" xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
-  <xs:import namespace="https://schemas.dataspecer.com/xsd/core/" schemaLocation="https://techlib.cz/specification/ccmm/dataset/2022-07.xsd"/>
-  <xs:complexType name="distribution_-_downloadable_file" sawsdl:modelReference="Distribution-DownloadableFile">
+  <xs:include schemaLocation="../application-profile/schema.xsd"/>
+  <xs:include schemaLocation="../media-type/schema.xsd"/>
+  <xs:include schemaLocation="../file/schema.xsd"/>
+  <xs:import namespace="https://schemas.dataspecer.com/xsd/core/" schemaLocation="./2022-07.xsd"/>
+  <xs:complexType name="distribution_downloadable_file" sawsdl:modelReference="Distribution-DownloadableFile">
     <xs:annotation>
       <xs:documentation xml:lang="en">
         Distribution - downloadable file - Physical embodiment of the dataset in a particular format. 
@@ -11,7 +14,7 @@
       <xs:element minOccurs="0" ref="c:iri"/>
       <xs:element name="checksum" type="xs:string" sawsdl:modelReference="http://spdx.org/rdf/terms#checksumValue">
         <xs:annotation>
-          <xs:documentation xml:lang="">
+          <xs:documentation xml:lang="en">
             Checksum
           </xs:documentation>
           <xs:documentation xml:lang="en">
@@ -21,7 +24,7 @@
       </xs:element>
       <xs:element minOccurs="0" name="byte_size" type="xs:integer" sawsdl:modelReference="http://www.w3.org/ns/dcat#byteSize">
         <xs:annotation>
-          <xs:documentation xml:lang="">
+          <xs:documentation xml:lang="en">
             Byte size
           </xs:documentation>
           <xs:documentation xml:lang="en">
@@ -36,24 +39,14 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="conforms_to_schema" sawsdl:modelReference="http://purl.org/dc/terms/conformsTo">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="conforms_to_schema" type="application_profile" sawsdl:modelReference="http://purl.org/dc/terms/conformsTo">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             conforms to schema - An established standard to which the distribution conforms.
           </xs:documentation>
         </xs:annotation>
-        <xs:complexType sawsdl:modelReference="http://purl.org/dc/terms/Standard">
-          <xs:annotation>
-            <xs:documentation xml:lang="en">
-              Application profile - A standard or other specification to which a metadata record conforms.
-            </xs:documentation>
-          </xs:annotation>
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="c:iri"/>
-          </xs:sequence>
-        </xs:complexType>
       </xs:element>
-      <xs:element minOccurs="0" name="typ_média" sawsdl:modelReference="http://www.w3.org/ns/dcat#mediaType">
+      <xs:element minOccurs="0" name="media_type" type="media_type" sawsdl:modelReference="http://www.w3.org/ns/dcat#mediaType">
         <xs:annotation>
           <xs:documentation xml:lang="ar">
             نوع الميديا - يجب استخدام هذه الخاصية إذا كان نوع الملف معرف ضمن IANA
@@ -83,18 +76,8 @@
             メディア・タイプ - このプロパティーは、配信のメディア・タイプがIANAで定義されているときに使用すべきで（SHOULD）、そうでない場合には、dcterms:formatを様々な値と共に使用できます（MAY）。
           </xs:documentation>
         </xs:annotation>
-        <xs:complexType sawsdl:modelReference="http://purl.org/dc/terms/MediaType">
-          <xs:annotation>
-            <xs:documentation xml:lang="en">
-              Media Type - A file format or physical medium.
-            </xs:documentation>
-          </xs:annotation>
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="c:iri"/>
-          </xs:sequence>
-        </xs:complexType>
       </xs:element>
-      <xs:element maxOccurs="unbounded" name="přístupová_adresa" sawsdl:modelReference="http://www.w3.org/ns/dcat#accessURL">
+      <xs:element maxOccurs="unbounded" name="access_url" type="file" sawsdl:modelReference="http://www.w3.org/ns/dcat#accessURL">
         <xs:annotation>
           <xs:documentation xml:lang="ar">
             رابط وصول - أي رابط يتيح الوصول إلى البيانات. إذا كان الرابط هو ربط مباشر لملف يمكن تحميله استخدم الخاصية downloadURL
@@ -124,18 +107,8 @@
             アクセスURL - データセットの配信にアクセス権を与えるランディング・ページ、フィード、SPARQLエンドポイント、その他の種類の資源。
           </xs:documentation>
         </xs:annotation>
-        <xs:complexType sawsdl:modelReference="http://www.w3.org/2000/01/rdf-schema#Resource Resource">
-          <xs:annotation>
-            <xs:documentation xml:lang="en">
-              File - Downloadable file in given format.
-            </xs:documentation>
-          </xs:annotation>
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="c:iri"/>
-          </xs:sequence>
-        </xs:complexType>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="url_souboru_ke_stažení" sawsdl:modelReference="http://www.w3.org/ns/dcat#downloadURL">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="download_url" type="file" sawsdl:modelReference="http://www.w3.org/ns/dcat#downloadURL">
         <xs:annotation>
           <xs:documentation xml:lang="ar">
             رابط تحميل - رابط مباشر لملف يمكن تحميله. نوع الملف يتم توصيفه باستخدام الخاصية dcterms:format dcat:mediaType 
@@ -165,18 +138,8 @@
             ダウンロードURL - dcat:downloadURLはdcat:accessURLの特定の形式です。しかし、DCATプロファイルが非ダウンロード・ロケーションに対してのみaccessURLを用いる場合には、より強い分離を課すことを望む可能性があるため、この含意を強化しないように、DCATは、dcat:downloadURLをdcat:accessURLのサブプロパティーであると定義しません。
           </xs:documentation>
         </xs:annotation>
-        <xs:complexType sawsdl:modelReference="http://www.w3.org/2000/01/rdf-schema#Resource Resource">
-          <xs:annotation>
-            <xs:documentation xml:lang="en">
-              File - Downloadable file in given format.
-            </xs:documentation>
-          </xs:annotation>
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="c:iri"/>
-          </xs:sequence>
-        </xs:complexType>
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="distribution_-_downloadable_file" type="distribution_-_downloadable_file"/>
+  <xs:element name="distribution_downloadable_file" type="distribution_downloadable_file"/>
 </xs:schema>

@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://techlib.cz/specification/ccmm/subject/schema.json",
+  "title": "Subject",
+  "description": "Subject, keyword, classification code, or key phrase describing the resource.",
+  "type": "object",
+  "required": [
+    "title"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "iri"
+    },
+    "type": {
+      "oneOf": [
+        {
+          "const": "Subject"
+        },
+        {
+          "type": "array",
+          "contains": {
+            "const": "Subject"
+          },
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "definition": {
+      "title": "Definition",
+      "description": "Definition of the subject.",
+      "type": "object",
+      "additionalProperties": {
+        "title": "Hodnota v jiném jazyce",
+        "type": "string"
+      },
+      "required": [
+
+      ],
+      "properties": {
+        "cs": {
+          "title": "Hodnota v českém jazyce",
+          "type": "string"
+        },
+        "en": {
+          "title": "Hodnota v anglickém jazyce",
+          "type": "string"
+        }
+      }
+    },
+    "title": {
+      "title": "Title",
+      "description": "Title of the subject",
+      "type": "object",
+      "required": [
+        "@value",
+        "@language"
+      ],
+      "properties": {
+        "@value": {
+          "title": "Text v daném jazyce",
+          "type": "string"
+        },
+        "@language": {
+          "title": "Jazyk textu",
+          "type": "string"
+        }
+      }
+    },
+    "classification_code": {
+      "title": "Classification code",
+      "description": "The classification code used for the subject term in the subject scheme.",
+      "type": "string"
+    },
+    "in_subject_scheme": {
+      "$ref": "../subject-scheme/schema.json"
+    }
+  }
+}

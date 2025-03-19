@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://techlib.cz/specification/ccmm/agent/schema.json",
+  "title": "Agent",
+  "description": "Any entity carrying out actions with respect to the entities Catalogue and the Catalogued Resources.",
+  "type": "object",
+  "required": [
+
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "iri"
+    },
+    "type": {
+      "oneOf": [
+        {
+          "const": "Agent"
+        },
+        {
+          "type": "array",
+          "contains": {
+            "const": "Agent"
+          },
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "external_identifiers": {
+      "title": "External identifier",
+      "description": "External identifer of an Agent.",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      }
+    },
+    "contactPoint": {
+      "title": "contact point",
+      "description": "Relevant contact information for the catalogued resource. Use of vCard is recommended.",
+      "type": "array",
+      "items": {
+        "$ref": "../contact-details/schema.json"
+      }
+    }
+  }
+}

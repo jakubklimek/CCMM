@@ -1,0 +1,30 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "id": "@id",
+    "type": "@type",
+    "Location": "http://purl.org/dc/terms/Location",
+    "bbox": {
+      "@id": "http://www.w3.org/ns/dcat#bbox",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "location_name": {
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "dataset_relations": {
+      "@id": "relationType",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "geometry": {
+      "@id": "http://www.w3.org/ns/locn#geometry",
+      "@context": "../geometry/context.jsonld"
+    },
+    "related_object_identifier": {
+      "@id": "hasRelatedResource",
+      "@container": "@set",
+      "@context": "../resource/context.jsonld"
+    }
+  }
+}

@@ -20,21 +20,21 @@
     "conforms_to_schema": {
       "@id": "http://purl.org/dc/terms/conformsTo",
       "@container": "@set",
-      "@type": "@id"
+      "@context": "../application-profile/context.jsonld"
     },
-    "typ_média": {
+    "media_type": {
       "@id": "http://www.w3.org/ns/dcat#mediaType",
-      "@type": "@id"
+      "@context": "../media-type/context.jsonld"
     },
-    "přístupová_adresa": {
+    "access_url": {
       "@id": "http://www.w3.org/ns/dcat#accessURL",
       "@container": "@set",
-      "@type": "@id"
+      "@context": "../file/context.jsonld"
     },
-    "url_souboru_ke_stažení": {
+    "download_url": {
       "@id": "http://www.w3.org/ns/dcat#downloadURL",
       "@container": "@set",
-      "@type": "@id"
+      "@context": "../file/context.jsonld"
     }
   }
 }

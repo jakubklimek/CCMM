@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1"
+  elementFormDefault="unqualified" xmlns:c="https://schemas.dataspecer.com/xsd/core/"
+  xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace"
+    schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+  <xs:import namespace="https://schemas.dataspecer.com/xsd/core/"
+    schemaLocation="./2022-07.xsd"/>
+  <xs:include schemaLocation="../dataset/schema.xsd"/>
+  <xs:complexType name="provenance_statement"
+    sawsdl:modelReference="http://purl.org/dc/terms/ProvenanceStatement">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Provenance Statement - Any changes in ownership and custody of a resource since its creation that are significant for its authenticity, integrity, and interpretation.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="c:iri"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="label" type="langString"
+        sawsdl:modelReference="http://www.w3.org/2000/01/rdf-schema#label">
+        <xs:annotation>
+          <xs:documentation xml:lang="">
+            Label
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            Provenance state label
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="provenance_statement" type="provenance_statement"/>
+</xs:schema>

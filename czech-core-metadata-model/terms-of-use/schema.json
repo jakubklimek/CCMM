@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://techlib.cz/specification/ccmm/terms-of-use/schema.json",
+  "title": "Terms of use",
+  "description": "Terms of use defines overall conditions and rights regarding access and usage  of dataset. ",
+  "type": "object",
+  "required": [
+
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "iri"
+    },
+    "type": {
+      "oneOf": [
+        {
+          "const": "Terms of use"
+        },
+        {
+          "type": "array",
+          "contains": {
+            "const": "Terms of use"
+          },
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "description": {
+      "title": "Description",
+      "description": "Descriptive text on details of rights and licensing.",
+      "type": "string"
+    },
+    "license": {
+      "title": "License",
+      "description": "Information about licensing details of the resource.",
+      "type": "string"
+    },
+    "access_rights": {
+      "title": "Access rights",
+      "description": "Information about who access the resource or an indication of its security status.",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      }
+    },
+    "contact_person": {
+      "title": "has contact person",
+      "description": "Contact person for the further details about the terms of use.",
+      "type": "array",
+      "items": {
+        "$ref": "../agent/schema.json"
+      }
+    }
+  }
+}

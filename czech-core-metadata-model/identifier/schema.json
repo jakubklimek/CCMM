@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://techlib.cz/specification/ccmm/identifier/schema.json",
+  "title": "Identifier",
+  "description": "This is based on the UN/CEFACT Identifier class.",
+  "type": "object",
+  "required": [
+    "identifier_scheme",
+    "value"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "iri"
+    },
+    "type": {
+      "oneOf": [
+        {
+          "const": "Identifier"
+        },
+        {
+          "type": "array",
+          "contains": {
+            "const": "Identifier"
+          },
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "identifier_scheme": {
+      "title": "Identifier scheme",
+      "description": "Scheme URI of the identifier.",
+      "type": "string",
+      "format": "iri"
+    },
+    "value": {
+      "title": "Value",
+      "description": "Value of the identifer within the given identifier scheme.",
+      "type": "string"
+    }
+  }
+}

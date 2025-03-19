@@ -1,0 +1,25 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "id": "@id",
+    "type": "@type",
+    "Subject": "Subject",
+    "definition": {
+      "@id": "http://www.w3.org/2004/02/skos/core#definition",
+      "@container": "@language"
+    },
+    "title": {
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "classification_code": {
+      "@id": "subjectClassificationCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "in_subject_scheme": {
+      "@id": "inSubjectScheme",
+      "@context": "../subject-scheme/context.jsonld"
+    }
+  }
+}

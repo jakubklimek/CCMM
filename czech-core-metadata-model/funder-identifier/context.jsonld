@@ -1,0 +1,17 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "id": "@id",
+    "type": "@type",
+    "Funder identifier": "FunderIdentifier",
+    "funder_identifier_scheme_uri": {
+      "@id": "funderIdentifierSchemeUri",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "funder_identifier_type": {
+      "@id": "funderIdentifierType",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    }
+  }
+}

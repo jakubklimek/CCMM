@@ -17,66 +17,20 @@
       "@id": "http://purl.org/dc/terms/language",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
-    "describes": {
-      "@id": "describes",
-      "@container": "@set",
-      "@type": "@id"
-    },
     "qualified_relation": {
       "@id": "qualifiedRelation",
       "@container": "@set",
-      "@context": {
-        "Metadata to agent relationship": "MetadataToAgentRelationship",
-        "relation": {
-          "@id": "http://purl.org/dc/terms/relation",
-          "@container": "@set",
-          "@context": {
-            "Agent": "http://xmlns.com/foaf/0.1/Agent",
-            "external_identifier": {
-              "@id": "agentExternalIdentifier",
-              "@type": "http://www.w3.org/2001/XMLSchema#string"
-            },
-            "kontaktní_bod": {
-              "@id": "http://www.w3.org/ns/dcat#contactPoint",
-              "@container": "@set",
-              "@context": {
-                "Contact details": "ContactDetails",
-                "phone": {
-                  "@id": "dataBox",
-                  "@type": "http://www.w3.org/2001/XMLSchema#string"
-                },
-                "undefined": {
-                  "@id": "email",
-                  "@type": "http://www.w3.org/2001/XMLSchema#string"
-                },
-                "data_box": {
-                  "@id": "phone",
-                  "@type": "http://www.w3.org/2001/XMLSchema#string"
-                }
-              }
-            }
-          }
-        },
-        "sehraná_role": {
-          "@id": "http://www.w3.org/ns/dcat#hadRole",
-          "@container": "@set",
-          "@type": "@id"
-        }
-      }
+      "@context": "../metadata-to-agent-relationship/context.jsonld"
     },
     "original_repository": {
       "@id": "originalRepository",
       "@container": "@set",
-      "@type": "@id"
-    },
-    "local_identifier": {
-      "@id": "http://purl.org/dc/terms/source",
-      "@type": "@id"
+      "@context": "../repository/context.jsonld"
     },
     "conforms_to_standard": {
       "@id": "http://purl.org/dc/terms/conformsTo",
       "@container": "@set",
-      "@type": "@id"
+      "@context": "../application-profile/context.jsonld"
     }
   }
 }

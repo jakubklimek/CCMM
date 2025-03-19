@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1" elementFormDefault="unqualified" xmlns:c="https://schemas.dataspecer.com/xsd/core/" xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+  <xs:include schemaLocation="../documentation/schema.xsd"/>
+  <xs:include schemaLocation="../application-profile/schema.xsd"/>
+  <xs:include schemaLocation="../data-service/schema.xsd"/>
+  <xs:import namespace="https://schemas.dataspecer.com/xsd/core/" schemaLocation="./2022-07.xsd"/>
+  <xs:complexType name="langString">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute ref="xml:lang" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="distribution_data_service" sawsdl:modelReference="Distribution-DataService">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Distribution - data service - Physical embodiment of the dataset as a particular data service. 
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="c:iri"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="description" type="langString" sawsdl:modelReference="http://purl.org/dc/terms/description">
+        <xs:annotation>
+          <xs:documentation xml:lang="">
+            Description
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            A free-text account of the Distribution.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="documentation" type="documentation" sawsdl:modelReference="http://xmlns.com/foaf/0.1/page">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            documentation - A page or document about this Distribution.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="specification" type="application_profile" sawsdl:modelReference="http://purl.org/dc/terms/conformsTo">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            specification - An established standard to which the distribution conforms.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="access_service" type="data_service" sawsdl:modelReference="http://www.w3.org/ns/dcat#accessService">
+        <xs:annotation>
+          <xs:documentation xml:lang="cs">
+            služba pro přístup k datům - Umístění či přístupový bod zpřístupňující distribuci datové sady.
+          </xs:documentation>
+          <xs:documentation xml:lang="da">
+            dataadgangstjeneste - Et websted eller endpoint der giver adgang til en repræsentation af datasættet.
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            access service - A site or end-point that gives access to the distribution of the dataset.
+          </xs:documentation>
+          <xs:documentation xml:lang="es">
+            servicio de acceso de datos - Un sitio o end-point que da acceso a la distribución de un conjunto de datos.
+          </xs:documentation>
+          <xs:documentation xml:lang="it">
+            servizio di accesso ai dati - Un sito o end-point che dà accesso alla distribuzione del set di dati.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="distribution_data_service" type="distribution_data_service"/>
+</xs:schema>

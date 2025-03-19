@@ -7,22 +7,22 @@
     "Distribution - data service": "Distribution-DataService",
     "description": {
       "@id": "http://purl.org/dc/terms/description",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "specification": {
-      "@id": "http://purl.org/dc/terms/conformsTo",
-      "@container": "@set",
-      "@type": "@id"
+      "@container": "@language"
     },
     "documentation": {
       "@id": "http://xmlns.com/foaf/0.1/page",
       "@container": "@set",
-      "@type": "@id"
+      "@context": "../documentation/context.jsonld"
     },
-    "služba_pro_přístup_k_datům": {
+    "specification": {
+      "@id": "http://purl.org/dc/terms/conformsTo",
+      "@container": "@set",
+      "@context": "../application-profile/context.jsonld"
+    },
+    "access_service": {
       "@id": "http://www.w3.org/ns/dcat#accessService",
       "@container": "@set",
-      "@type": "@id"
+      "@context": "../data-service/context.jsonld"
     }
   }
 }

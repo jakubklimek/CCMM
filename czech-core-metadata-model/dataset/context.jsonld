@@ -9,15 +9,15 @@
       "@id": "relatedItemPublicationYear",
       "@type": "http://www.w3.org/2001/XMLSchema#gYear"
     },
-    "descriptions": {
-      "@id": "http://purl.org/dc/terms/description",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
-    },
     "version": {
       "@id": "http://www.w3.org/ns/dcat#version",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
-    "other_languages": {
+    "description": {
+      "@id": "http://purl.org/dc/terms/description",
+      "@container": "@language"
+    },
+    "other_language": {
       "@id": "language",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
@@ -25,435 +25,78 @@
       "@id": "language",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
-    "alternate_titles": {
-      "@id": "alternativeTitle",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "abstract": {
-      "@id": "http://purl.org/dc/terms/abstract",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
-    },
     "resource_type": {
       "@id": "resourceType",
-      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
     "title": {
       "@id": "http://purl.org/dc/terms/title",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "alternate_title": {
+      "@id": "hasAlternateTitle",
+      "@container": "@set",
+      "@context": "../alternate-title/context.jsonld"
+    },
+    "is_described_by": {
+      "@id": "isDescribedBy",
+      "@container": "@set",
+      "@context": "../metadata-record/context.jsonld"
     },
     "identifier": {
-      "@id": "http://purl.org/dc/terms/identifier",
-      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      "@id": "hasIdentifier",
+      "@container": "@set",
+      "@context": "../identifier/context.jsonld"
     },
-    "locations": {
+    "location": {
       "@id": "http://purl.org/dc/terms/spatial",
       "@container": "@set",
-      "@context": {
-        "Location": "http://purl.org/dc/terms/Location",
-        "bbox": {
-          "@id": "http://www.w3.org/ns/dcat#bbox",
-          "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
-        },
-        "location_names": {
-          "@id": "http://purl.org/dc/terms/title",
-          "@type": "http://www.w3.org/2001/XMLSchema#string"
-        },
-        "relations_to_dataset": {
-          "@id": "relationType",
-          "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
-        },
-        "geometry": {
-          "@id": "http://www.w3.org/ns/locn#geometry",
-          "@type": "@id"
-        },
-        "related_objects_identifiers": {
-          "@id": "hasRelatedResource",
-          "@container": "@set",
-          "@context": {
-            "Resource": "http://www.w3.org/2000/01/rdf-schema#Resource",
-            "relation_type": {
-              "@id": "relationType",
-              "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
-            },
-            "type": {
-              "@id": "resourceType",
-              "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
-            },
-            "title": {
-              "@id": "relatedItemTitle",
-              "@type": "http://www.w3.org/2001/XMLSchema#string"
-            },
-            "identifier": {
-              "@id": "identifier",
-              "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
-            },
-            "qualified_relations": {
-              "@id": "qualifiedRelation",
-              "@container": "@set",
-              "@context": {
-                "Resource to Agent Relationship": "http://www.w3.org/ns/dcat#Relationship",
-                "roles": {
-                  "@id": "http://www.w3.org/ns/dcat#hadRole",
-                  "@container": "@set",
-                  "@type": "@id"
-                },
-                "relations": {
-                  "@id": "http://purl.org/dc/terms/relation",
-                  "@container": "@set",
-                  "@context": {
-                    "Agent": "http://xmlns.com/foaf/0.1/Agent",
-                    "external_identifiers": {
-                      "@id": "agentExternalIdentifier",
-                      "@type": "http://www.w3.org/2001/XMLSchema#string"
-                    },
-                    "contact_points": {
-                      "@id": "http://www.w3.org/ns/dcat#contactPoint",
-                      "@container": "@set",
-                      "@context": {
-                        "Contact details": "ContactDetails",
-                        "phone": {
-                          "@id": "dataBox",
-                          "@type": "http://www.w3.org/2001/XMLSchema#string"
-                        },
-                        "email": {
-                          "@id": "email",
-                          "@type": "http://www.w3.org/2001/XMLSchema#string"
-                        },
-                        "data_box": {
-                          "@id": "phone",
-                          "@type": "http://www.w3.org/2001/XMLSchema#string"
-                        },
-                        "addresses": {
-                          "@id": "http://www.w3.org/2006/vcard/ns#hasAddress",
-                          "@container": "@set",
-                          "@type": "@id"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            },
-            "time_references": {
-              "@id": "hasTimeReference",
-              "@container": "@set",
-              "@context": {
-                "Time reference": "TimeReference",
-                "date_information": {
-                  "@id": "dateInformation",
-                  "@type": "http://www.w3.org/2001/XMLSchema#string"
-                },
-                "date_type": {
-                  "@id": "dateType",
-                  "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
-                },
-                "date": {
-                  "@id": "dateValue",
-                  "@type": "http://www.w3.org/2001/XMLSchema#date"
-                }
-              }
-            }
-          }
-        }
-      }
+      "@context": "../location/context.jsonld"
     },
     "provenance": {
       "@id": "http://purl.org/dc/terms/provenance",
       "@container": "@set",
-      "@type": "@id"
+      "@context": "../provenance-statement/context.jsonld"
     },
-    "qualified_relations": {
+    "qualified_relation": {
       "@id": "qualifiedRelation",
       "@container": "@set",
-      "@context": {
-        "Resource to Agent Relationship": "http://www.w3.org/ns/dcat#Relationship",
-        "roles": {
-          "@id": "http://www.w3.org/ns/dcat#hadRole",
-          "@container": "@set",
-          "@type": "@id"
-        },
-        "relations": {
-          "@id": "http://purl.org/dc/terms/relation",
-          "@container": "@set",
-          "@context": {
-            "Agent": "http://xmlns.com/foaf/0.1/Agent",
-            "external_identifiers": {
-              "@id": "agentExternalIdentifier",
-              "@type": "http://www.w3.org/2001/XMLSchema#string"
-            },
-            "contact_points": {
-              "@id": "http://www.w3.org/ns/dcat#contactPoint",
-              "@container": "@set",
-              "@context": {
-                "Contact details": "ContactDetails",
-                "phone": {
-                  "@id": "dataBox",
-                  "@type": "http://www.w3.org/2001/XMLSchema#string"
-                },
-                "email": {
-                  "@id": "email",
-                  "@type": "http://www.w3.org/2001/XMLSchema#string"
-                },
-                "data_box": {
-                  "@id": "phone",
-                  "@type": "http://www.w3.org/2001/XMLSchema#string"
-                },
-                "addresses": {
-                  "@id": "http://www.w3.org/2006/vcard/ns#hasAddress",
-                  "@container": "@set",
-                  "@type": "@id"
-                }
-              }
-            }
-          }
-        }
-      }
+      "@context": "../resource-to-agent-relationship/context.jsonld"
     },
-    "time_references": {
+    "time_reference": {
       "@id": "hasTimeReference",
       "@container": "@set",
-      "@context": {
-        "Time reference": "TimeReference",
-        "date_information": {
-          "@id": "dateInformation",
-          "@type": "http://www.w3.org/2001/XMLSchema#string"
-        },
-        "date_type": {
-          "@id": "dateType",
-          "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
-        },
-        "date": {
-          "@id": "dateValue",
-          "@type": "http://www.w3.org/2001/XMLSchema#date"
-        }
-      }
+      "@context": "../time-reference/context.jsonld"
     },
-    "subjects": {
+    "subject": {
       "@id": "hasSubject",
       "@container": "@set",
-      "@context": {
-        "Subject": "Subject",
-        "definition": {
-          "@id": "http://www.w3.org/2004/02/skos/core#definition",
-          "@type": "http://www.w3.org/2001/XMLSchema#string"
-        },
-        "title": {
-          "@id": "http://purl.org/dc/terms/title",
-          "@type": "http://www.w3.org/2001/XMLSchema#string"
-        },
-        "classification_code": {
-          "@id": "subjectClassificationCode",
-          "@type": "http://www.w3.org/2001/XMLSchema#string"
-        },
-        "in_subject_scheme": {
-          "@id": "inSubjectScheme",
-          "@type": "@id"
-        }
-      }
+      "@context": "../subject/context.jsonld"
     },
-    "validation_results": {
+    "validation_result": {
       "@id": "hasValidationResult",
       "@container": "@set",
-      "@type": "@id"
+      "@context": "../validation-result/context.jsonld"
     },
-    "distributions": {
+    "distribution": {
       "@id": "hasDistribution",
       "@container": "@set",
-      "@context": {
-        "Distribuce": "http://www.w3.org/ns/dcat#Distribution",
-        "title": {
-          "@id": "http://purl.org/dc/terms/title",
-          "@type": "http://www.w3.org/2001/XMLSchema#string"
-        }
-      }
+      "@context": "../distribution/context.jsonld"
     },
-    "funding_references": {
+    "funding_reference": {
       "@id": "hasFundingReference",
       "@container": "@set",
-      "@context": {
-        "Funding reference": "FundingReference",
-        "funding_program": {
-          "@id": null,
-          "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
-        },
-        "award_title": {
-          "@id": "awardTitle",
-          "@type": "http://www.w3.org/2001/XMLSchema#string"
-        },
-        "local_identifier": {
-          "@id": "awardNumber",
-          "@type": "http://www.w3.org/2001/XMLSchema#string"
-        },
-        "funders": {
-          "@id": "hasFunderIdentifier",
-          "@container": "@set",
-          "@context": {
-            "Funder identifier": "FunderIdentifier",
-            "funder_identifier_scheme_uri": {
-              "@id": "funderIdentifierSchemeUri",
-              "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
-            },
-            "funder_identifier_type": {
-              "@id": "funderIdentifierType",
-              "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
-            }
-          }
-        }
-      }
+      "@context": "../funding-reference/context.jsonld"
     },
     "terms_of_use": {
       "@id": "hasVersion",
       "@container": "@set",
-      "@context": {
-        "Terms of use": "Rights",
-        "description": {
-          "@id": "http://purl.org/dc/terms/description",
-          "@type": "http://www.w3.org/2001/XMLSchema#string"
-        },
-        "license": {
-          "@id": "http://purl.org/dc/terms/license",
-          "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
-        },
-        "access_rights": {
-          "@id": null,
-          "@type": "http://www.w3.org/2001/XMLSchema#string"
-        },
-        "contact_persons": {
-          "@id": "http://www.w3.org/ns/dcat#contactPoint",
-          "@container": "@set",
-          "@context": {
-            "Agent": "http://xmlns.com/foaf/0.1/Agent",
-            "external_identifiers": {
-              "@id": "agentExternalIdentifier",
-              "@type": "http://www.w3.org/2001/XMLSchema#string"
-            },
-            "contact_points": {
-              "@id": "http://www.w3.org/ns/dcat#contactPoint",
-              "@container": "@set",
-              "@context": {
-                "Contact details": "ContactDetails",
-                "phone": {
-                  "@id": "dataBox",
-                  "@type": "http://www.w3.org/2001/XMLSchema#string"
-                },
-                "email": {
-                  "@id": "email",
-                  "@type": "http://www.w3.org/2001/XMLSchema#string"
-                },
-                "data_box": {
-                  "@id": "phone",
-                  "@type": "http://www.w3.org/2001/XMLSchema#string"
-                },
-                "addresses": {
-                  "@id": "http://www.w3.org/2006/vcard/ns#hasAddress",
-                  "@container": "@set",
-                  "@type": "@id"
-                }
-              }
-            }
-          }
-        }
-      }
+      "@context": "../terms-of-use/context.jsonld"
     },
-    "related_resources": {
+    "related_resource": {
       "@id": "hasRelatedResource",
       "@container": "@set",
-      "@context": {
-        "Resource": "http://www.w3.org/2000/01/rdf-schema#Resource",
-        "relation_type": {
-          "@id": "relationType",
-          "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
-        },
-        "type": {
-          "@id": "resourceType",
-          "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
-        },
-        "title": {
-          "@id": "relatedItemTitle",
-          "@type": "http://www.w3.org/2001/XMLSchema#string"
-        },
-        "identifier": {
-          "@id": "identifier",
-          "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
-        },
-        "qualified_relations": {
-          "@id": "qualifiedRelation",
-          "@container": "@set",
-          "@context": {
-            "Resource to Agent Relationship": "http://www.w3.org/ns/dcat#Relationship",
-            "roles": {
-              "@id": "http://www.w3.org/ns/dcat#hadRole",
-              "@container": "@set",
-              "@type": "@id"
-            },
-            "relations": {
-              "@id": "http://purl.org/dc/terms/relation",
-              "@container": "@set",
-              "@context": {
-                "Agent": "http://xmlns.com/foaf/0.1/Agent",
-                "external_identifiers": {
-                  "@id": "agentExternalIdentifier",
-                  "@type": "http://www.w3.org/2001/XMLSchema#string"
-                },
-                "contact_points": {
-                  "@id": "http://www.w3.org/ns/dcat#contactPoint",
-                  "@container": "@set",
-                  "@context": {
-                    "Contact details": "ContactDetails",
-                    "phone": {
-                      "@id": "dataBox",
-                      "@type": "http://www.w3.org/2001/XMLSchema#string"
-                    },
-                    "email": {
-                      "@id": "email",
-                      "@type": "http://www.w3.org/2001/XMLSchema#string"
-                    },
-                    "data_box": {
-                      "@id": "phone",
-                      "@type": "http://www.w3.org/2001/XMLSchema#string"
-                    },
-                    "addresses": {
-                      "@id": "http://www.w3.org/2006/vcard/ns#hasAddress",
-                      "@container": "@set",
-                      "@type": "@id"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "time_references": {
-          "@id": "hasTimeReference",
-          "@container": "@set",
-          "@context": {
-            "Time reference": "TimeReference",
-            "date_information": {
-              "@id": "dateInformation",
-              "@type": "http://www.w3.org/2001/XMLSchema#string"
-            },
-            "date_type": {
-              "@id": "dateType",
-              "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
-            },
-            "date": {
-              "@id": "dateValue",
-              "@type": "http://www.w3.org/2001/XMLSchema#date"
-            }
-          }
-        }
-      }
-    },
-    "alternate_identifiers": {
-      "@id": "hasAlternateIdentifier",
-      "@container": "@set",
-      "@context": {
-        "Alternate identifier": "AlternateIdentifier",
-        "alternate_identifier_type": {
-          "@id": "alternateIdentifierType",
-          "@type": "http://www.w3.org/2001/XMLSchema#string"
-        }
-      }
+      "@context": "../resource/context.jsonld"
     }
   }
 }

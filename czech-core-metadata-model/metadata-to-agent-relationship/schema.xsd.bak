@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1" elementFormDefault="unqualified" xmlns:c="https://schemas.dataspecer.com/xsd/core/" xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
+  <xs:include schemaLocation="../contact-details/schema.xsd"/>
+  <xs:import namespace="https://schemas.dataspecer.com/xsd/core/" schemaLocation="https://techlib.cz/specification/ccmm/person/2022-07.xsd"/>
+  <xs:complexType name="metadata_to_agent_relationship" sawsdl:modelReference="MetadataToAgentRelationship">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Metadata to agent relationship - Relationship between metadata record and agent.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="c:iri"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="external_identifiers" type="xs:string" sawsdl:modelReference="agentExternalIdentifier"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="contactPoint" type="contact_details" sawsdl:modelReference="http://www.w3.org/ns/dcat#contactPoint"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="metadata_to_agent_relationship" type="metadata_to_agent_relationship"/>
+</xs:schema>
