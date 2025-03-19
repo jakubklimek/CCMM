@@ -29,5 +29,5 @@ Each subdirectory contains strucutured models formalized in XSD (schema.xsd) and
 
 On the directory level, there is also [documentation](https://eosc-cz.github.io/CCMM/czech-core-metadata-model/documentation) of data strucutes, unfortunately, possibly due to the DataSpecer bug, it is generated only in czech language.
 
-[Project to open in DataSpecer](./Czech Core Metadata Model.zip) is newly also part of the repository.
+[Project to open in DataSpecer](https://github.com/EOSC-CZ/CCMM/blob/main/Czech%20Core%20Metadata%20Model.zip) is newly also part of the repository.
 
