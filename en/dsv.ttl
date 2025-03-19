@@ -24,7 +24,7 @@
     dsv:cardinality <https://w3id.org/dsv#11>;
     dsv:property dct:title;
     a dsv:DatatypePropertyProfile;
-    dsv:datatypePropertyRange rdf:langString.
+    dsv:datatypePropertyRange <http://www.w3.org/2001/XMLSchema#string>.
 
 <https://techlib.cz/profile/ccmm/Dataset.resourceType> dsv:domain <https://techlib.cz/profile/ccmm/Dataset>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1" elementFormDefault="unqualified" xmlns:c="https://schemas.dataspecer.com/xsd/core/" xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
-  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1"
+  elementFormDefault="unqualified" xmlns:c="https://schemas.dataspecer.com/xsd/core/"
+  xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace"
+    schemaLocation="http://www.w3.org/2001/xml.xsd"/>
   <xs:include schemaLocation="../alternate-title/schema.xsd"/>
   <xs:include schemaLocation="../metadata-record/schema.xsd"/>
   <xs:include schemaLocation="../identifier/schema.xsd"/>
@@ -54,7 +58,8 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element minOccurs="0" ref="c:iri"/>
-      <xs:element minOccurs="0" name="publication_year" type="xs:gYear" sawsdl:modelReference="relatedItemPublicationYear">
+      <xs:element minOccurs="0" name="publication_year" type="xs:gYear"
+        sawsdl:modelReference="relatedItemPublicationYear">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Publication year
@@ -64,7 +69,8 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" name="version" type="xs:string" sawsdl:modelReference="http://www.w3.org/ns/dcat#version">
+      <xs:element minOccurs="0" name="version" type="xs:string"
+        sawsdl:modelReference="http://www.w3.org/ns/dcat#version">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Version
@@ -80,7 +86,8 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="unbounded" name="description" type="langString" sawsdl:modelReference="http://purl.org/dc/terms/description">
+      <xs:element maxOccurs="unbounded" name="description" type="langString"
+        sawsdl:modelReference="http://purl.org/dc/terms/description">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Description
@@ -90,7 +97,8 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="other_language" type="xs:string" sawsdl:modelReference="language">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="other_language" type="xs:string"
+        sawsdl:modelReference="language">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Other language
@@ -110,7 +118,8 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" name="resource_type" type="xs:string" sawsdl:modelReference="resourceType">
+      <xs:element minOccurs="0" name="resource_type" type="xs:string"
+        sawsdl:modelReference="resourceType">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Resource type
@@ -120,7 +129,8 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="title" type="langString" sawsdl:modelReference="http://purl.org/dc/terms/title http://purl.org/dc/terms/title">
+      <xs:element name="title" type="xs:string"
+        sawsdl:modelReference="http://purl.org/dc/terms/title http://purl.org/dc/terms/title">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Title
@@ -130,91 +140,105 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="alternate_title" type="alternate_title" sawsdl:modelReference="hasAlternateTitle">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="alternate_title" type="alternate_title"
+        sawsdl:modelReference="hasAlternateTitle">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             has alternate title
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="unbounded" name="is_described_by" type="metadata_record" sawsdl:modelReference="isDescribedBy">
+      <xs:element maxOccurs="unbounded" name="is_described_by" type="metadata_record"
+        sawsdl:modelReference="isDescribedBy">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             is described by - Inverse relation between dataset and metadata record.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="unbounded" name="identifier" type="identifier" sawsdl:modelReference="hasIdentifier">
+      <xs:element maxOccurs="unbounded" name="identifier" type="identifier"
+        sawsdl:modelReference="hasIdentifier">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             has identifier - has identifier
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="location" type="location" sawsdl:modelReference="http://purl.org/dc/terms/spatial http://purl.org/dc/terms/spatial">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="location" type="location"
+        sawsdl:modelReference="http://purl.org/dc/terms/spatial http://purl.org/dc/terms/spatial">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             has location - The geographical area covered by the dataset.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="provenance" type="provenance_statement" sawsdl:modelReference="http://purl.org/dc/terms/provenance">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="provenance" type="provenance_statement"
+        sawsdl:modelReference="http://purl.org/dc/terms/provenance">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             provenance - A statement about the lineage of a Dataset.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="qualified_relation" type="resource_to_agent_relationship" sawsdl:modelReference="qualifiedRelation http://www.w3.org/ns/dcat#qualifiedRelation">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="qualified_relation"
+        type="resource_to_agent_relationship"
+        sawsdl:modelReference="qualifiedRelation http://www.w3.org/ns/dcat#qualifiedRelation">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             qualified relation - Attachment of resource to the relationship.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="time_reference" type="time_reference" sawsdl:modelReference="hasTimeReference">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="time_reference" type="time_reference"
+        sawsdl:modelReference="hasTimeReference">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             has time reference
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="subject" type="subject" sawsdl:modelReference="hasSubject">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="subject" type="subject"
+        sawsdl:modelReference="hasSubject">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             has subject
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="validation_result" type="validation_result" sawsdl:modelReference="hasValidationResult">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="validation_result"
+        type="validation_result" sawsdl:modelReference="hasValidationResult">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             has validation result
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="distribution" type="distribution" sawsdl:modelReference="hasDistribution">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="distribution" type="distribution"
+        sawsdl:modelReference="hasDistribution">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             has distribution
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="funding_reference" type="funding_reference" sawsdl:modelReference="hasFundingReference">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="funding_reference"
+        type="funding_reference" sawsdl:modelReference="hasFundingReference">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             has funding reference
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="terms_of_use" type="terms_of_use" sawsdl:modelReference="hasVersion">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="terms_of_use" type="terms_of_use"
+        sawsdl:modelReference="hasVersion">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             has terms of use
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="related_resource" type="resource" sawsdl:modelReference="hasRelatedResource">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="related_resource" type="resource"
+        sawsdl:modelReference="hasRelatedResource">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             has related resource

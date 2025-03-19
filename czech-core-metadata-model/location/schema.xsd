@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1" elementFormDefault="unqualified" xmlns:c="https://schemas.dataspecer.com/xsd/core/" xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1" elementFormDefault="unqualified" xmlns:c="https://schemas.dataspecer.com/xsd/core/" xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
   <xs:include schemaLocation="../geometry/schema.xsd"/>
   <xs:include schemaLocation="../resource/schema.xsd"/>
   <xs:import namespace="https://schemas.dataspecer.com/xsd/core/" schemaLocation="./2022-07.xsd"/>
+  <xs:import namespace="http://www.opengis.net/ows/1.1" schemaLocation="https://schemas.opengis.net/ows/1.1.0/owsCommon.xsd"/>
   <xs:complexType name="location" sawsdl:modelReference="http://purl.org/dc/terms/Location Geolocation">
     <xs:annotation>
       <xs:documentation xml:lang="en">
@@ -11,7 +12,7 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element minOccurs="0" ref="c:iri"/>
-      <xs:element minOccurs="0" name="bbox" type="xs:anySimpleType" sawsdl:modelReference="http://www.w3.org/ns/dcat#bbox">
+      <xs:element minOccurs="0" name="bbox" type="ows:BoundingBoxType" sawsdl:modelReference="http://www.w3.org/ns/dcat#bbox">
         <xs:annotation>
           <xs:documentation xml:lang="cs">
             ohraničení oblasti
