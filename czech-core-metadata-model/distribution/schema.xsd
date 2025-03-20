@@ -13,6 +13,9 @@
   <xs:complexType name="distribution" sawsdl:modelReference="http://www.w3.org/ns/dcat#Distribution"
     abstract="true">
     <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Distribution  
+      </xs:documentation>
       <xs:documentation xml:lang="ar">
         التوزيع - شكل محدد لقائمة البيانات يمكن الوصول إليه. قائمة بيانات ما يمكن أن تكون متاحه باشكال و أنواع متعددة.  ملف يمكن تحميله أو واجهة برمجية يمكن من خلالها الوصول إلى البيانات هي أمثلة على ذلك.
       </xs:documentation>
@@ -26,7 +29,7 @@
         Διανομή - Αναπαριστά μία συγκεκριμένη διαθέσιμη μορφή ενός συνόλου δεδομένων. Κάθε σύνολο δεδομενων μπορεί να είναι διαθέσιμο σε διαφορετικές μορφές, οι μορφές αυτές μπορεί να αναπαριστούν διαφορετικές μορφές αρχείων ή διαφορετικά σημεία διάθεσης. Παραδείγματα διανομών συμπεριλαμβάνουν ένα μεταφορτώσιμο αρχείο μορφής CSV, ένα API ή ένα RSS feed.
       </xs:documentation>
       <xs:documentation xml:lang="en">
-        Distribution - A specific representation of a dataset. A dataset might be available in multiple serializations that may differ in various ways, including natural language, media-type or format, schematic organization, temporal and spatial resolution, level of detail or profiles (which might specify any or all of the above).
+        A specific representation of a dataset. A dataset might be available in multiple serializations that may differ in various ways, including natural language, media-type or format, schematic organization, temporal and spatial resolution, level of detail or profiles (which might specify any or all of the above).
       </xs:documentation>
       <xs:documentation xml:lang="es">
         Distribución - Una representación específica de los datos. Cada conjunto de datos puede estar disponible en formas diferentes, las cuáles pueden variar en distintas formas, incluyendo el idioma, 'media-type' o formato, organización esquemática, resolución temporal y espacial, nivel de detalle o perfiles (que pueden especificar cualquiera o todas las diferencias anteriores).
@@ -60,7 +63,10 @@
   <xs:complexType name="distribution_data_service" sawsdl:modelReference="Distribution-DataService">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Distribution - data service - Physical embodiment of the dataset as a particular data service. 
+        Distrbution - data service  
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Physical embodiment of the dataset as a particular data service. 
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -81,7 +87,10 @@
             sawsdl:modelReference="http://xmlns.com/foaf/0.1/page">
             <xs:annotation>
               <xs:documentation xml:lang="en">
-            documentation - A page or document about this Distribution.
+                Documentation
+              </xs:documentation>
+              <xs:documentation xml:lang="en">
+            A page or document about this Distribution.
           </xs:documentation>
             </xs:annotation>
           </xs:element>
@@ -89,13 +98,19 @@
             type="application_profile" sawsdl:modelReference="http://purl.org/dc/terms/conformsTo">
             <xs:annotation>
               <xs:documentation xml:lang="en">
-            specification - An established standard to which the distribution conforms.
+                Specification
+              </xs:documentation>
+              <xs:documentation xml:lang="en">
+            An established standard to which the distribution conforms.
           </xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element minOccurs="0" maxOccurs="unbounded" name="access_service" type="data_service"
             sawsdl:modelReference="http://www.w3.org/ns/dcat#accessService">
             <xs:annotation>
+              <xs:documentation xml:lang="en">
+                Access service
+              </xs:documentation>
               <xs:documentation xml:lang="cs">
             služba pro přístup k datům - Umístění či přístupový bod zpřístupňující distribuci datové sady.
           </xs:documentation>
@@ -103,7 +118,7 @@
             dataadgangstjeneste - Et websted eller endpoint der giver adgang til en repræsentation af datasættet.
           </xs:documentation>
               <xs:documentation xml:lang="en">
-            access service - A site or end-point that gives access to the distribution of the dataset.
+            A site or end-point that gives access to the distribution of the dataset.
           </xs:documentation>
               <xs:documentation xml:lang="es">
             servicio de acceso de datos - Un sitio o end-point que da acceso a la distribución de un conjunto de datos.
@@ -123,7 +138,10 @@
     sawsdl:modelReference="Distribution-DownloadableFile">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Distribution - downloadable file - Physical embodiment of the dataset in a particular format. 
+        Distribution - downloadable file
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Physical embodiment of the dataset in a particular format. 
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -155,7 +173,10 @@
             sawsdl:modelReference="http://purl.org/dc/terms/format">
             <xs:annotation>
               <xs:documentation xml:lang="en">
-            Format - The file format of the Distribution. 
+                Format
+              </xs:documentation>
+              <xs:documentation xml:lang="en">
+                The file format of the Distribution. 
           </xs:documentation>
             </xs:annotation>
           </xs:element>
@@ -163,13 +184,19 @@
             type="application_profile" sawsdl:modelReference="http://purl.org/dc/terms/conformsTo">
             <xs:annotation>
               <xs:documentation xml:lang="en">
-            conforms to schema - An established standard to which the distribution conforms.
+                Conforms to schema
+              </xs:documentation>
+              <xs:documentation xml:lang="en">
+            An established standard to which the distribution conforms.
           </xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element minOccurs="0" name="media_type" type="media_type"
             sawsdl:modelReference="http://www.w3.org/ns/dcat#mediaType">
             <xs:annotation>
+              <xs:documentation xml:lang="en">
+                Media type
+              </xs:documentation>
               <xs:documentation xml:lang="ar">
             نوع الميديا - يجب استخدام هذه الخاصية إذا كان نوع الملف معرف ضمن IANA
           </xs:documentation>
@@ -183,7 +210,7 @@
             τύπος μέσου - Η ιδιότητα αυτή ΘΑ ΠΡΕΠΕΙ να χρησιμοποιείται όταν ο τύπος μέσου μίας διανομής είναι ορισμένος στο IANA, αλλιώς η ιδιότητα dcterms:format ΔΥΝΑΤΑΙ να χρησιμοποιηθεί με διαφορετικές τιμές.
           </xs:documentation>
               <xs:documentation xml:lang="en">
-            media type - The media type of the distribution as defined by IANA
+            The media type of the distribution as defined by IANA
           </xs:documentation>
               <xs:documentation xml:lang="es">
             tipo de media - Esta propiedad debe ser usada cuando está definido el tipo de media de la distribución en IANA, de otra manera dcterms:format puede ser utilizado con diferentes valores
@@ -202,6 +229,9 @@
           <xs:element maxOccurs="unbounded" name="access_url" type="xs:anyURI"
             sawsdl:modelReference="http://www.w3.org/ns/dcat#accessURL">
             <xs:annotation>
+              <xs:documentation xml:lang="en">
+                Access URL
+              </xs:documentation>
               <xs:documentation xml:lang="ar">
             رابط وصول - أي رابط يتيح الوصول إلى البيانات. إذا كان الرابط هو ربط مباشر لملف يمكن تحميله استخدم الخاصية downloadURL
           </xs:documentation>
@@ -215,7 +245,7 @@
             URL πρόσβασης - Μπορεί να είναι οποιουδήποτε είδους URL που δίνει πρόσβαση στη διανομή ενός συνόλου δεδομένων. Π.χ. ιστοσελίδα αρχικής πρόσβασης, μεταφόρτωση, feed URL, σημείο διάθεσης SPARQL. Να χρησιμοποιείται όταν ο κατάλογος δεν περιέχει πληροφορίες εαν πρόκειται ή όχι για μεταφορτώσιμο αρχείο.
           </xs:documentation>
               <xs:documentation xml:lang="en">
-            access URL - A URL that gives access to a Distribution of the Dataset.
+            A URL that gives access to a Distribution of the Dataset.
           </xs:documentation>
               <xs:documentation xml:lang="es">
             URL de acceso - Puede ser cualquier tipo de URL que de acceso a una distribución del conjunto de datos, e.g., página de destino, descarga, URL feed, punto de acceso SPARQL. Esta propriedad se debe usar cuando su catálogo de datos no tiene información sobre donde está o cuando no se puede descargar.
@@ -234,6 +264,9 @@
           <xs:element minOccurs="0" maxOccurs="unbounded" name="download_url" type="xs:anyURI"
             sawsdl:modelReference="http://www.w3.org/ns/dcat#downloadURL">
             <xs:annotation>
+              <xs:documentation xml:lang="en">
+                Download URL
+              </xs:documentation>
               <xs:documentation xml:lang="ar">
             رابط تحميل - رابط مباشر لملف يمكن تحميله. نوع الملف يتم توصيفه باستخدام الخاصية dcterms:format dcat:mediaType 
           </xs:documentation>
@@ -247,7 +280,7 @@
             URL μεταφόρτωσης - Είναι ένας σύνδεσμος άμεσης μεταφόρτωσης ενός αρχείου σε μια δεδομένη μορφή. Π.χ. ένα αρχείο CSV ή RDF. Η μορφη αρχείου περιγράφεται από τις ιδιότητες dcterms:format ή/και dcat:mediaType της διανομής.
           </xs:documentation>
               <xs:documentation xml:lang="en">
-            download URL - A URL that is a direct link to a downloadable file in a given format.
+            A URL that is a direct link to a downloadable file in a given format.
           </xs:documentation>
               <xs:documentation xml:lang="es">
             URL de descarga - La URL de un archivo descargable en el formato dato. Por ejemplo, archivo CSV o archivo RDF. El formato se describe con las propiedades de la distribución dcterms:format y/o dcat:mediaType.

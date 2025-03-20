@@ -10,7 +10,10 @@
   <xs:complexType name="documentation" sawsdl:modelReference="http://xmlns.com/foaf/0.1/Document">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Documentation - A textual resource intended for human consumption that contains information about the data service.
+      Documentation  
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        A textual resource intended for human consumption that contains information about the data service.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>

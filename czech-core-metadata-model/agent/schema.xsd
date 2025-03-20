@@ -10,7 +10,10 @@
     abstract="true">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Agent - Any entity carrying out actions with respect to the entities Catalogue and the Catalogued Resources.
+        Agent
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Any entity carrying out actions with respect to the entities Catalogue and the Catalogued Resources.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -19,13 +22,19 @@
         sawsdl:modelReference="agentExternalIdentifier">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            External identifier - External identifer of an Agent.
+            External identifier
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            External identifer of an Agent.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="contactPoint" type="contact_details"
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="contact_point" type="contact_details"
         sawsdl:modelReference="http://www.w3.org/ns/dcat#contactPoint">
         <xs:annotation>
+          <xs:documentation xml:lang="en">
+          Contact point
+          </xs:documentation>
           <xs:documentation xml:lang="ar">
             عنوان اتصال - تربط قائمة البيانات بعنوان اتصال موصف  باستخدام VCard
           </xs:documentation>
@@ -39,7 +48,7 @@
             σημείο επικοινωνίας - Συνδέει ένα σύνολο δεδομένων με ένα σχετικό σημείο επικοινωνίας, μέσω VCard.
           </xs:documentation>
           <xs:documentation xml:lang="en">
-            contact point - Relevant contact information for the catalogued resource. Use of vCard is recommended.
+            Relevant contact information for the catalogued resource. Use of vCard is recommended.
           </xs:documentation>
           <xs:documentation xml:lang="es">
             Punto de contacto - Información relevante de contacto para el recurso catalogado. Se recomienda el uso de vCard.
@@ -62,7 +71,10 @@
     sawsdl:modelReference="http://www.w3.org/ns/prov#Organization http://xmlns.com/foaf/0.1/Agent">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Organization - Represents a collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures. 
+        Organization
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Represents a collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures. 
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -98,7 +110,10 @@
   <xs:complexType name="person" sawsdl:modelReference="http://www.w3.org/ns/prov#Person">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Person - Physical person. 
+        Person
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Physical person. 
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -130,14 +145,20 @@
             sawsdl:modelReference="hasAffiliation">
             <xs:annotation>
               <xs:documentation xml:lang="en">
-            has affiliation - Affiliation of the person to the organization.
+                Affiliation
+              </xs:documentation>
+              <xs:documentation xml:lang="en">
+            Affiliation of the person to the organization.
           </xs:documentation>
             </xs:annotation>
             <xs:complexType
               sawsdl:modelReference="http://www.w3.org/ns/prov#Organization http://xmlns.com/foaf/0.1/Agent">
               <xs:annotation>
                 <xs:documentation xml:lang="en">
-              Organization - Represents a collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures. 
+                  Organization
+                </xs:documentation>
+                <xs:documentation xml:lang="en">
+              Represents a collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures. 
             </xs:documentation>
               </xs:annotation>
               <xs:sequence>

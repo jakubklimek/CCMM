@@ -11,7 +11,10 @@
   <xs:complexType name="subject_scheme" sawsdl:modelReference="SubjectScheme">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Subject scheme - Collection of subjects (keywords, concepts, classification codes) curated by a single source.
+        Subject scheme
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Collection of subjects (keywords, concepts, classification codes) curated by a single source.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>

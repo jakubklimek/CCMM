@@ -11,7 +11,10 @@
   <xs:complexType name="alternate_title" sawsdl:modelReference="AlternateTitle">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Alternate title - Alternate title f the resource
+        Alternate title
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Alternate title of the resource
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>

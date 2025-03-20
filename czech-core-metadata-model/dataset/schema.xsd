@@ -28,6 +28,9 @@
   </xs:complexType>
   <xs:complexType name="dataset" sawsdl:modelReference="http://www.w3.org/ns/dcat#Dataset">
     <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Dataset
+      </xs:documentation>
       <xs:documentation xml:lang="ar">
         قائمة بيانات - قائمة بيانات منشورة أو مجموعة من قبل مصدر ما و متاح الوصول إليها أو تحميلها
       </xs:documentation>
@@ -144,7 +147,7 @@
         sawsdl:modelReference="hasAlternateTitle">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            has alternate title
+            alternate title
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -152,7 +155,10 @@
         sawsdl:modelReference="isDescribedBy">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            is described by - Inverse relation between dataset and metadata record.
+            is described by
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            Inverse relation between dataset and metadata record.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -160,7 +166,10 @@
         sawsdl:modelReference="hasIdentifier">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            has identifier - has identifier
+            identifier
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            has identifier
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -168,7 +177,10 @@
         sawsdl:modelReference="http://purl.org/dc/terms/spatial http://purl.org/dc/terms/spatial">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            has location - The geographical area covered by the dataset.
+            Location
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            The geographical area covered by the dataset.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -185,7 +197,10 @@
         sawsdl:modelReference="qualifiedRelation http://www.w3.org/ns/dcat#qualifiedRelation">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            qualified relation - Attachment of resource to the relationship.
+            Qualified relation
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            Attachment of resource to the relationship.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -193,7 +208,7 @@
         sawsdl:modelReference="hasTimeReference">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            has time reference
+            time reference
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -201,7 +216,7 @@
         sawsdl:modelReference="hasSubject">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            has subject
+            subject
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -209,15 +224,15 @@
         type="validation_result" sawsdl:modelReference="hasValidationResult">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            has validation result
+            validation result
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="distribution" type="distribution"
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="distribution" 
         sawsdl:modelReference="hasDistribution">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            has distribution
+            distribution
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -225,7 +240,7 @@
         type="funding_reference" sawsdl:modelReference="hasFundingReference">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            has funding reference
+            funding reference
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -233,7 +248,7 @@
         sawsdl:modelReference="hasVersion">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            has terms of use
+            terms of use
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -241,7 +256,7 @@
         sawsdl:modelReference="hasRelatedResource">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            has related resource
+            related resource
           </xs:documentation>
         </xs:annotation>
       </xs:element>

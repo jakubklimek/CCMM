@@ -10,6 +10,9 @@
   <xs:include schemaLocation="../dataset/schema.xsd"/>
   <xs:complexType name="repository" sawsdl:modelReference="http://www.w3.org/ns/dcat#Catalog">
     <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Catalogue  
+      </xs:documentation>
       <xs:documentation xml:lang="ar">
         فهرس قوائم البيانات - مجموعة من توصيفات قوائم البيانات
       </xs:documentation>
@@ -29,7 +32,7 @@
         Catálogo - Una colección curada de metadatos sobre recursos (por ejemplo, conjuntos de datos y servicios de datos en el contexto de un catálogo de datos).
       </xs:documentation>
       <xs:documentation xml:lang="fr">
-        Catalogue - Une collection élaborée de métadonnées sur les jeux de données
+        Une collection élaborée de métadonnées sur les jeux de données
       </xs:documentation>
       <xs:documentation xml:lang="it">
         Catalogo - Una raccolta curata di metadati sulle risorse (ad es. sui dataset e relativi servizi nel contesto di cataloghi di dati).

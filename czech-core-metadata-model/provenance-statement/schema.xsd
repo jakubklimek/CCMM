@@ -12,7 +12,10 @@
     sawsdl:modelReference="http://purl.org/dc/terms/ProvenanceStatement">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Provenance Statement - Any changes in ownership and custody of a resource since its creation that are significant for its authenticity, integrity, and interpretation.
+      Provenance statement  
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Any changes in ownership and custody of a resource since its creation that are significant for its authenticity, integrity, and interpretation.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>

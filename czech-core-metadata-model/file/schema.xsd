@@ -6,7 +6,10 @@
   <xs:complexType name="file" sawsdl:modelReference="http://www.w3.org/2000/01/rdf-schema#Resource Resource">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        File - Downloadable file in given format.
+      File  
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Downloadable file in given format.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>

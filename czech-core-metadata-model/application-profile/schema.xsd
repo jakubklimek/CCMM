@@ -12,7 +12,10 @@
     sawsdl:modelReference="http://purl.org/dc/terms/Standard">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Application profile - A standard or other specification to which a metadata record conforms.
+        Application profile
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        A standard or other specification to which a metadata record conforms.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>

@@ -7,13 +7,19 @@
   <xs:complexType name="location" sawsdl:modelReference="http://purl.org/dc/terms/Location Geolocation">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Location - Spatial region, named place or geometry representation of a place related to the dataset. 
+      Location  
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Spatial region, named place or geometry representation of a place related to the dataset. 
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element minOccurs="0" ref="c:iri"/>
       <xs:element minOccurs="0" name="bbox" type="ows:BoundingBoxType" sawsdl:modelReference="http://www.w3.org/ns/dcat#bbox">
         <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Bbox
+          </xs:documentation>
           <xs:documentation xml:lang="cs">
             ohraničení oblasti
           </xs:documentation>
@@ -21,7 +27,7 @@
             bounding box
           </xs:documentation>
           <xs:documentation xml:lang="en">
-            bbox - Bounding box of the location geometry.
+            Bounding box of the location geometry.
           </xs:documentation>
           <xs:documentation xml:lang="es">
             cuadro delimitador
@@ -54,14 +60,20 @@
       <xs:element minOccurs="0" name="geometry" type="geometry" sawsdl:modelReference="http://www.w3.org/ns/locn#geometry">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            geometry - The corresponding geometry for a resource.
+            Geometry
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            The corresponding geometry for a resource.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="related_object_identifier" type="resource" sawsdl:modelReference="hasRelatedResource">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            has related object identifier - Relation to the existing spatial object.
+            Related object identifier
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            Relation to the existing spatial object.
           </xs:documentation>
         </xs:annotation>
       </xs:element>

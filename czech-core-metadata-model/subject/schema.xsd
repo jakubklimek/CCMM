@@ -12,7 +12,10 @@
   <xs:complexType name="subject" sawsdl:modelReference="Subject">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Subject - Subject, keyword, classification code, or key phrase describing the resource.
+        Subject        
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Subject, keyword, classification code, or key phrase describing the resource.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>

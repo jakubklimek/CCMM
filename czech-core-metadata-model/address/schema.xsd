@@ -11,7 +11,10 @@
   <xs:complexType name="address" sawsdl:modelReference="http://www.w3.org/ns/locn#Address">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Address - An &#34;address representation&#34; as conceptually defined by the INSPIRE Address Representation data type. The locn:addressId property may be used to link this locn:Address to other representations.
+        Address
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        An &#34;address representation&#34; as conceptually defined by the INSPIRE Address Representation data type. The locn:addressId property may be used to link this locn:Address to other representations.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>

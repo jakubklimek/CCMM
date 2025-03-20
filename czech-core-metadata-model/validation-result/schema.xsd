@@ -11,7 +11,10 @@
   <xs:complexType name="validation_result" sawsdl:modelReference="ValidationResult">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Validation result - Class describing the result of validation testing. It may include validation of metadata, data and/or web services accessing the data.
+        Validation result
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Class describing the result of validation testing. It may include validation of metadata, data and/or web services accessing the data.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>

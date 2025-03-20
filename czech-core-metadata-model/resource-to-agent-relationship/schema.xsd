@@ -10,7 +10,7 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element minOccurs="0" ref="c:iri"/>
-      <xs:element name="relation" type="agent" sawsdl:modelReference="http://purl.org/dc/terms/relation">
+      <xs:element ref="agent" sawsdl:modelReference="http://purl.org/dc/terms/relation">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             relation

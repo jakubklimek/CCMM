@@ -4,7 +4,10 @@
   <xs:complexType name="funder_identifier" sawsdl:modelReference="FunderIdentifier">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Funder identifier - Uniquely identifies a funding entity, according to various types.
+        Funder identifier  
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Uniquely identifies a funding entity, according to various types.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>

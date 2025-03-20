@@ -6,6 +6,9 @@
   <xs:import namespace="https://schemas.dataspecer.com/xsd/core/" schemaLocation="./2022-07.xsd"/>
   <xs:complexType name="metadata_record" sawsdl:modelReference="http://www.w3.org/ns/dcat#CatalogRecord">
     <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Metadata record
+      </xs:documentation>
       <xs:documentation xml:lang="ar">
         سجل
       </xs:documentation>
@@ -49,35 +52,50 @@
       <xs:element minOccurs="0" name="date_created" type="xs:date" sawsdl:modelReference="http://purl.org/dc/terms/created">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            Date Created - The date on which the metadata record was created.
+            Date Created
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            The date on which the metadata record was created.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="language" type="xs:string" sawsdl:modelReference="http://purl.org/dc/terms/language">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            Language - Language of the metadata record
+            Language
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            Language of the metadata record
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="qualified_relation" type="metadata_to_agent_relationship" sawsdl:modelReference="qualifiedRelation">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            qualified relation - Attachment of resource to the relationship.
+            Qualified relation
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            Attachment of resource to the relationship.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="original_repository" type="repository" sawsdl:modelReference="originalRepository">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            original repository - Link to the repository from which the metadata were originally stored and curated.
+            Original repository
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            Link to the repository from which the metadata were originally stored and curated.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="conforms_to_standard" type="application_profile" sawsdl:modelReference="http://purl.org/dc/terms/conformsTo">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            Conforms to standard - An established standard to which the metadata record conforms.
+            Conforms to standard
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            An established standard to which the metadata record conforms.
           </xs:documentation>
         </xs:annotation>
       </xs:element>

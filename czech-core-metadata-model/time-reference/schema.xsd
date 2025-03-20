@@ -4,7 +4,10 @@
   <xs:complexType name="time_reference" sawsdl:modelReference="TimeReference">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Time reference - A date on which something relative to the resource has happened.
+        Time reference
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        A date on which something relative to the resource has happened.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -32,7 +35,10 @@
       <xs:element minOccurs="0" name="date" type="xs:date" sawsdl:modelReference="dateValue">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            Date - A point or period of time associated with an event in the lifecycle of the resource.
+            Date
+          </xs:documentation>
+          <xs:documentation xml:lang="en">
+            A point or period of time associated with an event in the lifecycle of the resource.
           </xs:documentation>
         </xs:annotation>
       </xs:element>

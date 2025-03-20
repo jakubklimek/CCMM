@@ -7,7 +7,10 @@
   <xs:complexType name="identifier" sawsdl:modelReference="http://www.w3.org/ns/adms#Identifier">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Identifier - This is based on the UN/CEFACT Identifier class.
+        Identifier  
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        This is based on the UN/CEFACT Identifier class.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>

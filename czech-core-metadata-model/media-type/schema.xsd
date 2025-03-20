@@ -10,7 +10,10 @@
   <xs:complexType name="media_type" sawsdl:modelReference="http://purl.org/dc/terms/MediaType">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Media Type - A file format or physical medium.
+      Media type  
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        A file format or physical medium.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>

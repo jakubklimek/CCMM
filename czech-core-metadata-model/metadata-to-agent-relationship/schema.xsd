@@ -5,13 +5,16 @@
   <xs:complexType name="metadata_to_agent_relationship" sawsdl:modelReference="MetadataToAgentRelationship">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Metadata to agent relationship - Relationship between metadata record and agent.
+        Metadata to agent relationship
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Relationship between metadata record and agent.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element minOccurs="0" ref="c:iri"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="external_identifiers" type="xs:string" sawsdl:modelReference="agentExternalIdentifier"/>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="contactPoint" type="contact_details" sawsdl:modelReference="http://www.w3.org/ns/dcat#contactPoint"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="contact_point" type="contact_details" sawsdl:modelReference="http://www.w3.org/ns/dcat#contactPoint"/>
     </xs:sequence>
   </xs:complexType>
   <xs:element name="metadata_to_agent_relationship" type="metadata_to_agent_relationship"/>

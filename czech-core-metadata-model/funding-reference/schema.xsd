@@ -5,7 +5,10 @@
   <xs:complexType name="funding_reference" sawsdl:modelReference="FundingReference">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Funding reference - Information about financial support (funding) for the resource being registered.
+        Funding reference  
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Information about financial support (funding) for the resource being registered.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>

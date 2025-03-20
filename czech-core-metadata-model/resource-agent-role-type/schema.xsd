@@ -4,7 +4,10 @@
   <xs:complexType name="resource_agent_role_type" sawsdl:modelReference="http://www.w3.org/2004/02/skos/core#Concept">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Resource agent role type - An idea or notion; a unit of thought.
+        Resource agent role type
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        An idea or notion; a unit of thought.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>

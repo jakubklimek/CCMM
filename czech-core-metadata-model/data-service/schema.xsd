@@ -9,6 +9,9 @@
   <xs:include schemaLocation="../dataset/schema.xsd"/>
   <xs:complexType name="data_service" sawsdl:modelReference="http://www.w3.org/ns/dcat#DataService">
     <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Data service  
+      </xs:documentation>
       <xs:documentation xml:lang="cs">
         Umístění či přístupový bod poskytující operace související s hledáním, přistupem k, či výkonem funkcí na datech či souvisejících zdrojích.
       </xs:documentation>
@@ -16,7 +19,7 @@
         Datatjeneste - Et websted eller endpoint der udstiller operationer relateret til opdagelse af, adgang til eller behandlende funktioner på data eller relaterede ressourcer.
       </xs:documentation>
       <xs:documentation xml:lang="en">
-        Data service - A collection of operations that provides access to one or more datasets or data processing functions.
+        A collection of operations that provides access to one or more datasets or data processing functions.
       </xs:documentation>
       <xs:documentation xml:lang="es">
         Servicio de datos - Un sitio o end-point que provee operaciones relacionadas a funciones de descubrimiento, acceso, o procesamiento de datos o recursos relacionados.
@@ -41,6 +44,9 @@
       <xs:element maxOccurs="unbounded" name="endpoint_url"
         sawsdl:modelReference="http://www.w3.org/ns/dcat#endpointURL" type="xs:anyURI">
         <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Endpoint URL
+          </xs:documentation>
           <xs:documentation xml:lang="cs">
             přístupový bod služby - Kořenové umístění nebo hlavní přístupový bod služby (IRI přístupné přes Web).
           </xs:documentation>
@@ -48,7 +54,7 @@
             tjenesteendpoint - Rodplaceringen eller det primære endpoint for en tjeneste (en web-resolverbar IRI).
           </xs:documentation>
           <xs:documentation xml:lang="en">
-            endpoint URL - The root location or primary endpoint of the service (an IRI).
+            The root location or primary endpoint of the service (an IRI).
           </xs:documentation>
           <xs:documentation xml:lang="es">
             end-point del servicio - La posición raíz o end-point principal del servicio (una IRI web).
