@@ -95,10 +95,10 @@
             sawsdl:modelReference="http://www.w3.org/2006/vcard/ns#organization-name">
             <xs:annotation>
               <xs:documentation xml:lang="en">
-            Alternate name
+            Name
           </xs:documentation>
               <xs:documentation xml:lang="en">
-            To specify the organizational name associated with the object
+            Official organizational name
           </xs:documentation>
             </xs:annotation>
           </xs:element>
