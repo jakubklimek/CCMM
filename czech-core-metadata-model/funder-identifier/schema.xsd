@@ -32,7 +32,17 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element name="funder_name" type="xs:string"></xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="funder_identifier" type="funder_identifier"/>
+  <xs:element name="funder_identifier" type="funder_identifier" sawsdl:modelReference="funderName">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Funder name
+      </xs:documentation>
+      <xs:documentation>
+        Name of the funder.
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
 </xs:schema>
