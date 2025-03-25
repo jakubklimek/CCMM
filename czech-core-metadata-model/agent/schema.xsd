@@ -29,6 +29,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element minOccurs="0" name="external_identifier_type" type="xs:string"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="contact_point" type="contact_details"
         sawsdl:modelReference="http://www.w3.org/ns/dcat#contactPoint">
         <xs:annotation>
