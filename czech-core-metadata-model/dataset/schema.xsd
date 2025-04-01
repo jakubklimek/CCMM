@@ -245,7 +245,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="terms_of_use" type="terms_of_use"
+      <xs:element minOccurs="1" maxOccurs="1" name="terms_of_use" type="terms_of_use"
         sawsdl:modelReference="hasVersion">
         <xs:annotation>
           <xs:documentation xml:lang="en">

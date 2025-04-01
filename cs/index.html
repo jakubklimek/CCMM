@@ -865,7 +865,7 @@
       <td>
         <a href="#TermsOfUse">Terms of use (@en)</a>
 
-              [0..*]
+              [1..1]
 
     </td>
     </tr>
@@ -1492,61 +1492,6 @@
                   <li><a href="#TermsOfUse.contactPoint"></a></li>
               </ul>
 
-                <section id="Agent.externalIdentifier">
-  <h4>External identifier (@en)</h4>
-
-  <table class="def">
-    <tr>
-      <td>IRI</td>
-      <td><a href="https://techlib.cz/profile/ccmm/Agent.externalIdentifier">https://techlib.cz/profile/ccmm/Agent.externalIdentifier</a></td>
-    </tr>
-    <tr>
-      <td>Název</td>
-      <td>External identifier (@en)</td>
-    </tr>
-    <tr>
-      <td>Definice</td>
-      <td>External identifer of an Agent. (@en)</td>
-    </tr>
-    <tr>
-      <td>Definiční obor</td>
-      <td>
-        <a href="#Agent">Agent (@en)</a>
-
-              [0..*]
-
-      </td>
-    </tr>
-    <tr>
-      <td>Obor hodnot</td>
-      <td>
-        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
-
-              [0..*]
-
-    </td>
-    </tr>
-
-    <tr>
-      <td>Profiluje</td>
-      <td>      vlastnost
-      <a href="#agentExternalIdentifier">External identifier (@en)</a> (<a href="https://techlib.cz/profile/ccmm/agentExternalIdentifier">https://techlib.cz/profile/ccmm/agentExternalIdentifier</a>)
-</td>
-    </tr>
-
-    <tr>
-      <td>Název ze slovníku</td>
-      <td>External identifier (@en)</td>
-    </tr>
-
-    <tr>
-      <td>Definice ze slovníku</td>
-      <td>External identifer of an Agent. (@en)</td>
-    </tr>
-
-  </table>
-</section>
-
                 <section id="Agent.contactPoint">
   <h4>kontaktní bod</h4>
 
@@ -1601,61 +1546,55 @@
   </table>
 </section>
 
-                <section id="Agent.externalIdentifierType">
-  <h4>External identifier type</h4>
+                <section id="Agent.hasIdentifier">
+  <h4>has identifier (@en)</h4>
 
   <table class="def">
     <tr>
       <td>IRI</td>
-      <td><a href="https://techlib.cz/profile/ccmm/Agent.externalIdentifierType">https://techlib.cz/profile/ccmm/Agent.externalIdentifierType</a></td>
+      <td><a href="https://techlib.cz/profile/ccmm/Agent.hasIdentifier">https://techlib.cz/profile/ccmm/Agent.hasIdentifier</a></td>
     </tr>
     <tr>
       <td>Název</td>
-      <td>External identifier type</td>
+      <td>has identifier (@en)</td>
     </tr>
     <tr>
       <td>Definice</td>
-      <td>Type of external identifier. (@en)</td>
+      <td>Reference from agent to identifier. (@en)</td>
     </tr>
     <tr>
       <td>Definiční obor</td>
       <td>
         <a href="#Agent">Agent (@en)</a>
 
-              [0..*]
-
+        
       </td>
     </tr>
     <tr>
       <td>Obor hodnot</td>
       <td>
-        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+        <a href="#Identifier">Identifier (@en)</a>
 
-              [0..*]
-
+        
     </td>
     </tr>
 
     <tr>
       <td>Profiluje</td>
-      <td>      
-      <a href="#Dataset.title">Title</a> (<a href="https://techlib.cz/profile/ccmm/Dataset.title">https://techlib.cz/profile/ccmm/Dataset.title</a>)
-          <br />
-                
-      <a href="https://mff-uk.github.io/specifications/dcat-ap/#Dataset.title">title (@en)</a> (<a href="https://mff-uk.github.io/specifications/dcat-ap/#Dataset.title">https://mff-uk.github.io/specifications/dcat-ap/#Dataset.title</a>)
-          <br />
-                
-      <a href="https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.title">title (@en)</a> (<a href="https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.title">https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.title</a>)
-          <br />
-                vlastnost
-      <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl#title">Title (@en)</a> (<a href="http://purl.org/dc/terms/title">dcterms:title</a>)
-
-
-
+      <td>      vlastnost
+      <a href="#hasIdentifier">has identifier (@en)</a> (<a href="https://techlib.cz/profile/ccmm/hasIdentifier">https://techlib.cz/profile/ccmm/hasIdentifier</a>)
 </td>
     </tr>
 
+    <tr>
+      <td>Název ze slovníku</td>
+      <td>has identifier (@en)</td>
+    </tr>
 
+    <tr>
+      <td>Definice ze slovníku</td>
+      <td>has identifier (@en)</td>
+    </tr>
 
   </table>
 </section>
@@ -1731,7 +1670,7 @@
       <td>
         <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
 
-              [1..*]
+              [0..*]
 
     </td>
     </tr>
@@ -1786,7 +1725,7 @@
       <td>
         <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
 
-              [1..1]
+              [0..*]
 
     </td>
     </tr>
@@ -1859,6 +1798,65 @@
     <tr>
       <td>Definice ze slovníku</td>
       <td>Affiliation of the person to the organization. (@en)</td>
+    </tr>
+
+  </table>
+</section>
+
+                <section id="Person.fullName">
+  <h4>Full name</h4>
+
+  <table class="def">
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://techlib.cz/profile/ccmm/Person.fullName">https://techlib.cz/profile/ccmm/Person.fullName</a></td>
+    </tr>
+    <tr>
+      <td>Název</td>
+      <td>Full name</td>
+    </tr>
+    <tr>
+      <td>Definice</td>
+      <td>Full name of the person. (@en)</td>
+    </tr>
+    <tr>
+      <td>Definiční obor</td>
+      <td>
+        <a href="#Person">Person (@en)</a>
+
+              [0..*]
+
+      </td>
+    </tr>
+    <tr>
+      <td>Obor hodnot</td>
+      <td>
+        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+
+              [1..1]
+
+    </td>
+    </tr>
+
+    <tr>
+      <td>Profiluje</td>
+      <td>      
+      <a href="https://mff-uk.github.io/specifications/dcat-ap/#Agent.name">name (@en)</a> (<a href="https://mff-uk.github.io/specifications/dcat-ap/#Agent.name">https://mff-uk.github.io/specifications/dcat-ap/#Agent.name</a>)
+          <br />
+                vlastnost
+      <a href="https://datagov-cz.github.io/cache-slovniku/foaf.ttl#name">name (@en)</a> (<a href="http://xmlns.com/foaf/0.1/name">foaf:name</a>)
+
+</td>
+    </tr>
+
+    <tr>
+      <td>Název ze slovníku</td>
+      <td>name (@en)</td>
+    </tr>
+
+    <tr>
+      <td>Definice ze slovníku</td>
+      <td>A name of the agent. (@en)</td>
     </tr>
 
   </table>
@@ -2137,7 +2135,7 @@
       <td>
         <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
 
-              [0..1]
+              [1..1]
 
     </td>
     </tr>
@@ -2196,7 +2194,7 @@
       <td>
         <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
 
-              [0..1]
+              [0..*]
 
     </td>
     </tr>
@@ -2251,7 +2249,7 @@
       <td>
         <a href="https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/text">https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/text</a>
 
-              [0..1]
+              [0..*]
 
     </td>
     </tr>
@@ -3418,6 +3416,60 @@
     <tr>
       <td>Definice ze slovníku</td>
       <td>has identifier (@en)</td>
+    </tr>
+
+  </table>
+</section>
+
+                <section id="Resource.resourceUrl">
+  <h4>Resource URL (@en)</h4>
+
+  <table class="def">
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://techlib.cz/profile/ccmm/Resource.resourceUrl">https://techlib.cz/profile/ccmm/Resource.resourceUrl</a></td>
+    </tr>
+    <tr>
+      <td>Název</td>
+      <td>Resource URL (@en)</td>
+    </tr>
+    <tr>
+      <td>Definice</td>
+      <td>Resolvable URL pointing to some thing representing the resouce. (@en)</td>
+    </tr>
+    <tr>
+      <td>Definiční obor</td>
+      <td>
+        <a href="#Resource">Resource (@en)</a>
+
+        
+      </td>
+    </tr>
+    <tr>
+      <td>Obor hodnot</td>
+      <td>
+        <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+              [0..1]
+
+    </td>
+    </tr>
+
+    <tr>
+      <td>Profiluje</td>
+      <td>      vlastnost
+      <a href="#resourceUrl">Resource URL (@en)</a> (<a href="https://techlib.cz/profile/ccmm/resourceUrl">https://techlib.cz/profile/ccmm/resourceUrl</a>)
+</td>
+    </tr>
+
+    <tr>
+      <td>Název ze slovníku</td>
+      <td>Resource URL (@en)</td>
+    </tr>
+
+    <tr>
+      <td>Definice ze slovníku</td>
+      <td>Resolvable URL pointing to some thing representing the resouce. (@en)</td>
     </tr>
 
   </table>
@@ -7434,6 +7486,7 @@
               <ul>
                   <li><a href="#Dataset.hasIdentifier"></a></li>
                   <li><a href="#Resource.hasIdentifier"></a></li>
+                  <li><a href="#Agent.hasIdentifier"></a></li>
               </ul>
 
                 <section id="Identifier.value">
@@ -7464,7 +7517,7 @@
     <tr>
       <td>Obor hodnot</td>
       <td>
-        <a href="https://datagov-cz.github.io/cache-slovniku/rdfs.ttl#Literal">Literal (@en)</a>
+        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
 
               [1..1]
 
@@ -8319,6 +8372,42 @@
                   </tr>
               </table>
             </section>
+            <section id="resourceUrl">
+
+              <h4>Resource URL (@en)</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/profile/ccmm/resourceUrl">https://techlib.cz/profile/ccmm/resourceUrl</a></td>
+                </tr>
+                <tr>
+                  <td>Název</td>
+                  <td>Resource URL (@en)</td>
+                </tr>
+                <tr>
+                  <td>Definice</td>
+                  <td>Resolvable URL pointing to some thing representing the resouce. (@en)</td>
+                </tr>
+                <tr>
+                  <td>Definiční obor</td>
+                  <td>
+                    <a href="https://datagov-cz.github.io/cache-slovniku/rdfs.ttl#Resource">Resource (@en)</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Obor hodnot</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+
 
 
 

@@ -865,7 +865,7 @@
       <td>
         <a href="#TermsOfUse">Terms of use</a>
 
-              [0..*]
+              [1..1]
 
     </td>
     </tr>
@@ -1492,61 +1492,6 @@
                   <li><a href="#TermsOfUse.contactPoint"></a></li>
               </ul>
 
-                <section id="Agent.externalIdentifier">
-  <h4>External identifier</h4>
-
-  <table class="def">
-    <tr>
-      <td>IRI</td>
-      <td><a href="https://techlib.cz/profile/ccmm/Agent.externalIdentifier">https://techlib.cz/profile/ccmm/Agent.externalIdentifier</a></td>
-    </tr>
-    <tr>
-      <td>Label</td>
-      <td>External identifier</td>
-    </tr>
-    <tr>
-      <td>Definition</td>
-      <td>External identifer of an Agent.</td>
-    </tr>
-    <tr>
-      <td>Domain</td>
-      <td>
-        <a href="#Agent">Agent</a>
-
-              [0..*]
-
-      </td>
-    </tr>
-    <tr>
-      <td>Range</td>
-      <td>
-        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
-
-              [0..*]
-
-    </td>
-    </tr>
-
-    <tr>
-      <td>Profiles</td>
-      <td>      property
-      <a href="#agentExternalIdentifier">External identifier</a> (<a href="https://techlib.cz/profile/ccmm/agentExternalIdentifier">https://techlib.cz/profile/ccmm/agentExternalIdentifier</a>)
-</td>
-    </tr>
-
-    <tr>
-      <td>Label from vocabulary</td>
-      <td>External identifier</td>
-    </tr>
-
-    <tr>
-      <td>Definition from vocabulary</td>
-      <td>External identifer of an Agent.</td>
-    </tr>
-
-  </table>
-</section>
-
                 <section id="Agent.contactPoint">
   <h4>contact point</h4>
 
@@ -1601,61 +1546,55 @@
   </table>
 </section>
 
-                <section id="Agent.externalIdentifierType">
-  <h4>External identifier type</h4>
+                <section id="Agent.hasIdentifier">
+  <h4>has identifier</h4>
 
   <table class="def">
     <tr>
       <td>IRI</td>
-      <td><a href="https://techlib.cz/profile/ccmm/Agent.externalIdentifierType">https://techlib.cz/profile/ccmm/Agent.externalIdentifierType</a></td>
+      <td><a href="https://techlib.cz/profile/ccmm/Agent.hasIdentifier">https://techlib.cz/profile/ccmm/Agent.hasIdentifier</a></td>
     </tr>
     <tr>
       <td>Label</td>
-      <td>External identifier type</td>
+      <td>has identifier</td>
     </tr>
     <tr>
       <td>Definition</td>
-      <td>Type of external identifier.</td>
+      <td>Reference from agent to identifier.</td>
     </tr>
     <tr>
       <td>Domain</td>
       <td>
         <a href="#Agent">Agent</a>
 
-              [0..*]
-
+        
       </td>
     </tr>
     <tr>
       <td>Range</td>
       <td>
-        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+        <a href="#Identifier">Identifier</a>
 
-              [0..*]
-
+        
     </td>
     </tr>
 
     <tr>
       <td>Profiles</td>
-      <td>      
-      <a href="#Dataset.title">Title</a> (<a href="https://techlib.cz/profile/ccmm/Dataset.title">https://techlib.cz/profile/ccmm/Dataset.title</a>)
-          <br />
-                
-      <a href="https://mff-uk.github.io/specifications/dcat-ap/#Dataset.title">title</a> (<a href="https://mff-uk.github.io/specifications/dcat-ap/#Dataset.title">https://mff-uk.github.io/specifications/dcat-ap/#Dataset.title</a>)
-          <br />
-                
-      <a href="https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.title">title</a> (<a href="https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.title">https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.title</a>)
-          <br />
-                property
-      <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl#title">Title</a> (<a href="http://purl.org/dc/terms/title">dcterms:title</a>)
-
-
-
+      <td>      property
+      <a href="#hasIdentifier">has identifier</a> (<a href="https://techlib.cz/profile/ccmm/hasIdentifier">https://techlib.cz/profile/ccmm/hasIdentifier</a>)
 </td>
     </tr>
 
+    <tr>
+      <td>Label from vocabulary</td>
+      <td>has identifier</td>
+    </tr>
 
+    <tr>
+      <td>Definition from vocabulary</td>
+      <td>has identifier</td>
+    </tr>
 
   </table>
 </section>
@@ -1731,7 +1670,7 @@
       <td>
         <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
 
-              [1..*]
+              [0..*]
 
     </td>
     </tr>
@@ -1786,7 +1725,7 @@
       <td>
         <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
 
-              [1..1]
+              [0..*]
 
     </td>
     </tr>
@@ -1859,6 +1798,65 @@
     <tr>
       <td>Definition from vocabulary</td>
       <td>Affiliation of the person to the organization.</td>
+    </tr>
+
+  </table>
+</section>
+
+                <section id="Person.fullName">
+  <h4>Full name</h4>
+
+  <table class="def">
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://techlib.cz/profile/ccmm/Person.fullName">https://techlib.cz/profile/ccmm/Person.fullName</a></td>
+    </tr>
+    <tr>
+      <td>Label</td>
+      <td>Full name</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>Full name of the person.</td>
+    </tr>
+    <tr>
+      <td>Domain</td>
+      <td>
+        <a href="#Person">Person</a>
+
+              [0..*]
+
+      </td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td>
+        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+
+              [1..1]
+
+    </td>
+    </tr>
+
+    <tr>
+      <td>Profiles</td>
+      <td>      
+      <a href="https://mff-uk.github.io/specifications/dcat-ap/#Agent.name">name</a> (<a href="https://mff-uk.github.io/specifications/dcat-ap/#Agent.name">https://mff-uk.github.io/specifications/dcat-ap/#Agent.name</a>)
+          <br />
+                property
+      <a href="https://datagov-cz.github.io/cache-slovniku/foaf.ttl#name">name</a> (<a href="http://xmlns.com/foaf/0.1/name">foaf:name</a>)
+
+</td>
+    </tr>
+
+    <tr>
+      <td>Label from vocabulary</td>
+      <td>name</td>
+    </tr>
+
+    <tr>
+      <td>Definition from vocabulary</td>
+      <td>A name of the agent.</td>
     </tr>
 
   </table>
@@ -2137,7 +2135,7 @@
       <td>
         <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
 
-              [0..1]
+              [1..1]
 
     </td>
     </tr>
@@ -2196,7 +2194,7 @@
       <td>
         <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
 
-              [0..1]
+              [0..*]
 
     </td>
     </tr>
@@ -2251,7 +2249,7 @@
       <td>
         <a href="https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/text">https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/text</a>
 
-              [0..1]
+              [0..*]
 
     </td>
     </tr>
@@ -3418,6 +3416,60 @@
     <tr>
       <td>Definition from vocabulary</td>
       <td>has identifier</td>
+    </tr>
+
+  </table>
+</section>
+
+                <section id="Resource.resourceUrl">
+  <h4>Resource URL</h4>
+
+  <table class="def">
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://techlib.cz/profile/ccmm/Resource.resourceUrl">https://techlib.cz/profile/ccmm/Resource.resourceUrl</a></td>
+    </tr>
+    <tr>
+      <td>Label</td>
+      <td>Resource URL</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>Resolvable URL pointing to some thing representing the resouce.</td>
+    </tr>
+    <tr>
+      <td>Domain</td>
+      <td>
+        <a href="#Resource">Resource</a>
+
+        
+      </td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td>
+        <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+              [0..1]
+
+    </td>
+    </tr>
+
+    <tr>
+      <td>Profiles</td>
+      <td>      property
+      <a href="#resourceUrl">Resource URL</a> (<a href="https://techlib.cz/profile/ccmm/resourceUrl">https://techlib.cz/profile/ccmm/resourceUrl</a>)
+</td>
+    </tr>
+
+    <tr>
+      <td>Label from vocabulary</td>
+      <td>Resource URL</td>
+    </tr>
+
+    <tr>
+      <td>Definition from vocabulary</td>
+      <td>Resolvable URL pointing to some thing representing the resouce.</td>
     </tr>
 
   </table>
@@ -7434,6 +7486,7 @@
               <ul>
                   <li><a href="#Dataset.hasIdentifier"></a></li>
                   <li><a href="#Resource.hasIdentifier"></a></li>
+                  <li><a href="#Agent.hasIdentifier"></a></li>
               </ul>
 
                 <section id="Identifier.value">
@@ -7464,7 +7517,7 @@
     <tr>
       <td>Range</td>
       <td>
-        <a href="https://datagov-cz.github.io/cache-slovniku/rdfs.ttl#Literal">Literal</a>
+        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
 
               [1..1]
 
@@ -8319,6 +8372,42 @@
                   </tr>
               </table>
             </section>
+            <section id="resourceUrl">
+
+              <h4>Resource URL</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/profile/ccmm/resourceUrl">https://techlib.cz/profile/ccmm/resourceUrl</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Resource URL</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Resolvable URL pointing to some thing representing the resouce.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td>
+                    <a href="https://datagov-cz.github.io/cache-slovniku/rdfs.ttl#Resource">Resource</a>
+
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+
+                    
+                  </td>
+                  </tr>
+              </table>
+            </section>
+
 
 
 

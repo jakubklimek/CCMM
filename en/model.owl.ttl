@@ -142,3 +142,9 @@
     rdfs:isDefinedBy <https://techlib.cz/profile/ccmm/>;
     rdfs:domain <http://www.w3.org/ns/dcat#Dataset>;
     rdfs:range :AlternateTitle.
+:resourceUrl a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Resource URL"@en;
+    rdfs:comment "Resolvable URL pointing to some thing representing the resouce."@en;
+    rdfs:isDefinedBy <https://techlib.cz/profile/ccmm/>;
+    rdfs:domain rdfs:Resource;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#anyURI>.
