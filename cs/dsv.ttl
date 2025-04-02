@@ -117,7 +117,7 @@
   dsv:reusedProperty skos:definition;
   dsv:reusedFromResource <https://techlib.cz/vocabulary/datacite/relatedItemPublicationYear>
 ];
-    dsv:cardinality <https://w3id.org/dsv#01>;
+    dsv:cardinality <https://w3id.org/dsv#11>;
     dsv:property <https://techlib.cz/vocabulary/datacite/relatedItemPublicationYear>;
     a dsv:DatatypePropertyProfile;
     dsv:datatypePropertyRange <http://www.w3.org/2001/XMLSchema#gYear>.
@@ -222,6 +222,7 @@
 <https://techlib.cz/profile/ccmm/Dataset.hasTimeReference> dsv:domain <https://techlib.cz/profile/ccmm/Dataset>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
+    <http://purl.org/vocab/vann/usageNote> "Must contain at least one time reference with date type value \"Created\" from DataCIte controlled vocabulary https://datacite-metadata-schema.readthedocs.io/en/4.5/appendices/appendix-1/dateType/."@en;
     dsv:reusesPropertyValue [
   a dsv:PropertyValueReuse;
   dsv:reusedProperty skos:prefLabel;
@@ -231,6 +232,7 @@
   dsv:reusedProperty skos:definition;
   dsv:reusedFromResource <https://techlib.cz/profile/ccmm/hasTimeReference>
 ];
+    dsv:cardinality <https://w3id.org/dsv#1n>;
     dsv:property <https://techlib.cz/profile/ccmm/hasTimeReference>;
     a dsv:ObjectPropertyProfile;
     dsv:objectPropertyRange <https://techlib.cz/profile/ccmm/TimeReference>.
@@ -374,12 +376,16 @@
 <https://techlib.cz/profile/ccmm/Agent.hasIdentifier> dsv:domain <https://techlib.cz/profile/ccmm/Agent>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:definition "Reference from agent to identifier."@en;
     dsv:reusesPropertyValue [
   a dsv:PropertyValueReuse;
   dsv:reusedProperty skos:prefLabel;
   dsv:reusedFromResource <https://techlib.cz/profile/ccmm/hasIdentifier>
+], [
+  a dsv:PropertyValueReuse;
+  dsv:reusedProperty skos:definition;
+  dsv:reusedFromResource <https://techlib.cz/profile/ccmm/hasIdentifier>
 ];
+    dsv:cardinality <https://w3id.org/dsv#0n>;
     dsv:property <https://techlib.cz/profile/ccmm/hasIdentifier>;
     a dsv:ObjectPropertyProfile;
     dsv:objectPropertyRange <https://techlib.cz/profile/ccmm/Identifier>.
@@ -445,7 +451,7 @@
     a dsv:Profile;
     skos:prefLabel "Full name"^^rdf:langString;
     skos:definition "Full name of the person."@en;
-    <http://purl.org/vocab/vann/usageNote> "Contains combination of Given name and Family name."@en;
+    <http://purl.org/vocab/vann/usageNote> "FUll name is combvination of Given name(s) and Family name(s)."@en;
     dsv:profileOf <https://mff-uk.github.io/specifications/dcat-ap/#Agent.name>;
     dsv:cardinality <https://w3id.org/dsv#11>;
     a dsv:DatatypePropertyProfile;
@@ -561,7 +567,6 @@
     a dsv:Profile;
     skos:prefLabel "Punto de contacto"@es, "has contact"@en, "kontaktní bod"@cs, "point de contact"@fr, "punto di contatto"@it, "σημείο επικοινωνίας"@el, "عنوان اتصال"@ar, "窓口"@ja, "kontaktpunkt"@da;
     skos:definition "Información relevante de contacto para el recurso catalogado. Se recomienda el uso de vCard."@es, "Informazioni di contatto rilevanti per la risorsa catalogata. Si raccomanda l'uso di vCard."@it, "Contact person for the further details about the terms of use."@en, "Relevantní kontaktní informace pro katalogizovaný zdroj. Doporučuje se použít slovník VCard."@cs, "Relie un jeu de données à une information de contact utile en utilisant VCard."@fr, "Συνδέει ένα σύνολο δεδομένων με ένα σχετικό σημείο επικοινωνίας, μέσω VCard."@el, "تربط قائمة البيانات بعنوان اتصال موصف  باستخدام VCard"@ar, "データセットを、VCardを用いて提供されている適切な連絡先情報にリンクします。"@ja, "Relevante kontaktoplysninger for den katalogiserede ressource. Anvendelse af vCard anbefales."@da;
-    dsv:cardinality <https://w3id.org/dsv#0n>;
     dsv:property <http://www.w3.org/ns/dcat#contactPoint>;
     a dsv:ObjectPropertyProfile;
     dsv:objectPropertyRange <https://techlib.cz/profile/ccmm/Agent>.
@@ -610,7 +615,7 @@
   dsv:reusedProperty skos:definition;
   dsv:reusedFromResource <https://techlib.cz/vocabulary/datacite/hasFunderIdentifier>
 ];
-    dsv:cardinality <https://w3id.org/dsv#0n>;
+    dsv:cardinality <https://w3id.org/dsv#1n>;
     dsv:property <https://techlib.cz/vocabulary/datacite/hasFunderIdentifier>;
     a dsv:ObjectPropertyProfile;
     dsv:objectPropertyRange <https://techlib.cz/profile/ccmm/FunderIdentifier>.
@@ -652,7 +657,7 @@
   dsv:reusedProperty skos:definition;
   dsv:reusedFromResource <https://mff-uk.github.io/specifications/dcat-dap/#Distribution.title>
 ];
-    dsv:cardinality <https://w3id.org/dsv#01>;
+    dsv:cardinality <https://w3id.org/dsv#11>;
     a dsv:DatatypePropertyProfile;
     dsv:datatypePropertyRange rdf:langString.
 
@@ -849,28 +854,20 @@
   dsv:reusedProperty skos:definition;
   dsv:reusedFromResource <https://techlib.cz/profile/ccmm/hasIdentifier>
 ];
-    dsv:cardinality <https://w3id.org/dsv#1n>;
+    dsv:cardinality <https://w3id.org/dsv#0n>;
     dsv:property <https://techlib.cz/profile/ccmm/hasIdentifier>;
     a dsv:ObjectPropertyProfile;
     dsv:objectPropertyRange <https://techlib.cz/profile/ccmm/Identifier>.
 
-<https://techlib.cz/profile/ccmm/Resource.resourceUrl> dsv:domain <https://techlib.cz/profile/ccmm/Resource>;
+<https://techlib.cz/profile/ccmm/Resource.resourceURL> dsv:domain <https://techlib.cz/profile/ccmm/Resource>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    <http://purl.org/vocab/vann/usageNote> "In case it is filled, it must be filled the same in c:iri.\nIf more resolvable IRIs, resourceURL shall link to human readable version., machine readable ID is always in c:iri."@en;
-    dsv:reusesPropertyValue [
-  a dsv:PropertyValueReuse;
-  dsv:reusedProperty skos:prefLabel;
-  dsv:reusedFromResource <https://techlib.cz/profile/ccmm/resourceUrl>
-], [
-  a dsv:PropertyValueReuse;
-  dsv:reusedProperty skos:definition;
-  dsv:reusedFromResource <https://techlib.cz/profile/ccmm/resourceUrl>
-];
+    skos:prefLabel "Resource URL"^^rdf:langString;
+    skos:definition "Resolvable URL representing the resource, preferably human readable."@en;
+    <http://purl.org/vocab/vann/usageNote> "In case it is filled, it must be filled the same in c:iri.\nIf more resolvable IRIs, resourceURL shall link to human readable version, machine readable ID is always in c:iri."@en;
     dsv:cardinality <https://w3id.org/dsv#01>;
-    dsv:property <https://techlib.cz/profile/ccmm/resourceUrl>;
     a dsv:DatatypePropertyProfile;
-    dsv:datatypePropertyRange <http://www.w3.org/2001/XMLSchema#anyURI>.
+    dsv:datatypePropertyRange rdfs:Literal.
 
 <https://techlib.cz/profile/ccmm/TimeReference> dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
@@ -891,7 +888,7 @@
     a dsv:Profile;
     skos:prefLabel "Date"@en;
     skos:definition "A point or period of time associated with an event in the lifecycle of the resource."@en;
-    dsv:cardinality <https://w3id.org/dsv#01>;
+    dsv:cardinality <https://w3id.org/dsv#11>;
     dsv:property <https://techlib.cz/vocabulary/datacite/dateValue>;
     a dsv:DatatypePropertyProfile;
     dsv:datatypePropertyRange <http://www.w3.org/2001/XMLSchema#date>.
@@ -902,7 +899,7 @@
     skos:prefLabel "Date type"^^rdf:langString;
     skos:definition "Type of the date."@en;
     <http://purl.org/vocab/vann/usageNote> "Use value from controlled list https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/dateType/."@en;
-    dsv:cardinality <https://w3id.org/dsv#01>;
+    dsv:cardinality <https://w3id.org/dsv#11>;
     dsv:property <https://techlib.cz/vocabulary/datacite/dateType>;
     a dsv:DatatypePropertyProfile;
     dsv:datatypePropertyRange <http://www.w3.org/2001/XMLSchema#string>.
@@ -991,27 +988,6 @@
     a dsv:ClassProfile;
     dsv:class <https://techlib.cz/vocabulary/datacite/FunderIdentifier>.
 
-<https://techlib.cz/profile/ccmm/FunderIdentifier.funderIdentifierType> dsv:domain <https://techlib.cz/profile/ccmm/FunderIdentifier>;
-    dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
-    a dsv:Profile;
-    skos:prefLabel "Funder identifier type"^^rdf:langString;
-    skos:definition "The type of the funderIdentifier."@en;
-    <http://purl.org/vocab/vann/usageNote> "Value from controlled list"@en;
-    dsv:cardinality <https://w3id.org/dsv#11>;
-    dsv:property <https://techlib.cz/vocabulary/datacite/funderIdentifierType>;
-    a dsv:DatatypePropertyProfile;
-    dsv:datatypePropertyRange <http://www.w3.org/2001/XMLSchema#anyURI>.
-
-<https://techlib.cz/profile/ccmm/FunderIdentifier.FunderIdentifierSchemeURI> dsv:domain <https://techlib.cz/profile/ccmm/FunderIdentifier>;
-    dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
-    a dsv:Profile;
-    skos:prefLabel "Funder identifier scheme URI"^^rdf:langString;
-    skos:definition "The URI of the funder identifier scheme."@en;
-    dsv:cardinality <https://w3id.org/dsv#01>;
-    dsv:property <https://techlib.cz/vocabulary/datacite/funderIdentifierSchemeUri>;
-    a dsv:DatatypePropertyProfile;
-    dsv:datatypePropertyRange <http://www.w3.org/2001/XMLSchema#anyURI>.
-
 <https://techlib.cz/profile/ccmm/FunderIdentifier.funderName> dsv:domain <https://techlib.cz/profile/ccmm/FunderIdentifier>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
@@ -1022,15 +998,22 @@
     a dsv:DatatypePropertyProfile;
     dsv:datatypePropertyRange <http://www.w3.org/2001/XMLSchema#string>.
 
-<https://techlib.cz/profile/ccmm/FunderIdentifier.funderIdentifierValue> dsv:domain <https://techlib.cz/profile/ccmm/FunderIdentifier>;
+<https://techlib.cz/profile/ccmm/FunderIdentifier.hasIdentifier> dsv:domain <https://techlib.cz/profile/ccmm/FunderIdentifier>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Funder identifier value"^^rdf:langString;
-    skos:definition "Value of the funder identifier."@en;
-    dsv:profileOf <https://mff-uk.github.io/specifications/dcat-ap/#Identifier.notation>;
-    dsv:cardinality <https://w3id.org/dsv#01>;
-    a dsv:DatatypePropertyProfile;
-    dsv:datatypePropertyRange rdfs:Literal.
+    dsv:reusesPropertyValue [
+  a dsv:PropertyValueReuse;
+  dsv:reusedProperty skos:prefLabel;
+  dsv:reusedFromResource <https://techlib.cz/profile/ccmm/hasIdentifier>
+], [
+  a dsv:PropertyValueReuse;
+  dsv:reusedProperty skos:definition;
+  dsv:reusedFromResource <https://techlib.cz/profile/ccmm/hasIdentifier>
+];
+    dsv:cardinality <https://w3id.org/dsv#0n>;
+    dsv:property <https://techlib.cz/profile/ccmm/hasIdentifier>;
+    a dsv:ObjectPropertyProfile;
+    dsv:objectPropertyRange <https://techlib.cz/profile/ccmm/Identifier>.
 
 <https://techlib.cz/profile/ccmm/ContactDetails> dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
@@ -1198,22 +1181,6 @@
     a dsv:ObjectPropertyProfile;
     dsv:objectPropertyRange <https://techlib.cz/profile/ccmm/Repository>.
 
-<https://techlib.cz/profile/ccmm/MetadataRecord.qualifiedRelation> dsv:domain <https://techlib.cz/profile/ccmm/MetadataRecord>;
-    dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
-    a dsv:Profile;
-    dsv:reusesPropertyValue [
-  a dsv:PropertyValueReuse;
-  dsv:reusedProperty skos:prefLabel;
-  dsv:reusedFromResource <https://techlib.cz/profile/ccmm/qualifiedRelation>
-], [
-  a dsv:PropertyValueReuse;
-  dsv:reusedProperty skos:definition;
-  dsv:reusedFromResource <https://techlib.cz/profile/ccmm/qualifiedRelation>
-];
-    dsv:property <https://techlib.cz/profile/ccmm/qualifiedRelation>;
-    a dsv:ObjectPropertyProfile;
-    dsv:objectPropertyRange <https://techlib.cz/profile/ccmm/MetadataToAgentRelationship>.
-
 <https://techlib.cz/profile/ccmm/MetadataRecord.DateCreated> dsv:domain <https://techlib.cz/profile/ccmm/MetadataRecord>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
@@ -1255,6 +1222,21 @@
     dsv:property <https://techlib.cz/profile/ccmm/describes>;
     a dsv:ObjectPropertyProfile;
     dsv:objectPropertyRange <https://techlib.cz/profile/ccmm/Dataset>.
+
+<https://techlib.cz/profile/ccmm/MetadataRecord.qualifiedRelation> dsv:domain <https://techlib.cz/profile/ccmm/MetadataRecord>;
+    dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
+    a dsv:Profile;
+    skos:definition "Enlace a una descripción de la relación con otro recurso."@es, "Link a una descrizione di una relazione con un'altra risorsa."@it, "Link to a description of a relationship between metadata record and agent."@en, "Odkaz na popis vztahu s jiným zdrojem."@cs, "Reference til en beskrivelse af en relation til en anden ressource."@da;
+    <http://purl.org/vocab/vann/usageNote> "Relationship shall contain at least one agent with role \"DataManager\" from codelist https://datacite-metadata-schema.readthedocs.io/en/4.5/appendices/appendix-1/contributorType/."@en;
+    dsv:profileOf <https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.qualifiedRelation>;
+    dsv:reusesPropertyValue [
+  a dsv:PropertyValueReuse;
+  dsv:reusedProperty skos:prefLabel;
+  dsv:reusedFromResource <https://mff-uk.github.io/specifications/dcat-dap/#CataloguedResource.qualifiedRelation>
+];
+    dsv:cardinality <https://w3id.org/dsv#1n>;
+    a dsv:ObjectPropertyProfile;
+    dsv:objectPropertyRange <https://techlib.cz/profile/ccmm/ResourceToAgentRelationship>.
 
 <https://techlib.cz/profile/ccmm/ApplicationProfile> dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
@@ -1331,81 +1313,6 @@
     a dsv:DatatypePropertyProfile;
     dsv:datatypePropertyRange rdf:langString.
 
-<https://techlib.cz/profile/ccmm/MetadataToAgentRelationship> dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
-    a dsv:Profile;
-    dsv:reusesPropertyValue [
-  a dsv:PropertyValueReuse;
-  dsv:reusedProperty skos:prefLabel;
-  dsv:reusedFromResource <https://techlib.cz/profile/ccmm/MetadataToAgentRelationship>
-], [
-  a dsv:PropertyValueReuse;
-  dsv:reusedProperty skos:definition;
-  dsv:reusedFromResource <https://techlib.cz/profile/ccmm/MetadataToAgentRelationship>
-];
-    a dsv:ClassProfile;
-    dsv:class <https://techlib.cz/profile/ccmm/MetadataToAgentRelationship>.
-
-<https://techlib.cz/profile/ccmm/MetadataToAgentRelationship.hadRole> dsv:domain <https://techlib.cz/profile/ccmm/MetadataToAgentRelationship>;
-    dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
-    a dsv:Profile;
-    dsv:profileOf <https://mff-uk.github.io/specifications/dcat-ap/#Relationship.hadRole>;
-    dsv:reusesPropertyValue [
-  a dsv:PropertyValueReuse;
-  dsv:reusedProperty skos:prefLabel;
-  dsv:reusedFromResource <https://mff-uk.github.io/specifications/dcat-ap/#Relationship.hadRole>
-], [
-  a dsv:PropertyValueReuse;
-  dsv:reusedProperty skos:definition;
-  dsv:reusedFromResource <https://mff-uk.github.io/specifications/dcat-ap/#Relationship.hadRole>
-], [
-  a dsv:PropertyValueReuse;
-  dsv:reusedProperty <http://purl.org/vocab/vann/usageNote>;
-  dsv:reusedFromResource <https://mff-uk.github.io/specifications/dcat-ap/#Relationship.hadRole>
-];
-    dsv:cardinality <https://w3id.org/dsv#11>;
-    a dsv:ObjectPropertyProfile;
-    dsv:objectPropertyRange <https://techlib.cz/profile/ccmm/MetadataAgentRoleType>.
-
-<https://techlib.cz/profile/ccmm/MetadataToAgentRelationship.relation> dsv:domain <https://techlib.cz/profile/ccmm/MetadataToAgentRelationship>;
-    dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
-    a dsv:Profile;
-    skos:prefLabel "relation"@en;
-    dsv:profileOf <https://mff-uk.github.io/specifications/dcat-ap/#Relationship.relation>;
-    dsv:reusesPropertyValue [
-  a dsv:PropertyValueReuse;
-  dsv:reusedProperty skos:definition;
-  dsv:reusedFromResource <https://mff-uk.github.io/specifications/dcat-ap/#Relationship.relation>
-], [
-  a dsv:PropertyValueReuse;
-  dsv:reusedProperty <http://purl.org/vocab/vann/usageNote>;
-  dsv:reusedFromResource <https://mff-uk.github.io/specifications/dcat-ap/#Relationship.relation>
-];
-    dsv:cardinality <https://w3id.org/dsv#11>;
-    a dsv:ObjectPropertyProfile;
-    dsv:objectPropertyRange <https://techlib.cz/profile/ccmm/Agent>.
-
-<https://techlib.cz/profile/ccmm/MetadataAgentRoleType> dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
-    a dsv:Profile;
-    skos:prefLabel "Metadata agent role type"@en;
-    <http://purl.org/vocab/vann/usageNote> "List of roles of agent in relationship to metadata record."@en;
-    dsv:profileOf <https://mff-uk.github.io/specifications/dcat-ap/#Concept>;
-    dsv:reusesPropertyValue [
-  a dsv:PropertyValueReuse;
-  dsv:reusedProperty skos:definition;
-  dsv:reusedFromResource <https://mff-uk.github.io/specifications/dcat-ap/#Concept>
-];
-    a dsv:ClassProfile.
-
-<https://techlib.cz/profile/ccmm/MetadataAgentRoleType.label> dsv:domain <https://techlib.cz/profile/ccmm/MetadataAgentRoleType>;
-    dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
-    a dsv:Profile;
-    skos:prefLabel "Label"^^rdf:langString;
-    skos:definition "Metadata agent role type label"@en;
-    dsv:cardinality <https://w3id.org/dsv#0n>;
-    dsv:property rdfs:label;
-    a dsv:DatatypePropertyProfile;
-    dsv:datatypePropertyRange rdfs:Literal.
-
 <https://techlib.cz/profile/ccmm/Distribution-DownloadableFile> dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
     dsv:reusesPropertyValue [
@@ -1470,7 +1377,7 @@
   dsv:reusedProperty skos:prefLabel;
   dsv:reusedFromResource dct:format
 ];
-    dsv:cardinality <https://w3id.org/dsv#01>;
+    dsv:cardinality <https://w3id.org/dsv#11>;
     dsv:property dct:format;
     a dsv:DatatypePropertyProfile;
     dsv:datatypePropertyRange <http://www.w3.org/2001/XMLSchema#anyURI>.
@@ -1501,7 +1408,7 @@
     skos:prefLabel "Byte size"^^rdf:langString;
     skos:definition "The size of a Distribution in bytes. "@en;
     dsv:profileOf <https://mff-uk.github.io/specifications/dcat-ap/#Distribution.byteSize>;
-    dsv:cardinality <https://w3id.org/dsv#01>;
+    dsv:cardinality <https://w3id.org/dsv#11>;
     a dsv:DatatypePropertyProfile;
     dsv:datatypePropertyRange <http://www.w3.org/2001/XMLSchema#integer>.
 
@@ -1511,7 +1418,7 @@
     skos:prefLabel "Checksum"^^rdf:langString;
     skos:definition "A mechanism that can be used to verify that the contents of a distribution have not changed. "@en;
     dsv:profileOf <https://mff-uk.github.io/specifications/dcat-ap/#Checksum.checksumValue>;
-    dsv:cardinality <https://w3id.org/dsv#01>;
+    dsv:cardinality <https://w3id.org/dsv#11>;
     a dsv:DatatypePropertyProfile;
     dsv:datatypePropertyRange <http://www.w3.org/2001/XMLSchema#string>.
 
@@ -1767,7 +1674,7 @@
 <https://techlib.cz/profile/ccmm/Location> dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
     skos:definition "Spatial region, named place or geometry representation of a place related to the dataset. "@en;
-    <http://purl.org/vocab/vann/usageNote> "Location is represented according to the Open Formal Standard for Spatial Data. Locations are represented as a reference to the named place, geographic region or specific geometry according to the standardized geometry object representation. "@en;
+    <http://purl.org/vocab/vann/usageNote> "Location is represented according to the Open Formal Standard for Spatial Data. Locations are represented as a reference to the named place, geographic region or specific geometry according to the standardized geometry object representation. \nEvery Location instance must have at least one of the following attributes/relations: bbox, location name, geometry and/or related object identifier."@en;
     dsv:profileOf <https://mff-uk.github.io/specifications/dcat-ap/#Location>;
     dsv:reusesPropertyValue [
   a dsv:PropertyValueReuse;
@@ -1783,7 +1690,7 @@
     skos:prefLabel "Relation to dataset"^^rdf:langString;
     skos:definition "Type of relation of the spatial location to the dataset."@en;
     <http://purl.org/vocab/vann/usageNote> "Use value from controlled list."@en;
-    dsv:cardinality <https://w3id.org/dsv#0n>;
+    dsv:cardinality <https://w3id.org/dsv#11>;
     dsv:property <https://techlib.cz/profile/ccmm/relationType>;
     a dsv:DatatypePropertyProfile;
     dsv:datatypePropertyRange <http://www.w3.org/2001/XMLSchema#string>.
@@ -1894,14 +1801,14 @@
     dsv:profileOf <https://mff-uk.github.io/specifications/dcat-ap/#Identifier.notation>;
     dsv:cardinality <https://w3id.org/dsv#11>;
     a dsv:DatatypePropertyProfile;
-    dsv:datatypePropertyRange <http://www.w3.org/2001/XMLSchema#string>.
+    dsv:datatypePropertyRange rdfs:Literal.
 
 <https://techlib.cz/profile/ccmm/Identifier.identifierScheme> dsv:domain <https://techlib.cz/profile/ccmm/Identifier>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
     skos:prefLabel "Identifier scheme"^^rdf:langString;
     skos:definition "Scheme URI of the identifier."@en;
-    <http://purl.org/vocab/vann/usageNote> "For DOI, ROR etc. use the scheme uri, i.e. https://doi.org/. For others use base URI (whole URI except the notation part). Shall be closed controlled vocabulary."@en;
+    <http://purl.org/vocab/vann/usageNote> "For DOI, ROR etc. use the scheme uri, i.e. https://doi.org/. For others use base URI (whole URI except the notation part)."@en;
     dsv:cardinality <https://w3id.org/dsv#11>;
     a dsv:DatatypePropertyProfile;
     dsv:datatypePropertyRange <http://www.w3.org/2001/XMLSchema#anyURI>.
