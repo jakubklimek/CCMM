@@ -280,6 +280,13 @@
             <tr><td>XML schéma</td><td><a href="./organization/schema.xsd">./organization/schema.xsd</a></td></tr>
             <tr><td>XSLT lifting</td><td><a href="./organization/lifting.xslt">./organization/lifting.xslt</a></td></tr>
             <tr><td>XSLT lowering</td><td><a href="./organization/lowering.xslt">./organization/lowering.xslt</a></td></tr>
+            <tr><td>JSON schéma</td><td><a href="./checksum/schema.json">./checksum/schema.json</a></td></tr>
+            <tr><td>Příklad JSONu</td><td><a href="./checksum/example.json">./checksum/example.json</a></td></tr>
+            <tr><td>JSON-LD kontext</td><td><a href="./checksum/context.jsonld">./checksum/context.jsonld</a></td></tr>
+            <tr><td>XML sdílené koncepty</td><td><a href="./checksum/2022-07.xsd">./checksum/2022-07.xsd</a></td></tr>
+            <tr><td>XML schéma</td><td><a href="./checksum/schema.xsd">./checksum/schema.xsd</a></td></tr>
+            <tr><td>XSLT lifting</td><td><a href="./checksum/lifting.xslt">./checksum/lifting.xslt</a></td></tr>
+            <tr><td>XSLT lowering</td><td><a href="./checksum/lowering.xslt">./checksum/lowering.xslt</a></td></tr>
             <tr><td>Dokumentace</td><td><a href="./documentation.html">./documentation.html</a></td></tr>
         </tbody>
     </table>
@@ -299,6 +306,176 @@ V této sekci jsou definovány veškeré koncepty, třídy a asociace, potřebn�
     </figcaption>
 </figure>
 
+<section id="konceptuální-třída-distribution---downloadable-file-Distribution-DownloadableFile">
+<h3>Distribution - downloadable file</h3>
+<dl>
+<dt>Popis</dt>
+<dd>Physical embodiment of the dataset in a particular format. </dd>
+<dt>Význam</dt>
+<dd>Koncept Distribution - downloadable file je definován v <a href="https://slovník.gov.cz/">sémantickém slovníku pojmů</a> jako <a href="Distribution-DownloadableFile">Distribution - downloadable file</a>.</dd>
+<dt>Nadřazený typ</dt>
+<dd><a href="#konceptuální-třída-distribuce-http:&#x2F;&#x2F;www.w3.org&#x2F;ns&#x2F;dcat#Distribution">Distribuce</a></dd>
+</dl>
+
+<section id="konceptuální-vlastnost-distribution---downloadable-file--http:&#x2F;&#x2F;www.w3.org&#x2F;ns&#x2F;dcat#byteSize">
+<h4></h4>
+<dl>
+<dt>Jméno</dt>
+<dd></dd>
+<dt>Popis</dt>
+<dd>The size of a Distribution in bytes. </dd>
+<dt>Povinnost</dt>
+<dd>povinné</dd>
+<dt>Kardinalita</dt>
+<dd>1 - 1</dd>
+<dt>Význam</dt>
+<dd>Koncept  je definován v <a href="https://slovník.gov.cz/">sémantickém slovníku pojmů</a> jako <a href="http://www.w3.org/ns/dcat#byteSize"></a>.</dd>
+</section>
+<section id="konceptuální-vlastnost-distribution---downloadable-file-format-http:&#x2F;&#x2F;purl.org&#x2F;dc&#x2F;terms&#x2F;format">
+<h4>Format</h4>
+<dl>
+<dt>Jméno</dt>
+<dd>Format</dd>
+<dt>Popis</dt>
+<dd>The file format of the Distribution. </dd>
+<dt>Povinnost</dt>
+<dd>povinné</dd>
+<dt>Kardinalita</dt>
+<dd>1 - 1</dd>
+<dt>Význam</dt>
+<dd>Koncept Format je definován v <a href="https://slovník.gov.cz/">sémantickém slovníku pojmů</a> jako <a href="http://purl.org/dc/terms/format">Format</a>.</dd>
+</section>
+<section id="konceptuální-vlastnost-distribution---downloadable-file-checksum-http:&#x2F;&#x2F;spdx.org&#x2F;rdf&#x2F;terms#checksum">
+<h4>Vztah (asociace): checksum</h4>
+<dl>
+<dt>Jméno</dt>
+<dd>checksum</dd>
+<dt>Popis</dt>
+<dd>A mechanism that can be used to verify that the contents of a distribution have not changed.</dd>
+<dt>Povinnost</dt>
+<dd>nepovinné</dd>
+<dt>Kardinalita</dt>
+<dd>0 - 1</dd>
+<dt>Typ</dt>
+<dd><a href="#konceptuální-třída-checksum-http:&#x2F;&#x2F;spdx.org&#x2F;rdf&#x2F;terms#Checksum">Checksum</a></dd>
+<dt>Význam</dt>
+<dd>Koncept checksum je definován v <a href="https://slovník.gov.cz/">sémantickém slovníku pojmů</a> jako <a href="http://spdx.org/rdf/terms#checksum">checksum</a>.</dd>
+</section>
+<section id="konceptuální-vlastnost-distribution---downloadable-file-conforms-to-schema-http:&#x2F;&#x2F;purl.org&#x2F;dc&#x2F;terms&#x2F;conformsTo">
+<h4>Vztah (asociace): conforms to schema</h4>
+<dl>
+<dt>Jméno</dt>
+<dd>conforms to schema</dd>
+<dt>Popis</dt>
+<dd>An established standard to which the distribution conforms.</dd>
+<dt>Povinnost</dt>
+<dd>nepovinné</dd>
+<dt>Kardinalita</dt>
+<dd>0 - ∞</dd>
+<dt>Typ</dt>
+<dd><a href="#konceptuální-třída-application-profile-http:&#x2F;&#x2F;purl.org&#x2F;dc&#x2F;terms&#x2F;Standard">Application profile</a></dd>
+<dt>Význam</dt>
+<dd>Koncept conforms to schema je definován v <a href="https://slovník.gov.cz/">sémantickém slovníku pojmů</a> jako <a href="http://purl.org/dc/terms/conformsTo">conforms to schema</a>.</dd>
+</section>
+<section id="konceptuální-vlastnost-distribution---downloadable-file-typ-média-http:&#x2F;&#x2F;www.w3.org&#x2F;ns&#x2F;dcat#mediaType">
+<h4>Vztah (asociace): typ média</h4>
+<dl>
+<dt>Jméno</dt>
+<dd>typ média</dd>
+<dt>Popis</dt>
+<dd>Typ média distribuce definovaný v IANA.</dd>
+<dt>Povinnost</dt>
+<dd>nepovinné</dd>
+<dt>Kardinalita</dt>
+<dd>0 - 1</dd>
+<dt>Typ</dt>
+<dd><a href="#konceptuální-třída-media-type-http:&#x2F;&#x2F;purl.org&#x2F;dc&#x2F;terms&#x2F;MediaType">Media Type</a></dd>
+<dt>Význam</dt>
+<dd>Koncept typ média je definován v <a href="https://slovník.gov.cz/">sémantickém slovníku pojmů</a> jako <a href="http://www.w3.org/ns/dcat#mediaType">typ média</a>.</dd>
+</section>
+<section id="konceptuální-vlastnost-distribution---downloadable-file-přístupová-adresa-http:&#x2F;&#x2F;www.w3.org&#x2F;ns&#x2F;dcat#accessURL">
+<h4>Vztah (asociace): přístupová adresa</h4>
+<dl>
+<dt>Jméno</dt>
+<dd>přístupová adresa</dd>
+<dt>Popis</dt>
+<dd>URL zdroje, přes které je přístupná distribuce datové sady. Příkladem může být vstupní stránka, RSS kanál či SPARQL endpoint. Použijte ve všech případech kromě URL souboru ke stažení, pro které je lepší použít dcat:downloadURL.</dd>
+<dt>Povinnost</dt>
+<dd>povinné</dd>
+<dt>Kardinalita</dt>
+<dd>1 - ∞</dd>
+<dt>Typ</dt>
+<dd><a href="#konceptuální-třída-file-http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;01&#x2F;rdf-schema#Resource">File</a></dd>
+<dt>Význam</dt>
+<dd>Koncept přístupová adresa je definován v <a href="https://slovník.gov.cz/">sémantickém slovníku pojmů</a> jako <a href="http://www.w3.org/ns/dcat#accessURL">přístupová adresa</a>.</dd>
+</section>
+<section id="konceptuální-vlastnost-distribution---downloadable-file-url-souboru-ke-stažení-http:&#x2F;&#x2F;www.w3.org&#x2F;ns&#x2F;dcat#downloadURL">
+<h4>Vztah (asociace): URL souboru ke stažení</h4>
+<dl>
+<dt>Jméno</dt>
+<dd>URL souboru ke stažení</dd>
+<dt>Popis</dt>
+<dd>URL souboru ke stažení v daném formátu, například CSV nebo RDF soubor. Formát je popsán vlastností distribuce dcterms:format a&#x2F;nebo dcat:mediaType.</dd>
+<dt>Povinnost</dt>
+<dd>nepovinné</dd>
+<dt>Kardinalita</dt>
+<dd>0 - ∞</dd>
+<dt>Typ</dt>
+<dd><a href="#konceptuální-třída-file-http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;01&#x2F;rdf-schema#Resource">File</a></dd>
+<dt>Význam</dt>
+<dd>Koncept URL souboru ke stažení je definován v <a href="https://slovník.gov.cz/">sémantickém slovníku pojmů</a> jako <a href="http://www.w3.org/ns/dcat#downloadURL">URL souboru ke stažení</a>.</dd>
+</section>
+</section>
+<section id="konceptuální-třída-checksum-http:&#x2F;&#x2F;spdx.org&#x2F;rdf&#x2F;terms#Checksum">
+<h3>Checksum</h3>
+<dl>
+<dt>Popis</dt>
+<dd>A value that allows the contents of a file to be authenticated.</dd>
+<dt>Význam</dt>
+<dd>Koncept Checksum je definován v <a href="https://slovník.gov.cz/">sémantickém slovníku pojmů</a> jako <a href="http://spdx.org/rdf/terms#Checksum">Checksum</a>.</dd>
+</dl>
+
+<section id="konceptuální-vlastnost-checksum--http:&#x2F;&#x2F;spdx.org&#x2F;rdf&#x2F;terms#checksumValue">
+<h4></h4>
+<dl>
+<dt>Jméno</dt>
+<dd></dd>
+<dt>Popis</dt>
+<dd>A lower case hexadecimal encoded digest value produced using a specific algorithm. </dd>
+<dt>Povinnost</dt>
+<dd>povinné</dd>
+<dt>Kardinalita</dt>
+<dd>1 - 1</dd>
+<dt>Význam</dt>
+<dd>Koncept  je definován v <a href="https://slovník.gov.cz/">sémantickém slovníku pojmů</a> jako <a href="http://spdx.org/rdf/terms#checksumValue"></a>.</dd>
+</section>
+<section id="konceptuální-vlastnost-checksum-algorithm-http:&#x2F;&#x2F;spdx.org&#x2F;rdf&#x2F;terms#algorithm">
+<h4>Vztah (asociace): algorithm</h4>
+<dl>
+<dt>Jméno</dt>
+<dd>algorithm</dd>
+<dt>Popis</dt>
+<dd>The algorithm used to produce the subject Checksum.</dd>
+<dt>Povinnost</dt>
+<dd>povinné</dd>
+<dt>Kardinalita</dt>
+<dd>1 - 1</dd>
+<dt>Typ</dt>
+<dd><a href="#konceptuální-třída-checksum-algorithm-http:&#x2F;&#x2F;spdx.org&#x2F;rdf&#x2F;terms#ChecksumAlgorithm">Checksum Algorithm</a></dd>
+<dt>Význam</dt>
+<dd>Koncept algorithm je definován v <a href="https://slovník.gov.cz/">sémantickém slovníku pojmů</a> jako <a href="http://spdx.org/rdf/terms#algorithm">algorithm</a>.</dd>
+</section>
+</section>
+<section id="konceptuální-třída-checksum-algorithm-http:&#x2F;&#x2F;spdx.org&#x2F;rdf&#x2F;terms#ChecksumAlgorithm">
+<h3>Checksum Algorithm</h3>
+<dl>
+<dt>Popis</dt>
+<dd>Algorighm for Checksums.</dd>
+<dt>Význam</dt>
+<dd>Koncept Checksum Algorithm je definován v <a href="https://slovník.gov.cz/">sémantickém slovníku pojmů</a> jako <a href="http://spdx.org/rdf/terms#ChecksumAlgorithm">Checksum Algorithm</a>.</dd>
+</dl>
+
+</section>
 <section id="konceptuální-třída-katalogizační-záznam-http:&#x2F;&#x2F;www.w3.org&#x2F;ns&#x2F;dcat#CatalogRecord">
 <h3>Katalogizační záznam</h3>
 <dl>
@@ -1713,124 +1890,6 @@ V této sekci jsou definovány veškeré koncepty, třídy a asociace, potřebn�
 <dd><a href="#konceptuální-třída-data-service-http:&#x2F;&#x2F;www.w3.org&#x2F;ns&#x2F;dcat#DataService">Data service</a></dd>
 <dt>Význam</dt>
 <dd>Koncept služba pro přístup k datům je definován v <a href="https://slovník.gov.cz/">sémantickém slovníku pojmů</a> jako <a href="http://www.w3.org/ns/dcat#accessService">služba pro přístup k datům</a>.</dd>
-</section>
-</section>
-<section id="konceptuální-třída-distribution---downloadable-file-Distribution-DownloadableFile">
-<h3>Distribution - downloadable file</h3>
-<dl>
-<dt>Popis</dt>
-<dd>Physical embodiment of the dataset in a particular format. </dd>
-<dt>Význam</dt>
-<dd>Koncept Distribution - downloadable file je definován v <a href="https://slovník.gov.cz/">sémantickém slovníku pojmů</a> jako <a href="Distribution-DownloadableFile">Distribution - downloadable file</a>.</dd>
-<dt>Nadřazený typ</dt>
-<dd><a href="#konceptuální-třída-distribuce-http:&#x2F;&#x2F;www.w3.org&#x2F;ns&#x2F;dcat#Distribution">Distribuce</a></dd>
-</dl>
-
-<section id="konceptuální-vlastnost-distribution---downloadable-file--http:&#x2F;&#x2F;spdx.org&#x2F;rdf&#x2F;terms#checksumValue">
-<h4></h4>
-<dl>
-<dt>Jméno</dt>
-<dd></dd>
-<dt>Popis</dt>
-<dd>A mechanism that can be used to verify that the contents of a distribution have not changed. </dd>
-<dt>Povinnost</dt>
-<dd>povinné</dd>
-<dt>Kardinalita</dt>
-<dd>1 - 1</dd>
-<dt>Význam</dt>
-<dd>Koncept  je definován v <a href="https://slovník.gov.cz/">sémantickém slovníku pojmů</a> jako <a href="http://spdx.org/rdf/terms#checksumValue"></a>.</dd>
-</section>
-<section id="konceptuální-vlastnost-distribution---downloadable-file--http:&#x2F;&#x2F;www.w3.org&#x2F;ns&#x2F;dcat#byteSize">
-<h4></h4>
-<dl>
-<dt>Jméno</dt>
-<dd></dd>
-<dt>Popis</dt>
-<dd>The size of a Distribution in bytes. </dd>
-<dt>Povinnost</dt>
-<dd>povinné</dd>
-<dt>Kardinalita</dt>
-<dd>1 - 1</dd>
-<dt>Význam</dt>
-<dd>Koncept  je definován v <a href="https://slovník.gov.cz/">sémantickém slovníku pojmů</a> jako <a href="http://www.w3.org/ns/dcat#byteSize"></a>.</dd>
-</section>
-<section id="konceptuální-vlastnost-distribution---downloadable-file-format-http:&#x2F;&#x2F;purl.org&#x2F;dc&#x2F;terms&#x2F;format">
-<h4>Format</h4>
-<dl>
-<dt>Jméno</dt>
-<dd>Format</dd>
-<dt>Popis</dt>
-<dd>The file format of the Distribution. </dd>
-<dt>Povinnost</dt>
-<dd>povinné</dd>
-<dt>Kardinalita</dt>
-<dd>1 - 1</dd>
-<dt>Význam</dt>
-<dd>Koncept Format je definován v <a href="https://slovník.gov.cz/">sémantickém slovníku pojmů</a> jako <a href="http://purl.org/dc/terms/format">Format</a>.</dd>
-</section>
-<section id="konceptuální-vlastnost-distribution---downloadable-file-conforms-to-schema-http:&#x2F;&#x2F;purl.org&#x2F;dc&#x2F;terms&#x2F;conformsTo">
-<h4>Vztah (asociace): conforms to schema</h4>
-<dl>
-<dt>Jméno</dt>
-<dd>conforms to schema</dd>
-<dt>Popis</dt>
-<dd>An established standard to which the distribution conforms.</dd>
-<dt>Povinnost</dt>
-<dd>nepovinné</dd>
-<dt>Kardinalita</dt>
-<dd>0 - ∞</dd>
-<dt>Typ</dt>
-<dd><a href="#konceptuální-třída-application-profile-http:&#x2F;&#x2F;purl.org&#x2F;dc&#x2F;terms&#x2F;Standard">Application profile</a></dd>
-<dt>Význam</dt>
-<dd>Koncept conforms to schema je definován v <a href="https://slovník.gov.cz/">sémantickém slovníku pojmů</a> jako <a href="http://purl.org/dc/terms/conformsTo">conforms to schema</a>.</dd>
-</section>
-<section id="konceptuální-vlastnost-distribution---downloadable-file-typ-média-http:&#x2F;&#x2F;www.w3.org&#x2F;ns&#x2F;dcat#mediaType">
-<h4>Vztah (asociace): typ média</h4>
-<dl>
-<dt>Jméno</dt>
-<dd>typ média</dd>
-<dt>Popis</dt>
-<dd>Typ média distribuce definovaný v IANA.</dd>
-<dt>Povinnost</dt>
-<dd>nepovinné</dd>
-<dt>Kardinalita</dt>
-<dd>0 - 1</dd>
-<dt>Typ</dt>
-<dd><a href="#konceptuální-třída-media-type-http:&#x2F;&#x2F;purl.org&#x2F;dc&#x2F;terms&#x2F;MediaType">Media Type</a></dd>
-<dt>Význam</dt>
-<dd>Koncept typ média je definován v <a href="https://slovník.gov.cz/">sémantickém slovníku pojmů</a> jako <a href="http://www.w3.org/ns/dcat#mediaType">typ média</a>.</dd>
-</section>
-<section id="konceptuální-vlastnost-distribution---downloadable-file-přístupová-adresa-http:&#x2F;&#x2F;www.w3.org&#x2F;ns&#x2F;dcat#accessURL">
-<h4>Vztah (asociace): přístupová adresa</h4>
-<dl>
-<dt>Jméno</dt>
-<dd>přístupová adresa</dd>
-<dt>Popis</dt>
-<dd>URL zdroje, přes které je přístupná distribuce datové sady. Příkladem může být vstupní stránka, RSS kanál či SPARQL endpoint. Použijte ve všech případech kromě URL souboru ke stažení, pro které je lepší použít dcat:downloadURL.</dd>
-<dt>Povinnost</dt>
-<dd>povinné</dd>
-<dt>Kardinalita</dt>
-<dd>1 - ∞</dd>
-<dt>Typ</dt>
-<dd><a href="#konceptuální-třída-file-http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;01&#x2F;rdf-schema#Resource">File</a></dd>
-<dt>Význam</dt>
-<dd>Koncept přístupová adresa je definován v <a href="https://slovník.gov.cz/">sémantickém slovníku pojmů</a> jako <a href="http://www.w3.org/ns/dcat#accessURL">přístupová adresa</a>.</dd>
-</section>
-<section id="konceptuální-vlastnost-distribution---downloadable-file-url-souboru-ke-stažení-http:&#x2F;&#x2F;www.w3.org&#x2F;ns&#x2F;dcat#downloadURL">
-<h4>Vztah (asociace): URL souboru ke stažení</h4>
-<dl>
-<dt>Jméno</dt>
-<dd>URL souboru ke stažení</dd>
-<dt>Popis</dt>
-<dd>URL souboru ke stažení v daném formátu, například CSV nebo RDF soubor. Formát je popsán vlastností distribuce dcterms:format a&#x2F;nebo dcat:mediaType.</dd>
-<dt>Povinnost</dt>
-<dd>nepovinné</dd>
-<dt>Kardinalita</dt>
-<dd>0 - ∞</dd>
-<dt>Typ</dt>
-<dd><a href="#konceptuální-třída-file-http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;01&#x2F;rdf-schema#Resource">File</a></dd>
-<dt>Význam</dt>
-<dd>Koncept URL souboru ke stažení je definován v <a href="https://slovník.gov.cz/">sémantickém slovníku pojmů</a> jako <a href="http://www.w3.org/ns/dcat#downloadURL">URL souboru ke stažení</a>.</dd>
 </section>
 </section>
 <section id="konceptuální-třída-distribuce-http:&#x2F;&#x2F;www.w3.org&#x2F;ns&#x2F;dcat#Distribution">
@@ -15267,14 +15326,6 @@ V této sekci jsou definovány veškeré koncepty, třídy a asociace, potřebn�
   </a>
 <ul>
 <li>
-    <code>checksum</code>:
-    povinná
-    
-    (1 - 1) položka typu 
-      
-       <a href="http://www.w3.org/2001/XMLSchema#string">http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema#string</a>
-</li>
-<li>
     <code>byte_size</code>:
     povinná
     
@@ -15322,6 +15373,14 @@ V této sekci jsou definovány veškeré koncepty, třídy a asociace, potřebn�
       <strong><a href="#json-schéma-objekt-file">File</a></strong>
       
 </li>
+<li>
+    <code>checksum</code>:
+    
+    nepovinná
+    (0 - 1) položka typu 
+      <strong><a href="#json-schéma-objekt-checksum">Checksum</a></strong>
+      
+</li>
 </ul>
 </li>
 </ul>
@@ -15339,35 +15398,6 @@ V této sekci jsou definovány veškeré koncepty, třídy a asociace, potřebn�
 </dd>
 </dl>
 
-<section id="json-schéma-vlastnost-distribution---downloadable-file-checksum">
-<h5>Vlastnost <code>checksum</code></h5>
-<dl>
-<dt>Klíč</dt>
-<dd>`checksum`</dd
-<dt>Jméno</dt>
-<dd></dd
-<dt>Popis</dt>
-<dd>A mechanism that can be used to verify that the contents of a distribution have not changed. </dd
-<dt>Povinnost</dt>
-<dd>povinné</dd
-<dt>Kardinalita</dt>
-<dd>1 - 1</dd
-<dt>Typ</dt>
-
-
-<dd>
-<a href="http://www.w3.org/2001/XMLSchema#string">http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema#string</a>
-</dd>
-
-
-
-
-<dt>Interpretace</dt>
-<dd>
-<a href="#konceptuální-vlastnost-distribution---downloadable-file--http:&#x2F;&#x2F;spdx.org&#x2F;rdf&#x2F;terms#checksumValue"></a>
-</dd>
-</dl>
-</section>
 <section id="json-schéma-vlastnost-distribution---downloadable-file-byte_size">
 <h5>Vlastnost <code>byte_size</code></h5>
 <dl>
@@ -15451,7 +15481,7 @@ V této sekci jsou definovány veškeré koncepty, třídy a asociace, potřebn�
 
 <dt>Interpretace</dt>
 <dd>
-<a href="#konceptuální-vlastnost-distribution---downloadable-file-conforms-to-schema-http:&#x2F;&#x2F;purl.org&#x2F;dc&#x2F;terms&#x2F;conformsTo">conforms to schema</a>
+<a href="#konceptuální-vlastnost-distribution---downloadable-file-"></a>
 </dd>
 </dl>
 </section>
@@ -15480,7 +15510,7 @@ V této sekci jsou definovány veškeré koncepty, třídy a asociace, potřebn�
 
 <dt>Interpretace</dt>
 <dd>
-<a href="#konceptuální-vlastnost-distribution---downloadable-file-typ-média-http:&#x2F;&#x2F;www.w3.org&#x2F;ns&#x2F;dcat#mediaType">typ média</a>
+<a href="#konceptuální-vlastnost-distribution---downloadable-file-"></a>
 </dd>
 </dl>
 </section>
@@ -15509,7 +15539,7 @@ V této sekci jsou definovány veškeré koncepty, třídy a asociace, potřebn�
 
 <dt>Interpretace</dt>
 <dd>
-<a href="#konceptuální-vlastnost-distribution---downloadable-file-přístupová-adresa-http:&#x2F;&#x2F;www.w3.org&#x2F;ns&#x2F;dcat#accessURL">přístupová adresa</a>
+<a href="#konceptuální-vlastnost-distribution---downloadable-file-"></a>
 </dd>
 </dl>
 </section>
@@ -15538,7 +15568,36 @@ V této sekci jsou definovány veškeré koncepty, třídy a asociace, potřebn�
 
 <dt>Interpretace</dt>
 <dd>
-<a href="#konceptuální-vlastnost-distribution---downloadable-file-url-souboru-ke-stažení-http:&#x2F;&#x2F;www.w3.org&#x2F;ns&#x2F;dcat#downloadURL">URL souboru ke stažení</a>
+<a href="#konceptuální-vlastnost-distribution---downloadable-file-"></a>
+</dd>
+</dl>
+</section>
+<section id="json-schéma-vlastnost-distribution---downloadable-file-checksum">
+<h5>Vlastnost <code>checksum</code></h5>
+<dl>
+<dt>Klíč</dt>
+<dd>`checksum`</dd
+<dt>Jméno</dt>
+<dd>checksum</dd
+<dt>Popis</dt>
+<dd>A mechanism that can be used to verify that the contents of a distribution have not changed.</dd
+<dt>Povinnost</dt>
+<dd>nepovinné</dd
+<dt>Kardinalita</dt>
+<dd>0 - 1</dd
+<dt>Typ</dt>
+
+<dd>
+  <a href=".&#x2F;documentation.html#json-schéma-objekt-checksum">Checksum</a>
+</dd>
+
+
+
+
+
+<dt>Interpretace</dt>
+<dd>
+<a href="#konceptuální-vlastnost-distribution---downloadable-file-"></a>
 </dd>
 </dl>
 </section>
@@ -15605,6 +15664,21 @@ V této sekci jsou definovány veškeré koncepty, třídy a asociace, potřebn�
 </dd>
 </dl>
 </section>
+<section id="json-schéma-objekt-checksum">
+<h4>Referencovaný objekt <i>Checksum</i></h4>
+<dl>
+<dt>Popis</dt>
+<dd>A value that allows the contents of a file to be authenticated.</dd>
+<dt>Interpretace</dt>
+<dd>
+  <a href="#konceptuální-třída-checksum-http:&#x2F;&#x2F;spdx.org&#x2F;rdf&#x2F;terms#Checksum">Checksum</a>
+</dd>
+<dt>Schéma</dt>
+<dd>
+  Schéma je definováno v  <a href=".&#x2F;documentation.html"></a>.
+</dd>
+</dl>
+</section>
 </section>
 
 
@@ -15649,6 +15723,11 @@ V této sekci jsou definovány veškeré koncepty, třídy a asociace, potřebn�
         <tr>
             <td colspan="2" style="text-align: center;"><i>Stejný namespace jako hlavní dokument</i></td>
           <td><a href="../file/schema.xsd">../file/schema.xsd</a></td>
+          <td><a href="../documentation.html"></a></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;"><i>Stejný namespace jako hlavní dokument</i></td>
+          <td><a href="../checksum/schema.xsd">../checksum/schema.xsd</a></td>
           <td><a href="../documentation.html"></a></td>
         </tr>
         <tr>
@@ -15717,9 +15796,6 @@ V této sekci jsou definovány veškeré koncepty, třídy a asociace, potřebn�
           element <a href="https://schemas.dataspecer.com/xsd/core/#iri"><code>&lt;iri&gt;</code></a> [0..1]
       </li>
       <li>
-          element <a href="#element-checksum"><code>&lt;checksum&gt;</code></a> [1..1]
-      </li>
-      <li>
           element <a href="#element-byte_size"><code>&lt;byte_size&gt;</code></a> [1..1]
       </li>
       <li>
@@ -15737,50 +15813,12 @@ V této sekci jsou definovány veškeré koncepty, třídy a asociace, potřebn�
       <li>
           element <a href="#element-download_url"><code>&lt;download_url&gt;</code></a> [0..*]
       </li>
+      <li>
+          element <a href="#element-checksum"><code>&lt;checksum&gt;</code></a> [0..1]
+      </li>
   </ul>
 
 
-  </dl>
-</section>
-<section id="element-checksum">
-  <h4>Element <code>&lt;checksum&gt;</code></h4>
-
-  <dl>
-    <dt>Význam</dt>
-    <dd>
-        <i>
-          
-          vlastnost
-          
-          
-        </i>
-
-          <a href="#konceptuální-vlastnost-distribution---downloadable-file--http://spdx.org/rdf/terms#checksumValue"><strong>Checksum</strong></a>
-          (A mechanism that can be used to verify that the contents of a distribution have not changed. )
-
-    </dd>
-
-      <dt>Efektivní kardinalita elementu vůči nadřazeném elementu</dt>
-      <dd>1..1</dd>
-      <dt>Nadřazený element</dt>
-      <dd><a href="#type-distribution_downloadable_file"></a></dd>
-
-    
-      <dt>Typ elementu</dt>
-        <div style="margin-left: 40px;">
-      <dt>Obsah</dt>
-      <dd>
-          Obsahem elementu je typ <a href="https://www.w3.org/TR/xmlschema-2/#string"><code>xs:string</code></a>.
-      </dd>
-
-
-    
-
-
-    
-  </div>
-
-    
   </dl>
 </section>
 <section id="element-byte_size">
@@ -16039,6 +16077,52 @@ V této sekci jsou definovány veškeré koncepty, třídy a asociace, potřebn�
       <dd>
         <a href="#konceptuální-třída-resource-http://www.w3.org/2000/01/rdf-schema#Resource">File</a>
         (Downloadable file in given format.)
+      </dd>
+
+
+
+    
+  </div>
+
+    
+  </dl>
+</section>
+<section id="element-checksum">
+  <h4>Element <code>&lt;checksum&gt;</code></h4>
+
+  <dl>
+    <dt>Význam</dt>
+    <dd>
+        <i>
+          
+          vlastnost
+          
+          
+        </i>
+
+          <a href="#konceptuální-vlastnost-distribution---downloadable-file-checksum-http://spdx.org/rdf/terms#checksum"><strong>checksum</strong></a>
+          (A mechanism that can be used to verify that the contents of a distribution have not changed.)
+
+    </dd>
+
+      <dt>Efektivní kardinalita elementu vůči nadřazeném elementu</dt>
+      <dd>0..1</dd>
+      <dt>Nadřazený element</dt>
+      <dd><a href="#type-distribution_downloadable_file"></a></dd>
+
+    
+      <dt>Typ elementu</dt>
+        <div style="margin-left: 40px;">
+      <dt>Obsah</dt>
+      <dd>
+          Obsahem elementu je typ <a href="#type-checksum"><code>checksum</code></a>.
+      </dd>
+
+
+        <dt>Význam</dt>
+      <dd>
+        <a href="#konceptuální-třída-checksum-http://spdx.org/rdf/terms#Checksum">Checksum</a>
+        (A value that allows the contents of a file to be authenticated.)
       </dd>
 
 
@@ -16345,6 +16429,317 @@ V této sekci jsou definovány veškeré koncepty, třídy a asociace, potřebn�
 
 
     
+  </div>
+
+    
+  </dl>
+</section>
+
+
+</section>
+</section>
+<section>
+<h2>Specifikace struktury pro Checksum</h2>
+<p>Datová struktura pro Checksum. A value that allows the contents of a file to be authenticated.</p>
+
+<section>
+<h3>Přehled JSON struktury</h3>
+<p>JSON Schéma zachycující strukturu pro <i>Checksum</i> je definováno v souboru <a href="./checksum/schema.json"><code>.&#x2F;checksum&#x2F;schema.json</code></a>. Datová sada je tvořena jediným prvkem odpovídající datové struktuře <i>Checksum</i>.</p>
+
+<ul>
+<li>
+  <a href="#json-schéma-objekt-checksum">
+    Checksum
+  </a>
+<ul>
+<li>
+    <code>checksum_value</code>:
+    povinná
+    
+    (1 - 1) položka typu 
+      
+       <a href="http://www.w3.org/2001/XMLSchema#hexBinary">http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema#hexBinary</a>
+</li>
+<li>
+    <code>algorithm</code>:
+    povinná
+    
+    (1 - 1) položka typu 
+      <strong>IRI (<a href="#konceptuální-třída-checksum-algorithm-http:&#x2F;&#x2F;spdx.org&#x2F;rdf&#x2F;terms#ChecksumAlgorithm">Checksum Algorithm</a>)</strong>
+      
+</li>
+</ul>
+</li>
+</ul>
+
+<h3>Detailní specifikace prvků JSON struktury</h3>
+
+<section id="json-schéma-objekt-checksum">
+<h4>Objekt <i>Checksum</i></h4>
+<dl>
+<dt>Popis</dt>
+<dd>A value that allows the contents of a file to be authenticated.</dd>
+<dt>Interpretace</dt>
+<dd>
+  <a href="#konceptuální-třída-checksum-http:&#x2F;&#x2F;spdx.org&#x2F;rdf&#x2F;terms#Checksum">Checksum</a>
+</dd>
+</dl>
+
+<section id="json-schéma-vlastnost-checksum-checksum_value">
+<h5>Vlastnost <code>checksum_value</code></h5>
+<dl>
+<dt>Klíč</dt>
+<dd>`checksum_value`</dd
+<dt>Jméno</dt>
+<dd></dd
+<dt>Popis</dt>
+<dd>A lower case hexadecimal encoded digest value produced using a specific algorithm. </dd
+<dt>Povinnost</dt>
+<dd>povinné</dd
+<dt>Kardinalita</dt>
+<dd>1 - 1</dd
+<dt>Typ</dt>
+
+
+<dd>
+<a href="http://www.w3.org/2001/XMLSchema#hexBinary">http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema#hexBinary</a>
+</dd>
+
+
+
+
+<dt>Interpretace</dt>
+<dd>
+<a href="#konceptuální-vlastnost-checksum--http:&#x2F;&#x2F;spdx.org&#x2F;rdf&#x2F;terms#checksumValue"></a>
+</dd>
+</dl>
+</section>
+<section id="json-schéma-vlastnost-checksum-algorithm">
+<h5>Vlastnost <code>algorithm</code></h5>
+<dl>
+<dt>Klíč</dt>
+<dd>`algorithm`</dd
+<dt>Jméno</dt>
+<dd>algorithm</dd
+<dt>Popis</dt>
+<dd>The algorithm used to produce the subject Checksum.</dd
+<dt>Povinnost</dt>
+<dd>povinné</dd
+<dt>Kardinalita</dt>
+<dd>1 - 1</dd
+<dt>Typ</dt>
+
+<dd>
+  IRI (<a href="#konceptuální-třída-checksum-algorithm-http:&#x2F;&#x2F;spdx.org&#x2F;rdf&#x2F;terms#ChecksumAlgorithm">Checksum Algorithm</a>)
+</dd>
+
+
+
+
+
+<dt>Interpretace</dt>
+<dd>
+<a href="#konceptuální-vlastnost-checksum-"></a>
+</dd>
+</dl>
+</section>
+
+</section>
+
+</section>
+
+
+
+
+
+
+
+<section>
+<h3>Přehled XML struktury</h3>
+<p>
+  Tato sekce popisuje XSD zachycující strukturu pro <i>Checksum</i>, jež je definováno
+  v souboru <a href="./checksum/schema.xsd"><code>./checksum/schema.xsd</code></a>.
+</p>
+
+
+<section>
+<h4>Importy</h4>
+<p>
+  Seznam schémat, jež jsou tímto schématem importovány a použity.
+</p>
+  <table class="def">
+    <thead>
+      <tr>
+        <th>Prefix</th>
+        <th>Namespace</th>
+        <th>Lokace schématu</th>
+        <th>Dokumentace</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code></code>c</code></td>
+            <td><a href="https://schemas.dataspecer.com/xsd/core/">https://schemas.dataspecer.com/xsd/core/</a></td>
+          <td><a href="https://techlib.cz/specification/ccmm/person/2022-07.xsd">https://techlib.cz/specification/ccmm/person/2022-07.xsd</a></td>
+          <td></td>
+        </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h4>Kořenové entity XSD schématu</h4>
+  <ul>
+      <li> element <a href="#element-checksum"><code>checksum</code></a></li>
+
+
+      <li> komplexní typ <a href="#type-checksum"><code>checksum</code></a></li>
+  </ul>
+</section>
+
+
+
+
+<section id="element-checksum">
+  <h4>Kořenový element <code>&lt;checksum&gt;</code></h4>
+  <dl>
+    
+
+    
+      <dt>Typ elementu</dt>
+        <div style="margin-left: 40px;">
+      <dt>Obsah</dt>
+      <dd>
+          Obsahem elementu je typ <a href="#type-checksum"><code>checksum</code></a>.
+      </dd>
+
+
+    
+
+
+    
+  </div>
+
+      </dl>
+</section>
+
+
+
+<section id="type-checksum">
+  <h4>Kořenový komplexní typ <code>checksum</code></h4>
+  <dl>
+        <dt>Význam</dt>
+      <dd>
+        <a href="#konceptuální-třída-checksum-http://spdx.org/rdf/terms#Checksum">Checksum</a>
+        (A value that allows the contents of a file to be authenticated.)
+      </dd>
+
+
+        <dt>Obsah 
+ - elementy v tomto pořadí
+</dt>
+      <ul style="margin-top: 0;">
+      <li>
+          element <a href="https://schemas.dataspecer.com/xsd/core/#iri"><code>&lt;iri&gt;</code></a> [0..1]
+      </li>
+      <li>
+          element <a href="#element-checksum_value"><code>&lt;checksum_value&gt;</code></a> [1..1]
+      </li>
+      <li>
+          element <a href="#element-algorithm"><code>&lt;algorithm&gt;</code></a> [1..1]
+      </li>
+  </ul>
+
+
+  </dl>
+</section>
+<section id="element-checksum_value">
+  <h4>Element <code>&lt;checksum_value&gt;</code></h4>
+
+  <dl>
+    <dt>Význam</dt>
+    <dd>
+        <i>
+          
+          vlastnost
+          
+          
+        </i>
+
+          <a href="#konceptuální-vlastnost-checksum--http://spdx.org/rdf/terms#checksumValue"><strong>Checksum value</strong></a>
+          (A lower case hexadecimal encoded digest value produced using a specific algorithm. )
+
+    </dd>
+
+      <dt>Efektivní kardinalita elementu vůči nadřazeném elementu</dt>
+      <dd>1..1</dd>
+      <dt>Nadřazený element</dt>
+      <dd><a href="#type-checksum"></a></dd>
+
+    
+      <dt>Typ elementu</dt>
+        <div style="margin-left: 40px;">
+      <dt>Obsah</dt>
+      <dd>
+          Obsahem elementu je typ <a href="https://www.w3.org/TR/xmlschema-2/#hexBinary"><code>xs:hexBinary</code></a>.
+      </dd>
+
+
+    
+
+
+    
+  </div>
+
+    
+  </dl>
+</section>
+<section id="element-algorithm">
+  <h4>Element <code>&lt;algorithm&gt;</code></h4>
+
+  <dl>
+    <dt>Význam</dt>
+    <dd>
+        <i>
+          
+          vlastnost
+          
+          
+        </i>
+
+          <a href="#konceptuální-vlastnost-checksum-algorithm-http://spdx.org/rdf/terms#algorithm"><strong>algorithm</strong></a>
+          (The algorithm used to produce the subject Checksum.)
+
+    </dd>
+
+      <dt>Efektivní kardinalita elementu vůči nadřazeném elementu</dt>
+      <dd>1..1</dd>
+      <dt>Nadřazený element</dt>
+      <dd><a href="#type-checksum"></a></dd>
+
+    
+      <dt>Typ elementu</dt>
+        <div style="margin-left: 40px;">
+
+
+        <dt>Význam</dt>
+      <dd>
+        <a href="#konceptuální-třída-checksum-algorithm-http://spdx.org/rdf/terms#ChecksumAlgorithm">Checksum Algorithm</a>
+        (Algorighm for Checksums.)
+      </dd>
+
+
+
+        <dt>Obsah 
+ - elementy v tomto pořadí
+</dt>
+      <ul style="margin-top: 0;">
+      <li>
+          element <a href="https://schemas.dataspecer.com/xsd/core/#iri"><code>&lt;iri&gt;</code></a> [0..1]
+      </li>
+  </ul>
+
+
   </div>
 
     

@@ -5574,69 +5574,6 @@
   </table>
 </section>
 
-                <section id="Distribution-DownloadableFile.checksum">
-  <h4>Checksum</h4>
-
-  <table class="def">
-    <tr>
-      <td>IRI</td>
-      <td><a href="https://techlib.cz/profile/ccmm/Distribution-DownloadableFile.checksum">https://techlib.cz/profile/ccmm/Distribution-DownloadableFile.checksum</a></td>
-    </tr>
-    <tr>
-      <td>Label</td>
-      <td>Checksum</td>
-    </tr>
-    <tr>
-      <td>Definition</td>
-      <td>A mechanism that can be used to verify that the contents of a distribution have not changed. </td>
-    </tr>
-    <tr>
-      <td>Domain</td>
-      <td>
-        <a href="#Distribution-DownloadableFile">Distribution - downloadable file</a>
-
-              [0..*]
-
-      </td>
-    </tr>
-    <tr>
-      <td>Range</td>
-      <td>
-        <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
-
-              [1..1]
-
-    </td>
-    </tr>
-
-    <tr>
-      <td>Profiles</td>
-      <td>      
-      <a href="https://mff-uk.github.io/specifications/dcat-ap/#Checksum.checksumValue">checksum value</a> (<a href="https://mff-uk.github.io/specifications/dcat-ap/#Checksum.checksumValue">https://mff-uk.github.io/specifications/dcat-ap/#Checksum.checksumValue</a>)
-          <br />
-                
-      <a href="https://mff-uk.github.io/specifications/dcat-dap/#Checksum.checksumValue">checksum value</a> (<a href="https://mff-uk.github.io/specifications/dcat-dap/#Checksum.checksumValue">https://mff-uk.github.io/specifications/dcat-dap/#Checksum.checksumValue</a>)
-          <br />
-                property
-      <a href="https://datagov-cz.github.io/cache-slovniku/spdx-ontology.2.3.1.ttl#checksumValue"><i>without assigned name</i></a> (<a href="http://spdx.org/rdf/terms#checksumValue">spdx:checksumValue</a>)
-
-
-</td>
-    </tr>
-
-    <tr>
-      <td>Label from vocabulary</td>
-      <td>checksum value</td>
-    </tr>
-
-    <tr>
-      <td>Definition from vocabulary</td>
-      <td>A lower case hexadecimal encoded digest value produced using a specific algorithm.</td>
-    </tr>
-
-  </table>
-</section>
-
                 <section id="Distribution-DownloadableFile.conformsToSchema">
   <h4>conforms to schema</h4>
 
@@ -5694,6 +5631,68 @@
     <tr>
       <td>Definition from vocabulary</td>
       <td>An established standard to which the distribution conforms.</td>
+    </tr>
+
+  </table>
+</section>
+
+                <section id="Distribution-DataService.checksum">
+  <h4>checksum</h4>
+
+  <table class="def">
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://techlib.cz/profile/ccmm/Distribution-DataService.checksum">https://techlib.cz/profile/ccmm/Distribution-DataService.checksum</a></td>
+    </tr>
+    <tr>
+      <td>Label</td>
+      <td>checksum</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>A mechanism that can be used to verify that the contents of a distribution have not changed.</td>
+    </tr>
+    <tr>
+      <td>Domain</td>
+      <td>
+        <a href="#Distribution-DownloadableFile">Distribution - downloadable file</a>
+
+        
+      </td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td>
+        <a href="#Checksum">Checksum</a>
+
+              [0..1]
+
+    </td>
+    </tr>
+
+    <tr>
+      <td>Profiles</td>
+      <td>      
+      <a href="https://mff-uk.github.io/specifications/dcat-ap/#Distribution.checksum">checksum</a> (<a href="https://mff-uk.github.io/specifications/dcat-ap/#Distribution.checksum">https://mff-uk.github.io/specifications/dcat-ap/#Distribution.checksum</a>)
+          <br />
+                
+      <a href="https://mff-uk.github.io/specifications/dcat-dap/#Distribution.checksum">checksum</a> (<a href="https://mff-uk.github.io/specifications/dcat-dap/#Distribution.checksum">https://mff-uk.github.io/specifications/dcat-dap/#Distribution.checksum</a>)
+          <br />
+                property
+      <a href="https://datagov-cz.github.io/cache-slovniku/spdx-ontology.2.3.1.ttl#checksum"><i>without assigned name</i></a> (<a href="http://spdx.org/rdf/terms#checksum">spdx:checksum</a>)
+
+
+</td>
+    </tr>
+
+    <tr>
+      <td>Label from vocabulary</td>
+      <td>checksum</td>
+    </tr>
+
+    <tr>
+      <td>Definition from vocabulary</td>
+      <td>A mechanism that can be used to verify that the contents of a distribution have not changed.</td>
     </tr>
 
   </table>
@@ -7385,6 +7384,231 @@ Every Location instance must have at least one of the following attributes/relat
 
 
             </section>
+            <section id="Checksum">
+              <h4>Checksum</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/profile/ccmm/Checksum">https://techlib.cz/profile/ccmm/Checksum</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Checksum</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>A value that allows the contents of a file to be authenticated.</td>
+                </tr>
+                <tr>
+                  <td>Profiles</td>
+                  <td>                  
+                  <a href="https://mff-uk.github.io/specifications/dcat-ap/#Checksum">Checksum</a> (<a href="https://mff-uk.github.io/specifications/dcat-ap/#Checksum">https://mff-uk.github.io/specifications/dcat-ap/#Checksum</a>)
+                      <br />
+                                        
+                  <a href="https://mff-uk.github.io/specifications/dcat-dap/#Checksum">Checksum</a> (<a href="https://mff-uk.github.io/specifications/dcat-dap/#Checksum">https://mff-uk.github.io/specifications/dcat-dap/#Checksum</a>)
+                      <br />this profiles
+                                        class
+                  <a href="https://datagov-cz.github.io/cache-slovniku/spdx-ontology.2.3.1.ttl#Checksum"><i>without assigned name</i></a> (<a href="http://spdx.org/rdf/terms#Checksum">spdx:Checksum</a>)
+
+
+</td>
+                </tr>
+
+                <tr>
+                  <td>Label from vocabulary</td>
+                  <td>Checksum</td>
+                </tr>
+
+                <tr>
+                  <td>Definition from vocabulary</td>
+                  <td>A value that allows the contents of a file to be authenticated.</td>
+                </tr>
+
+              </table>
+
+              <p>Zpětné asociace</p>
+              <ul>
+                  <li><a href="#Distribution-DataService.checksum"></a></li>
+              </ul>
+
+                <section id="Checksum.checksumValue">
+  <h4>Checksum value</h4>
+
+  <table class="def">
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://techlib.cz/profile/ccmm/Checksum.checksumValue">https://techlib.cz/profile/ccmm/Checksum.checksumValue</a></td>
+    </tr>
+    <tr>
+      <td>Label</td>
+      <td>Checksum value</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>A lower case hexadecimal encoded digest value produced using a specific algorithm. </td>
+    </tr>
+    <tr>
+      <td>Domain</td>
+      <td>
+        <a href="#Checksum">Checksum</a>
+
+              [0..*]
+
+      </td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td>
+        <a href="http://www.w3.org/2001/XMLSchema#hexBinary">xsd:hexBinary</a>
+
+              [1..1]
+
+    </td>
+    </tr>
+
+    <tr>
+      <td>Profiles</td>
+      <td>      
+      <a href="https://mff-uk.github.io/specifications/dcat-ap/#Checksum.checksumValue">checksum value</a> (<a href="https://mff-uk.github.io/specifications/dcat-ap/#Checksum.checksumValue">https://mff-uk.github.io/specifications/dcat-ap/#Checksum.checksumValue</a>)
+          <br />
+                
+      <a href="https://mff-uk.github.io/specifications/dcat-dap/#Checksum.checksumValue">checksum value</a> (<a href="https://mff-uk.github.io/specifications/dcat-dap/#Checksum.checksumValue">https://mff-uk.github.io/specifications/dcat-dap/#Checksum.checksumValue</a>)
+          <br />
+                property
+      <a href="https://datagov-cz.github.io/cache-slovniku/spdx-ontology.2.3.1.ttl#checksumValue"><i>without assigned name</i></a> (<a href="http://spdx.org/rdf/terms#checksumValue">spdx:checksumValue</a>)
+
+
+</td>
+    </tr>
+
+    <tr>
+      <td>Label from vocabulary</td>
+      <td>checksum value</td>
+    </tr>
+
+    <tr>
+      <td>Definition from vocabulary</td>
+      <td>A lower case hexadecimal encoded digest value produced using a specific algorithm.</td>
+    </tr>
+
+  </table>
+</section>
+
+                <section id="Checksum.algorithm">
+  <h4>algorithm</h4>
+
+  <table class="def">
+    <tr>
+      <td>IRI</td>
+      <td><a href="https://techlib.cz/profile/ccmm/Checksum.algorithm">https://techlib.cz/profile/ccmm/Checksum.algorithm</a></td>
+    </tr>
+    <tr>
+      <td>Label</td>
+      <td>algorithm</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>The algorithm used to produce the subject Checksum.</td>
+    </tr>
+    <tr>
+      <td>Domain</td>
+      <td>
+        <a href="#Checksum">Checksum</a>
+
+        
+      </td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td>
+        <a href="#ChecksumAlgorithm">Checksum Algorithm</a>
+
+              [1..1]
+
+    </td>
+    </tr>
+
+    <tr>
+      <td>Profiles</td>
+      <td>      
+      <a href="https://mff-uk.github.io/specifications/dcat-ap/#Checksum.algorithm">algorithm</a> (<a href="https://mff-uk.github.io/specifications/dcat-ap/#Checksum.algorithm">https://mff-uk.github.io/specifications/dcat-ap/#Checksum.algorithm</a>)
+          <br />
+                
+      <a href="https://mff-uk.github.io/specifications/dcat-dap/#Checksum.algorithm">algorithm</a> (<a href="https://mff-uk.github.io/specifications/dcat-dap/#Checksum.algorithm">https://mff-uk.github.io/specifications/dcat-dap/#Checksum.algorithm</a>)
+          <br />
+                property
+      <a href="https://datagov-cz.github.io/cache-slovniku/spdx-ontology.2.3.1.ttl#algorithm"><i>without assigned name</i></a> (<a href="http://spdx.org/rdf/terms#algorithm">spdx:algorithm</a>)
+
+
+</td>
+    </tr>
+
+    <tr>
+      <td>Label from vocabulary</td>
+      <td>algorithm</td>
+    </tr>
+
+    <tr>
+      <td>Definition from vocabulary</td>
+      <td>The algorithm used to produce the subject Checksum.</td>
+    </tr>
+
+  </table>
+</section>
+
+
+            </section>
+            <section id="ChecksumAlgorithm">
+              <h4>Checksum Algorithm</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://techlib.cz/profile/ccmm/ChecksumAlgorithm">https://techlib.cz/profile/ccmm/ChecksumAlgorithm</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Checksum Algorithm</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Algorighm for Checksums.</td>
+                </tr>
+                <tr>
+                  <td>Profiles</td>
+                  <td>                  
+                  <a href="https://mff-uk.github.io/specifications/dcat-ap/#ChecksumAlgorithm">Checksum Algorithm</a> (<a href="https://mff-uk.github.io/specifications/dcat-ap/#ChecksumAlgorithm">https://mff-uk.github.io/specifications/dcat-ap/#ChecksumAlgorithm</a>)
+                      <br />
+                                        
+                  <a href="https://mff-uk.github.io/specifications/dcat-dap/#ChecksumAlgorithm">Checksum Algorithm</a> (<a href="https://mff-uk.github.io/specifications/dcat-dap/#ChecksumAlgorithm">https://mff-uk.github.io/specifications/dcat-dap/#ChecksumAlgorithm</a>)
+                      <br />this profiles
+                                        class
+                  <a href="https://datagov-cz.github.io/cache-slovniku/spdx-ontology.2.3.1.ttl#ChecksumAlgorithm"><i>without assigned name</i></a> (<a href="http://spdx.org/rdf/terms#ChecksumAlgorithm">spdx:ChecksumAlgorithm</a>)
+
+
+</td>
+                </tr>
+
+                <tr>
+                  <td>Label from vocabulary</td>
+                  <td>Checksum Algorithm</td>
+                </tr>
+
+                <tr>
+                  <td>Definition from vocabulary</td>
+                  <td>Algorighm for Checksums.</td>
+                </tr>
+
+              </table>
+
+              <p>Zpětné asociace</p>
+              <ul>
+                  <li><a href="#Checksum.algorithm"></a></li>
+              </ul>
+
+
+            </section>
 
         </section>
 
@@ -7992,6 +8216,8 @@ Every Location instance must have at least one of the following attributes/relat
                   </tr>
               </table>
             </section>
+
+
 
 
 

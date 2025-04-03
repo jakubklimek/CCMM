@@ -1,7 +1,0 @@
-a is undefined
-
-Or.resolveWithContext@http://localhost:3000/data-specification-editor/assets/index-Dbfxk0_n.js:824:1892
-Or.resolve@http://localhost:3000/data-specification-editor/assets/index-Dbfxk0_n.js:824:2123
-generateJsonData@http://localhost:3000/data-specification-editor/assets/index-Dbfxk0_n.js:824:2865
-Hft/<@http://localhost:3000/data-specification-editor/assets/index-Dbfxk0_n.js:824:2657
-generateToObject@http://localhost:3000/data-specification-editor/assets/index-Dbfxk0_n.js:1010:2199

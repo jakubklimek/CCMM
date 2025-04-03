@@ -9,6 +9,7 @@
   <xs:include schemaLocation="../application-profile/schema.xsd"/>
   <xs:include schemaLocation="../media-type/schema.xsd"/>
   <xs:include schemaLocation="../file/schema.xsd"/>
+  <xs:include schemaLocation="../checksum/schema.xsd"/>
   <xs:import namespace="https://schemas.dataspecer.com/xsd/core/" schemaLocation="./2022-07.xsd"/>
   <xs:complexType name="distribution" sawsdl:modelReference="http://www.w3.org/ns/dcat#Distribution"
     abstract="true">
@@ -147,8 +148,8 @@
     <xs:complexContent>
       <xs:extension base="distribution">
         <xs:sequence>
-          <xs:element name="checksum" type="xs:string"
-            sawsdl:modelReference="http://spdx.org/rdf/terms#checksumValue">
+          <xs:element name="checksum" type="checksum"
+            sawsdl:modelReference="http://spdx.org/rdf/terms#checksumValue" minOccurs="0">
             <xs:annotation>
               <xs:documentation xml:lang="en">
             Checksum
