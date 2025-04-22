@@ -170,7 +170,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="qualified_relation"
+      <xs:element minOccurs="2" maxOccurs="unbounded" name="qualified_relation"
         type="resource_to_agent_relationship"
         sawsdl:modelReference="https://techlib.cz/vocabulary/ccmm/qualifiedRelation">
         <xs:annotation>
