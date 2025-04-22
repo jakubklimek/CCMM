@@ -19,13 +19,11 @@ Directory resources/ contains data specification in json format. It also contain
 
 Directory czech-core-metadata-model contains all structured artifacts generated from Dataspecer. There are four subdirectories, one per each root element of the data structures: datase, distribution - data service, distribution - downloadable file and metadata record. Currently, Applicationb profiles in Dataspecer do not support specializations, therefore it is not possible to include distribution types as subclasses of distribution. The same is for Organization and Person as subclasses of Agent. Those classes are not yet part of the strucutured models, but you may search them in the specifification of the application profile in direstories cs/ and /en. 
 
-Each subdirectory contains strucutured models formalized in XSD (schema.xsd) and JSON (schema.json).
+Each subdirectory contains strucutured models formalized in XSD (schema.xsd) and JSON (schema.json). Root element for the whole profile is **Dataset**
+
 |Root element|XSD schema|JSON Schema|
 | - | - | - |
 |Dataset|https://eosc-cz.github.io/CCMM/czech-core-metadata-model/dataset/schema.xsd|https://eosc-cz.github.io/CCMM/czech-core-metadata-model/dataset/schema.json|
-|Metadata record|https://eosc-cz.github.io/CCMM/czech-core-metadata-model/metadata-record/schema.xsd|https://eosc-cz.github.io/CCMM/czech-core-metadata-model/metadata-record/schema.json|
-|Distribution -- data service|https://eosc-cz.github.io/CCMM/czech-core-metadata-model/distribution---data-service/schema.xsd|https://eosc-cz.github.io/CCMM/czech-core-metadata-model/distribution---data-service/schema.json|
-|Distribution -- downloadable file|https://eosc-cz.github.io/CCMM/czech-core-metadata-model/distribution---downloadable-file/schema.xsd|https://eosc-cz.github.io/CCMM/czech-core-metadata-model/distribution---downloadable-file/schema.json|
 
 On the directory level, there is also [documentation](https://eosc-cz.github.io/CCMM/czech-core-metadata-model/documentation) of data strucutes, unfortunately, possibly due to the DataSpecer bug, it is generated only in czech language.
 
