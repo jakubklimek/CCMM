@@ -1,7 +1,8 @@
 # Czech Core Metadata Model specification
 
-This repository contains specification of Czech Core Metadata Model modelled in and generated from DataSpoecer.
-The structure of the repository is as follows. For the documenattion and publication purposes were created GitHub pages. In each section, there is a link to the published specifications,
+This repository contains specification of Czech Core Metadata Model modelled in and generated from DataSpecer.
+The structure of the repository is as follows. For the documenattion and publication purposes were created GitHub pages. In each section, there is a link to the published specifications.
+Changes are described in [RELEASE_NOTES](RELEASE_NOTES.md).
 
 ## cs
 
