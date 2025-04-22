@@ -8,26 +8,6 @@
 
   ],
   "properties": {
-    "id": {
-      "type": "string",
-      "format": "iri"
-    },
-    "type": {
-      "oneOf": [
-        {
-          "const": "Geometry"
-        },
-        {
-          "type": "array",
-          "contains": {
-            "const": "Geometry"
-          },
-          "items": {
-            "type": "string"
-          }
-        }
-      ]
-    },
     "label": {
       "title": "Label",
       "description": "Geometry label",

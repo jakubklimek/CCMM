@@ -5,7 +5,8 @@
   "description": "A date on which something relative to the resource has happened.",
   "type": "object",
   "required": [
-
+    "date_type",
+    "date"
   ],
   "properties": {
     "id": {

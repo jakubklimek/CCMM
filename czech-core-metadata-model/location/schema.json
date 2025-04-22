@@ -5,7 +5,7 @@
   "description": "Spatial region, named place or geometry representation of a place related to the dataset. ",
   "type": "object",
   "required": [
-
+    "dataset_relations"
   ],
   "properties": {
     "id": {
@@ -29,9 +29,13 @@
       ]
     },
     "bbox": {
-      "title": "bbox",
+      "title": "Undefined",
       "description": "Bounding box of the location geometry.",
-      "type": "string"
+      "type": "array",
+      "items": {
+        "title": "http://www.w3.org/2000/01/rdf-schema#Literal",
+        "type": "string"
+      }
     },
     "location_name": {
       "title": "Location name",
@@ -43,20 +47,15 @@
       }
     },
     "dataset_relations": {
-      "title": "Relation to dataset",
-      "description": "Type of relation of the spatial location to the dataset.",
-      "type": "array",
-      "items": {
-        "title": "String",
-        "type": "string"
-      }
+      "title": "Relation type",
+      "description": "Type of the relation between Dataset and related resource.",
+      "type": "string"
     },
     "geometry": {
       "$ref": "../geometry/schema.json"
     },
     "related_object_identifier": {
-      "title": "has related object identifier",
-      "description": "Relation to the existing spatial object.",
+      "title": "has related resource",
       "type": "array",
       "items": {
         "$ref": "../resource/schema.json"

@@ -13,7 +13,7 @@
   <xsl:template match="/sp:sparql">
     <xsl:apply-templates select="sp:results/sp:result"/>
   </xsl:template>
-  <xsl:template match="sp:result[sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;Subject&#34;]">
+  <xsl:template match="sp:result[sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;https://techlib.cz/vocabulary/datacite/Subject&#34;]">
     <subject>
       <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742338662847-61c1-8d4b-b552">
         <xsl:with-param name="id">
@@ -61,19 +61,19 @@
         <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
       </title>
     </xsl:for-each>
-    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;subjectClassificationCode&#34;]">
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;https://techlib.cz/vocabulary/datacite/subjectClassificationCode&#34;]">
       <classification_code>
         <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
       </classification_code>
     </xsl:for-each>
-    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;inSubjectScheme&#34;]">
-      <in_subject_scheme>
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;https://techlib.cz/vocabulary/ccmm/inSubjectScheme&#34;]">
+      <scheme>
         <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742288726417-ccc4-1d84-8bc2">
           <xsl:with-param name="id">
             <xsl:copy-of select="sp:binding[@name=$obj]/*"/>
           </xsl:with-param>
         </xsl:call-template>
-      </in_subject_scheme>
+      </scheme>
     </xsl:for-each>
   </xsl:template>
   <xsl:template match="@*|*"/>

@@ -9,26 +9,6 @@
     "algorithm"
   ],
   "properties": {
-    "id": {
-      "type": "string",
-      "format": "iri"
-    },
-    "type": {
-      "oneOf": [
-        {
-          "const": "Checksum"
-        },
-        {
-          "type": "array",
-          "contains": {
-            "const": "Checksum"
-          },
-          "items": {
-            "type": "string"
-          }
-        }
-      ]
-    },
     "checksum_value": {
       "title": "Checksum value",
       "description": "A lower case hexadecimal encoded digest value produced using a specific algorithm. ",

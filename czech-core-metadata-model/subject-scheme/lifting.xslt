@@ -5,7 +5,7 @@
     <rdf:RDF>
       <xsl:variable name="result">
         <xsl:sequence>
-          <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742339651960-5772-aba1-b7dc"/>
+          <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742288726417-ccc4-1d84-8bc2"/>
         </xsl:sequence>
       </xsl:variable>
       <xsl:for-each select="$result">
@@ -33,7 +33,7 @@
       </xsl:copy>
     </xsl:for-each>
   </xsl:template>
-  <xsl:template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742339651960-5772-aba1-b7dc">
+  <xsl:template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742288726417-ccc4-1d84-8bc2">
     <xsl:param name="arc" select="()"/>
     <xsl:param name="no_iri" select="false()"/>
     <rdf:Description>
@@ -55,7 +55,7 @@
         </id>
       </xsl:variable>
       <xsl:copy-of select="$id//@*"/>
-      <rdf:type rdf:resource="SubjectScheme"/>
+      <rdf:type rdf:resource="https://techlib.cz/vocabulary/ccmm/SubjectScheme"/>
       <xsl:copy-of select="$arc"/>
       <xsl:for-each select="label">
         <ns0:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">

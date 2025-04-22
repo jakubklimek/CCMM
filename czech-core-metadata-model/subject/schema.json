@@ -74,7 +74,7 @@
       "description": "The classification code used for the subject term in the subject scheme.",
       "type": "string"
     },
-    "in_subject_scheme": {
+    "scheme": {
       "$ref": "../subject-scheme/schema.json"
     }
   }

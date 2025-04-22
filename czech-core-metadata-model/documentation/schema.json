@@ -8,26 +8,6 @@
 
   ],
   "properties": {
-    "id": {
-      "type": "string",
-      "format": "iri"
-    },
-    "type": {
-      "oneOf": [
-        {
-          "const": "Documentation"
-        },
-        {
-          "type": "array",
-          "contains": {
-            "const": "Documentation"
-          },
-          "items": {
-            "type": "string"
-          }
-        }
-      ]
-    },
     "label": {
       "title": "Label",
       "description": "Documentation label",

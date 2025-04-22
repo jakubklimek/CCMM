@@ -12,9 +12,9 @@
   <xsl:template match="/sp:sparql">
     <xsl:apply-templates select="sp:results/sp:result"/>
   </xsl:template>
-  <xsl:template match="sp:result[sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;SubjectScheme&#34;]">
+  <xsl:template match="sp:result[sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;https://techlib.cz/vocabulary/ccmm/SubjectScheme&#34;]">
     <subject_scheme>
-      <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742339651960-5772-aba1-b7dc">
+      <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742288726417-ccc4-1d84-8bc2">
         <xsl:with-param name="id">
           <xsl:copy-of select="sp:binding[@name=$subj]/*"/>
         </xsl:with-param>
@@ -31,7 +31,7 @@
   <xsl:template match="sp:uri">
     <xsl:value-of select="."/>
   </xsl:template>
-  <xsl:template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742339651960-5772-aba1-b7dc">
+  <xsl:template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742288726417-ccc4-1d84-8bc2">
     <xsl:param name="id"/>
     <xsl:param name="type_name" select="()"/>
     <xsl:param name="no_iri" select="false()"/>

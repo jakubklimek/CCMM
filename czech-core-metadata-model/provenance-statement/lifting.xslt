@@ -55,7 +55,6 @@
         </id>
       </xsl:variable>
       <xsl:copy-of select="$id//@*"/>
-      <rdf:type rdf:resource="http://purl.org/dc/terms/ProvenanceStatement"/>
       <xsl:copy-of select="$arc"/>
       <xsl:for-each select="label">
         <ns0:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">

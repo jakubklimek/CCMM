@@ -8,26 +8,6 @@
 
   ],
   "properties": {
-    "id": {
-      "type": "string",
-      "format": "iri"
-    },
-    "type": {
-      "oneOf": [
-        {
-          "const": "Application profile"
-        },
-        {
-          "type": "array",
-          "contains": {
-            "const": "Application profile"
-          },
-          "items": {
-            "type": "string"
-          }
-        }
-      ]
-    },
     "label": {
       "title": "Label",
       "description": "Label of application profile",

@@ -12,7 +12,7 @@
   <xsl:template match="/sp:sparql">
     <xsl:apply-templates select="sp:results/sp:result"/>
   </xsl:template>
-  <xsl:template match="sp:result[sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;ValidationResult&#34;]">
+  <xsl:template match="sp:result[sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;https://techlib.cz/vocabulary/ccmm/ValidationResult&#34;]">
     <validation_result>
       <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742288707998-704b-3f0e-8e1a">
         <xsl:with-param name="id">

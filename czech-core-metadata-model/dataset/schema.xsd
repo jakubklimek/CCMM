@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1"
-  elementFormDefault="unqualified" xmlns:c="https://schemas.dataspecer.com/xsd/core/"
-  xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
+  elementFormDefault="unqualified" xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
   <xs:import namespace="http://www.w3.org/XML/1998/namespace"
-    schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+    schemaLocation="http://www.w3.org/XML/1998/namespace"/>
   <xs:include schemaLocation="../alternate-title/schema.xsd"/>
   <xs:include schemaLocation="../metadata-record/schema.xsd"/>
   <xs:include schemaLocation="../identifier/schema.xsd"/>
@@ -18,19 +17,8 @@
   <xs:include schemaLocation="../funding-reference/schema.xsd"/>
   <xs:include schemaLocation="../terms-of-use/schema.xsd"/>
   <xs:include schemaLocation="../resource/schema.xsd"/>
-  <xs:import namespace="https://schemas.dataspecer.com/xsd/core/" schemaLocation="./2022-07.xsd"/>
-  <xs:complexType name="langString">
-    <xs:simpleContent>
-      <xs:extension base="xs:string">
-        <xs:attribute ref="xml:lang" use="required"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
   <xs:complexType name="dataset" sawsdl:modelReference="http://www.w3.org/ns/dcat#Dataset">
     <xs:annotation>
-      <xs:documentation xml:lang="en">
-        Dataset
-      </xs:documentation>
       <xs:documentation xml:lang="ar">
         قائمة بيانات - قائمة بيانات منشورة أو مجموعة من قبل مصدر ما و متاح الوصول إليها أو تحميلها
       </xs:documentation>
@@ -60,133 +48,122 @@
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="0" ref="c:iri"/>
-      <xs:element minOccurs="1" name="publication_year" type="xs:gYear"
-        sawsdl:modelReference="relatedItemPublicationYear">
+      <xs:element minOccurs="0" name="iri" type="xs:anyURI"/>
+      <xs:element name="publication_year" type="xs:gYear"
+        sawsdl:modelReference="https://techlib.cz/vocabulary/datacite/relatedItemPublicationYear">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Publication year
           </xs:documentation>
           <xs:documentation xml:lang="en">
-            The year when the item was or will be made publicly available.
+            Publication year - The year when the item was or will be made publicly available.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" name="version" type="xs:string"
-        sawsdl:modelReference="http://www.w3.org/ns/dcat#version">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="version" type="xs:string">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Version
           </xs:documentation>
           <xs:documentation xml:lang="en">
-            The version indicator (name or identifier) of a resource.
-          </xs:documentation>
-          <xs:documentation xml:lang="es">
-            El indicador de versión (nombre o identificador) del recurso.
-          </xs:documentation>
-          <xs:documentation xml:lang="it">
-            L'indicatore di versione (un nome o un identificatore) di una risorsa.
+            Version
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="unbounded" name="description" type="langString"
-        sawsdl:modelReference="http://purl.org/dc/terms/description">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="description">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Description
           </xs:documentation>
           <xs:documentation xml:lang="en">
-            A free-text account of the Dataset.
+            Description
           </xs:documentation>
         </xs:annotation>
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute ref="xml:lang" use="required"/>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="other_language" type="xs:string"
-        sawsdl:modelReference="language">
+        sawsdl:modelReference="https://techlib.cz/vocabulary/datacite/language">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Other language
           </xs:documentation>
           <xs:documentation xml:lang="en">
-            The primary language of the resource.
+            Other language - The primary language of the resource.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="primary_language" type="xs:string" sawsdl:modelReference="language"
-        minOccurs="0">
+      <xs:element minOccurs="0" name="primary_language" type="xs:string"
+        sawsdl:modelReference="https://techlib.cz/vocabulary/datacite/language">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Other language
           </xs:documentation>
           <xs:documentation xml:lang="en">
-            The primary language of the resource.
+            Other language - The primary language of the resource.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" name="resource_type" type="xs:string"
-        sawsdl:modelReference="resourceType">
+        sawsdl:modelReference="https://techlib.cz/vocabulary/datacite/resourceType">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Resource type
           </xs:documentation>
           <xs:documentation xml:lang="en">
-            A description of the resource. 
+            Resource type - A description of the resource. 
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="title" type="xs:string"
-        sawsdl:modelReference="http://purl.org/dc/terms/title http://purl.org/dc/terms/title">
+        sawsdl:modelReference="http://purl.org/dc/terms/title">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Title
           </xs:documentation>
           <xs:documentation xml:lang="en">
-            A name given to the resource.
+            Title - A name given to the resource.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="alternate_title" type="alternate_title"
-        sawsdl:modelReference="hasAlternateTitle">
+        sawsdl:modelReference="https://techlib.cz/vocabulary/ccmm/hasAlternateTitle">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            alternate title
+            has alternate title
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element maxOccurs="unbounded" name="is_described_by" type="metadata_record"
-        sawsdl:modelReference="isDescribedBy">
+        sawsdl:modelReference="https://techlib.cz/vocabulary/ccmm/isDescribedBy">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            is described by
-          </xs:documentation>
-          <xs:documentation xml:lang="en">
-            Inverse relation between dataset and metadata record.
+            is described by - Inverse relation between dataset and metadata record.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element maxOccurs="unbounded" name="identifier" type="identifier"
-        sawsdl:modelReference="hasIdentifier">
+        sawsdl:modelReference="https://techlib.cz/vocabulary/ccmm/hasIdentifier">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            identifier
-          </xs:documentation>
-          <xs:documentation xml:lang="en">
-            has identifier
+            has identifier - has identifier
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="location" type="location"
-        sawsdl:modelReference="http://purl.org/dc/terms/spatial http://purl.org/dc/terms/spatial">
+        sawsdl:modelReference="http://purl.org/dc/terms/spatial">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            Location
-          </xs:documentation>
-          <xs:documentation xml:lang="en">
-            The geographical area covered by the dataset.
+            has location - The geographical area covered by the dataset.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="provenance" type="provenance_statement"
-        sawsdl:modelReference="http://purl.org/dc/terms/provenance">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="provenance" type="provenance_statement">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             provenance - A statement about the lineage of a Dataset.
@@ -195,69 +172,69 @@
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="qualified_relation"
         type="resource_to_agent_relationship"
-        sawsdl:modelReference="qualifiedRelation http://www.w3.org/ns/dcat#qualifiedRelation">
+        sawsdl:modelReference="https://techlib.cz/vocabulary/ccmm/qualifiedRelation">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            Qualified relation
-          </xs:documentation>
-          <xs:documentation xml:lang="en">
-            Attachment of resource to the relationship.
+            qualified relation - Attachment of resource to the relationship.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="1" maxOccurs="unbounded" name="time_reference" type="time_reference"
-        sawsdl:modelReference="hasTimeReference">
+      <xs:element maxOccurs="unbounded" name="time_reference" type="time_reference"
+        sawsdl:modelReference="https://techlib.cz/vocabulary/ccmm/hasTimeReference">
         <xs:annotation>
-          <xs:documentation xml:lang="en">Time reference
+          <xs:documentation xml:lang="en">
+            has time reference
           </xs:documentation>
-          <xs:documentation xml:lang="en">Must contain at least one time reference with date type value "Created" from DataCIte controlled vocabulary https://datacite-metadata-schema.readthedocs.io/en/4.5/appendices/appendix-1/dateType/.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="subject" type="subject"
-        sawsdl:modelReference="hasSubject">
+        sawsdl:modelReference="https://techlib.cz/vocabulary/datacite/hasSubject">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            subject
+            has subject
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="validation_result"
-        type="validation_result" sawsdl:modelReference="hasValidationResult">
+        type="validation_result"
+        sawsdl:modelReference="https://techlib.cz/vocabulary/ccmm/hasValidationResult">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            validation result
+            has validation result
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" ref="distribution"
-        sawsdl:modelReference="hasDistribution">
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="distribution"
+        sawsdl:modelReference="https://techlib.cz/vocabulary/ccmm/hasDistribution"
+        type="distribution">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            distribution
+            has distribution
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="funding_reference"
-        type="funding_reference" sawsdl:modelReference="hasFundingReference">
+        type="funding_reference"
+        sawsdl:modelReference="https://techlib.cz/vocabulary/datacite/hasFundingReference">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            funding reference
+            has funding reference
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="1" maxOccurs="1" name="terms_of_use" type="terms_of_use"
-        sawsdl:modelReference="hasVersion">
+      <xs:element name="terms_of_use" type="terms_of_use"
+        sawsdl:modelReference="https://techlib.cz/vocabulary/datacite/hasVersion">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            terms of use
+            has terms of use
           </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="related_resource" type="resource"
-        sawsdl:modelReference="hasRelatedResource">
+        sawsdl:modelReference="https://techlib.cz/vocabulary/ccmm/hasRelatedResource">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            related resource
+            has related resource
           </xs:documentation>
         </xs:annotation>
       </xs:element>

@@ -1,0 +1,29 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "id": "@id",
+    "type": "@type",
+    "has_identifier": {
+      "@id": "https://techlib.cz/vocabulary/ccmm/hasIdentifier",
+      "@container": "@set",
+      "@context": "../identifier/context.jsonld"
+    },
+    "contact_point": {
+      "@id": "http://www.w3.org/ns/dcat#contactPoint",
+      "@container": "@set",
+      "@context": "../contact-details/context.jsonld"
+    },
+    "alternate_name": {
+      "@id": "http://www.w3.org/2006/vcard/ns#organization-name",
+      "@container": "@language"
+    },
+    "name": {
+      "@id": "http://www.w3.org/2006/vcard/ns#organization-name",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Organization": {
+      "@id": "http://www.w3.org/ns/prov#Organization",
+      "@context": {}
+    }
+  }
+}

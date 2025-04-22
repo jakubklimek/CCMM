@@ -5,7 +5,7 @@
   "description": "Uniquely identifies a funding entity, according to various types.",
   "type": "object",
   "required": [
-    "funder_identifier_type"
+
   ],
   "properties": {
     "id": {
@@ -28,16 +28,22 @@
         }
       ]
     },
-    "funder_identifier_scheme_uri": {
-      "title": "Funder identifier scheme URI",
-      "description": "The URI of the funder identifier scheme.",
-      "type": "string",
-      "format": "iri"
+    "funder_name": {
+      "title": "Funder name",
+      "description": "Funder name",
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      }
     },
-    "funder_identifier_type": {
-      "title": "Funder identifier type",
-      "description": "The type of the funderIdentifier.",
-      "type": "string"
+    "identifier": {
+      "title": "has identifier",
+      "description": "has identifier",
+      "type": "array",
+      "items": {
+        "$ref": "../identifier/schema.json"
+      }
     }
   }
 }

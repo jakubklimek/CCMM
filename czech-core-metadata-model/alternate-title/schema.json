@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://techlib.cz/specification/ccmm/alternate-title/schema.json",
   "title": "Alternate title",
-  "description": "Alternate title f the resource",
+  "description": "Alternate title of the resource.",
   "type": "object",
   "required": [
     "title"

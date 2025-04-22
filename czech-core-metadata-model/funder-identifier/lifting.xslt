@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xmlns:c="https://schemas.dataspecer.com/xsd/core/" xmlns:ns0="f">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xmlns:c="https://schemas.dataspecer.com/xsd/core/" xmlns:ns0="http://www.w3.org/2000/01/rdf-schema#" xmlns:ns1="https://techlib.cz/vocabulary/ccmm/">
+  <xsl:import href="../identifier/lifting.xslt"/>
   <xsl:output method="xml" version="1.0" encoding="utf-8" media-type="application/rdf+xml" indent="yes"/>
   <xsl:template match="/funder_identifier">
     <rdf:RDF>
@@ -55,19 +56,18 @@
         </id>
       </xsl:variable>
       <xsl:copy-of select="$id//@*"/>
-      <rdf:type rdf:resource="FunderIdentifier"/>
+      <rdf:type rdf:resource="https://techlib.cz/vocabulary/datacite/FunderIdentifier"/>
       <xsl:copy-of select="$arc"/>
-      <xsl:for-each select="funder_identifier_scheme_uri">
-        <ns0:underIdentifierSchemeUri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+      <xsl:for-each select="funder_name">
+        <ns0:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
           <xsl:apply-templates select="@*"/>
           <xsl:value-of select="."/>
-        </ns0:underIdentifierSchemeUri>
+        </ns0:label>
       </xsl:for-each>
-      <xsl:for-each select="funder_identifier_type">
-        <ns0:underIdentifierType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
-          <xsl:apply-templates select="@*"/>
-          <xsl:value-of select="."/>
-        </ns0:underIdentifierType>
+      <xsl:for-each select="identifier">
+        <ns1:hasIdentifier>
+          <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742340169817-84a9-ded1-a656"/>
+        </ns1:hasIdentifier>
       </xsl:for-each>
     </rdf:Description>
   </xsl:template>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:sp="http://www.w3.org/2005/sparql-results#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xmlns:c="https://schemas.dataspecer.com/xsd/core/">
+  <xsl:import href="../identifier/lowering.xslt"/>
   <xsl:output method="xml" version="1.0" encoding="utf-8" indent="yes"/>
   <xsl:param name="subj" select="'s'"/>
   <xsl:param name="pred" select="'p'"/>
@@ -12,7 +13,7 @@
   <xsl:template match="/sp:sparql">
     <xsl:apply-templates select="sp:results/sp:result"/>
   </xsl:template>
-  <xsl:template match="sp:result[sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;FunderIdentifier&#34;]">
+  <xsl:template match="sp:result[sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;https://techlib.cz/vocabulary/datacite/FunderIdentifier&#34;]">
     <funder_identifier>
       <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742235441772-8377-33b2-bc7b">
         <xsl:with-param name="id">
@@ -50,15 +51,19 @@
     <xsl:variable name="id_test">
       <xsl:value-of select="c:id-key($id/*)"/>
     </xsl:variable>
-    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;funderIdentifierSchemeUri&#34;]">
-      <funder_identifier_scheme_uri>
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://www.w3.org/2000/01/rdf-schema#label&#34;]">
+      <funder_name>
         <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
-      </funder_identifier_scheme_uri>
+      </funder_name>
     </xsl:for-each>
-    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;funderIdentifierType&#34;]">
-      <funder_identifier_type>
-        <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
-      </funder_identifier_type>
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;https://techlib.cz/vocabulary/ccmm/hasIdentifier&#34;]">
+      <identifier>
+        <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742340169817-84a9-ded1-a656">
+          <xsl:with-param name="id">
+            <xsl:copy-of select="sp:binding[@name=$obj]/*"/>
+          </xsl:with-param>
+        </xsl:call-template>
+      </identifier>
     </xsl:for-each>
   </xsl:template>
   <xsl:template match="@*|*"/>

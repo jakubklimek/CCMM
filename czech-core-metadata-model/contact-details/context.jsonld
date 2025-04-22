@@ -1,26 +1,28 @@
 {
   "@context": {
     "@version": 1.1,
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "id": "@id",
     "type": "@type",
-    "Contact details": "ContactDetails",
     "dataBox": {
-      "@id": "dataBox",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
+      "@id": "https://techlib.cz/vocabulary/ccmm/dataBox",
+      "@type": "xsd:string"
     },
     "email": {
-      "@id": "email",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
+      "@id": "https://techlib.cz/vocabulary/ccmm/email",
+      "@type": "xsd:string"
     },
     "phone": {
-      "@id": "phone",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
+      "@id": "https://techlib.cz/vocabulary/ccmm/phone",
+      "@type": "xsd:string"
     },
     "address": {
       "@id": "http://www.w3.org/2006/vcard/ns#hasAddress",
       "@container": "@set",
       "@context": "../address/context.jsonld"
+    },
+    "Contact details": {
+      "@id": "https://techlib.cz/vocabulary/ccmm/ContactDetails",
+      "@context": {}
     }
   }
 }

@@ -5,7 +5,7 @@
   "description": "Information about financial support (funding) for the resource being registered.",
   "type": "object",
   "required": [
-
+    "funder"
   ],
   "properties": {
     "id": {
@@ -46,6 +46,7 @@
     "funder": {
       "title": "has funder",
       "type": "array",
+      "minItems": 1,
       "items": {
         "$ref": "../funder-identifier/schema.json"
       }

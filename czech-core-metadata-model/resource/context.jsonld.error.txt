@@ -1,0 +1,7 @@
+JSON-LD generator: Multiprofile for relationships is not supported by JSON generators!
+
+generateClassesContext@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:691:31593
+Dat/<@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:691:29417
+generateToObject@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:691:34365
+generateToStream@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:691:33748
+generateArtefact@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:1539:60631

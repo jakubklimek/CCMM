@@ -5,11 +5,12 @@
   "description": "A collection of data, published or curated by a single source, and available for access or download in one or more representations.",
   "type": "object",
   "required": [
-    "description",
-    "primary_language",
+    "publication_year",
     "title",
     "is_described_by",
-    "identifier"
+    "identifier",
+    "time_reference",
+    "terms_of_use"
   ],
   "properties": {
     "id": {
@@ -39,12 +40,14 @@
     },
     "version": {
       "title": "Version",
-      "description": "The version indicator (name or identifier) of a resource.",
-      "type": "string"
+      "type": "array",
+      "items": {
+        "title": "String",
+        "type": "string"
+      }
     },
     "description": {
       "title": "Description",
-      "description": "A free-text account of the Dataset.",
       "type": "array",
       "items": {
         "title": "Text",
@@ -90,21 +93,7 @@
     "title": {
       "title": "Title",
       "description": "A name given to the resource.",
-      "type": "object",
-      "required": [
-        "@value",
-        "@language"
-      ],
-      "properties": {
-        "@value": {
-          "title": "Text v daném jazyce",
-          "type": "string"
-        },
-        "@language": {
-          "title": "Jazyk textu",
-          "type": "string"
-        }
-      }
+      "type": "string"
     },
     "alternate_title": {
       "title": "has alternate title",
@@ -117,6 +106,7 @@
       "title": "is described by",
       "description": "Inverse relation between dataset and metadata record.",
       "type": "array",
+      "minItems": 1,
       "items": {
         "$ref": "../metadata-record/schema.json"
       }
@@ -125,6 +115,7 @@
       "title": "has identifier",
       "description": "has identifier",
       "type": "array",
+      "minItems": 1,
       "items": {
         "$ref": "../identifier/schema.json"
       }
@@ -156,6 +147,7 @@
     "time_reference": {
       "title": "has time reference",
       "type": "array",
+      "minItems": 1,
       "items": {
         "$ref": "../time-reference/schema.json"
       }
@@ -178,7 +170,17 @@
       "title": "has distribution",
       "type": "array",
       "items": {
-        "$ref": "../distribution/schema.json"
+        "anyOf": [
+          {
+            "$ref": "../distribution/schema.json"
+          },
+          {
+            "$ref": "../distribution/schema.json"
+          },
+          {
+            "$ref": "../distribution/schema.json"
+          }
+        ]
       }
     },
     "funding_reference": {
@@ -189,11 +191,7 @@
       }
     },
     "terms_of_use": {
-      "title": "has terms of use",
-      "type": "array",
-      "items": {
-        "$ref": "../terms-of-use/schema.json"
-      }
+      "$ref": "../terms-of-use/schema.json"
     },
     "related_resource": {
       "title": "has related resource",

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xmlns:c="https://schemas.dataspecer.com/xsd/core/" xmlns:ns0="d">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xmlns:c="https://schemas.dataspecer.com/xsd/core/" xmlns:ns0="https://techlib.cz/vocabulary/datacite/">
   <xsl:output method="xml" version="1.0" encoding="utf-8" media-type="application/rdf+xml" indent="yes"/>
   <xsl:template match="/time_reference">
     <rdf:RDF>
@@ -55,25 +55,25 @@
         </id>
       </xsl:variable>
       <xsl:copy-of select="$id//@*"/>
-      <rdf:type rdf:resource="TimeReference"/>
+      <rdf:type rdf:resource="https://techlib.cz/vocabulary/ccmm/TimeReference"/>
       <xsl:copy-of select="$arc"/>
       <xsl:for-each select="date_information">
-        <ns0:ateInformation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+        <ns0:dateInformation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
           <xsl:apply-templates select="@*"/>
           <xsl:value-of select="."/>
-        </ns0:ateInformation>
+        </ns0:dateInformation>
       </xsl:for-each>
       <xsl:for-each select="date_type">
-        <ns0:ateType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+        <ns0:dateType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
           <xsl:apply-templates select="@*"/>
           <xsl:value-of select="."/>
-        </ns0:ateType>
+        </ns0:dateType>
       </xsl:for-each>
       <xsl:for-each select="date">
-        <ns0:ateValue rdf:datatype="http://www.w3.org/2001/XMLSchema#date">
+        <ns0:dateValue rdf:datatype="http://www.w3.org/2001/XMLSchema#date">
           <xsl:apply-templates select="@*"/>
           <xsl:value-of select="."/>
-        </ns0:ateValue>
+        </ns0:dateValue>
       </xsl:for-each>
     </rdf:Description>
   </xsl:template>

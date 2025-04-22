@@ -24,12 +24,11 @@
     },
     "title": {
       "title": "Title",
-      "description": "A name given to the Catalogue Record.",
       "type": "string"
     },
-    "identifier": {
-      "title": "Identifier",
-      "description": "An unambiguous reference to the resource within a given context.",
+    "resource_url": {
+      "title": "Resource URL",
+      "description": "Resolvable URL representing the resource, preferably human readable.",
       "type": "string"
     },
     "qualified_relation": {
@@ -45,6 +44,14 @@
       "type": "array",
       "items": {
         "$ref": "../time-reference/schema.json"
+      }
+    },
+    "identifier": {
+      "title": "has identifier",
+      "description": "has identifier",
+      "type": "array",
+      "items": {
+        "$ref": "../identifier/schema.json"
       }
     }
   }

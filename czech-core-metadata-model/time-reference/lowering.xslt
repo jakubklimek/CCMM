@@ -12,7 +12,7 @@
   <xsl:template match="/sp:sparql">
     <xsl:apply-templates select="sp:results/sp:result"/>
   </xsl:template>
-  <xsl:template match="sp:result[sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;TimeReference&#34;]">
+  <xsl:template match="sp:result[sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;https://techlib.cz/vocabulary/ccmm/TimeReference&#34;]">
     <time_reference>
       <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742235299937-b17d-6f34-926d">
         <xsl:with-param name="id">
@@ -50,17 +50,17 @@
     <xsl:variable name="id_test">
       <xsl:value-of select="c:id-key($id/*)"/>
     </xsl:variable>
-    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;dateInformation&#34;]">
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;https://techlib.cz/vocabulary/datacite/dateInformation&#34;]">
       <date_information>
         <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
       </date_information>
     </xsl:for-each>
-    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;dateType&#34;]">
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;https://techlib.cz/vocabulary/datacite/dateType&#34;]">
       <date_type>
         <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
       </date_type>
     </xsl:for-each>
-    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;dateValue&#34;]">
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;https://techlib.cz/vocabulary/datacite/dateValue&#34;]">
       <date>
         <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
       </date>

@@ -13,20 +13,22 @@
       "format": "iri"
     },
     "type": {
-      "oneOf": [
+      "type": "array",
+      "allOf": [
         {
-          "const": "File"
+          "contains": {
+            "const": "Resource"
+          }
         },
         {
-          "type": "array",
           "contains": {
-            "const": "File"
-          },
-          "items": {
-            "type": "string"
+            "const": "Resource"
           }
         }
-      ]
+      ],
+      "items": {
+        "type": "string"
+      }
     },
     "label": {
       "title": "Label",

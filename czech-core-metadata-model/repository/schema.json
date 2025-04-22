@@ -8,26 +8,6 @@
 
   ],
   "properties": {
-    "id": {
-      "type": "string",
-      "format": "iri"
-    },
-    "type": {
-      "oneOf": [
-        {
-          "const": "Katalog"
-        },
-        {
-          "type": "array",
-          "contains": {
-            "const": "Katalog"
-          },
-          "items": {
-            "type": "string"
-          }
-        }
-      ]
-    },
     "label": {
       "title": "Label",
       "description": "Repository label",

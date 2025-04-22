@@ -8,26 +8,6 @@
 
   ],
   "properties": {
-    "id": {
-      "type": "string",
-      "format": "iri"
-    },
-    "type": {
-      "oneOf": [
-        {
-          "const": "Media Type"
-        },
-        {
-          "type": "array",
-          "contains": {
-            "const": "Media Type"
-          },
-          "items": {
-            "type": "string"
-          }
-        }
-      ]
-    },
     "label": {
       "title": "Label",
       "description": "Media type label",

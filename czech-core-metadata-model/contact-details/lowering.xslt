@@ -13,7 +13,7 @@
   <xsl:template match="/sp:sparql">
     <xsl:apply-templates select="sp:results/sp:result"/>
   </xsl:template>
-  <xsl:template match="sp:result[sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;ContactDetails&#34;]">
+  <xsl:template match="sp:result[sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;https://techlib.cz/vocabulary/ccmm/ContactDetails&#34;]">
     <contact_details>
       <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742234373952-7a86-df18-a582">
         <xsl:with-param name="id">
@@ -51,17 +51,17 @@
     <xsl:variable name="id_test">
       <xsl:value-of select="c:id-key($id/*)"/>
     </xsl:variable>
-    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;dataBox&#34;]">
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;https://techlib.cz/vocabulary/ccmm/dataBox&#34;]">
       <dataBox>
         <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
       </dataBox>
     </xsl:for-each>
-    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;email&#34;]">
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;https://techlib.cz/vocabulary/ccmm/email&#34;]">
       <email>
         <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
       </email>
     </xsl:for-each>
-    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;phone&#34;]">
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;https://techlib.cz/vocabulary/ccmm/phone&#34;]">
       <phone>
         <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
       </phone>
