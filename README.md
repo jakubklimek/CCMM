@@ -1,8 +1,11 @@
 # Czech Core Metadata Model specification
 
 This repository contains specification of Czech Core Metadata Model modelled in and generated from DataSpecer.
-The structure of the repository is as follows. For the documenattion and publication purposes were created GitHub pages. In each section, there is a link to the published specifications.
 Changes are described in [RELEASE_NOTES](RELEASE_NOTES.md).
+DataSpecer generates schema diagram in bad resolution, therefore we generated diagram image in better quality.
+![CCMM schema diagram](CCMM-model.png)
+
+The structure of the repository is as follows. For the documenattion and publication purposes were created GitHub pages. In each section, there is a link to the published specifications.
 
 ## cs
 
