@@ -24,6 +24,7 @@
     },
     "title": {
       "title": "Title",
+      "description": "Title of the related item.",
       "type": "string"
     },
     "resource_url": {

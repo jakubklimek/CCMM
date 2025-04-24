@@ -150,7 +150,7 @@
         },
         "full_name": {
           "title": "Full name",
-          "description": "Full name of the person.",
+          "description": "To specify the organizational name associated with the object",
           "type": "string"
         },
         "family_name": {

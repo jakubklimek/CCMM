@@ -1,8 +1,8 @@
 Property https://ofn.gov.cz/attribute/1744808523022-2e51-5a09-ac3f has no interpretation!
 
-propertyToMatchCheckType@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:1539:9026
-propertyToMatch@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:1539:8457
-classToTemplate@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:1539:8093
-fromRoots@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:1539:6265
-Dct@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:1539:5623
-generateToObject@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:1539:27467
+propertyToMatchCheckType@http://localhost:3000/data-specification-editor/assets/index-CVN6l5N1.js:1539:9014
+propertyToMatch@http://localhost:3000/data-specification-editor/assets/index-CVN6l5N1.js:1539:8445
+classToTemplate@http://localhost:3000/data-specification-editor/assets/index-CVN6l5N1.js:1539:8081
+fromRoots@http://localhost:3000/data-specification-editor/assets/index-CVN6l5N1.js:1539:6253
+jct@http://localhost:3000/data-specification-editor/assets/index-CVN6l5N1.js:1539:5611
+generateToObject@http://localhost:3000/data-specification-editor/assets/index-CVN6l5N1.js:1539:27455

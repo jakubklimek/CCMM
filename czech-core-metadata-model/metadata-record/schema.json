@@ -19,7 +19,7 @@
       }
     },
     "date_created": {
-      "title": "Date Created",
+      "title": "Date created",
       "description": "The date on which the metadata record was created.",
       "type": "string",
       "format": "date"

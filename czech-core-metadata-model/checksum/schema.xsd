@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1" elementFormDefault="unqualified" xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1" elementFormDefault="unqualified" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
   <xs:complexType name="checksum">
     <xs:annotation>
       <xs:documentation xml:lang="en">
@@ -9,9 +9,6 @@
     <xs:sequence>
       <xs:element name="checksum_value" type="xs:hexBinary">
         <xs:annotation>
-          <xs:documentation xml:lang="en">
-            Checksum value
-          </xs:documentation>
           <xs:documentation xml:lang="en">
             Checksum value - A lower case hexadecimal encoded digest value produced using a specific algorithm. 
           </xs:documentation>

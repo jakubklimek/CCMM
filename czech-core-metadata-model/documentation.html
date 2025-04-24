@@ -358,6 +358,10 @@
                         </td>
                       </tr>
                 
+                    <tr>
+                      <td>Usage note</td>
+                      <td>Gets the value from DataCite controlled list https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/resourceTypeGeneral/.</td>
+                    </tr>
                   </table>
                 </section>    <section id="Dataset.hasAlternateIdentifier">
                   <h4>has alternate identifier</h4>
@@ -459,6 +463,10 @@
                         </td>
                       </tr>
                 
+                    <tr>
+                      <td>Usage note</td>
+                      <td>Use for the language in which is the dataset created and published.</td>
+                    </tr>
                   </table>
                 </section>    <section id="Dataset.otherLanguage">
                   <h4>Other language</h4>
@@ -512,6 +520,10 @@
                         </td>
                       </tr>
                 
+                    <tr>
+                      <td>Usage note</td>
+                      <td>Other languages in which is the dataset available.</td>
+                    </tr>
                   </table>
                 </section>    <section id="Dataset.description">
                   <h4>Description</h4>
@@ -547,6 +559,10 @@
                 
                 
                 
+                    <tr>
+                      <td>Usage note</td>
+                      <td>Description of a data set other than abstract, e.g. purpose of creation, sources, preffered usage etc.</td>
+                    </tr>
                   </table>
                 </section>    <section id="Dataset.version">
                   <h4>Version</h4>
@@ -827,6 +843,10 @@
                         </td>
                       </tr>
                 
+                    <tr>
+                      <td>Usage note</td>
+                      <td>For the distribution of data in the form of files use instances of class Distribution – downloadable file. For the distribution of data as a service use instance of class Distribution – data service. </td>
+                    </tr>
                   </table>
                 </section>    <section id="Dataset.hasValidationResult">
                   <h4>has validation result</h4>
@@ -923,6 +943,10 @@
                         </td>
                       </tr>
                 
+                    <tr>
+                      <td>Usage note</td>
+                      <td></td>
+                    </tr>
                   </table>
                 </section>    <section id="Dataset.hasTimeReference">
                   <h4>has time reference</h4>
@@ -971,6 +995,10 @@
                         </td>
                       </tr>
                 
+                    <tr>
+                      <td>Usage note</td>
+                      <td>Must contain at least one time reference with date type value &quot;Created&quot; from DataCIte controlled vocabulary https://datacite-metadata-schema.readthedocs.io/en/4.5/appendices/appendix-1/dateType/.</td>
+                    </tr>
                   </table>
                 </section>    <section id="Dataset.qualifiedRelation">
                   <h4>qualified relation</h4>
@@ -1001,7 +1029,7 @@
                       <td>
                         <a href="#ResourceToAgentRelationship">Resource to agent relationship</a>
                 
-                            [0..*]
+                            [2..*]
                 
                     </td>
                     </tr>
@@ -1023,6 +1051,10 @@
                         </td>
                       </tr>
                 
+                    <tr>
+                      <td>Usage note</td>
+                      <td>Description of relationship between dataset and agent (e.g. creator, publisher, etc.). Controlled list of possible relations will be created soon. In the meantime use creator, publisher, or one from list of contributorType  from DataCite: https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/contributorType/)</td>
+                    </tr>
                   </table>
                 </section>    <section id="Dataset.provenance">
                   <h4>provenance</h4>
@@ -1122,6 +1154,10 @@
                         </td>
                       </tr>
                 
+                    <tr>
+                      <td>Usage note</td>
+                      <td>In the CCMM spatial coverage does not only cover the area of dataset, it may be connected to the dataset in some other way, e.g. the place from where the data were measured, administrative area to which the dataset  conforms or other.</td>
+                    </tr>
                   </table>
                 </section>    <section id="Dataset.hasIdentifier">
                   <h4>has identifier</h4>
@@ -1498,10 +1534,6 @@
                         </td>
                       </tr>
                 
-                    <tr>
-                      <td>Usage note</td>
-                      <td></td>
-                    </tr>
                   </table>
                 </section>    <section id="Person.FamilyName">
                   <h4>Family name</h4>
@@ -1555,10 +1587,6 @@
                         </td>
                       </tr>
                 
-                    <tr>
-                      <td>Usage note</td>
-                      <td></td>
-                    </tr>
                   </table>
                 </section>    <section id="Person.hasAffiliation">
                   <h4>has affiliation</h4>
@@ -1611,10 +1639,6 @@
                         </td>
                       </tr>
                 
-                    <tr>
-                      <td>Usage note</td>
-                      <td></td>
-                    </tr>
                   </table>
                 </section>    <section id="Person.fullName">
                   <h4>Full name</h4>
@@ -1630,7 +1654,7 @@
                     </tr>
                     <tr>
                       <td>Definition</td>
-                      <td>Full name of the person.</td>
+                      <td>To specify the organizational name associated with the object</td>
                     </tr>
                     <tr>
                       <td>Domain</td>
@@ -1653,11 +1677,21 @@
                 
                 
                 
+                      <tr>
+                        <td>Profiles</td>
+                        <td>
+                          <ul style="list-style-type: none; padding-left: 0; margin: 0;">
+                                <li>
+                                        property
+                      
+                      <a href="todo#name">name</a> (<a href="http://xmlns.com/foaf/0.1/name">foaf:name</a>)
+                        <br />Definition: <i>A name for some thing.</i>
                 
-                    <tr>
-                      <td>Usage note</td>
-                      <td></td>
-                    </tr>
+                                </li>
+                          </ul>
+                        </td>
+                      </tr>
+                
                   </table>
                 </section>
             </section>            <section id="Organization">
@@ -1886,11 +1920,21 @@
                 
                 
                 
+                      <tr>
+                        <td>Profiles</td>
+                        <td>
+                          <ul style="list-style-type: none; padding-left: 0; margin: 0;">
+                                <li>
+                                        property
+                      
+                      <a href="todo#accessRights">Access Rights</a> (<a href="http://purl.org/dc/terms/accessRights">dcterms:accessRights</a>)
+                        <br />Definition: <i>Information about who access the resource or an indication of its security status.</i>
                 
-                    <tr>
-                      <td>Usage note</td>
-                      <td>Class terms of use combines to classes from profiles DCAT-AP-CZ and DataCite. It shall be further extended. </td>
-                    </tr>
+                                </li>
+                          </ul>
+                        </td>
+                      </tr>
+                
                   </table>
                 </section>    <section id="TermsOfUse.License">
                   <h4>License</h4>
@@ -1946,7 +1990,7 @@
                 
                     <tr>
                       <td>Usage note</td>
-                      <td>Class terms of use combines to classes from profiles DCAT-AP-CZ and DataCite. It shall be further extended. </td>
+                      <td></td>
                     </tr>
                   </table>
                 </section>    <section id="TermsOfUse.Description">
@@ -2001,10 +2045,6 @@
                         </td>
                       </tr>
                 
-                    <tr>
-                      <td>Usage note</td>
-                      <td>Class terms of use combines to classes from profiles DCAT-AP-CZ and DataCite. It shall be further extended. </td>
-                    </tr>
                   </table>
                 </section>    <section id="TermsOfUse.contactPoint">
                   <h4>has contact</h4>
@@ -2057,10 +2097,6 @@
                         </td>
                       </tr>
                 
-                    <tr>
-                      <td>Usage note</td>
-                      <td>Class terms of use combines to classes from profiles DCAT-AP-CZ and DataCite. It shall be further extended. </td>
-                    </tr>
                   </table>
                 </section>
             </section>            <section id="FundingReference">
@@ -2154,6 +2190,10 @@
                         </td>
                       </tr>
                 
+                    <tr>
+                      <td>Usage note</td>
+                      <td>In case the award or grant has an ID or DOI, the full URL can be included.</td>
+                    </tr>
                   </table>
                 </section>    <section id="FundingReference.awardTitle">
                   <h4>Award title</h4>
@@ -2567,10 +2607,6 @@
                         </td>
                       </tr>
                 
-                    <tr>
-                      <td>Usage note</td>
-                      <td>Recommended approach is to use controlled list values, preferably in the form of IRI. </td>
-                    </tr>
                   </table>
                 </section>    <section id="Subject.classificationCode">
                   <h4>Classification code</h4>
@@ -2624,10 +2660,6 @@
                         </td>
                       </tr>
                 
-                    <tr>
-                      <td>Usage note</td>
-                      <td>Recommended approach is to use controlled list values, preferably in the form of IRI. </td>
-                    </tr>
                   </table>
                 </section>    <section id="Subject.title">
                   <h4>Title</h4>
@@ -2681,10 +2713,6 @@
                         </td>
                       </tr>
                 
-                    <tr>
-                      <td>Usage note</td>
-                      <td>Recommended approach is to use controlled list values, preferably in the form of IRI. </td>
-                    </tr>
                   </table>
                 </section>    <section id="Subject.definition">
                   <h4>Definition</h4>
@@ -2738,10 +2766,6 @@
                         </td>
                       </tr>
                 
-                    <tr>
-                      <td>Usage note</td>
-                      <td>Recommended approach is to use controlled list values, preferably in the form of IRI. </td>
-                    </tr>
                   </table>
                 </section>
             </section>            <section id="Resource">
@@ -2809,6 +2833,10 @@
                       <td>Title</td>
                     </tr>
                     <tr>
+                      <td>Definition</td>
+                      <td>Title of the related item.</td>
+                    </tr>
+                    <tr>
                       <td>Domain</td>
                       <td>
                         <a href="#Resource">Resource</a>
@@ -2844,10 +2872,6 @@
                         </td>
                       </tr>
                 
-                    <tr>
-                      <td>Usage note</td>
-                      <td>Class is used for description of the resource together with the type of relation, for which is used codelist. Distributions of the datasets SHALL NOT be modelled as related resource, but as a distribution. Use qualified resource property to link to the dataset class. </td>
-                    </tr>
                   </table>
                 </section>    <section id="Resource.type">
                   <h4>Type</h4>
@@ -2910,7 +2934,7 @@
                 
                     <tr>
                       <td>Usage note</td>
-                      <td>Class is used for description of the resource together with the type of relation, for which is used codelist. Distributions of the datasets SHALL NOT be modelled as related resource, but as a distribution. Use qualified resource property to link to the dataset class. </td>
+                      <td>Contains value from controlled list.</td>
                     </tr>
                   </table>
                 </section>    <section id="Resource.relationType">
@@ -2967,7 +2991,7 @@
                 
                     <tr>
                       <td>Usage note</td>
-                      <td>Class is used for description of the resource together with the type of relation, for which is used codelist. Distributions of the datasets SHALL NOT be modelled as related resource, but as a distribution. Use qualified resource property to link to the dataset class. </td>
+                      <td>Use value from controlled list.</td>
                     </tr>
                   </table>
                 </section>    <section id="Resource.hasTimeReference">
@@ -3017,10 +3041,6 @@
                         </td>
                       </tr>
                 
-                    <tr>
-                      <td>Usage note</td>
-                      <td>Class is used for description of the resource together with the type of relation, for which is used codelist. Distributions of the datasets SHALL NOT be modelled as related resource, but as a distribution. Use qualified resource property to link to the dataset class. </td>
-                    </tr>
                   </table>
                 </section>    <section id="Resource.qualifiedRelation">
                   <h4>qualified relation</h4>
@@ -3073,10 +3093,6 @@
                         </td>
                       </tr>
                 
-                    <tr>
-                      <td>Usage note</td>
-                      <td>Class is used for description of the resource together with the type of relation, for which is used codelist. Distributions of the datasets SHALL NOT be modelled as related resource, but as a distribution. Use qualified resource property to link to the dataset class. </td>
-                    </tr>
                   </table>
                 </section>    <section id="Resource.hasIdentifier">
                   <h4>has identifier</h4>
@@ -3129,10 +3145,6 @@
                         </td>
                       </tr>
                 
-                    <tr>
-                      <td>Usage note</td>
-                      <td>Class is used for description of the resource together with the type of relation, for which is used codelist. Distributions of the datasets SHALL NOT be modelled as related resource, but as a distribution. Use qualified resource property to link to the dataset class. </td>
-                    </tr>
                   </table>
                 </section>    <section id="Resource.resourceURL">
                   <h4>Resource URL</h4>
@@ -3174,7 +3186,8 @@
                 
                     <tr>
                       <td>Usage note</td>
-                      <td>Class is used for description of the resource together with the type of relation, for which is used codelist. Distributions of the datasets SHALL NOT be modelled as related resource, but as a distribution. Use qualified resource property to link to the dataset class. </td>
+                      <td>In case it is filled, it must be filled the same in c:iri.
+                If more resolvable IRIs, Resource URL shall link to human readable version, machine readable ID is always in c:iri.</td>
                     </tr>
                   </table>
                 </section>
@@ -3323,6 +3336,10 @@
                         </td>
                       </tr>
                 
+                    <tr>
+                      <td>Usage note</td>
+                      <td>Use value from controlled list https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/dateType/.</td>
+                    </tr>
                   </table>
                 </section>    <section id="TimeReference.dateInformation">
                   <h4>Date information</h4>
@@ -3456,10 +3473,6 @@
                 
                 
                 
-                    <tr>
-                      <td>Usage note</td>
-                      <td>Use to characterize a relationship between datasets and agents, where the nature of the relationship is known but is not adequately characterized by the standard [DCTERMS] properties (dcterms:hasPart, dcterms:isPartOf, dcterms:conformsTo, dcterms:isFormatOf, dcterms:hasFormat, dcterms:isVersionOf, dcterms:hasVersion, dcterms:replaces, dcterms:isReplacedBy, dcterms:references, dcterms:isReferencedBy, dcterms:requires, dcterms:isRequiredBy) or [PROV-O] properties (prov:wasDerivedFrom, prov:wasInfluencedBy, prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource, prov:alternateOf, prov:specializationOf)</td>
-                    </tr>
                   </table>
                 </section>    <section id="DatasetToAgentRelationship.hadRole">
                   <h4>had role</h4>
@@ -3498,10 +3511,6 @@
                 
                 
                 
-                    <tr>
-                      <td>Usage note</td>
-                      <td>Use to characterize a relationship between datasets and agents, where the nature of the relationship is known but is not adequately characterized by the standard [DCTERMS] properties (dcterms:hasPart, dcterms:isPartOf, dcterms:conformsTo, dcterms:isFormatOf, dcterms:hasFormat, dcterms:isVersionOf, dcterms:hasVersion, dcterms:replaces, dcterms:isReplacedBy, dcterms:references, dcterms:isReferencedBy, dcterms:requires, dcterms:isRequiredBy) or [PROV-O] properties (prov:wasDerivedFrom, prov:wasInfluencedBy, prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource, prov:alternateOf, prov:specializationOf)</td>
-                    </tr>
                   </table>
                 </section>
             </section>            <section id="ResourceAgentRoleType">
@@ -3534,7 +3543,7 @@
                 </ul>
             
                 <section id="ResourceAgentRoleType.label">
-                  <h4>Label</h4>
+                  <h4>label</h4>
                 
                   <table class="def">
                     <tr>
@@ -3543,7 +3552,7 @@
                     </tr>
                     <tr>
                       <td>Label</td>
-                      <td>Label</td>
+                      <td>label</td>
                     </tr>
                     <tr>
                       <td>Definition</td>
@@ -3585,10 +3594,6 @@
                         </td>
                       </tr>
                 
-                    <tr>
-                      <td>Usage note</td>
-                      <td>List of roles of agents in relation to resources or specifically datasets.</td>
-                    </tr>
                   </table>
                 </section>
             </section>            <section id="FunderIdentifier">
@@ -3827,6 +3832,10 @@
                         </td>
                       </tr>
                 
+                    <tr>
+                      <td>Usage note</td>
+                      <td>Phone number in international format +xx(x) xxx xxx xxx</td>
+                    </tr>
                   </table>
                 </section>    <section id="ContactDetails.email">
                   <h4>Email</h4>
@@ -3880,6 +3889,10 @@
                         </td>
                       </tr>
                 
+                    <tr>
+                      <td>Usage note</td>
+                      <td>Email address in standard format, e.g. john.doe@domain.com</td>
+                    </tr>
                   </table>
                 </section>    <section id="ContactDetails.hasAddress">
                   <h4>has address</h4>
@@ -3985,6 +3998,10 @@
                         </td>
                       </tr>
                 
+                    <tr>
+                      <td>Usage note</td>
+                      <td></td>
+                    </tr>
                   </table>
                 </section>
             </section>            <section id="Address">
@@ -4164,6 +4181,10 @@
                         </td>
                       </tr>
                 
+                    <tr>
+                      <td>Usage note</td>
+                      <td>This property SHOULD be used to indicate the model, schema, ontology, view or profile that the cataloged resource content conforms to.</td>
+                    </tr>
                   </table>
                 </section>    <section id="MetadataRecord.Language">
                   <h4>Language</h4>
@@ -4271,7 +4292,7 @@
                 
                   </table>
                 </section>    <section id="MetadataRecord.DateCreated">
-                  <h4>Date Created</h4>
+                  <h4>Date created</h4>
                 
                   <table class="def">
                     <tr>
@@ -4280,7 +4301,7 @@
                     </tr>
                     <tr>
                       <td>Label</td>
-                      <td>Date Created</td>
+                      <td>Date created</td>
                     </tr>
                     <tr>
                       <td>Definition</td>
@@ -4375,6 +4396,10 @@
                         </td>
                       </tr>
                 
+                    <tr>
+                      <td>Usage note</td>
+                      <td>The most recent date on which the metadata record was changed or modified.</td>
+                    </tr>
                   </table>
                 </section>    <section id="MetadataRecord.describes">
                   <h4>Describes</h4>
@@ -4487,6 +4512,10 @@
                         </td>
                       </tr>
                 
+                    <tr>
+                      <td>Usage note</td>
+                      <td>Relationship shall contain at least one agent with role &quot;DataManager&quot; from codelist https://datacite-metadata-schema.readthedocs.io/en/4.5/appendices/appendix-1/contributorType/.</td>
+                    </tr>
                   </table>
                 </section>
             </section>            <section id="ApplicationProfile">
@@ -4889,6 +4918,10 @@
                         </td>
                       </tr>
                 
+                    <tr>
+                      <td>Usage note</td>
+                      <td>Identifier from IANA list.</td>
+                    </tr>
                   </table>
                 </section>    <section id="Distribution-DownloadableFile.mediaType">
                   <h4>media type</h4>
@@ -5153,6 +5186,10 @@
                 
                 
                 
+                    <tr>
+                      <td>Usage note</td>
+                      <td>This property can be repeated for parallel language versions of the description. </td>
+                    </tr>
                   </table>
                 </section>    <section id="Distribution-DataService.specification">
                   <h4>specification</h4>
@@ -5805,8 +5842,7 @@
                 
                     <tr>
                       <td>Usage note</td>
-                      <td>Location is represented according to the Open Formal Standard for Spatial Data. Locations are represented as a reference to the named place, geographic region or specific geometry according to the standardized geometry object representation. 
-                Every Location instance must have at least one of the following attributes/relations: bbox, location name, geometry and/or related object identifier.</td>
+                      <td>Use value from controlled list.</td>
                     </tr>
                   </table>
                 </section>    <section id="Location.hasRelatedObjectIdentifier">
@@ -5858,8 +5894,7 @@
                 
                     <tr>
                       <td>Usage note</td>
-                      <td>Location is represented according to the Open Formal Standard for Spatial Data. Locations are represented as a reference to the named place, geographic region or specific geometry according to the standardized geometry object representation. 
-                Every Location instance must have at least one of the following attributes/relations: bbox, location name, geometry and/or related object identifier.</td>
+                      <td>The relation is provided by the idnetifer of the related object.</td>
                     </tr>
                   </table>
                 </section>    <section id="Location.name">
@@ -5914,14 +5949,9 @@
                         </td>
                       </tr>
                 
-                    <tr>
-                      <td>Usage note</td>
-                      <td>Location is represented according to the Open Formal Standard for Spatial Data. Locations are represented as a reference to the named place, geographic region or specific geometry according to the standardized geometry object representation. 
-                Every Location instance must have at least one of the following attributes/relations: bbox, location name, geometry and/or related object identifier.</td>
-                    </tr>
                   </table>
                 </section>    <section id="Location.bbox">
-                  <h4>Undefined</h4>
+                  <h4>Bounding box</h4>
                 
                   <table class="def">
                     <tr>
@@ -5930,7 +5960,7 @@
                     </tr>
                     <tr>
                       <td>Label</td>
-                      <td>Undefined</td>
+                      <td>Bounding box</td>
                     </tr>
                     <tr>
                       <td>Definition</td>
@@ -5957,12 +5987,21 @@
                 
                 
                 
+                      <tr>
+                        <td>Profiles</td>
+                        <td>
+                          <ul style="list-style-type: none; padding-left: 0; margin: 0;">
+                                <li>
+                                        property
+                      
+                      <a href="todo#bbox">bounding box</a> (<a href="http://www.w3.org/ns/dcat#bbox">dcat:bbox</a>)
+                        <br />Definition: <i>The geographic bounding box of a spatial thing [SDW-BP].</i>
                 
-                    <tr>
-                      <td>Usage note</td>
-                      <td>Location is represented according to the Open Formal Standard for Spatial Data. Locations are represented as a reference to the named place, geographic region or specific geometry according to the standardized geometry object representation. 
-                Every Location instance must have at least one of the following attributes/relations: bbox, location name, geometry and/or related object identifier.</td>
-                    </tr>
+                                </li>
+                          </ul>
+                        </td>
+                      </tr>
+                
                   </table>
                 </section>    <section id="Location.geometry">
                   <h4>geometry</h4>
@@ -6001,11 +6040,6 @@
                 
                 
                 
-                    <tr>
-                      <td>Usage note</td>
-                      <td>Location is represented according to the Open Formal Standard for Spatial Data. Locations are represented as a reference to the named place, geographic region or specific geometry according to the standardized geometry object representation. 
-                Every Location instance must have at least one of the following attributes/relations: bbox, location name, geometry and/or related object identifier.</td>
-                    </tr>
                   </table>
                 </section>
             </section>            <section id="Geometry">
@@ -6166,6 +6200,20 @@
                 
                 
                 
+                      <tr>
+                        <td>Profiles</td>
+                        <td>
+                          <ul style="list-style-type: none; padding-left: 0; margin: 0;">
+                                <li>
+                                        property
+                      
+                      <a href="todo#notation">notation</a> (<a href="http://www.w3.org/2004/02/skos/core#notation">skos:notation</a>)
+                        <br />Definition: <i></i>
+                
+                                </li>
+                          </ul>
+                        </td>
+                      </tr>
                 
                   </table>
                 </section>    <section id="Identifier.identifierScheme">
@@ -6206,6 +6254,10 @@
                 
                 
                 
+                    <tr>
+                      <td>Usage note</td>
+                      <td>For DOI, ROR etc. use the scheme uri, i.e. https://doi.org/. For others use base URI (whole URI except the notation part).</td>
+                    </tr>
                   </table>
                 </section>
             </section>            <section id="AlternateTitle">
@@ -6299,6 +6351,15 @@
                         </td>
                       </tr>
                 
+                    <tr>
+                      <td>Usage note</td>
+                      <td>Use value from controlled list with values:
+                - AlternativeTitle
+                - Subtitle
+                - TranslatedTitle
+                
+                For other leave empty</td>
+                    </tr>
                   </table>
                 </section>    <section id="AlternateTitle.title">
                   <h4>Title</h4>
@@ -7305,24 +7366,6 @@
 
         
         </section>
-        <section>
-        <h2>Specifikace struktury pro Person</h2>
-        <p>Data structure for Person. Physical person. </p>
-
-        
-        </section>
-        <section>
-        <h2>Specifikace struktury pro Distribution - data service</h2>
-        <p>Data structure for Distribution - data service. Physical embodiment of the dataset as a particular data service. </p>
-
-        
-        </section>
-        <section>
-        <h2>Specifikace struktury pro Distribution - downloadable file</h2>
-        <p>Data structure for Distribution - downloadable file. Physical embodiment of the dataset in a particular format. </p>
-
-        
-        </section>
 
       <section>
         <h2>Used prefixes</h2>
@@ -7334,6 +7377,7 @@
               <tr><td><code>dcterms</code></td><td><a href=http://purl.org/dc/terms/><code>http://purl.org/dc/terms/</code></a></td></tr>
               <tr><td><code>prov</code></td><td><a href=http://www.w3.org/ns/prov#><code>http://www.w3.org/ns/prov#</code></a></td></tr>
               <tr><td><code>vcard</code></td><td><a href=http://www.w3.org/2006/vcard/ns#><code>http://www.w3.org/2006/vcard/ns#</code></a></td></tr>
+              <tr><td><code>foaf</code></td><td><a href=http://xmlns.com/foaf/0.1/><code>http://xmlns.com/foaf/0.1/</code></a></td></tr>
               <tr><td><code>rdf</code></td><td><a href=http://www.w3.org/1999/02/22-rdf-syntax-ns#><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></a></td></tr>
               <tr><td><code>rdfs</code></td><td><a href=http://www.w3.org/2000/01/rdf-schema#><code>http://www.w3.org/2000/01/rdf-schema#</code></a></td></tr>
               <tr><td><code>skos</code></td><td><a href=http://www.w3.org/2004/02/skos/core#><code>http://www.w3.org/2004/02/skos/core#</code></a></td></tr>
@@ -7534,24 +7578,6 @@
               <tr><td>XML schéma</td><td><a href="./organization/schema.xsd">./organization/schema.xsd</a></td></tr>
               <tr><td>XSLT lifting</td><td><a href="./organization/lifting.xslt">./organization/lifting.xslt</a></td></tr>
               <tr><td>XSLT lowering</td><td><a href="./organization/lowering.xslt">./organization/lowering.xslt</a></td></tr>
-              <tr><td>JSON schéma</td><td><a href="./person/schema.json">./person/schema.json</a></td></tr>
-              <tr><td>Příklad JSONu</td><td><a href="./person/example.json">./person/example.json</a></td></tr>
-              <tr><td>JSON-LD kontext</td><td><a href="./person/context.jsonld">./person/context.jsonld</a></td></tr>
-              <tr><td>XML schéma</td><td><a href="./person/schema.xsd">./person/schema.xsd</a></td></tr>
-              <tr><td>XSLT lifting</td><td><a href="./person/lifting.xslt">./person/lifting.xslt</a></td></tr>
-              <tr><td>XSLT lowering</td><td><a href="./person/lowering.xslt">./person/lowering.xslt</a></td></tr>
-              <tr><td>JSON schéma</td><td><a href="./distribution---data-service/schema.json">./distribution---data-service/schema.json</a></td></tr>
-              <tr><td>Příklad JSONu</td><td><a href="./distribution---data-service/example.json">./distribution---data-service/example.json</a></td></tr>
-              <tr><td>JSON-LD kontext</td><td><a href="./distribution---data-service/context.jsonld">./distribution---data-service/context.jsonld</a></td></tr>
-              <tr><td>XML schéma</td><td><a href="./distribution---data-service/schema.xsd">./distribution---data-service/schema.xsd</a></td></tr>
-              <tr><td>XSLT lifting</td><td><a href="./distribution---data-service/lifting.xslt">./distribution---data-service/lifting.xslt</a></td></tr>
-              <tr><td>XSLT lowering</td><td><a href="./distribution---data-service/lowering.xslt">./distribution---data-service/lowering.xslt</a></td></tr>
-              <tr><td>JSON schéma</td><td><a href="./distribution---downloadable-file/schema.json">./distribution---downloadable-file/schema.json</a></td></tr>
-              <tr><td>Příklad JSONu</td><td><a href="./distribution---downloadable-file/example.json">./distribution---downloadable-file/example.json</a></td></tr>
-              <tr><td>JSON-LD kontext</td><td><a href="./distribution---downloadable-file/context.jsonld">./distribution---downloadable-file/context.jsonld</a></td></tr>
-              <tr><td>XML schéma</td><td><a href="./distribution---downloadable-file/schema.xsd">./distribution---downloadable-file/schema.xsd</a></td></tr>
-              <tr><td>XSLT lifting</td><td><a href="./distribution---downloadable-file/lifting.xslt">./distribution---downloadable-file/lifting.xslt</a></td></tr>
-              <tr><td>XSLT lowering</td><td><a href="./distribution---downloadable-file/lowering.xslt">./distribution---downloadable-file/lowering.xslt</a></td></tr>
               <tr><td>Dokumentace</td><td><a href="./documentation.html">./documentation.html</a></td></tr>
           </tbody>
         </table>

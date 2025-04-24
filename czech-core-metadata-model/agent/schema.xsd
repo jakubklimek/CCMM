@@ -2,10 +2,10 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1"
   elementFormDefault="unqualified" xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
-  <xs:import namespace="http://www.w3.org/XML/1998/namespace"
-    schemaLocation="http://www.w3.org/XML/1998/namespace"/>
   <xs:include schemaLocation="../identifier/schema.xsd"/>
   <xs:include schemaLocation="../contact-details/schema.xsd"/>
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace"
+    schemaLocation="http://www.w3.org/XML/1998/namespace"/>
   <xs:include schemaLocation="../organization/schema.xsd"/>
   <xs:complexType name="agent">
     <xs:choice>
@@ -62,9 +62,6 @@
               sawsdl:modelReference="http://www.w3.org/2006/vcard/ns#organization-name">
               <xs:annotation>
                 <xs:documentation xml:lang="en">
-                  Alternate name
-                </xs:documentation>
-                <xs:documentation xml:lang="en">
                   Alternate name - To specify the organizational name associated with the object
                 </xs:documentation>
               </xs:annotation>
@@ -79,9 +76,6 @@
             <xs:element name="name"
               sawsdl:modelReference="http://www.w3.org/2006/vcard/ns#organization-name">
               <xs:annotation>
-                <xs:documentation xml:lang="en">
-                  Alternate name
-                </xs:documentation>
                 <xs:documentation xml:lang="en">
                   Alternate name - To specify the organizational name associated with the object
                 </xs:documentation>
@@ -146,22 +140,17 @@
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element name="full_name" type="xs:string">
+            <xs:element name="full_name" type="xs:string"
+              sawsdl:modelReference="http://xmlns.com/foaf/0.1/name">
               <xs:annotation>
                 <xs:documentation xml:lang="en">
-                  Full name
-                </xs:documentation>
-                <xs:documentation xml:lang="en">
-                  Full name - Full name of the person.
+                  Full name - To specify the organizational name associated with the object
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
             <xs:element minOccurs="0" maxOccurs="unbounded" name="family_name" type="xs:string"
               sawsdl:modelReference="http://www.w3.org/2006/vcard/ns#family-name">
               <xs:annotation>
-                <xs:documentation xml:lang="en">
-                  Family name
-                </xs:documentation>
                 <xs:documentation xml:lang="en">
                   Family name - The family name associated with the object
                 </xs:documentation>
@@ -170,9 +159,6 @@
             <xs:element minOccurs="0" maxOccurs="unbounded" name="given_name" type="xs:string"
               sawsdl:modelReference="http://www.w3.org/2006/vcard/ns#given-name">
               <xs:annotation>
-                <xs:documentation xml:lang="en">
-                  Given name
-                </xs:documentation>
                 <xs:documentation xml:lang="en">
                   Given name - The given name associated with the object
                 </xs:documentation>
@@ -192,4 +178,5 @@
       </xs:element>
     </xs:choice>
   </xs:complexType>
+  <xs:element name="agent" type="agent"/>
 </xs:schema>

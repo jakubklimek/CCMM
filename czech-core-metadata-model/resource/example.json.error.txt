@@ -1,9 +1,9 @@
 JSON-LD generator: Multiprofile for relationships is not supported by JSON generators!
 
-generateClassesContext@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:691:31593
-Dat/<@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:691:29417
-generateToObject@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:691:34365
-generateToStream@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:691:33748
-generateToObject@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:831:8944
-generateToStream@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:831:9524
-generateArtefact@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:1539:60631
+generateClassesContext@http://localhost:3000/data-specification-editor/assets/index-CVN6l5N1.js:691:31593
+Dat/<@http://localhost:3000/data-specification-editor/assets/index-CVN6l5N1.js:691:29417
+generateToObject@http://localhost:3000/data-specification-editor/assets/index-CVN6l5N1.js:691:34365
+generateToStream@http://localhost:3000/data-specification-editor/assets/index-CVN6l5N1.js:691:33748
+generateToObject@http://localhost:3000/data-specification-editor/assets/index-CVN6l5N1.js:831:8944
+generateToStream@http://localhost:3000/data-specification-editor/assets/index-CVN6l5N1.js:831:9524
+generateArtefact@http://localhost:3000/data-specification-editor/assets/index-CVN6l5N1.js:1539:60619

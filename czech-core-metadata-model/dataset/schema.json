@@ -9,6 +9,7 @@
     "title",
     "is_described_by",
     "identifier",
+    "qualified_relation",
     "time_reference",
     "terms_of_use"
   ],
@@ -140,6 +141,7 @@
       "title": "qualified relation",
       "description": "Attachment of resource to the relationship.",
       "type": "array",
+      "minItems": 2,
       "items": {
         "$ref": "../resource-to-agent-relationship/schema.json"
       }

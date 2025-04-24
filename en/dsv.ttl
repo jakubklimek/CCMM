@@ -22,7 +22,7 @@
 <https://techlib.cz/profile/ccmm/Dataset.title> dsv:domain <https://techlib.cz/profile/ccmm/Dataset>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Title"^^rdf:langString, "Title"@en;
+    skos:prefLabel "Title"@en;
     skos:definition "A name given to the resource."@en;
     dsv:cardinality cardinality:11;
     dsv:property dct:title;
@@ -32,7 +32,7 @@
 <https://techlib.cz/profile/ccmm/Dataset.resourceType> dsv:domain <https://techlib.cz/profile/ccmm/Dataset>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Resource type"^^rdf:langString, "Resource type"@en;
+    skos:prefLabel "Resource type"@en;
     skos:definition "A description of the resource. "@en;
     vann:usageNote "Gets the value from DataCite controlled list https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/resourceTypeGeneral/."@en;
     dsv:cardinality cardinality:01;
@@ -59,7 +59,7 @@
 <https://techlib.cz/profile/ccmm/Dataset.primaryLanguage> dsv:domain <https://techlib.cz/profile/ccmm/Dataset>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Primary language"^^rdf:langString, "Primary language"@en;
+    skos:prefLabel "Primary language"@en;
     skos:definition "Primary language of a dataset."@en;
     vann:usageNote "Use for the language in which is the dataset created and published."@en;
     dsv:cardinality cardinality:01;
@@ -70,7 +70,7 @@
 <https://techlib.cz/profile/ccmm/Dataset.otherLanguage> dsv:domain <https://techlib.cz/profile/ccmm/Dataset>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Other language"^^rdf:langString, "Other language"@en;
+    skos:prefLabel "Other language"@en;
     vann:usageNote "Other languages in which is the dataset available."@en;
     dsv:reusesPropertyValue [
   a dsv:PropertyValueReuse;
@@ -85,12 +85,12 @@
 <https://techlib.cz/profile/ccmm/Dataset.description> dsv:domain <https://techlib.cz/profile/ccmm/Dataset>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Description"^^rdf:langString, "Description"@en;
+    skos:prefLabel "Description"@en;
     vann:usageNote "Description of a data set other than abstract, e.g. purpose of creation, sources, preffered usage etc."@en;
     dsv:reusesPropertyValue [
   a dsv:PropertyValueReuse;
   dsv:reusedProperty skos:definition;
-  dsv:reusedFromResource <https://mff-uk.github.io/specifications/dcat-ap/#Dataset.description>
+  dsv:reusedFromResource <:undefined-identifier:>
 ];
     dsv:cardinality cardinality:0n;
     a dsv:DatatypePropertyProfile;
@@ -99,11 +99,11 @@
 <https://techlib.cz/profile/ccmm/Dataset.version> dsv:domain <https://techlib.cz/profile/ccmm/Dataset>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Version"^^rdf:langString, "Version"@en;
+    skos:prefLabel "Version"@en;
     dsv:reusesPropertyValue [
   a dsv:PropertyValueReuse;
   dsv:reusedProperty skos:definition;
-  dsv:reusedFromResource <https://mff-uk.github.io/specifications/dcat-ap/#Dataset.version>
+  dsv:reusedFromResource <:undefined-identifier:>
 ];
     dsv:cardinality cardinality:0n;
     a dsv:DatatypePropertyProfile;
@@ -112,7 +112,7 @@
 <https://techlib.cz/profile/ccmm/Dataset.publicationYear> dsv:domain <https://techlib.cz/profile/ccmm/Dataset>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Publication year"^^rdf:langString, "Publication year"@en;
+    skos:prefLabel "Publication year"@en;
     dsv:reusesPropertyValue [
   a dsv:PropertyValueReuse;
   dsv:reusedProperty skos:definition;
@@ -212,6 +212,7 @@
     skos:prefLabel "qualified relation"@en;
     skos:definition "Attachment of resource to the relationship."@en;
     vann:usageNote "Description of relationship between dataset and agent (e.g. creator, publisher, etc.). Controlled list of possible relations will be created soon. In the meantime use creator, publisher, or one from list of contributorType  from DataCite: https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/contributorType/)"@en;
+    dsv:cardinality dsv:nn;
     dsv:property <https://techlib.cz/vocabulary/ccmm/qualifiedRelation>;
     a dsv:ObjectPropertyProfile;
     dsv:objectPropertyRange <https://techlib.cz/profile/ccmm/ResourceToAgentRelationship>.
@@ -338,7 +339,7 @@
 <https://techlib.cz/profile/ccmm/Person.GivenName> dsv:domain <https://techlib.cz/profile/ccmm/Person>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Given name"^^rdf:langString, "Given name"@en;
+    skos:prefLabel "Given name"@en;
     dsv:reusesPropertyValue [
   a dsv:PropertyValueReuse;
   dsv:reusedProperty skos:definition;
@@ -352,7 +353,7 @@
 <https://techlib.cz/profile/ccmm/Person.FamilyName> dsv:domain <https://techlib.cz/profile/ccmm/Person>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Family name"^^rdf:langString, "Family name"@en;
+    skos:prefLabel "Family name"@en;
     dsv:reusesPropertyValue [
   a dsv:PropertyValueReuse;
   dsv:reusedProperty skos:definition;
@@ -375,10 +376,10 @@
 <https://techlib.cz/profile/ccmm/Person.fullName> dsv:domain <https://techlib.cz/profile/ccmm/Person>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Full name"^^rdf:langString, "Full name"@en;
-    skos:definition "Full name of the person."@en;
-    vann:usageNote "FUll name is combvination of Given name(s) and Family name(s)."@en;
+    skos:prefLabel "Full name"@en;
+    skos:definition "To specify the organizational name associated with the object"@en;
     dsv:cardinality cardinality:11;
+    dsv:property <http://xmlns.com/foaf/0.1/name>;
     a dsv:DatatypePropertyProfile;
     dsv:datatypePropertyRange <http://www.w3.org/2001/XMLSchema#string>.
 
@@ -397,7 +398,7 @@
 <https://techlib.cz/profile/ccmm/Organization.Name> dsv:domain <https://techlib.cz/profile/ccmm/Organization>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Name"^^rdf:langString, "Name"@en;
+    skos:prefLabel "Name"@en;
     dsv:reusesPropertyValue [
   a dsv:PropertyValueReuse;
   dsv:reusedProperty skos:definition;
@@ -411,7 +412,7 @@
 <https://techlib.cz/profile/ccmm/Organization.AlternateName> dsv:domain <https://techlib.cz/profile/ccmm/Organization>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Alternate name"^^rdf:langString, "Alternate name"@en;
+    skos:prefLabel "Alternate name"@en;
     dsv:reusesPropertyValue [
   a dsv:PropertyValueReuse;
   dsv:reusedProperty skos:definition;
@@ -433,9 +434,10 @@
 <https://techlib.cz/profile/ccmm/TermsOfUse.accessRights> dsv:domain <https://techlib.cz/profile/ccmm/TermsOfUse>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Access rights"^^rdf:langString, "Access rights"@en;
+    skos:prefLabel "Access rights"@en;
     skos:definition "Information about who access the resource or an indication of its security status."@en;
     dsv:cardinality cardinality:11;
+    dsv:property dct:accessRights;
     a dsv:DatatypePropertyProfile;
     dsv:datatypePropertyRange <http://www.w3.org/2001/XMLSchema#string>.
 
@@ -494,7 +496,7 @@
 <https://techlib.cz/profile/ccmm/FundingReference.localIdentifier> dsv:domain <https://techlib.cz/profile/ccmm/FundingReference>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Local identifier"^^rdf:langString, "Local identifier"@en;
+    skos:prefLabel "Local identifier"@en;
     skos:definition "The code assigned by the funder to a sponsored award (grant)."@en;
     vann:usageNote "In case the award or grant has an ID or DOI, the full URL can be included."@en;
     dsv:cardinality cardinality:01;
@@ -505,7 +507,7 @@
 <https://techlib.cz/profile/ccmm/FundingReference.awardTitle> dsv:domain <https://techlib.cz/profile/ccmm/FundingReference>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Award title"^^rdf:langString, "Award title"@en;
+    skos:prefLabel "Award title"@en;
     skos:definition " The human readable title or name of the award (grant)."@en;
     dsv:cardinality cardinality:01;
     dsv:property <https://techlib.cz/vocabulary/datacite/awardTitle>;
@@ -529,7 +531,7 @@
 <https://techlib.cz/profile/ccmm/FundingReference.fundingProgram> dsv:domain <https://techlib.cz/profile/ccmm/FundingReference>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Funding program"^^rdf:langString, "Funding program"@en;
+    skos:prefLabel "Funding program"@en;
     skos:definition "Reference to the specific funding program."@en;
     dsv:cardinality cardinality:01;
     a dsv:DatatypePropertyProfile;
@@ -555,7 +557,7 @@
 <https://techlib.cz/profile/ccmm/Distribution.title> dsv:domain <https://techlib.cz/profile/ccmm/Distribution>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Title"^^rdf:langString, "Title"@en;
+    skos:prefLabel "Title"@en;
     dsv:profileOf <https://mff-uk.github.io/specifications/dcat-dap/#Distribution.title>;
     dsv:reusesPropertyValue [
   a dsv:PropertyValueReuse;
@@ -576,7 +578,7 @@
 <https://techlib.cz/profile/ccmm/ValidationResult.label> dsv:domain <https://techlib.cz/profile/ccmm/ValidationResult>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Label"^^rdf:langString, "Label"@en;
+    skos:prefLabel "Label"@en;
     skos:definition "Validation result label"@en;
     dsv:cardinality cardinality:0n;
     dsv:property rdfs:label;
@@ -610,7 +612,7 @@
 <https://techlib.cz/profile/ccmm/Subject.classificationCode> dsv:domain <https://techlib.cz/profile/ccmm/Subject>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Classification code"^^rdf:langString, "Classification code"@en;
+    skos:prefLabel "Classification code"@en;
     skos:definition "The classification code used for the subject term in the subject scheme."@en;
     dsv:cardinality cardinality:01;
     dsv:property <https://techlib.cz/vocabulary/datacite/subjectClassificationCode>;
@@ -620,7 +622,7 @@
 <https://techlib.cz/profile/ccmm/Subject.title> dsv:domain <https://techlib.cz/profile/ccmm/Subject>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Title"^^rdf:langString, "Title"@en;
+    skos:prefLabel "Title"@en;
     skos:definition "Title of the subject"@en;
     dsv:cardinality cardinality:11;
     dsv:property dct:title;
@@ -630,7 +632,7 @@
 <https://techlib.cz/profile/ccmm/Subject.definition> dsv:domain <https://techlib.cz/profile/ccmm/Subject>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Definition"^^rdf:langString, "Definition"@en;
+    skos:prefLabel "Definition"@en;
     skos:definition "Definition of the subject."@en;
     dsv:cardinality cardinality:01;
     dsv:property skos:definition;
@@ -648,11 +650,11 @@
 <https://techlib.cz/profile/ccmm/Resource.title> dsv:domain <https://techlib.cz/profile/ccmm/Resource>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Title"^^rdf:langString, "Title"@en;
+    skos:prefLabel "Title"@en;
     dsv:reusesPropertyValue [
   a dsv:PropertyValueReuse;
   dsv:reusedProperty skos:definition;
-  dsv:reusedFromResource <https://mff-uk.github.io/specifications/dcat-ap/#CatalogueRecord.title>
+  dsv:reusedFromResource <https://techlib.cz/vocabulary/datacite/relatedItemTitle>
 ];
     dsv:cardinality cardinality:01;
     dsv:property <https://techlib.cz/vocabulary/datacite/relatedItemTitle>;
@@ -718,7 +720,7 @@
 <https://techlib.cz/profile/ccmm/Resource.resourceURL> dsv:domain <https://techlib.cz/profile/ccmm/Resource>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Resource URL"^^rdf:langString, "Resource URL"@en;
+    skos:prefLabel "Resource URL"@en;
     skos:definition "Resolvable URL representing the resource, preferably human readable."@en;
     vann:usageNote "In case it is filled, it must be filled the same in c:iri.\nIf more resolvable IRIs, Resource URL shall link to human readable version, machine readable ID is always in c:iri."@en;
     dsv:cardinality cardinality:01;
@@ -745,7 +747,7 @@
 <https://techlib.cz/profile/ccmm/TimeReference.dateType> dsv:domain <https://techlib.cz/profile/ccmm/TimeReference>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Date type"^^rdf:langString, "Date type"@en;
+    skos:prefLabel "Date type"@en;
     skos:definition "Type of the date."@en;
     vann:usageNote "Use value from controlled list https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/dateType/."@en;
     dsv:cardinality cardinality:11;
@@ -756,7 +758,7 @@
 <https://techlib.cz/profile/ccmm/TimeReference.dateInformation> dsv:domain <https://techlib.cz/profile/ccmm/TimeReference>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Date information"^^rdf:langString, "Date information"@en;
+    skos:prefLabel "Date information"@en;
     skos:definition "Additional information to the date in text form."@en;
     dsv:cardinality cardinality:01;
     dsv:property <https://techlib.cz/vocabulary/datacite/dateInformation>;
@@ -813,7 +815,7 @@
 <https://techlib.cz/profile/ccmm/ResourceAgentRoleType.label> dsv:domain <https://techlib.cz/profile/ccmm/ResourceAgentRoleType>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Label"^^rdf:langString, "Label"@en;
+    skos:prefLabel "label"@en;
     skos:definition "Resource agent role type label"@en;
     dsv:cardinality cardinality:0n;
     dsv:property rdfs:label;
@@ -928,7 +930,7 @@
 <https://techlib.cz/profile/ccmm/Address.label> dsv:domain <https://techlib.cz/profile/ccmm/Address>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Label"^^rdf:langString, "Label"@en;
+    skos:prefLabel "Label"@en;
     skos:definition "Address label"@en;
     dsv:cardinality cardinality:0n;
     dsv:property rdfs:label;
@@ -987,12 +989,8 @@
 <https://techlib.cz/profile/ccmm/MetadataRecord.DateCreated> dsv:domain <https://techlib.cz/profile/ccmm/MetadataRecord>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
+    skos:prefLabel "Date created"@en;
     skos:definition "The date on which the metadata record was created."@en;
-    dsv:reusesPropertyValue [
-  a dsv:PropertyValueReuse;
-  dsv:reusedProperty skos:prefLabel;
-  dsv:reusedFromResource dct:created
-];
     dsv:cardinality cardinality:01;
     dsv:property dct:created;
     a dsv:DatatypePropertyProfile;
@@ -1001,7 +999,7 @@
 <https://techlib.cz/profile/ccmm/MetadataRecord.DateUpdated> dsv:domain <https://techlib.cz/profile/ccmm/MetadataRecord>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Date updated"^^rdf:langString, "Date updated"@en;
+    skos:prefLabel "Date updated"@en;
     vann:usageNote "The most recent date on which the metadata record was changed or modified."@en;
     dsv:reusesPropertyValue [
   a dsv:PropertyValueReuse;
@@ -1051,7 +1049,7 @@
 <https://techlib.cz/profile/ccmm/ApplicationProfile.label> dsv:domain <https://techlib.cz/profile/ccmm/ApplicationProfile>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Label"^^rdf:langString, "Label"@en;
+    skos:prefLabel "Label"@en;
     skos:definition "Label of application profile"@en;
     dsv:cardinality cardinality:0n;
     dsv:property rdfs:label;
@@ -1078,7 +1076,7 @@
 <https://techlib.cz/profile/ccmm/ProvenanceStatement.label> dsv:domain <https://techlib.cz/profile/ccmm/ProvenanceStatement>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Label"^^rdf:langString, "Label"@en;
+    skos:prefLabel "Label"@en;
     skos:definition "Provenance state label"@en;
     dsv:cardinality cardinality:0n;
     dsv:property rdfs:label;
@@ -1102,7 +1100,7 @@
 <https://techlib.cz/profile/ccmm/Repository.label> dsv:domain <https://techlib.cz/profile/ccmm/Repository>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Label"^^rdf:langString, "Label"@en;
+    skos:prefLabel "Label"@en;
     skos:definition "Repository label"@en;
     dsv:cardinality cardinality:0n;
     dsv:property rdfs:label;
@@ -1192,7 +1190,7 @@
 <https://techlib.cz/profile/ccmm/Distribution-DownloadableFile.byteSize> dsv:domain <https://techlib.cz/profile/ccmm/Distribution-DownloadableFile>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Byte size"^^rdf:langString, "Byte size"@en;
+    skos:prefLabel "Byte size"@en;
     skos:definition "The size of a Distribution in bytes. "@en;
     dsv:cardinality cardinality:11;
     a dsv:DatatypePropertyProfile;
@@ -1265,7 +1263,7 @@
 <https://techlib.cz/profile/ccmm/Distribution-DataService.Description> dsv:domain <https://techlib.cz/profile/ccmm/Distribution-DataService>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Description"^^rdf:langString, "Description"@en;
+    skos:prefLabel "Description"@en;
     skos:definition "A free-text account of the Distribution."@en;
     vann:usageNote "This property can be repeated for parallel language versions of the description. "@en;
     dsv:cardinality cardinality:0n;
@@ -1317,7 +1315,7 @@
 <https://techlib.cz/profile/ccmm/File.label> dsv:domain <https://techlib.cz/profile/ccmm/File>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Label"^^rdf:langString, "Label"@en;
+    skos:prefLabel "Label"@en;
     skos:definition "File label"@en;
     dsv:cardinality cardinality:0n;
     dsv:property rdfs:label;
@@ -1344,7 +1342,7 @@
 <https://techlib.cz/profile/ccmm/MediaType.label> dsv:domain <https://techlib.cz/profile/ccmm/MediaType>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Label"^^rdf:langString, "Label"@en;
+    skos:prefLabel "Label"@en;
     skos:definition "Media type label"@en;
     dsv:cardinality cardinality:0n;
     dsv:property rdfs:label;
@@ -1391,7 +1389,7 @@
 <https://techlib.cz/profile/ccmm/DataService.label> dsv:domain <https://techlib.cz/profile/ccmm/DataService>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Label"^^rdf:langString, "Label"@en;
+    skos:prefLabel "Label"@en;
     skos:definition "Data service label"@en;
     dsv:cardinality cardinality:0n;
     dsv:property rdfs:label;
@@ -1412,7 +1410,7 @@
 <https://techlib.cz/profile/ccmm/Documentation.label> dsv:domain <https://techlib.cz/profile/ccmm/Documentation>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Label"^^rdf:langString, "Label"@en;
+    skos:prefLabel "Label"@en;
     skos:definition "Documentation label"@en;
     dsv:cardinality cardinality:0n;
     dsv:property rdfs:label;
@@ -1429,7 +1427,7 @@
 <https://techlib.cz/profile/ccmm/SubjectScheme.label> dsv:domain <https://techlib.cz/profile/ccmm/SubjectScheme>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Label"^^rdf:langString, "Label"@en;
+    skos:prefLabel "Label"@en;
     skos:definition "Subject scheme label"@en;
     dsv:cardinality cardinality:0n;
     dsv:property rdfs:label;
@@ -1471,7 +1469,7 @@
 <https://techlib.cz/profile/ccmm/Location.name> dsv:domain <https://techlib.cz/profile/ccmm/Location>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Location name"^^rdf:langString, "Location name"@en;
+    skos:prefLabel "Location name"@en;
     skos:definition "Name of the spatial location."@en;
     dsv:cardinality cardinality:0n;
     dsv:property dct:title;
@@ -1481,13 +1479,10 @@
 <https://techlib.cz/profile/ccmm/Location.bbox> dsv:domain <https://techlib.cz/profile/ccmm/Location>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
+    skos:prefLabel "Bounding box"@en;
     skos:definition "Bounding box of the location geometry."@en;
-    dsv:reusesPropertyValue [
-  a dsv:PropertyValueReuse;
-  dsv:reusedProperty skos:prefLabel;
-  dsv:reusedFromResource <https://mff-uk.github.io/specifications/dcat-ap/#Location.bbox>
-];
     dsv:cardinality cardinality:0n;
+    dsv:property <http://www.w3.org/ns/dcat#bbox>;
     a dsv:DatatypePropertyProfile;
     dsv:datatypePropertyRange rdfs:Literal.
 
@@ -1528,7 +1523,7 @@
 <https://techlib.cz/profile/ccmm/Geometry.label> dsv:domain <https://techlib.cz/profile/ccmm/Geometry>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Label"^^rdf:langString, "Label"@en;
+    skos:prefLabel "Label"@en;
     skos:definition "Geometry label"@en;
     dsv:cardinality cardinality:0n;
     dsv:property rdfs:label;
@@ -1556,16 +1551,17 @@
 <https://techlib.cz/profile/ccmm/Identifier.value> dsv:domain <https://techlib.cz/profile/ccmm/Identifier>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Value"^^rdf:langString, "Value"@en;
+    skos:prefLabel "Value"@en;
     skos:definition "Value of the identifer within the given identifier scheme."@en;
     dsv:cardinality cardinality:11;
+    dsv:property skos:notation;
     a dsv:DatatypePropertyProfile;
     dsv:datatypePropertyRange rdfs:Literal.
 
 <https://techlib.cz/profile/ccmm/Identifier.identifierScheme> dsv:domain <https://techlib.cz/profile/ccmm/Identifier>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Identifier scheme"^^rdf:langString, "Identifier scheme"@en;
+    skos:prefLabel "Identifier scheme"@en;
     skos:definition "Scheme URI of the identifier."@en;
     vann:usageNote "For DOI, ROR etc. use the scheme uri, i.e. https://doi.org/. For others use base URI (whole URI except the notation part)."@en;
     dsv:cardinality cardinality:11;
@@ -1582,7 +1578,7 @@
 <https://techlib.cz/profile/ccmm/AlternateTitle.type> dsv:domain <https://techlib.cz/profile/ccmm/AlternateTitle>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Type"^^rdf:langString, "Type"@en;
+    skos:prefLabel "Type"@en;
     skos:definition "Type of alternate title."@en;
     vann:usageNote "Use value from controlled list with values:\n- AlternativeTitle\n- Subtitle\n- TranslatedTitle\n\nFor other leave empty"@en;
     dsv:cardinality cardinality:01;
@@ -1593,7 +1589,7 @@
 <https://techlib.cz/profile/ccmm/AlternateTitle.title> dsv:domain <https://techlib.cz/profile/ccmm/AlternateTitle>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Title"^^rdf:langString, "Title"@en;
+    skos:prefLabel "Title"@en;
     skos:definition "Alternate title name."@en;
     dsv:cardinality cardinality:11;
     a dsv:DatatypePropertyProfile;
@@ -1619,7 +1615,7 @@
 <https://techlib.cz/profile/ccmm/Checksum.checksumValue> dsv:domain <https://techlib.cz/profile/ccmm/Checksum>;
     dct:isPartOf <https://techlib.cz/profile/ccmm/applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "Checksum value"^^rdf:langString, "Checksum value"@en;
+    skos:prefLabel "Checksum value"@en;
     skos:definition "A lower case hexadecimal encoded digest value produced using a specific algorithm. "@en;
     dsv:cardinality cardinality:11;
     a dsv:DatatypePropertyProfile;

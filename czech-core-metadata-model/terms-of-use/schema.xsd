@@ -28,11 +28,9 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="access_rights" type="xs:string">
+      <xs:element name="access_rights" type="xs:string"
+        sawsdl:modelReference="http://purl.org/dc/terms/accessRights">
         <xs:annotation>
-          <xs:documentation xml:lang="en">
-            Access rights
-          </xs:documentation>
           <xs:documentation xml:lang="en">
             Access rights - Information about who access the resource or an indication of its security status.
           </xs:documentation>

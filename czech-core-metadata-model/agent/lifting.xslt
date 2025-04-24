@@ -1,12 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xmlns:c="https://schemas.dataspecer.com/xsd/core/" xmlns:ns0="a" xmlns:ns1="http://www.w3.org/ns/dcat#">
-  <xsl:import href="../contact-details/lifting.xslt"/>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xmlns:c="https://schemas.dataspecer.com/xsd/core/" xmlns:ns0="https://techlib.cz/vocabulary/ccmm/" xmlns:ns1="http://www.w3.org/ns/dcat#" xmlns:ns2="http://www.w3.org/2006/vcard/ns#" xmlns:ns3="http://xmlns.com/foaf/0.1/">
+  <xsl:import href="../identifier/lifting.xslt"/>
   <xsl:output method="xml" version="1.0" encoding="utf-8" media-type="application/rdf+xml" indent="yes"/>
   <xsl:template match="/agent">
     <rdf:RDF>
       <xsl:variable name="result">
         <xsl:sequence>
-          <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742234312711-3b17-2e3d-91b1"/>
+          <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1744806334636-9353-d66e-89dc"/>
+        </xsl:sequence>
+      </xsl:variable>
+      <xsl:for-each select="$result">
+        <xsl:copy>
+          <xsl:call-template name="remove-top"/>
+        </xsl:copy>
+      </xsl:for-each>
+      <xsl:for-each select="$result//top-level/node()">
+        <xsl:copy>
+          <xsl:call-template name="remove-top"/>
+        </xsl:copy>
+      </xsl:for-each>
+    </rdf:RDF>
+  </xsl:template>
+  <xsl:template match="/organization">
+    <rdf:RDF>
+      <xsl:variable name="result">
+        <xsl:sequence>
+          <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1744806345521-602d-5078-a2c5"/>
+        </xsl:sequence>
+      </xsl:variable>
+      <xsl:for-each select="$result">
+        <xsl:copy>
+          <xsl:call-template name="remove-top"/>
+        </xsl:copy>
+      </xsl:for-each>
+      <xsl:for-each select="$result//top-level/node()">
+        <xsl:copy>
+          <xsl:call-template name="remove-top"/>
+        </xsl:copy>
+      </xsl:for-each>
+    </rdf:RDF>
+  </xsl:template>
+  <xsl:template match="/person">
+    <rdf:RDF>
+      <xsl:variable name="result">
+        <xsl:sequence>
+          <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1744806350501-735b-f599-9019"/>
         </xsl:sequence>
       </xsl:variable>
       <xsl:for-each select="$result">
@@ -34,7 +72,7 @@
       </xsl:copy>
     </xsl:for-each>
   </xsl:template>
-  <xsl:template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742234312711-3b17-2e3d-91b1">
+  <xsl:template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1744806334636-9353-d66e-89dc">
     <xsl:param name="arc" select="()"/>
     <xsl:param name="no_iri" select="false()"/>
     <rdf:Description>
@@ -56,18 +94,113 @@
         </id>
       </xsl:variable>
       <xsl:copy-of select="$id//@*"/>
-      <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
       <xsl:copy-of select="$arc"/>
-      <xsl:for-each select="external_identifiers">
-        <ns0:gentExternalIdentifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
-          <xsl:apply-templates select="@*"/>
-          <xsl:value-of select="."/>
-        </ns0:gentExternalIdentifier>
+    </rdf:Description>
+  </xsl:template>
+  <xsl:template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1744806345521-602d-5078-a2c5">
+    <xsl:param name="arc" select="()"/>
+    <xsl:param name="no_iri" select="false()"/>
+    <rdf:Description>
+      <xsl:apply-templates select="@*"/>
+      <xsl:variable name="id">
+        <id>
+          <xsl:choose>
+            <xsl:when test="c:iri and not($no_iri)">
+              <xsl:attribute name="rdf:about">
+                <xsl:value-of select="c:iri"/>
+              </xsl:attribute>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:attribute name="rdf:nodeID">
+                <xsl:value-of select="generate-id()"/>
+              </xsl:attribute>
+            </xsl:otherwise>
+          </xsl:choose>
+        </id>
+      </xsl:variable>
+      <xsl:copy-of select="$id//@*"/>
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Organization"/>
+      <xsl:copy-of select="$arc"/>
+      <xsl:for-each select="has_identifier">
+        <ns0:hasIdentifier>
+          <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742340169817-84a9-ded1-a656"/>
+        </ns0:hasIdentifier>
       </xsl:for-each>
-      <xsl:for-each select="contactPoint">
+      <xsl:for-each select="contact_point">
         <ns1:contactPoint>
           <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742234373952-7a86-df18-a582"/>
         </ns1:contactPoint>
+      </xsl:for-each>
+      <xsl:for-each select="alternate_name">
+        <ns2:organization-name>
+          <xsl:apply-templates select="@*"/>
+          <xsl:value-of select="."/>
+        </ns2:organization-name>
+      </xsl:for-each>
+      <xsl:for-each select="name">
+        <ns2:organization-name rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">
+          <xsl:apply-templates select="@*"/>
+          <xsl:value-of select="."/>
+        </ns2:organization-name>
+      </xsl:for-each>
+    </rdf:Description>
+  </xsl:template>
+  <xsl:template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1744806350501-735b-f599-9019">
+    <xsl:param name="arc" select="()"/>
+    <xsl:param name="no_iri" select="false()"/>
+    <rdf:Description>
+      <xsl:apply-templates select="@*"/>
+      <xsl:variable name="id">
+        <id>
+          <xsl:choose>
+            <xsl:when test="c:iri and not($no_iri)">
+              <xsl:attribute name="rdf:about">
+                <xsl:value-of select="c:iri"/>
+              </xsl:attribute>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:attribute name="rdf:nodeID">
+                <xsl:value-of select="generate-id()"/>
+              </xsl:attribute>
+            </xsl:otherwise>
+          </xsl:choose>
+        </id>
+      </xsl:variable>
+      <xsl:copy-of select="$id//@*"/>
+      <rdf:type rdf:resource="http://www.w3.org/ns/prov#Person"/>
+      <xsl:copy-of select="$arc"/>
+      <xsl:for-each select="has_identifier">
+        <ns0:hasIdentifier>
+          <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742340169817-84a9-ded1-a656"/>
+        </ns0:hasIdentifier>
+      </xsl:for-each>
+      <xsl:for-each select="contact_point">
+        <ns1:contactPoint>
+          <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742234373952-7a86-df18-a582"/>
+        </ns1:contactPoint>
+      </xsl:for-each>
+      <xsl:for-each select="full_name">
+        <ns3:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+          <xsl:apply-templates select="@*"/>
+          <xsl:value-of select="."/>
+        </ns3:name>
+      </xsl:for-each>
+      <xsl:for-each select="family_name">
+        <ns2:family-name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+          <xsl:apply-templates select="@*"/>
+          <xsl:value-of select="."/>
+        </ns2:family-name>
+      </xsl:for-each>
+      <xsl:for-each select="given_name">
+        <ns2:given-name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+          <xsl:apply-templates select="@*"/>
+          <xsl:value-of select="."/>
+        </ns2:given-name>
+      </xsl:for-each>
+      <xsl:for-each select="has_affiliation">
+        <ns0:hasAffiliation>
+          <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1744871355397-62d0-acf0-af09"/>
+        </ns0:hasAffiliation>
       </xsl:for-each>
     </rdf:Description>
   </xsl:template>

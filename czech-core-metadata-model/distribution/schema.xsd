@@ -24,9 +24,6 @@
             <xs:element name="title" sawsdl:modelReference="http://purl.org/dc/terms/title">
               <xs:annotation>
                 <xs:documentation xml:lang="en">
-                  Title
-                </xs:documentation>
-                <xs:documentation xml:lang="en">
                   Title - A name given to the distribution.
                 </xs:documentation>
               </xs:annotation>
@@ -40,9 +37,6 @@
             </xs:element>
             <xs:element minOccurs="0" maxOccurs="unbounded" name="description">
               <xs:annotation>
-                <xs:documentation xml:lang="en">
-                  Description
-                </xs:documentation>
                 <xs:documentation xml:lang="en">
                   Description - A free-text account of the Distribution.
                 </xs:documentation>
@@ -107,9 +101,6 @@
             <xs:element name="title" sawsdl:modelReference="http://purl.org/dc/terms/title">
               <xs:annotation>
                 <xs:documentation xml:lang="en">
-                  Title
-                </xs:documentation>
-                <xs:documentation xml:lang="en">
                   Title - A name given to the distribution.
                 </xs:documentation>
               </xs:annotation>
@@ -123,9 +114,6 @@
             </xs:element>
             <xs:element name="byte_size" type="xs:integer">
               <xs:annotation>
-                <xs:documentation xml:lang="en">
-                  Byte size
-                </xs:documentation>
                 <xs:documentation xml:lang="en">
                   Byte size - The size of a Distribution in bytes. 
                 </xs:documentation>
@@ -252,4 +240,5 @@
       </xs:element>
     </xs:choice>
   </xs:complexType>
+  <xs:element name="distribution" type="distribution"/>
 </xs:schema>

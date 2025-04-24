@@ -1,12 +1,7 @@
-e is null
+a is undefined
 
-_g/n<@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:691:28169
-_g@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:691:28155
-generatePropertyContext@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:691:29691
-generateClassesContext@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:691:31924
-Dat/<@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:691:29417
-generateToObject@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:691:34365
-generateToStream@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:691:33748
-generateToObject@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:831:8944
-generateToStream@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:831:9524
-generateArtefact@http://localhost:3000/data-specification-editor/assets/index-BLbPXSd8.js:1539:60631
+xr.resolveWithContext@http://localhost:3000/data-specification-editor/assets/index-CVN6l5N1.js:691:1892
+xr.resolve@http://localhost:3000/data-specification-editor/assets/index-CVN6l5N1.js:691:2123
+generateJsonData@http://localhost:3000/data-specification-editor/assets/index-CVN6l5N1.js:691:2862
+_at/<@http://localhost:3000/data-specification-editor/assets/index-CVN6l5N1.js:691:2656
+generateToObject@http://localhost:3000/data-specification-editor/assets/index-CVN6l5N1.js:831:9316

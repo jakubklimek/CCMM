@@ -29,7 +29,7 @@
       ]
     },
     "bbox": {
-      "title": "Undefined",
+      "title": "Bbox",
       "description": "Bounding box of the location geometry.",
       "type": "array",
       "items": {
