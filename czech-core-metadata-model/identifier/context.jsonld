@@ -1,17 +1,19 @@
 {
   "@context": {
     "@version": 1.1,
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "id": "@id",
     "type": "@type",
-    "Identifier": "http://www.w3.org/ns/adms#Identifier",
-    "identifier_scheme": {
-      "@id": null,
-      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
-    },
     "value": {
       "@id": "http://www.w3.org/2004/02/skos/core#notation",
-      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      "@type": "xsd:string"
+    },
+    "in_scheme": {
+      "@id": "https://techlib.cz/vocabulary/ccmm/inScheme",
+      "@context": "../identifier-scheme/context.jsonld"
+    },
+    "Identifier": {
+      "@id": "http://www.w3.org/ns/adms#Identifier",
+      "@context": {}
     }
   }
 }

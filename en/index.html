@@ -5769,40 +5769,41 @@
                     <li><a href="#Agent.hasIdentifier"></a></li>
                 </ul>
             
-                <section id="Identifier.identifierScheme">
-                  <h4>Identifier scheme</h4>
+                <section id="Identifier.inScheme">
+                  <h4>in scheme</h4>
                 
                   <table class="def">
                     <tr>
                       <td>Profiled relationship IRI(s)</td>
                       <td>
+                          
+                          <a href="https://techlib.cz/vocabulary/ccmm/inScheme">https://techlib.cz/vocabulary/ccmm/inScheme</a>
                       </td>
                     </tr>
                     <tr>
                       <td>IRI</td>
-                      <td><a href="https://model.ccmm.cz/rd/Identifier.identifierScheme">https://model.ccmm.cz/rd/Identifier.identifierScheme</a></td>
+                      <td><a href="https://model.ccmm.cz/rd/Identifier.inScheme">https://model.ccmm.cz/rd/Identifier.inScheme</a></td>
                     </tr>
                     <tr>
                       <td>Label</td>
-                      <td>Identifier scheme</td>
+                      <td>in scheme</td>
                     </tr>
                     <tr>
                       <td>Definition</td>
-                      <td>Scheme URI of the identifier.</td>
+                      <td>Relation between the identifier and scheme in which it is defined and unique.</td>
                     </tr>
                     <tr>
                       <td>Domain</td>
                       <td>
                         <a href="#Identifier">Identifier</a>
                 
-                            [0..*]
-                
+                        
                       </td>
                     </tr>
                     <tr>
                       <td>Range</td>
                       <td>
-                        <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+                        <a href="#IdentifierScheme">Identifier scheme</a>
                 
                             [1..1]
                 
@@ -5811,11 +5812,21 @@
                 
                 
                 
+                      <tr>
+                        <td>Profiles</td>
+                        <td>
+                          <ul style="list-style-type: none; padding-left: 0; margin: 0;">
+                                <li>
+                                        property
+                      
+                      <a href="https://techlib.cz/vocabulary/ccmm/inScheme">in scheme</a> (<a href="https://techlib.cz/vocabulary/ccmm/inScheme">https://techlib.cz/vocabulary/ccmm/inScheme</a>)
+                        <br />Definition: <i>Relation between the identifier and scheme in which it is defined and unique.</i>
                 
-                    <tr>
-                      <td>Usage note</td>
-                      <td>For DOI, ROR etc. use the scheme uri, i.e. https://doi.org/. For others use base URI (whole URI except the notation part).</td>
-                    </tr>
+                                </li>
+                          </ul>
+                        </td>
+                      </tr>
+                
                   </table>
                 </section>    <section id="Identifier.value">
                   <h4>Value</h4>
@@ -5876,6 +5887,120 @@
                         </td>
                       </tr>
                 
+                  </table>
+                </section>
+            </section>            <section id="IdentifierScheme">
+              <h4>Identifier scheme</h4>
+            
+              <table class="def">
+                <tr>
+                  <td>Profiled class IRI(s)</td>
+                  <td>
+                      
+                      <a href="https://techlib.cz/vocabulary/ccmm/IdentifierScheme">https://techlib.cz/vocabulary/ccmm/IdentifierScheme</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://model.ccmm.cz/rd/IdentifierScheme">https://model.ccmm.cz/rd/IdentifierScheme</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Identifier scheme</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Scheme in which is the identifier value unique, usually representing some authority. Identifier scheme shall always be represented as IRI identifier.</td>
+                </tr>
+            
+                  <tr>
+                    <td>Profiles</td>
+                    <td>
+                      <ul style="list-style-type: none; padding-left: 0; margin: 0;">
+                            <li>
+                                    class
+                  
+                  <a href="https://techlib.cz/vocabulary/ccmm/IdentifierScheme">Identifier scheme</a> (<a href="https://techlib.cz/vocabulary/ccmm/IdentifierScheme">https://techlib.cz/vocabulary/ccmm/IdentifierScheme</a>)
+                    <br />Definition: <i>Scheme in which is the identifier value unique, usually representing some authority. Identifier scheme shall always be represented as IRI identifier.</i>
+            
+                            </li>
+                      </ul>
+                    </td>
+                  </tr>
+            
+                <tr>
+                  <td>Usage note</td>
+                  <td>Use identifier scheme in the form of IRI identifier. There shall be methodology list of known sources.</td>
+                </tr>
+              </table>
+            
+                <p>Backwards associations</p>
+                <ul>
+                    <li><a href="#Identifier.inScheme"></a></li>
+                </ul>
+            
+                <section id="IdentifierScheme.label">
+                  <h4>Label</h4>
+                
+                  <table class="def">
+                    <tr>
+                      <td>Profiled relationship IRI(s)</td>
+                      <td>
+                          
+                          <a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>IRI</td>
+                      <td><a href="https://model.ccmm.cz/rd/IdentifierScheme.label">https://model.ccmm.cz/rd/IdentifierScheme.label</a></td>
+                    </tr>
+                    <tr>
+                      <td>Label</td>
+                      <td>Label</td>
+                    </tr>
+                    <tr>
+                      <td>Definition</td>
+                      <td>Identifier scheme label</td>
+                    </tr>
+                    <tr>
+                      <td>Domain</td>
+                      <td>
+                        <a href="#IdentifierScheme">Identifier scheme</a>
+                
+                        
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Range</td>
+                      <td>
+                        <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a>
+                
+                            [0..*]
+                
+                    </td>
+                    </tr>
+                
+                
+                
+                      <tr>
+                        <td>Profiles</td>
+                        <td>
+                          <ul style="list-style-type: none; padding-left: 0; margin: 0;">
+                                <li>
+                                        property
+                      
+                      <a href="http://www.w3.org/2000/01/rdf-schema#label">label</a> (<a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a>)
+                        <br />Definition: <i>A human-readable name for the subject.</i>
+                
+                                </li>
+                          </ul>
+                        </td>
+                      </tr>
+                
+                    <tr>
+                      <td>Usage note</td>
+                      <td>E.g. DOI, ORCID etc...</td>
+                    </tr>
                   </table>
                 </section>
             </section>            <section id="LanguageSystem">

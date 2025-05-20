@@ -51,7 +51,7 @@
     <xsl:variable name="id_test">
       <xsl:value-of select="c:id-key($id/*)"/>
     </xsl:variable>
-    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://www.w3.org/2000/01/rdf-schema#label&#34;]">
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://purl.org/dc/terms/title&#34;]">
       <title>
         <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
       </title>

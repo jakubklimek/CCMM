@@ -31,41 +31,50 @@
     "definition": {
       "title": "Definition",
       "description": "Definition of the subject.",
-      "type": "object",
-      "additionalProperties": {
-        "title": "Hodnota v jiném jazyce",
-        "type": "string"
-      },
-      "required": [
-
-      ],
-      "properties": {
-        "cs": {
-          "title": "Hodnota v českém jazyce",
+      "type": "array",
+      "items": {
+        "title": "Text",
+        "type": "object",
+        "additionalProperties": {
+          "title": "Hodnota v jiném jazyce",
           "type": "string"
         },
-        "en": {
-          "title": "Hodnota v anglickém jazyce",
-          "type": "string"
+        "required": [
+
+        ],
+        "properties": {
+          "cs": {
+            "title": "Hodnota v českém jazyce",
+            "type": "string"
+          },
+          "en": {
+            "title": "Hodnota v anglickém jazyce",
+            "type": "string"
+          }
         }
       }
     },
     "title": {
       "title": "Title",
       "description": "Title of the subject",
-      "type": "object",
-      "required": [
-        "@value",
-        "@language"
-      ],
-      "properties": {
-        "@value": {
-          "title": "Text v daném jazyce",
-          "type": "string"
-        },
-        "@language": {
-          "title": "Jazyk textu",
-          "type": "string"
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "title": "Language tagged string",
+        "type": "object",
+        "required": [
+          "@value",
+          "@language"
+        ],
+        "properties": {
+          "@value": {
+            "title": "Text v daném jazyce",
+            "type": "string"
+          },
+          "@language": {
+            "title": "Jazyk textu",
+            "type": "string"
+          }
         }
       }
     },

@@ -29,20 +29,26 @@
       ]
     },
     "title": {
-      "title": "notation",
-      "type": "object",
-      "required": [
-        "@value",
-        "@language"
-      ],
-      "properties": {
-        "@value": {
-          "title": "Text v daném jazyce",
-          "type": "string"
-        },
-        "@language": {
-          "title": "Jazyk textu",
-          "type": "string"
+      "title": "Title",
+      "description": "A human-readable name for the subject.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "title": "Language tagged string",
+        "type": "object",
+        "required": [
+          "@value",
+          "@language"
+        ],
+        "properties": {
+          "@value": {
+            "title": "Text v daném jazyce",
+            "type": "string"
+          },
+          "@language": {
+            "title": "Jazyk textu",
+            "type": "string"
+          }
         }
       }
     },

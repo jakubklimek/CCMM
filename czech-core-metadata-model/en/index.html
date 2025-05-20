@@ -1425,14 +1425,14 @@
                 
                   </table>
                 </section>    <section id="AlternateTitle.title">
-                  <h4>notation</h4>
+                  <h4>Title</h4>
                 
                   <table class="def">
                     <tr>
                       <td>Profiled relationship IRI(s)</td>
                       <td>
                           
-                          <a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a>
+                          <a href="http://purl.org/dc/terms/title">dcterms:title</a>
                       </td>
                     </tr>
                     <tr>
@@ -1441,7 +1441,11 @@
                     </tr>
                     <tr>
                       <td>Label</td>
-                      <td>notation</td>
+                      <td>Title</td>
+                    </tr>
+                    <tr>
+                      <td>Definition</td>
+                      <td>A human-readable name for the subject.</td>
                     </tr>
                     <tr>
                       <td>Domain</td>
@@ -1457,7 +1461,7 @@
                       <td>
                         <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a>
                 
-                            [1..1]
+                            [1..*]
                 
                     </td>
                     </tr>
@@ -1471,8 +1475,8 @@
                                 <li>
                                         property
                       
-                      <a href="http://www.w3.org/2000/01/rdf-schema#label">label</a> (<a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a>)
-                        <br />Definition: <i>A human-readable name for the subject.</i>
+                      <a href="http://purl.org/dc/terms/title">Title</a> (<a href="http://purl.org/dc/terms/title">dcterms:title</a>)
+                        <br />Definition: <i>A name given to the resource.</i>
                 
                                 </li>
                           </ul>
@@ -5765,40 +5769,41 @@
                     <li><a href="#Agent.hasIdentifier"></a></li>
                 </ul>
             
-                <section id="Identifier.identifierScheme">
-                  <h4>Identifier scheme</h4>
+                <section id="Identifier.inScheme">
+                  <h4>in scheme</h4>
                 
                   <table class="def">
                     <tr>
                       <td>Profiled relationship IRI(s)</td>
                       <td>
+                          
+                          <a href="https://techlib.cz/vocabulary/ccmm/inScheme">https://techlib.cz/vocabulary/ccmm/inScheme</a>
                       </td>
                     </tr>
                     <tr>
                       <td>IRI</td>
-                      <td><a href="https://model.ccmm.cz/rd/Identifier.identifierScheme">https://model.ccmm.cz/rd/Identifier.identifierScheme</a></td>
+                      <td><a href="https://model.ccmm.cz/rd/Identifier.inScheme">https://model.ccmm.cz/rd/Identifier.inScheme</a></td>
                     </tr>
                     <tr>
                       <td>Label</td>
-                      <td>Identifier scheme</td>
+                      <td>in scheme</td>
                     </tr>
                     <tr>
                       <td>Definition</td>
-                      <td>Scheme URI of the identifier.</td>
+                      <td>Relation between the identifier and scheme in which it is defined and unique.</td>
                     </tr>
                     <tr>
                       <td>Domain</td>
                       <td>
                         <a href="#Identifier">Identifier</a>
                 
-                            [0..*]
-                
+                        
                       </td>
                     </tr>
                     <tr>
                       <td>Range</td>
                       <td>
-                        <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a>
+                        <a href="#IdentifierScheme">Identifier scheme</a>
                 
                             [1..1]
                 
@@ -5807,11 +5812,21 @@
                 
                 
                 
+                      <tr>
+                        <td>Profiles</td>
+                        <td>
+                          <ul style="list-style-type: none; padding-left: 0; margin: 0;">
+                                <li>
+                                        property
+                      
+                      <a href="https://techlib.cz/vocabulary/ccmm/inScheme">in scheme</a> (<a href="https://techlib.cz/vocabulary/ccmm/inScheme">https://techlib.cz/vocabulary/ccmm/inScheme</a>)
+                        <br />Definition: <i>Relation between the identifier and scheme in which it is defined and unique.</i>
                 
-                    <tr>
-                      <td>Usage note</td>
-                      <td>For DOI, ROR etc. use the scheme uri, i.e. https://doi.org/. For others use base URI (whole URI except the notation part).</td>
-                    </tr>
+                                </li>
+                          </ul>
+                        </td>
+                      </tr>
+                
                   </table>
                 </section>    <section id="Identifier.value">
                   <h4>Value</h4>
@@ -5872,6 +5887,120 @@
                         </td>
                       </tr>
                 
+                  </table>
+                </section>
+            </section>            <section id="IdentifierScheme">
+              <h4>Identifier scheme</h4>
+            
+              <table class="def">
+                <tr>
+                  <td>Profiled class IRI(s)</td>
+                  <td>
+                      
+                      <a href="https://techlib.cz/vocabulary/ccmm/IdentifierScheme">https://techlib.cz/vocabulary/ccmm/IdentifierScheme</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="https://model.ccmm.cz/rd/IdentifierScheme">https://model.ccmm.cz/rd/IdentifierScheme</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Identifier scheme</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Scheme in which is the identifier value unique, usually representing some authority. Identifier scheme shall always be represented as IRI identifier.</td>
+                </tr>
+            
+                  <tr>
+                    <td>Profiles</td>
+                    <td>
+                      <ul style="list-style-type: none; padding-left: 0; margin: 0;">
+                            <li>
+                                    class
+                  
+                  <a href="https://techlib.cz/vocabulary/ccmm/IdentifierScheme">Identifier scheme</a> (<a href="https://techlib.cz/vocabulary/ccmm/IdentifierScheme">https://techlib.cz/vocabulary/ccmm/IdentifierScheme</a>)
+                    <br />Definition: <i>Scheme in which is the identifier value unique, usually representing some authority. Identifier scheme shall always be represented as IRI identifier.</i>
+            
+                            </li>
+                      </ul>
+                    </td>
+                  </tr>
+            
+                <tr>
+                  <td>Usage note</td>
+                  <td>Use identifier scheme in the form of IRI identifier. There shall be methodology list of known sources.</td>
+                </tr>
+              </table>
+            
+                <p>Backwards associations</p>
+                <ul>
+                    <li><a href="#Identifier.inScheme"></a></li>
+                </ul>
+            
+                <section id="IdentifierScheme.label">
+                  <h4>Label</h4>
+                
+                  <table class="def">
+                    <tr>
+                      <td>Profiled relationship IRI(s)</td>
+                      <td>
+                          
+                          <a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>IRI</td>
+                      <td><a href="https://model.ccmm.cz/rd/IdentifierScheme.label">https://model.ccmm.cz/rd/IdentifierScheme.label</a></td>
+                    </tr>
+                    <tr>
+                      <td>Label</td>
+                      <td>Label</td>
+                    </tr>
+                    <tr>
+                      <td>Definition</td>
+                      <td>Identifier scheme label</td>
+                    </tr>
+                    <tr>
+                      <td>Domain</td>
+                      <td>
+                        <a href="#IdentifierScheme">Identifier scheme</a>
+                
+                        
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Range</td>
+                      <td>
+                        <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a>
+                
+                            [0..*]
+                
+                    </td>
+                    </tr>
+                
+                
+                
+                      <tr>
+                        <td>Profiles</td>
+                        <td>
+                          <ul style="list-style-type: none; padding-left: 0; margin: 0;">
+                                <li>
+                                        property
+                      
+                      <a href="http://www.w3.org/2000/01/rdf-schema#label">label</a> (<a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a>)
+                        <br />Definition: <i>A human-readable name for the subject.</i>
+                
+                                </li>
+                          </ul>
+                        </td>
+                      </tr>
+                
+                    <tr>
+                      <td>Usage note</td>
+                      <td>E.g. DOI, ORCID etc...</td>
+                    </tr>
                   </table>
                 </section>
             </section>            <section id="LanguageSystem">
@@ -9019,7 +9148,7 @@
                       <td>
                         <a href="https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/text">https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/text</a>
                 
-                            [0..1]
+                            [0..*]
                 
                     </td>
                     </tr>
@@ -9134,7 +9263,7 @@
                       <td>
                         <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a>
                 
-                            [1..1]
+                            [1..*]
                 
                     </td>
                     </tr>
@@ -10658,6 +10787,24 @@
 <dt>Interpretace</dt>
 <dd>
   <a href="#Address">Address</a>
+</dd>
+<dt>Schéma</dt>
+<dd>
+  Schéma je definováno v  <a href="./documentation.html"></a>.
+</dd>
+</dl>
+</section>
+
+<section id="json-schéma-objekt-identifier-scheme">
+<h3>Referencovaný objekt <i>Identifier scheme</i></h3>
+<dl>
+
+<dt>Popis</dt>
+<dd>Scheme in which is the identifier value unique, usually representing some authority. Identifier scheme shall always be represented as IRI identifier.</dd>
+
+<dt>Interpretace</dt>
+<dd>
+  <a href="#IdentifierScheme">Identifier scheme</a>
 </dd>
 <dt>Schéma</dt>
 <dd>
@@ -13662,9 +13809,6 @@
     <code>time_reference</code>:
     nepovinná
     (0 - ∞) položka typu 
-      <strong>IRI (<a href="#TimeReference">Time reference</a>)</strong>
-      
-
       <strong><a href="#json-schéma-objekt-time-interval">Time interval</a></strong>
       
 
@@ -13823,12 +13967,6 @@
 <dt>Kardinalita</dt>
 <dd>0 - ∞</dd>
 <dt>Typ</dt>
-
-<dd>
-  IRI (<a href="#TimeReference">Time reference</a>)
-</dd>
-
-
 
 <dd>
   <a href="./documentation.html#json-schéma-objekt-time-interval">Time interval</a>
@@ -14056,6 +14194,24 @@
 <dt>Interpretace</dt>
 <dd>
   <a href="#ResourceRelationType">Resource relation type</a>
+</dd>
+<dt>Schéma</dt>
+<dd>
+  Schéma je definováno v  <a href="./documentation.html"></a>.
+</dd>
+</dl>
+</section>
+
+<section id="json-schéma-objekt-identifier-scheme">
+<h3>Referencovaný objekt <i>Identifier scheme</i></h3>
+<dl>
+
+<dt>Popis</dt>
+<dd>Scheme in which is the identifier value unique, usually representing some authority. Identifier scheme shall always be represented as IRI identifier.</dd>
+
+<dt>Interpretace</dt>
+<dd>
+  <a href="#IdentifierScheme">Identifier scheme</a>
 </dd>
 <dt>Schéma</dt>
 <dd>
@@ -15129,6 +15285,24 @@
 </dl>
 </section>
 
+<section id="json-schéma-objekt-identifier-scheme">
+<h3>Referencovaný objekt <i>Identifier scheme</i></h3>
+<dl>
+
+<dt>Popis</dt>
+<dd>Scheme in which is the identifier value unique, usually representing some authority. Identifier scheme shall always be represented as IRI identifier.</dd>
+
+<dt>Interpretace</dt>
+<dd>
+  <a href="#IdentifierScheme">Identifier scheme</a>
+</dd>
+<dt>Schéma</dt>
+<dd>
+  Schéma je definováno v  <a href="./documentation.html"></a>.
+</dd>
+</dl>
+</section>
+
 <section id="json-schéma-objekt-date-type">
 <h3>Referencovaný objekt <i>Date type</i></h3>
 <dl>
@@ -15699,7 +15873,7 @@
 
       <section>
 <h3>Přehled JSON struktury</h3>
-<p>JSON Schéma zachycující strukturu pro <i>Time reference</i> je definováno v souboru <a href="./time_reference/schema.json"><code>./time_reference/schema.json</code></a>. Datová sada je tvořena jediným prvkem odpovídající datové struktuře <i>Time referenceTime intervalTime instant</i>.</p>
+<p>JSON Schéma zachycující strukturu pro <i>Time reference</i> je definováno v souboru <a href="./time_reference/schema.json"><code>./time_reference/schema.json</code></a>. Datová sada je tvořena jediným prvkem odpovídající datové struktuře <i>Time intervalTime instant</i>.</p>
 
 <ul>
 
@@ -16292,9 +16466,6 @@
 </dt>
       <ul style="margin-top: 0;">
       <li>
-          element <a href="#element-time_reference"><code>&lt;time_reference&gt;</code></a> [1..1]
-      </li>
-      <li>
           element <a href="#element-time_interval"><code>&lt;time_interval&gt;</code></a> [1..1]
       </li>
       <li>
@@ -16303,47 +16474,6 @@
   </ul>
 
 
-  </dl>
-</section>
-<section id="element-time_reference">
-  <h4>Element <code>&lt;time_reference&gt;</code></h4>
-
-  <dl>
-    <dt>Význam</dt>
-    <dd>
-    </dd>
-
-      <dt>Efektivní kardinalita elementu vůči nadřazeném elementu</dt>
-      <dd>1..1</dd>
-      <dt>Nadřazený element</dt>
-      <dd><a href="#type-time_reference"></a></dd>
-
-    
-      <dt>Typ elementu</dt>
-        <div style="margin-left: 40px;">
-
-
-        <dt>Význam</dt>
-      <dd>
-        <a href="#TimeReference">Time reference</a>
-        (A temporal interval or instant on which something relevant to the resource has happened.)
-      </dd>
-
-
-
-        <dt>Obsah 
- - elementy v tomto pořadí
-</dt>
-      <ul style="margin-top: 0;">
-      <li>
-          element <a href="undefinediri"><code>&lt;iri&gt;</code></a> [0..1]
-      </li>
-  </ul>
-
-
-  </div>
-
-    
   </dl>
 </section>
 <section id="element-time_interval">
@@ -17260,6 +17390,24 @@
 </dl>
 </section>
 
+<section id="json-schéma-objekt-identifier-scheme">
+<h3>Referencovaný objekt <i>Identifier scheme</i></h3>
+<dl>
+
+<dt>Popis</dt>
+<dd>Scheme in which is the identifier value unique, usually representing some authority. Identifier scheme shall always be represented as IRI identifier.</dd>
+
+<dt>Interpretace</dt>
+<dd>
+  <a href="#IdentifierScheme">Identifier scheme</a>
+</dd>
+<dt>Schéma</dt>
+<dd>
+  Schéma je definováno v  <a href="./documentation.html"></a>.
+</dd>
+</dl>
+</section>
+
 <section id="json-schéma-objekt-identifier">
 <h3>Referencovaný objekt <i>Identifier</i></h3>
 <dl>
@@ -17972,6 +18120,24 @@
 </dl>
 </section>
 
+<section id="json-schéma-objekt-identifier-scheme">
+<h3>Referencovaný objekt <i>Identifier scheme</i></h3>
+<dl>
+
+<dt>Popis</dt>
+<dd>Scheme in which is the identifier value unique, usually representing some authority. Identifier scheme shall always be represented as IRI identifier.</dd>
+
+<dt>Interpretace</dt>
+<dd>
+  <a href="#IdentifierScheme">Identifier scheme</a>
+</dd>
+<dt>Schéma</dt>
+<dd>
+  Schéma je definováno v  <a href="./documentation.html"></a>.
+</dd>
+</dl>
+</section>
+
 <section id="json-schéma-objekt-identifier">
 <h3>Referencovaný objekt <i>Identifier</i></h3>
 <dl>
@@ -18577,6 +18743,24 @@
 <dt>Interpretace</dt>
 <dd>
   <a href="#Address">Address</a>
+</dd>
+<dt>Schéma</dt>
+<dd>
+  Schéma je definováno v  <a href="./documentation.html"></a>.
+</dd>
+</dl>
+</section>
+
+<section id="json-schéma-objekt-identifier-scheme">
+<h3>Referencovaný objekt <i>Identifier scheme</i></h3>
+<dl>
+
+<dt>Popis</dt>
+<dd>Scheme in which is the identifier value unique, usually representing some authority. Identifier scheme shall always be represented as IRI identifier.</dd>
+
+<dt>Interpretace</dt>
+<dd>
+  <a href="#IdentifierScheme">Identifier scheme</a>
 </dd>
 <dt>Schéma</dt>
 <dd>
@@ -21580,14 +21764,14 @@
 <li>
     <code>definition</code>:
     nepovinná
-    (0 - 1) položka typu 
+    (0 - ∞) položka typu 
       
        <a href="https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/text">Text</a>
 </li>
 <li>
     <code>title</code>:
     povinná
-    (1 - 1) položka typu 
+    (1 - ∞) položka typu 
       
        <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Language tagged string</a>
 </li>
@@ -21638,7 +21822,7 @@
 <dt>Povinnost</dt>
 <dd>nepovinné</dd>
 <dt>Kardinalita</dt>
-<dd>0 - 1</dd>
+<dd>0 - ∞</dd>
 <dt>Typ</dt>
 
 
@@ -21671,7 +21855,7 @@
 <dt>Povinnost</dt>
 <dd>povinné</dd>
 <dt>Kardinalita</dt>
-<dd>1 - 1</dd>
+<dd>1 - ∞</dd>
 <dt>Typ</dt>
 
 
@@ -21876,10 +22060,10 @@
           element <a href="undefinediri"><code>&lt;iri&gt;</code></a> [0..1]
       </li>
       <li>
-          element <a href="#element-definition"><code>&lt;definition&gt;</code></a> [0..1]
+          element <a href="#element-definition"><code>&lt;definition&gt;</code></a> [0..*]
       </li>
       <li>
-          element <a href="#element-title"><code>&lt;title&gt;</code></a> [1..1]
+          element <a href="#element-title"><code>&lt;title&gt;</code></a> [1..*]
       </li>
       <li>
           element <a href="#element-classification_code"><code>&lt;classification_code&gt;</code></a> [0..1]
@@ -21911,7 +22095,7 @@
     </dd>
 
       <dt>Efektivní kardinalita elementu vůči nadřazeném elementu</dt>
-      <dd>0..1</dd>
+      <dd>0..*</dd>
       <dt>Nadřazený element</dt>
       <dd><a href="#type-subject"></a></dd>
 
@@ -21952,7 +22136,7 @@
     </dd>
 
       <dt>Efektivní kardinalita elementu vůči nadřazeném elementu</dt>
-      <dd>1..1</dd>
+      <dd>1..*</dd>
       <dt>Nadřazený element</dt>
       <dd><a href="#type-subject"></a></dd>
 
@@ -22552,6 +22736,24 @@
 <dt>Interpretace</dt>
 <dd>
   <a href="#Address">Address</a>
+</dd>
+<dt>Schéma</dt>
+<dd>
+  Schéma je definováno v  <a href="./documentation.html"></a>.
+</dd>
+</dl>
+</section>
+
+<section id="json-schéma-objekt-identifier-scheme">
+<h3>Referencovaný objekt <i>Identifier scheme</i></h3>
+<dl>
+
+<dt>Popis</dt>
+<dd>Scheme in which is the identifier value unique, usually representing some authority. Identifier scheme shall always be represented as IRI identifier.</dd>
+
+<dt>Interpretace</dt>
+<dd>
+  <a href="#IdentifierScheme">Identifier scheme</a>
 </dd>
 <dt>Schéma</dt>
 <dd>
@@ -23313,9 +23515,6 @@
     <code>time_reference</code>:
     povinná
     (1 - ∞) položka typu 
-      <strong>IRI (<a href="#TimeReference">Time reference</a>)</strong>
-      
-
       <strong><a href="#json-schéma-objekt-time-interval">Time interval</a></strong>
       
 
@@ -23747,12 +23946,6 @@
 <dt>Kardinalita</dt>
 <dd>1 - ∞</dd>
 <dt>Typ</dt>
-
-<dd>
-  IRI (<a href="#TimeReference">Time reference</a>)
-</dd>
-
-
 
 <dd>
   <a href="./documentation.html#json-schéma-objekt-time-interval">Time interval</a>
@@ -24496,6 +24689,24 @@
 <dt>Interpretace</dt>
 <dd>
   <a href="#ResourceRelationType">Resource relation type</a>
+</dd>
+<dt>Schéma</dt>
+<dd>
+  Schéma je definováno v  <a href="./documentation.html"></a>.
+</dd>
+</dl>
+</section>
+
+<section id="json-schéma-objekt-identifier-scheme">
+<h3>Referencovaný objekt <i>Identifier scheme</i></h3>
+<dl>
+
+<dt>Popis</dt>
+<dd>Scheme in which is the identifier value unique, usually representing some authority. Identifier scheme shall always be represented as IRI identifier.</dd>
+
+<dt>Interpretace</dt>
+<dd>
+  <a href="#IdentifierScheme">Identifier scheme</a>
 </dd>
 <dt>Schéma</dt>
 <dd>
@@ -26296,18 +26507,18 @@
   </a>
 <ul>
 <li>
-    <code>identifier_scheme</code>:
-    povinná
-    (1 - 1) položka typu 
-      
-       <a href="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/2001/XMLSchema#anyURI</a>
-</li>
-<li>
     <code>value</code>:
     povinná
     (1 - 1) položka typu 
       
        <a href="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/2001/XMLSchema#string</a>
+</li>
+<li>
+    <code>in_scheme</code>:
+    povinná
+    (1 - 1) položka typu 
+      <strong><a href="#json-schéma-objekt-identifier-scheme">Identifier scheme</a></strong>
+      
 </li>
 </ul>
 </li>
@@ -26328,39 +26539,6 @@
 </dd>
 </dl>
 
-<section id="json-schéma-vlastnost-identifier-identifier_scheme">
-<h5>Vlastnost <code>identifier_scheme</code></h5>
-<dl>
-<dt>Klíč</dt>
-<dd>`identifier_scheme`</dd>
-<dt>Jméno</dt>
-<dd>Identifier scheme</dd>
-
-<dt>Popis</dt>
-<dd>Scheme URI of the identifier.</dd>
-
-<dt>Povinnost</dt>
-<dd>povinné</dd>
-<dt>Kardinalita</dt>
-<dd>1 - 1</dd>
-<dt>Typ</dt>
-
-
-<dd>
-<a href="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/2001/XMLSchema#anyURI</a>
-</dd>
-
-
-
-
-
-
-<dt>Interpretace</dt>
-<dd>
-<a href="#Identifier.identifierScheme">Identifier scheme</a>
-</dd>
-</dl>
-</section>
 <section id="json-schéma-vlastnost-identifier-value">
 <h5>Vlastnost <code>value</code></h5>
 <dl>
@@ -26394,10 +26572,61 @@
 </dd>
 </dl>
 </section>
+<section id="json-schéma-vlastnost-identifier-in_scheme">
+<h5>Vlastnost <code>in_scheme</code></h5>
+<dl>
+<dt>Klíč</dt>
+<dd>`in_scheme`</dd>
+<dt>Jméno</dt>
+<dd>in scheme</dd>
+
+<dt>Popis</dt>
+<dd>Relation between the identifier and scheme in which it is defined and unique.</dd>
+
+<dt>Povinnost</dt>
+<dd>povinné</dd>
+<dt>Kardinalita</dt>
+<dd>1 - 1</dd>
+<dt>Typ</dt>
+
+<dd>
+  <a href="./documentation.html#json-schéma-objekt-identifier-scheme">Identifier scheme</a>
+</dd>
+
+
+
+
+
+
+
+<dt>Interpretace</dt>
+<dd>
+<a href="#Identifier.inScheme">in scheme</a>
+</dd>
+</dl>
+</section>
 
 </section>
 
 
+
+<section id="json-schéma-objekt-identifier-scheme">
+<h3>Referencovaný objekt <i>Identifier scheme</i></h3>
+<dl>
+
+<dt>Popis</dt>
+<dd>Scheme in which is the identifier value unique, usually representing some authority. Identifier scheme shall always be represented as IRI identifier.</dd>
+
+<dt>Interpretace</dt>
+<dd>
+  <a href="#IdentifierScheme">Identifier scheme</a>
+</dd>
+<dt>Schéma</dt>
+<dd>
+  Schéma je definováno v  <a href="./documentation.html"></a>.
+</dd>
+</dl>
+</section>
 
 </section>
 
@@ -26419,7 +26648,23 @@
 <p>
   Seznam schémat, jež jsou tímto schématem importovány a použity.
 </p>
-<i>Nic není importováno.</i>
+  <table class="def">
+    <thead>
+      <tr>
+        <th>Prefix</th>
+        <th>Namespace</th>
+        <th>Lokace schématu</th>
+        <th>Dokumentace</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="2" style="text-align: center;"><i>Stejný namespace jako hlavní dokument</i></td>
+          <td><a href="../identifier-scheme/schema.xsd">../identifier-scheme/schema.xsd</a></td>
+          <td><a href="../documentation.html"></a></td>
+        </tr>
+    </tbody>
+  </table>
 </section>
 
 <section>
@@ -26478,55 +26723,14 @@
           element <a href="undefinediri"><code>&lt;iri&gt;</code></a> [0..1]
       </li>
       <li>
-          element <a href="#element-identifier_scheme"><code>&lt;identifier_scheme&gt;</code></a> [1..1]
+          element <a href="#element-value"><code>&lt;value&gt;</code></a> [1..1]
       </li>
       <li>
-          element <a href="#element-value"><code>&lt;value&gt;</code></a> [1..1]
+          element <a href="#element-in_scheme"><code>&lt;in_scheme&gt;</code></a> [1..1]
       </li>
   </ul>
 
 
-  </dl>
-</section>
-<section id="element-identifier_scheme">
-  <h4>Element <code>&lt;identifier_scheme&gt;</code></h4>
-
-  <dl>
-    <dt>Význam</dt>
-    <dd>
-        <i>
-          
-          vlastnost
-          
-          
-        </i>
-
-          <a href="#Identifier.identifierScheme"><strong>Identifier scheme</strong></a>
-          (Scheme URI of the identifier.)
-
-    </dd>
-
-      <dt>Efektivní kardinalita elementu vůči nadřazeném elementu</dt>
-      <dd>1..1</dd>
-      <dt>Nadřazený element</dt>
-      <dd><a href="#type-identifier"></a></dd>
-
-    
-      <dt>Typ elementu</dt>
-        <div style="margin-left: 40px;">
-      <dt>Obsah</dt>
-      <dd>
-          Obsahem elementu je typ <a href="http://www.w3.org/2001/XMLSchemaanyURI"><code>xs:anyURI</code></a>.
-      </dd>
-
-
-    
-
-
-    
-  </div>
-
-    
   </dl>
 </section>
 <section id="element-value">
@@ -26570,6 +26774,52 @@
     
   </dl>
 </section>
+<section id="element-in_scheme">
+  <h4>Element <code>&lt;in_scheme&gt;</code></h4>
+
+  <dl>
+    <dt>Význam</dt>
+    <dd>
+        <i>
+          
+          vlastnost
+          
+          
+        </i>
+
+          <a href="#Identifier.inScheme"><strong>in scheme</strong></a>
+          (Relation between the identifier and scheme in which it is defined and unique.)
+
+    </dd>
+
+      <dt>Efektivní kardinalita elementu vůči nadřazeném elementu</dt>
+      <dd>1..1</dd>
+      <dt>Nadřazený element</dt>
+      <dd><a href="#type-identifier"></a></dd>
+
+    
+      <dt>Typ elementu</dt>
+        <div style="margin-left: 40px;">
+      <dt>Obsah</dt>
+      <dd>
+          Obsahem elementu je typ <a href="#type-identifier_scheme"><code>identifier_scheme</code></a>.
+      </dd>
+
+
+        <dt>Význam</dt>
+      <dd>
+        <a href="#IdentifierScheme">Identifier scheme</a>
+        (Scheme in which is the identifier value unique, usually representing some authority. Identifier scheme shall always be represented as IRI identifier.)
+      </dd>
+
+
+
+    
+  </div>
+
+    
+  </dl>
+</section>
 
 
 </section>
@@ -26592,7 +26842,7 @@
 <li>
     <code>title</code>:
     povinná
-    (1 - 1) položka typu 
+    (1 - ∞) položka typu 
       
        <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Language tagged string</a>
 </li>
@@ -26628,12 +26878,15 @@
 <dt>Klíč</dt>
 <dd>`title`</dd>
 <dt>Jméno</dt>
-<dd>notation</dd>
+<dd>Title</dd>
+
+<dt>Popis</dt>
+<dd>A human-readable name for the subject.</dd>
 
 <dt>Povinnost</dt>
 <dd>povinné</dd>
 <dt>Kardinalita</dt>
-<dd>1 - 1</dd>
+<dd>1 - ∞</dd>
 <dt>Typ</dt>
 
 
@@ -26648,7 +26901,7 @@
 
 <dt>Interpretace</dt>
 <dd>
-<a href="#AlternateTitle.title">notation</a>
+<a href="#AlternateTitle.title">Title</a>
 </dd>
 </dl>
 </section>
@@ -26808,7 +27061,7 @@
           element <a href="undefinediri"><code>&lt;iri&gt;</code></a> [0..1]
       </li>
       <li>
-          element <a href="#element-title"><code>&lt;title&gt;</code></a> [1..1]
+          element <a href="#element-title"><code>&lt;title&gt;</code></a> [1..*]
       </li>
       <li>
           element <a href="#element-alternate_title_type"><code>&lt;alternate_title_type&gt;</code></a> [0..1]
@@ -26831,13 +27084,13 @@
           
         </i>
 
-          <a href="#AlternateTitle.title"><strong>notation</strong></a>
-          
+          <a href="#AlternateTitle.title"><strong>Title</strong></a>
+          (A human-readable name for the subject.)
 
     </dd>
 
       <dt>Efektivní kardinalita elementu vůči nadřazeném elementu</dt>
-      <dd>1..1</dd>
+      <dd>1..*</dd>
       <dt>Nadřazený element</dt>
       <dd><a href="#type-alternate_title"></a></dd>
 
@@ -28210,6 +28463,24 @@
 <dt>Interpretace</dt>
 <dd>
   <a href="#Address">Address</a>
+</dd>
+<dt>Schéma</dt>
+<dd>
+  Schéma je definováno v  <a href="./documentation.html"></a>.
+</dd>
+</dl>
+</section>
+
+<section id="json-schéma-objekt-identifier-scheme">
+<h3>Referencovaný objekt <i>Identifier scheme</i></h3>
+<dl>
+
+<dt>Popis</dt>
+<dd>Scheme in which is the identifier value unique, usually representing some authority. Identifier scheme shall always be represented as IRI identifier.</dd>
+
+<dt>Interpretace</dt>
+<dd>
+  <a href="#IdentifierScheme">Identifier scheme</a>
 </dd>
 <dt>Schéma</dt>
 <dd>
@@ -30584,6 +30855,232 @@
 
 </section>
       </section>
+      <section>
+      <h2>Specifikace struktury pro Identifier scheme</h2>
+      <p>Data structure for Identifier scheme. Scheme in which is the identifier value unique, usually representing some authority. Identifier scheme shall always be represented as IRI identifier.</p>
+
+      <section>
+<h3>Přehled JSON struktury</h3>
+<p>JSON Schéma zachycující strukturu pro <i>Identifier scheme</i> je definováno v souboru <a href="./identifier-scheme/schema.json"><code>./identifier-scheme/schema.json</code></a>. Datová sada je tvořena jediným prvkem odpovídající datové struktuře <i>Identifier scheme</i>.</p>
+
+<ul>
+
+<li>
+  <a href="#json-schéma-objekt-identifier-scheme">
+    Identifier scheme
+  </a>
+<ul>
+<li>
+    <code>label</code>:
+    nepovinná
+    (0 - ∞) položka typu 
+      
+       <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Language tagged string</a>
+</li>
+</ul>
+</li>
+
+</ul>
+
+
+<section id="json-schéma-objekt-identifier-scheme">
+<h3>Objekt <i>Identifier scheme</i></h3>
+<dl>
+
+<dt>Popis</dt>
+<dd>Scheme in which is the identifier value unique, usually representing some authority. Identifier scheme shall always be represented as IRI identifier.</dd>
+
+<dt>Interpretace</dt>
+<dd>
+  <a href="#IdentifierScheme">Identifier scheme</a>
+</dd>
+</dl>
+
+<section id="json-schéma-vlastnost-identifier-scheme-label">
+<h5>Vlastnost <code>label</code></h5>
+<dl>
+<dt>Klíč</dt>
+<dd>`label`</dd>
+<dt>Jméno</dt>
+<dd>Label</dd>
+
+<dt>Popis</dt>
+<dd>Identifier scheme label</dd>
+
+<dt>Povinnost</dt>
+<dd>nepovinné</dd>
+<dt>Kardinalita</dt>
+<dd>0 - ∞</dd>
+<dt>Typ</dt>
+
+
+<dd>
+<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Language tagged string</a>
+</dd>
+
+
+
+
+
+
+<dt>Interpretace</dt>
+<dd>
+<a href="#IdentifierScheme.label">Label</a>
+</dd>
+</dl>
+</section>
+
+</section>
+
+
+
+</section>
+
+
+
+
+
+
+<section>
+<h3>Přehled XML struktury</h3>
+<p>
+  Tato sekce popisuje XSD zachycující strukturu pro <i>Identifier scheme</i>, jež je definováno
+  v souboru <a href="./identifier-scheme/schema.xsd"><code>./identifier-scheme/schema.xsd</code></a>.
+</p>
+
+
+<section>
+<h4>Importy</h4>
+<p>
+  Seznam schémat, jež jsou tímto schématem importovány a použity.
+</p>
+  <table class="def">
+    <thead>
+      <tr>
+        <th>Prefix</th>
+        <th>Namespace</th>
+        <th>Lokace schématu</th>
+        <th>Dokumentace</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="2" style="text-align: center;"><i>Stejný namespace jako hlavní dokument</i></td>
+          <td><a href="http://www.w3.org/XML/1998/namespace">http://www.w3.org/XML/1998/namespace</a></td>
+          <td></td>
+        </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h4>Kořenové entity XSD schématu</h4>
+  <ul>
+      <li> element <a href="#element-identifier_scheme"><code>identifier_scheme</code></a></li>
+
+
+      <li> komplexní typ <a href="#type-identifier_scheme"><code>identifier_scheme</code></a></li>
+  </ul>
+</section>
+
+
+
+
+<section id="element-identifier_scheme">
+  <h4>Kořenový element <code>&lt;identifier_scheme&gt;</code></h4>
+  <dl>
+    
+
+    
+      <dt>Typ elementu</dt>
+        <div style="margin-left: 40px;">
+      <dt>Obsah</dt>
+      <dd>
+          Obsahem elementu je typ <a href="#type-identifier_scheme"><code>identifier_scheme</code></a>.
+      </dd>
+
+
+    
+
+
+    
+  </div>
+
+      </dl>
+</section>
+
+
+
+<section id="type-identifier_scheme">
+  <h4>Kořenový komplexní typ <code>identifier_scheme</code></h4>
+  <dl>
+        <dt>Význam</dt>
+      <dd>
+        <a href="#IdentifierScheme">Identifier scheme</a>
+        (Scheme in which is the identifier value unique, usually representing some authority. Identifier scheme shall always be represented as IRI identifier.)
+      </dd>
+
+
+        <dt>Obsah 
+ - elementy v tomto pořadí
+</dt>
+      <ul style="margin-top: 0;">
+      <li>
+          element <a href="undefinediri"><code>&lt;iri&gt;</code></a> [0..1]
+      </li>
+      <li>
+          element <a href="#element-label"><code>&lt;label&gt;</code></a> [0..*]
+      </li>
+  </ul>
+
+
+  </dl>
+</section>
+<section id="element-label">
+  <h4>Element <code>&lt;label&gt;</code></h4>
+
+  <dl>
+    <dt>Význam</dt>
+    <dd>
+        <i>
+          
+          vlastnost
+          
+          
+        </i>
+
+          <a href="#IdentifierScheme.label"><strong>Label</strong></a>
+          (Identifier scheme label)
+
+    </dd>
+
+      <dt>Efektivní kardinalita elementu vůči nadřazeném elementu</dt>
+      <dd>0..*</dd>
+      <dt>Nadřazený element</dt>
+      <dd><a href="#type-identifier_scheme"></a></dd>
+
+    
+      <dt>Typ elementu</dt>
+        <div style="margin-left: 40px;">
+      <dt>Obsah</dt>
+      <dd>
+          Obsahem elementu je typ <a href=""><code></code></a>.
+      </dd>
+
+
+    
+
+
+    
+  </div>
+
+    
+  </dl>
+</section>
+
+
+</section>
+      </section>
 
     <section>
       <h2>Used prefixes</h2>
@@ -30850,6 +31347,12 @@
             <tr><td>XML schéma</td><td><a href="./language-system/schema.xsd">./language-system/schema.xsd</a></td></tr>
             <tr><td>XSLT lifting</td><td><a href="./language-system/lifting.xslt">./language-system/lifting.xslt</a></td></tr>
             <tr><td>XSLT lowering</td><td><a href="./language-system/lowering.xslt">./language-system/lowering.xslt</a></td></tr>
+            <tr><td>JSON schéma</td><td><a href="./identifier-scheme/schema.json">./identifier-scheme/schema.json</a></td></tr>
+            <tr><td>Příklad JSONu</td><td><a href="./identifier-scheme/example.json">./identifier-scheme/example.json</a></td></tr>
+            <tr><td>JSON-LD kontext</td><td><a href="./identifier-scheme/context.jsonld">./identifier-scheme/context.jsonld</a></td></tr>
+            <tr><td>XML schéma</td><td><a href="./identifier-scheme/schema.xsd">./identifier-scheme/schema.xsd</a></td></tr>
+            <tr><td>XSLT lifting</td><td><a href="./identifier-scheme/lifting.xslt">./identifier-scheme/lifting.xslt</a></td></tr>
+            <tr><td>XSLT lowering</td><td><a href="./identifier-scheme/lowering.xslt">./identifier-scheme/lowering.xslt</a></td></tr>
             <tr><td>Dokumentace</td><td><a href="./documentation.html">./documentation.html</a></td></tr>
         </tbody>
       </table>

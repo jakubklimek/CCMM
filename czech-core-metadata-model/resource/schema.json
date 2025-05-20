@@ -58,9 +58,6 @@
           },
           {
             "$ref": "../time_reference/schema.json"
-          },
-          {
-            "$ref": "../time_reference/schema.json"
           }
         ]
       }

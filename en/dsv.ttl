@@ -1563,15 +1563,22 @@
     a dsv:DatatypePropertyProfile;
     dsv:datatypePropertyRange rdfs:Literal.
 
-<https://model.ccmm.cz/rd/Identifier.identifierScheme> dsv:domain :Identifier;
+<https://model.ccmm.cz/rd/Identifier.inScheme> dsv:domain :Identifier;
     dct:isPartOf <https://model.ccmm.cz/rd/>;
     a dsv:TermProfile;
-    skos:prefLabel "Identifier scheme"@en;
-    skos:definition "Scheme URI of the identifier."@en;
-    skos:scopeNote "For DOI, ROR etc. use the scheme uri, i.e. https://doi.org/. For others use base URI (whole URI except the notation part)."@en;
+    dsv:reusesPropertyValue [
+  a dsv:PropertyValueReuse;
+  dsv:reusedProperty skos:prefLabel;
+  dsv:reusedFromResource <https://techlib.cz/vocabulary/ccmm/inScheme>
+], [
+  a dsv:PropertyValueReuse;
+  dsv:reusedProperty skos:definition;
+  dsv:reusedFromResource <https://techlib.cz/vocabulary/ccmm/inScheme>
+];
     dsv:cardinality cardinality:11;
-    a dsv:DatatypePropertyProfile;
-    dsv:datatypePropertyRange <http://www.w3.org/2001/XMLSchema#anyURI>.
+    dsv:property <https://techlib.cz/vocabulary/ccmm/inScheme>;
+    a dsv:ObjectPropertyProfile;
+    dsv:objectPropertyRange :IdentifierScheme.
 :AlternateTitle dct:isPartOf <https://model.ccmm.cz/rd/>;
     a dsv:TermProfile;
     skos:prefLabel "Alternate title"@en;
@@ -1910,3 +1917,27 @@
     dsv:property <http://www.w3.org/2006/time#hasEnd>;
     a dsv:ObjectPropertyProfile;
     dsv:objectPropertyRange :TimeInstant.
+:IdentifierScheme dct:isPartOf <https://model.ccmm.cz/rd/>;
+    a dsv:TermProfile;
+    skos:scopeNote "Use identifier scheme in the form of IRI identifier. There shall be methodology list of known sources."@en;
+    dsv:reusesPropertyValue [
+  a dsv:PropertyValueReuse;
+  dsv:reusedProperty skos:prefLabel;
+  dsv:reusedFromResource <https://techlib.cz/vocabulary/ccmm/IdentifierScheme>
+], [
+  a dsv:PropertyValueReuse;
+  dsv:reusedProperty skos:definition;
+  dsv:reusedFromResource <https://techlib.cz/vocabulary/ccmm/IdentifierScheme>
+];
+    a dsv:ClassProfile;
+    dsv:class <https://techlib.cz/vocabulary/ccmm/IdentifierScheme>.
+
+<https://model.ccmm.cz/rd/IdentifierScheme.label> dsv:domain :IdentifierScheme;
+    dct:isPartOf <https://model.ccmm.cz/rd/>;
+    a dsv:TermProfile;
+    skos:prefLabel "Label"@en;
+    skos:definition "Identifier scheme label"@en;
+    skos:scopeNote "E.g. DOI, ORCID etc..."@en;
+    dsv:property rdfs:label;
+    a dsv:DatatypePropertyProfile;
+    dsv:datatypePropertyRange rdf:langString.

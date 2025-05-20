@@ -3,36 +3,6 @@
   "$id": "https://model.ccmm.cz/rd/time_reference/schema.json",
   "anyOf": [
     {
-      "title": "Time reference",
-      "description": "A temporal interval or instant on which something relevant to the resource has happened.",
-      "type": "object",
-      "required": [
-
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "format": "iri"
-        },
-        "type": {
-          "oneOf": [
-            {
-              "const": "Time reference"
-            },
-            {
-              "type": "array",
-              "contains": {
-                "const": "Time reference"
-              },
-              "items": {
-                "type": "string"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
       "title": "Time interval",
       "description": "A temporal entity with an extent or duration",
       "type": "object",

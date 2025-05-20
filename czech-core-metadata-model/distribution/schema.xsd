@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1"
-  elementFormDefault="unqualified" xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
-  <xs:import namespace="http://www.w3.org/XML/1998/namespace"
-    schemaLocation="http://www.w3.org/XML/1998/namespace"/>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1" elementFormDefault="unqualified" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/XML/1998/namespace"/>
   <xs:include schemaLocation="../documentation/schema.xsd"/>
   <xs:include schemaLocation="../application-profile/schema.xsd"/>
   <xs:include schemaLocation="../data-service/schema.xsd"/>
@@ -13,9 +10,44 @@
   <xs:include schemaLocation="../format/schema.xsd"/>
   <xs:complexType name="distribution">
     <xs:choice>
+      <xs:element name="distribution">
+        <xs:complexType sawsdl:modelReference="http://www.w3.org/ns/dcat#Distribution">
+          <xs:annotation>
+            <xs:documentation xml:lang="ar">
+              التوزيع - شكل محدد لقائمة البيانات يمكن الوصول إليه. قائمة بيانات ما يمكن أن تكون متاحه باشكال و أنواع متعددة.  ملف يمكن تحميله أو واجهة برمجية يمكن من خلالها الوصول إلى البيانات هي أمثلة على ذلك.
+            </xs:documentation>
+            <xs:documentation xml:lang="cs">
+              Distribuce - Konkrétní reprezentace datové sady. Datová sada může být dostupná v různých serializacích, které se mohou navzájem lišit různými způsoby, mimo jiné přirozeným jazykem, media-typem či formátem, schematickou organizací, časovým a prostorovým rozlišením, úrovní detailu či profily (které mohou specifikovat některé či všechny tyto rozdíly).
+            </xs:documentation>
+            <xs:documentation xml:lang="da">
+              Distribution - En specifik repræsentation af et datasæt. Et datasæt kan være tilgængelig i mange serialiseringer der kan variere på forskellige vis, herunder sprog, medietype eller format, systemorganisering, tidslig- og geografisk opløsning, detaljeringsniveau eller profiler (der kan specificere en eller flere af ovenstående).
+            </xs:documentation>
+            <xs:documentation xml:lang="el">
+              Διανομή - Αναπαριστά μία συγκεκριμένη διαθέσιμη μορφή ενός συνόλου δεδομένων. Κάθε σύνολο δεδομενων μπορεί να είναι διαθέσιμο σε διαφορετικές μορφές, οι μορφές αυτές μπορεί να αναπαριστούν διαφορετικές μορφές αρχείων ή διαφορετικά σημεία διάθεσης. Παραδείγματα διανομών συμπεριλαμβάνουν ένα μεταφορτώσιμο αρχείο μορφής CSV, ένα API ή ένα RSS feed.
+            </xs:documentation>
+            <xs:documentation xml:lang="en">
+              Distribution - A specific representation of a dataset. A dataset might be available in multiple serializations that may differ in various ways, including natural language, media-type or format, schematic organization, temporal and spatial resolution, level of detail or profiles (which might specify any or all of the above).
+            </xs:documentation>
+            <xs:documentation xml:lang="es">
+              Distribución - Una representación específica de los datos. Cada conjunto de datos puede estar disponible en formas diferentes, las cuáles pueden variar en distintas formas, incluyendo el idioma, 'media-type' o formato, organización esquemática, resolución temporal y espacial, nivel de detalle o perfiles (que pueden especificar cualquiera o todas las diferencias anteriores).
+            </xs:documentation>
+            <xs:documentation xml:lang="fr">
+              Distribution - Représente une forme spécifique d'un jeu de données. Caque jeu de données peut être disponible sous différentes formes, celles-ci pouvant représenter différents formats du jeu de données ou différents endpoint. Des exemples de distribution sont des fichirs CSV, des API ou des flux RSS.
+            </xs:documentation>
+            <xs:documentation xml:lang="it">
+              Distribuzione - Rappresenta una forma disponibile e specifica del dataset. Ciascun dataset può essere disponibile in forme differenti, che possono rappresentare formati diversi o diversi punti di accesso per un dataset. Esempi di distribuzioni sono un file CSV scaricabile, una API o un RSS feed.
+            </xs:documentation>
+            <xs:documentation xml:lang="ja">
+              配信 - データセットの特定の利用可能な形式を表わします。各データセットは、異なる形式で利用できることがあり、これらの形式は、データセットの異なる形式や、異なるエンドポイントを表わす可能性があります。配信の例には、ダウンロード可能なCSVファイル、API、RSSフィードが含まれます。
+            </xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="iri" type="xs:anyURI"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="distribution_-_data_service">
-        <xs:complexType
-          sawsdl:modelReference="https://techlib.cz/vocabulary/ccmm/Distribution-DataService">
+        <xs:complexType sawsdl:modelReference="https://techlib.cz/vocabulary/ccmm/Distribution-DataService">
           <xs:annotation>
             <xs:documentation xml:lang="en">
               Distribution - data service - Physical embodiment of the dataset as a particular data service. 
@@ -51,24 +83,21 @@
                 </xs:simpleContent>
               </xs:complexType>
             </xs:element>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="documentation"
-              type="documentation" sawsdl:modelReference="http://xmlns.com/foaf/0.1/page">
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="documentation" type="documentation" sawsdl:modelReference="http://xmlns.com/foaf/0.1/page">
               <xs:annotation>
                 <xs:documentation xml:lang="en">
                   documentation - A page or document about this Distribution.
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="specification"
-              type="application_profile" sawsdl:modelReference="http://purl.org/dc/terms/conformsTo">
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="specification" type="application_profile" sawsdl:modelReference="http://purl.org/dc/terms/conformsTo">
               <xs:annotation>
                 <xs:documentation xml:lang="en">
                   specification - An established standard to which the distribution conforms.
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="access_service"
-              type="data_service" sawsdl:modelReference="http://www.w3.org/ns/dcat#accessService">
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="access_service" type="data_service" sawsdl:modelReference="http://www.w3.org/ns/dcat#accessService">
               <xs:annotation>
                 <xs:documentation xml:lang="cs">
                   služba pro přístup k datům - Umístění či přístupový bod zpřístupňující distribuci datové sady.
@@ -91,8 +120,7 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="distribution_-_downloadable_file">
-        <xs:complexType
-          sawsdl:modelReference="https://techlib.cz/vocabulary/ccmm/Distribution-DownloadableFile">
+        <xs:complexType sawsdl:modelReference="https://techlib.cz/vocabulary/ccmm/Distribution-DownloadableFile">
           <xs:annotation>
             <xs:documentation xml:lang="en">
               Distribution - downloadable file - Physical embodiment of the dataset in a particular format. 
@@ -121,24 +149,21 @@
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element minOccurs="0" name="checksum" type="checksum"
-              sawsdl:modelReference="http://spdx.org/rdf/terms#checksum">
+            <xs:element minOccurs="0" name="checksum" type="checksum" sawsdl:modelReference="http://spdx.org/rdf/terms#checksum">
               <xs:annotation>
                 <xs:documentation xml:lang="en">
                   checksum - A mechanism that can be used to verify that the contents of a distribution have not changed.
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="conforms_to_schema"
-              type="application_profile" sawsdl:modelReference="http://purl.org/dc/terms/conformsTo">
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="conforms_to_schema" type="application_profile" sawsdl:modelReference="http://purl.org/dc/terms/conformsTo">
               <xs:annotation>
                 <xs:documentation xml:lang="en">
                   conforms to schema - An established standard to which the distribution conforms.
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element minOccurs="0" name="media_type" type="media_type"
-              sawsdl:modelReference="http://www.w3.org/ns/dcat#mediaType">
+            <xs:element minOccurs="0" name="media_type" type="media_type" sawsdl:modelReference="http://www.w3.org/ns/dcat#mediaType">
               <xs:annotation>
                 <xs:documentation xml:lang="ar">
                   نوع الميديا - يجب استخدام هذه الخاصية إذا كان نوع الملف معرف ضمن IANA
@@ -169,8 +194,7 @@
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element maxOccurs="unbounded" name="access_url" type="file"
-              sawsdl:modelReference="http://www.w3.org/ns/dcat#accessURL">
+            <xs:element maxOccurs="unbounded" name="access_url" type="file" sawsdl:modelReference="http://www.w3.org/ns/dcat#accessURL">
               <xs:annotation>
                 <xs:documentation xml:lang="ar">
                   رابط وصول - أي رابط يتيح الوصول إلى البيانات. إذا كان الرابط هو ربط مباشر لملف يمكن تحميله استخدم الخاصية downloadURL
@@ -201,8 +225,7 @@
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="download_url" type="file"
-              sawsdl:modelReference="http://www.w3.org/ns/dcat#downloadURL">
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="download_url" type="file" sawsdl:modelReference="http://www.w3.org/ns/dcat#downloadURL">
               <xs:annotation>
                 <xs:documentation xml:lang="ar">
                   رابط تحميل - رابط مباشر لملف يمكن تحميله. نوع الملف يتم توصيفه باستخدام الخاصية dcterms:format dcat:mediaType 
@@ -233,8 +256,7 @@
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element name="format" type="format"
-              sawsdl:modelReference="http://purl.org/dc/terms/format">
+            <xs:element name="format" type="format" sawsdl:modelReference="http://purl.org/dc/terms/format">
               <xs:annotation>
                 <xs:documentation xml:lang="en">
                   has format - The file format of the distribution.
