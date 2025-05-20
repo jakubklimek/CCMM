@@ -30,22 +30,6 @@
     a dsv:DatatypePropertyProfile;
     dsv:datatypePropertyRange <http://www.w3.org/2001/XMLSchema#string>.
 
-<https://model.ccmm.cz/rd/Dataset.hasAlternateIdentifier> dsv:domain :Dataset;
-    dct:isPartOf <https://model.ccmm.cz/rd/>;
-    a dsv:TermProfile;
-    dsv:reusesPropertyValue [
-  a dsv:PropertyValueReuse;
-  dsv:reusedProperty skos:prefLabel;
-  dsv:reusedFromResource <https://techlib.cz/vocabulary/datacite/hasAlternateIdentifier>
-], [
-  a dsv:PropertyValueReuse;
-  dsv:reusedProperty skos:definition;
-  dsv:reusedFromResource <https://techlib.cz/vocabulary/datacite/hasAlternateIdentifier>
-];
-    dsv:property <https://techlib.cz/vocabulary/datacite/hasAlternateIdentifier>;
-    a dsv:ObjectPropertyProfile;
-    dsv:objectPropertyRange <plckn6gl38m7ufbi8u>.
-
 <https://model.ccmm.cz/rd/Dataset.description> dsv:domain :Dataset;
     dct:isPartOf <https://model.ccmm.cz/rd/>;
     a dsv:TermProfile;
