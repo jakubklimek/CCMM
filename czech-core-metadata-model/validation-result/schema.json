@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://techlib.cz/specification/ccmm/validation-result/schema.json",
+  "$id": "https://model.ccmm.cz/rd/validation-result/schema.json",
   "title": "Validation result",
   "description": "Class describing the result of validation testing. It may include validation of metadata, data and/or web services accessing the data.",
   "type": "object",

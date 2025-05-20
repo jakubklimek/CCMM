@@ -10,7 +10,8 @@
   <xs:complexType name="agent">
     <xs:choice>
       <xs:element name="organization">
-        <xs:complexType sawsdl:modelReference="http://www.w3.org/ns/prov#Organization">
+        <xs:complexType
+          sawsdl:modelReference="http://www.w3.org/ns/prov#Organization http://xmlns.com/foaf/0.1/Agent">
           <xs:annotation>
             <xs:documentation xml:lang="en">
               Organization - Represents a collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures. 
@@ -18,6 +19,14 @@
           </xs:annotation>
           <xs:sequence>
             <xs:element minOccurs="0" name="iri" type="xs:anyURI"/>
+            <xs:element name="name" type="xs:string"
+              sawsdl:modelReference="http://xmlns.com/foaf/0.1/name">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Name - Name of the agent.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
             <xs:element minOccurs="0" maxOccurs="unbounded" name="has_identifier" type="identifier"
               sawsdl:modelReference="https://techlib.cz/vocabulary/ccmm/hasIdentifier">
               <xs:annotation>
@@ -73,21 +82,6 @@
                 </xs:simpleContent>
               </xs:complexType>
             </xs:element>
-            <xs:element name="name"
-              sawsdl:modelReference="http://www.w3.org/2006/vcard/ns#organization-name">
-              <xs:annotation>
-                <xs:documentation xml:lang="en">
-                  Alternate name - To specify the organizational name associated with the object
-                </xs:documentation>
-              </xs:annotation>
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute ref="xml:lang" use="required"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -100,6 +94,14 @@
           </xs:annotation>
           <xs:sequence>
             <xs:element minOccurs="0" name="iri" type="xs:anyURI"/>
+            <xs:element name="name" type="xs:string"
+              sawsdl:modelReference="http://xmlns.com/foaf/0.1/name">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Name - Name of the agent.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
             <xs:element minOccurs="0" maxOccurs="unbounded" name="has_identifier" type="identifier"
               sawsdl:modelReference="https://techlib.cz/vocabulary/ccmm/hasIdentifier">
               <xs:annotation>
@@ -137,14 +139,6 @@
                 </xs:documentation>
                 <xs:documentation xml:lang="ja">
                   窓口 - データセットを、VCardを用いて提供されている適切な連絡先情報にリンクします。
-                </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element name="full_name" type="xs:string"
-              sawsdl:modelReference="http://xmlns.com/foaf/0.1/name">
-              <xs:annotation>
-                <xs:documentation xml:lang="en">
-                  Full name - To specify the organizational name associated with the object
                 </xs:documentation>
               </xs:annotation>
             </xs:element>

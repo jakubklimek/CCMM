@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1" elementFormDefault="unqualified" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/XML/1998/namespace"/>
-  <xs:complexType name="file" sawsdl:modelReference="http://www.w3.org/2000/01/rdf-schema#Resource https://techlib.cz/vocabulary/datacite/Resource">
+  <xs:complexType name="file" sawsdl:modelReference="http://www.w3.org/2000/01/rdf-schema#Resource">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        File - Downloadable file in given format.
+        File - Resource represents any resource, physical or digital, that is related to the described dataset. 
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>

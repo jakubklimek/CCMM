@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://techlib.cz/specification/ccmm/organization/schema.json",
+  "$id": "https://model.ccmm.cz/rd/organization/schema.json",
   "title": "Organization",
   "description": "Represents a collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures. ",
   "type": "object",
@@ -13,20 +13,27 @@
       "format": "iri"
     },
     "type": {
-      "oneOf": [
+      "type": "array",
+      "allOf": [
         {
-          "const": "Organization"
-        },
-        {
-          "type": "array",
           "contains": {
             "const": "Organization"
-          },
-          "items": {
-            "type": "string"
+          }
+        },
+        {
+          "contains": {
+            "const": "Agent"
           }
         }
-      ]
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "name": {
+      "title": "Name",
+      "description": "Name of the agent.",
+      "type": "string"
     },
     "has_identifier": {
       "title": "has identifier",
@@ -67,25 +74,6 @@
             "title": "Hodnota v anglickém jazyce",
             "type": "string"
           }
-        }
-      }
-    },
-    "name": {
-      "title": "Alternate name",
-      "description": "To specify the organizational name associated with the object",
-      "type": "object",
-      "required": [
-        "@value",
-        "@language"
-      ],
-      "properties": {
-        "@value": {
-          "title": "Text v daném jazyce",
-          "type": "string"
-        },
-        "@language": {
-          "title": "Jazyk textu",
-          "type": "string"
         }
       }
     }

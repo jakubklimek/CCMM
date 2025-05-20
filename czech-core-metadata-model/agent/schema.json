@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://techlib.cz/specification/ccmm/agent/schema.json",
+  "$id": "https://model.ccmm.cz/rd/agent/schema.json",
   "anyOf": [
     {
       "title": "Agent",
@@ -10,7 +10,26 @@
 
       ],
       "properties": {
-
+        "id": {
+          "type": "string",
+          "format": "iri"
+        },
+        "type": {
+          "oneOf": [
+            {
+              "const": "Agent"
+            },
+            {
+              "type": "array",
+              "contains": {
+                "const": "Agent"
+              },
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        }
       }
     },
     {
@@ -26,20 +45,27 @@
           "format": "iri"
         },
         "type": {
-          "oneOf": [
+          "type": "array",
+          "allOf": [
             {
-              "const": "Organization"
-            },
-            {
-              "type": "array",
               "contains": {
                 "const": "Organization"
-              },
-              "items": {
-                "type": "string"
+              }
+            },
+            {
+              "contains": {
+                "const": "Agent"
               }
             }
-          ]
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "name": {
+          "title": "Name",
+          "description": "Name of the agent.",
+          "type": "string"
         },
         "has_identifier": {
           "title": "has identifier",
@@ -82,25 +108,6 @@
               }
             }
           }
-        },
-        "name": {
-          "title": "Alternate name",
-          "description": "To specify the organizational name associated with the object",
-          "type": "object",
-          "required": [
-            "@value",
-            "@language"
-          ],
-          "properties": {
-            "@value": {
-              "title": "Text v daném jazyce",
-              "type": "string"
-            },
-            "@language": {
-              "title": "Jazyk textu",
-              "type": "string"
-            }
-          }
         }
       }
     },
@@ -109,7 +116,7 @@
       "description": "Physical person. ",
       "type": "object",
       "required": [
-        "full_name"
+        "name"
       ],
       "properties": {
         "id": {
@@ -132,6 +139,11 @@
             }
           ]
         },
+        "name": {
+          "title": "Name",
+          "description": "Name of the agent.",
+          "type": "string"
+        },
         "has_identifier": {
           "title": "has identifier",
           "description": "has identifier",
@@ -147,11 +159,6 @@
           "items": {
             "$ref": "../contact-details/schema.json"
           }
-        },
-        "full_name": {
-          "title": "Full name",
-          "description": "To specify the organizational name associated with the object",
-          "type": "string"
         },
         "family_name": {
           "title": "Family name",

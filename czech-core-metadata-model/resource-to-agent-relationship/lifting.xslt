@@ -56,16 +56,34 @@
         </id>
       </xsl:variable>
       <xsl:copy-of select="$id//@*"/>
-      <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Relationship"/>
+      <rdf:type rdf:resource="https://techlib.cz/vocabulary/ccmm/ResourceToAgentRelationship"/>
       <xsl:copy-of select="$arc"/>
-      <ns0:hadRole>
-        <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742235606195-b8fa-9b2f-a5cf">
-          <xsl:with-param name="no_iri" select="true()"/>
-        </xsl:call-template>
-      </ns0:hadRole>
+      <xsl:for-each select="role">
+        <ns0:hadRole>
+          <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742235606195-b8fa-9b2f-a5cf"/>
+        </ns0:hadRole>
+      </xsl:for-each>
       <xsl:for-each select="relation">
         <ns1:relation>
-          <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742234312711-3b17-2e3d-91b1"/>
+          <xsl:variable name="type" select="resolve-QName(@xsi:type,.)"/>
+          <xsl:variable name="types">
+            <xsl:sequence>
+              <agent/>
+              <organization/>
+              <person/>
+            </xsl:sequence>
+          </xsl:variable>
+          <xsl:choose>
+            <xsl:when test="$type=node-name($types/*[1])">
+              <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1744806334636-9353-d66e-89dc"/>
+            </xsl:when>
+            <xsl:when test="$type=node-name($types/*[2])">
+              <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1744806345521-602d-5078-a2c5"/>
+            </xsl:when>
+            <xsl:when test="$type=node-name($types/*[3])">
+              <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1744806350501-735b-f599-9019"/>
+            </xsl:when>
+          </xsl:choose>
         </ns1:relation>
       </xsl:for-each>
     </rdf:Description>

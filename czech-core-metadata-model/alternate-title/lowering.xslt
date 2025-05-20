@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:sp="http://www.w3.org/2005/sparql-results#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xmlns:c="https://schemas.dataspecer.com/xsd/core/">
+  <xsl:import href="../alternate-title-type/lowering.xslt"/>
   <xsl:output method="xml" version="1.0" encoding="utf-8" indent="yes"/>
   <xsl:param name="subj" select="'s'"/>
   <xsl:param name="pred" select="'p'"/>
@@ -12,7 +13,7 @@
   <xsl:template match="/sp:sparql">
     <xsl:apply-templates select="sp:results/sp:result"/>
   </xsl:template>
-  <xsl:template match="sp:result[sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;AlternateTitle&#34;]">
+  <xsl:template match="sp:result[sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;https://techlib.cz/vocabulary/ccmm/AlternateTitle&#34;]">
     <alternate_title>
       <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742340187136-c36a-9f4c-b745">
         <xsl:with-param name="id">
@@ -50,15 +51,19 @@
     <xsl:variable name="id_test">
       <xsl:value-of select="c:id-key($id/*)"/>
     </xsl:variable>
-    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://purl.org/dc/terms/title&#34;]">
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://www.w3.org/2000/01/rdf-schema#label&#34;]">
       <title>
         <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
       </title>
     </xsl:for-each>
-    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://purl.org/dc/terms/type&#34;]">
-      <type>
-        <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
-      </type>
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;https://techlib.cz/vocabulary/ccmm/hasType&#34;]">
+      <alternate_title_type>
+        <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1747685369782-00bf-3a68-ae58">
+          <xsl:with-param name="id">
+            <xsl:copy-of select="sp:binding[@name=$obj]/*"/>
+          </xsl:with-param>
+        </xsl:call-template>
+      </alternate_title_type>
     </xsl:for-each>
   </xsl:template>
   <xsl:template match="@*|*"/>

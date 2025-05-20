@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xmlns:c="https://schemas.dataspecer.com/xsd/core/" xmlns:ns0="http://www.w3.org/2000/01/rdf-schema#">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xmlns:c="https://schemas.dataspecer.com/xsd/core/" xmlns:ns0="http://www.w3.org/2000/01/rdf-schema#" xmlns:ns1="http://www.w3.org/ns/locn#">
   <xsl:output method="xml" version="1.0" encoding="utf-8" media-type="application/rdf+xml" indent="yes"/>
   <xsl:template match="/address">
     <rdf:RDF>
@@ -62,6 +62,66 @@
           <xsl:apply-templates select="@*"/>
           <xsl:value-of select="."/>
         </ns0:label>
+      </xsl:for-each>
+      <xsl:for-each select="full_address">
+        <ns1:fullAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+          <xsl:apply-templates select="@*"/>
+          <xsl:value-of select="."/>
+        </ns1:fullAddress>
+      </xsl:for-each>
+      <xsl:for-each select="po_box">
+        <ns1:poBox rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+          <xsl:apply-templates select="@*"/>
+          <xsl:value-of select="."/>
+        </ns1:poBox>
+      </xsl:for-each>
+      <xsl:for-each select="thoroughfare">
+        <ns1:thoroughfare rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+          <xsl:apply-templates select="@*"/>
+          <xsl:value-of select="."/>
+        </ns1:thoroughfare>
+      </xsl:for-each>
+      <xsl:for-each select="locator_designator">
+        <ns1:locatorDesignator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+          <xsl:apply-templates select="@*"/>
+          <xsl:value-of select="."/>
+        </ns1:locatorDesignator>
+      </xsl:for-each>
+      <xsl:for-each select="locator_name">
+        <ns1:locatorName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+          <xsl:apply-templates select="@*"/>
+          <xsl:value-of select="."/>
+        </ns1:locatorName>
+      </xsl:for-each>
+      <xsl:for-each select="address_area">
+        <ns1:addressArea rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+          <xsl:apply-templates select="@*"/>
+          <xsl:value-of select="."/>
+        </ns1:addressArea>
+      </xsl:for-each>
+      <xsl:for-each select="post_name">
+        <ns1:postName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+          <xsl:apply-templates select="@*"/>
+          <xsl:value-of select="."/>
+        </ns1:postName>
+      </xsl:for-each>
+      <xsl:for-each select="administrative_unit_level_1">
+        <ns1:adminUnitL1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+          <xsl:apply-templates select="@*"/>
+          <xsl:value-of select="."/>
+        </ns1:adminUnitL1>
+      </xsl:for-each>
+      <xsl:for-each select="administrative_unit_level_2">
+        <ns1:adminUnitL2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+          <xsl:apply-templates select="@*"/>
+          <xsl:value-of select="."/>
+        </ns1:adminUnitL2>
+      </xsl:for-each>
+      <xsl:for-each select="post_code">
+        <ns1:postCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+          <xsl:apply-templates select="@*"/>
+          <xsl:value-of select="."/>
+        </ns1:postCode>
       </xsl:for-each>
     </rdf:Description>
   </xsl:template>

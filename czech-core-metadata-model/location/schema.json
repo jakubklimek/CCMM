@@ -1,11 +1,11 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://techlib.cz/specification/ccmm/location/schema.json",
+  "$id": "https://model.ccmm.cz/rd/location/schema.json",
   "title": "Location",
   "description": "Spatial region, named place or geometry representation of a place related to the dataset. ",
   "type": "object",
   "required": [
-    "dataset_relations"
+    "location_relation_type"
   ],
   "properties": {
     "id": {
@@ -13,20 +13,22 @@
       "format": "iri"
     },
     "type": {
-      "oneOf": [
+      "type": "array",
+      "allOf": [
         {
-          "const": "Location"
+          "contains": {
+            "const": "GeoLocation"
+          }
         },
         {
-          "type": "array",
           "contains": {
             "const": "Location"
-          },
-          "items": {
-            "type": "string"
           }
         }
-      ]
+      ],
+      "items": {
+        "type": "string"
+      }
     },
     "bbox": {
       "title": "Bbox",
@@ -46,16 +48,14 @@
         "type": "string"
       }
     },
-    "dataset_relations": {
-      "title": "Relation type",
-      "description": "Type of the relation between Dataset and related resource.",
-      "type": "string"
+    "location_relation_type": {
+      "$ref": "../location-relation-type/schema.json"
     },
     "geometry": {
       "$ref": "../geometry/schema.json"
     },
-    "related_object_identifier": {
-      "title": "has related resource",
+    "related_object": {
+      "title": "has related object",
       "type": "array",
       "items": {
         "$ref": "../resource/schema.json"

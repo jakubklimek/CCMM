@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://techlib.cz/specification/ccmm/documentation/schema.json",
+  "$id": "https://model.ccmm.cz/rd/documentation/schema.json",
   "title": "Documentation",
   "description": "A textual resource intended for human consumption that contains information about the data service.",
   "type": "object",
@@ -8,6 +8,26 @@
 
   ],
   "properties": {
+    "id": {
+      "type": "string",
+      "format": "iri"
+    },
+    "type": {
+      "oneOf": [
+        {
+          "const": "Documentation"
+        },
+        {
+          "type": "array",
+          "contains": {
+            "const": "Documentation"
+          },
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
     "label": {
       "title": "Label",
       "description": "Documentation label",

@@ -11,10 +11,6 @@
       "@id": "http://purl.org/dc/terms/created",
       "@type": "xsd:date"
     },
-    "language": {
-      "@id": "http://purl.org/dc/terms/language",
-      "@type": "xsd:string"
-    },
     "original_repository": {
       "@id": "https://techlib.cz/vocabulary/ccmm/originalRepository",
       "@container": "@set",
@@ -29,6 +25,15 @@
       "@id": "http://www.w3.org/ns/dcat#qualifiedRelation",
       "@container": "@set",
       "@context": "../resource-to-agent-relationship/context.jsonld"
+    },
+    "language": {
+      "@id": "http://purl.org/dc/terms/language",
+      "@container": "@set",
+      "@context": "../language-system/context.jsonld"
+    },
+    "Katalogizační záznam": {
+      "@id": "http://www.w3.org/ns/dcat#CatalogRecord",
+      "@context": {}
     }
   }
 }

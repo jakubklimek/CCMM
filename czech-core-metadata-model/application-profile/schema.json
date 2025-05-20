@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://techlib.cz/specification/ccmm/application-profile/schema.json",
+  "$id": "https://model.ccmm.cz/rd/application-profile/schema.json",
   "title": "Application profile",
   "description": "A standard or other specification to which a metadata record conforms.",
   "type": "object",
@@ -8,6 +8,26 @@
 
   ],
   "properties": {
+    "id": {
+      "type": "string",
+      "format": "iri"
+    },
+    "type": {
+      "oneOf": [
+        {
+          "const": "Application profile"
+        },
+        {
+          "type": "array",
+          "contains": {
+            "const": "Application profile"
+          },
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
     "label": {
       "title": "Label",
       "description": "Label of application profile",

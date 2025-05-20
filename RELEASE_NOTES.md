@@ -1,5 +1,12 @@
 CHANGELOG
 ---------------------------------------
+### 2025-05-20 - Major release
+* probably last publication before official release
+* compact use of indentifiers and agents
+* codelists as separate classes
+* detailed attributes for address (accordfing to INSPIRE core location ontology)
+* minor bug fixes
+
 ### 2025-04-24 - Bug fixes
 * bugs forcing users to edit XSD partially fixed
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xmlns:c="https://schemas.dataspecer.com/xsd/core/" xmlns:ns0="https://techlib.cz/vocabulary/ccmm/" xmlns:ns1="http://www.w3.org/ns/dcat#" xmlns:ns2="http://www.w3.org/2006/vcard/ns#">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xmlns:c="https://schemas.dataspecer.com/xsd/core/" xmlns:ns0="http://xmlns.com/foaf/0.1/" xmlns:ns1="https://techlib.cz/vocabulary/ccmm/" xmlns:ns2="http://www.w3.org/ns/dcat#" xmlns:ns3="http://www.w3.org/2006/vcard/ns#">
   <xsl:import href="../identifier/lifting.xslt"/>
   <xsl:output method="xml" version="1.0" encoding="utf-8" media-type="application/rdf+xml" indent="yes"/>
   <xsl:template match="/organization">
@@ -58,27 +58,27 @@
       <xsl:copy-of select="$id//@*"/>
       <rdf:type rdf:resource="http://www.w3.org/ns/prov#Organization"/>
       <xsl:copy-of select="$arc"/>
+      <xsl:for-each select="name">
+        <ns0:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+          <xsl:apply-templates select="@*"/>
+          <xsl:value-of select="."/>
+        </ns0:name>
+      </xsl:for-each>
       <xsl:for-each select="has_identifier">
-        <ns0:hasIdentifier>
+        <ns1:hasIdentifier>
           <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742340169817-84a9-ded1-a656"/>
-        </ns0:hasIdentifier>
+        </ns1:hasIdentifier>
       </xsl:for-each>
       <xsl:for-each select="contact_point">
-        <ns1:contactPoint>
+        <ns2:contactPoint>
           <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742234373952-7a86-df18-a582"/>
-        </ns1:contactPoint>
+        </ns2:contactPoint>
       </xsl:for-each>
       <xsl:for-each select="alternate_name">
-        <ns2:organization-name>
+        <ns3:organization-name>
           <xsl:apply-templates select="@*"/>
           <xsl:value-of select="."/>
-        </ns2:organization-name>
-      </xsl:for-each>
-      <xsl:for-each select="name">
-        <ns2:organization-name rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">
-          <xsl:apply-templates select="@*"/>
-          <xsl:value-of select="."/>
-        </ns2:organization-name>
+        </ns3:organization-name>
       </xsl:for-each>
     </rdf:Description>
   </xsl:template>

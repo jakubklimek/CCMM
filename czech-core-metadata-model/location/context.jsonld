@@ -1,30 +1,36 @@
 {
   "@context": {
     "@version": 1.1,
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "id": "@id",
     "type": "@type",
-    "Location": "http://purl.org/dc/terms/Location",
     "bbox": {
       "@id": "http://www.w3.org/ns/dcat#bbox",
       "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
     },
     "location_name": {
       "@id": "http://purl.org/dc/terms/title",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
+      "@type": "xsd:string"
     },
-    "dataset_relations": {
-      "@id": "relationType",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    "location_relation_type": {
+      "@id": "https://techlib.cz/vocabulary/ccmm/hasType",
+      "@context": "../location-relation-type/context.jsonld"
     },
     "geometry": {
       "@id": "http://www.w3.org/ns/locn#geometry",
       "@context": "../geometry/context.jsonld"
     },
-    "related_object_identifier": {
-      "@id": "hasRelatedResource",
+    "related_object": {
+      "@id": "https://techlib.cz/vocabulary/ccmm/hasRelatedResource",
       "@container": "@set",
       "@context": "../resource/context.jsonld"
+    },
+    "GeoLocation": {
+      "@id": "https://techlib.cz/vocabulary/datacite/Geolocation",
+      "@context": {}
+    },
+    "Location": {
+      "@id": "http://purl.org/dc/terms/Location",
+      "@context": {}
     }
   }
 }

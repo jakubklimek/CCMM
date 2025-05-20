@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1" elementFormDefault="unqualified" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/XML/1998/namespace"/>
-  <xs:complexType name="data_service">
+  <xs:complexType name="data_service" sawsdl:modelReference="http://www.w3.org/ns/dcat#DataService">
     <xs:annotation>
       <xs:documentation xml:lang="cs">
         Umístění či přístupový bod poskytující operace související s hledáním, přistupem k, či výkonem funkcí na datech či souvisejících zdrojích.
@@ -20,6 +20,7 @@
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
+      <xs:element minOccurs="0" name="iri" type="xs:anyURI"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="label" sawsdl:modelReference="http://www.w3.org/2000/01/rdf-schema#label">
         <xs:annotation>
           <xs:documentation xml:lang="en">
@@ -34,7 +35,7 @@
           </xs:simpleContent>
         </xs:complexType>
       </xs:element>
-      <xs:element maxOccurs="unbounded" name="endpoint_url" type="xs:anyURI">
+      <xs:element maxOccurs="unbounded" name="endpoint_url" type="xs:anyURI" sawsdl:modelReference="http://www.w3.org/ns/dcat#endpointURL">
         <xs:annotation>
           <xs:documentation xml:lang="cs">
             přístupový bod služby - Kořenové umístění nebo hlavní přístupový bod služby (IRI přístupné přes Web).

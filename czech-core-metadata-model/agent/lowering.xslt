@@ -13,7 +13,7 @@
   <xsl:template match="/sp:sparql">
     <xsl:apply-templates select="sp:results/sp:result"/>
   </xsl:template>
-  <xsl:template match="sp:result[sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;null&#34;]">
+  <xsl:template match="sp:result[sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;http://xmlns.com/foaf/0.1/Agent&#34;]">
     <agent>
       <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1744806334636-9353-d66e-89dc">
         <xsl:with-param name="id">
@@ -89,6 +89,11 @@
     <xsl:variable name="id_test">
       <xsl:value-of select="c:id-key($id/*)"/>
     </xsl:variable>
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://xmlns.com/foaf/0.1/name&#34;]">
+      <name>
+        <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
+      </name>
+    </xsl:for-each>
     <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;https://techlib.cz/vocabulary/ccmm/hasIdentifier&#34;]">
       <has_identifier>
         <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742340169817-84a9-ded1-a656">
@@ -112,11 +117,6 @@
         <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
       </alternate_name>
     </xsl:for-each>
-    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://www.w3.org/2006/vcard/ns#organization-name&#34;]">
-      <name>
-        <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
-      </name>
-    </xsl:for-each>
   </xsl:template>
   <xsl:template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1744806350501-735b-f599-9019">
     <xsl:param name="id"/>
@@ -137,6 +137,11 @@
     <xsl:variable name="id_test">
       <xsl:value-of select="c:id-key($id/*)"/>
     </xsl:variable>
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://xmlns.com/foaf/0.1/name&#34;]">
+      <name>
+        <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
+      </name>
+    </xsl:for-each>
     <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;https://techlib.cz/vocabulary/ccmm/hasIdentifier&#34;]">
       <has_identifier>
         <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742340169817-84a9-ded1-a656">
@@ -154,11 +159,6 @@
           </xsl:with-param>
         </xsl:call-template>
       </contact_point>
-    </xsl:for-each>
-    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://xmlns.com/foaf/0.1/name&#34;]">
-      <full_name>
-        <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
-      </full_name>
     </xsl:for-each>
     <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://www.w3.org/2006/vcard/ns#family-name&#34;]">
       <family_name>

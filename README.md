@@ -21,7 +21,7 @@ Directory resources/ contains data specification in json format. It also contain
 
 ## Czech core metadata model
 
-Directory czech-core-metadata-model contains all structured artifacts generated from Dataspecer. There are four subdirectories, one per each root element of the data structures: datase, distribution - data service, distribution - downloadable file and metadata record. Currently, Applicationb profiles in Dataspecer do not support specializations, therefore it is not possible to include distribution types as subclasses of distribution. The same is for Organization and Person as subclasses of Agent. Those classes are not yet part of the strucutured models, but you may search them in the specifification of the application profile in direstories cs/ and /en. 
+Directory czech-core-metadata-model contains all structured artifacts generated from Dataspecer. There are many subdirectories, one per each element of the data structures. 
 
 Each subdirectory contains strucutured models formalized in XSD (schema.xsd) and JSON (schema.json). Root element for the whole profile is **Dataset**
 
@@ -29,7 +29,7 @@ Each subdirectory contains strucutured models formalized in XSD (schema.xsd) and
 | - | - | - |
 |Dataset|https://eosc-cz.github.io/CCMM/czech-core-metadata-model/dataset/schema.xsd|https://eosc-cz.github.io/CCMM/czech-core-metadata-model/dataset/schema.json|
 
-On the directory level, there is also [documentation](https://eosc-cz.github.io/CCMM/czech-core-metadata-model/documentation) of data strucutes, unfortunately, possibly due to the DataSpecer bug, it is generated only in czech language.
+On the directory level, there is also [documentation](https://eosc-cz.github.io/CCMM/czech-core-metadata-model/en) of data structures. 
 
-[Project to open in DataSpecer](https://github.com/EOSC-CZ/CCMM/blob/main/Czech%20Core%20Metadata%20Model.zip) is newly also part of the repository.
+[Project to open in DataSpecer](https://github.com/EOSC-CZ/CCMM/blob/main/Czech%20Core%20Metadata%20Model-Backup.zip) is newly also part of the repository.
 

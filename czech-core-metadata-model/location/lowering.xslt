@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:sp="http://www.w3.org/2005/sparql-results#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xmlns:c="https://schemas.dataspecer.com/xsd/core/">
-  <xsl:import href="../geometry/lowering.xslt"/>
+  <xsl:import href="../location-relation-type/lowering.xslt"/>
   <xsl:output method="xml" version="1.0" encoding="utf-8" indent="yes"/>
   <xsl:param name="subj" select="'s'"/>
   <xsl:param name="pred" select="'p'"/>
@@ -13,7 +13,7 @@
   <xsl:template match="/sp:sparql">
     <xsl:apply-templates select="sp:results/sp:result"/>
   </xsl:template>
-  <xsl:template match="sp:result[sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;http://purl.org/dc/terms/Location&#34;]">
+  <xsl:template match="sp:result[sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;https://techlib.cz/vocabulary/datacite/Geolocation&#34;]">
     <location>
       <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742235167407-c0c8-51f4-be0a">
         <xsl:with-param name="id">
@@ -61,10 +61,14 @@
         <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
       </location_name>
     </xsl:for-each>
-    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;relationType&#34;]">
-      <dataset_relations>
-        <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
-      </dataset_relations>
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;https://techlib.cz/vocabulary/ccmm/hasType&#34;]">
+      <location_relation_type>
+        <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1747685228117-d1d5-c203-b159">
+          <xsl:with-param name="id">
+            <xsl:copy-of select="sp:binding[@name=$obj]/*"/>
+          </xsl:with-param>
+        </xsl:call-template>
+      </location_relation_type>
     </xsl:for-each>
     <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://www.w3.org/ns/locn#geometry&#34;]">
       <geometry>
@@ -75,14 +79,14 @@
         </xsl:call-template>
       </geometry>
     </xsl:for-each>
-    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;hasRelatedResource&#34;]">
-      <related_object_identifier>
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;https://techlib.cz/vocabulary/ccmm/hasRelatedResource&#34;]">
+      <related_object>
         <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742234428662-255b-ab44-995e">
           <xsl:with-param name="id">
             <xsl:copy-of select="sp:binding[@name=$obj]/*"/>
           </xsl:with-param>
         </xsl:call-template>
-      </related_object_identifier>
+      </related_object>
     </xsl:for-each>
   </xsl:template>
   <xsl:template match="@*|*"/>

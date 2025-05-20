@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://techlib.cz/specification/ccmm/dataset/schema.json",
+  "$id": "https://model.ccmm.cz/rd/dataset/schema.json",
   "title": "Dataset",
   "description": "A collection of data, published or curated by a single source, and available for access or download in one or more representations.",
   "type": "object",
@@ -49,6 +49,7 @@
     },
     "description": {
       "title": "Description",
+      "description": "An account of the resource.",
       "type": "array",
       "items": {
         "title": "Text",
@@ -71,25 +72,6 @@
           }
         }
       }
-    },
-    "other_language": {
-      "title": "Other language",
-      "description": "The primary language of the resource.",
-      "type": "array",
-      "items": {
-        "title": "String",
-        "type": "string"
-      }
-    },
-    "primary_language": {
-      "title": "Other language",
-      "description": "The primary language of the resource.",
-      "type": "string"
-    },
-    "resource_type": {
-      "title": "Resource type",
-      "description": "A description of the resource. ",
-      "type": "string"
     },
     "title": {
       "title": "Title",
@@ -151,7 +133,17 @@
       "type": "array",
       "minItems": 1,
       "items": {
-        "$ref": "../time-reference/schema.json"
+        "anyOf": [
+          {
+            "$ref": "../time_reference/schema.json"
+          },
+          {
+            "$ref": "../time_reference/schema.json"
+          },
+          {
+            "$ref": "../time_reference/schema.json"
+          }
+        ]
       }
     },
     "subject": {
@@ -201,6 +193,20 @@
       "items": {
         "$ref": "../resource/schema.json"
       }
+    },
+    "resource_type": {
+      "$ref": "../resource-type/schema.json"
+    },
+    "other_language": {
+      "title": "other language",
+      "description": "Any other languages of the Dataset.",
+      "type": "array",
+      "items": {
+        "$ref": "../language-system/schema.json"
+      }
+    },
+    "primary_language": {
+      "$ref": "../language-system/schema.json"
     }
   }
 }

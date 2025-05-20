@@ -55,6 +55,56 @@
         <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
       </label>
     </xsl:for-each>
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://www.w3.org/ns/locn#fullAddress&#34;]">
+      <full_address>
+        <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
+      </full_address>
+    </xsl:for-each>
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://www.w3.org/ns/locn#poBox&#34;]">
+      <po_box>
+        <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
+      </po_box>
+    </xsl:for-each>
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://www.w3.org/ns/locn#thoroughfare&#34;]">
+      <thoroughfare>
+        <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
+      </thoroughfare>
+    </xsl:for-each>
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://www.w3.org/ns/locn#locatorDesignator&#34;]">
+      <locator_designator>
+        <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
+      </locator_designator>
+    </xsl:for-each>
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://www.w3.org/ns/locn#locatorName&#34;]">
+      <locator_name>
+        <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
+      </locator_name>
+    </xsl:for-each>
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://www.w3.org/ns/locn#addressArea&#34;]">
+      <address_area>
+        <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
+      </address_area>
+    </xsl:for-each>
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://www.w3.org/ns/locn#postName&#34;]">
+      <post_name>
+        <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
+      </post_name>
+    </xsl:for-each>
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://www.w3.org/ns/locn#adminUnitL1&#34;]">
+      <administrative_unit_level_1>
+        <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
+      </administrative_unit_level_1>
+    </xsl:for-each>
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://www.w3.org/ns/locn#adminUnitL2&#34;]">
+      <administrative_unit_level_2>
+        <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
+      </administrative_unit_level_2>
+    </xsl:for-each>
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://www.w3.org/ns/locn#postCode&#34;]">
+      <post_code>
+        <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
+      </post_code>
+    </xsl:for-each>
   </xsl:template>
   <xsl:template match="@*|*"/>
 </xsl:stylesheet>

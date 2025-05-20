@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://techlib.cz/specification/ccmm/data-service/schema.json",
+  "$id": "https://model.ccmm.cz/rd/data-service/schema.json",
   "title": "Data service",
   "description": "A collection of operations that provides access to one or more datasets or data processing functions.",
   "type": "object",
@@ -8,6 +8,26 @@
     "endpoint_url"
   ],
   "properties": {
+    "id": {
+      "type": "string",
+      "format": "iri"
+    },
+    "type": {
+      "oneOf": [
+        {
+          "const": "Data service"
+        },
+        {
+          "type": "array",
+          "contains": {
+            "const": "Data service"
+          },
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
     "label": {
       "title": "Label",
       "description": "Data service label",

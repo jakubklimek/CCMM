@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://techlib.cz/specification/ccmm/resource/schema.json",
+  "$id": "https://model.ccmm.cz/rd/resource/schema.json",
   "title": "Resource",
   "description": "Resource represents any resource, physical or digital, that is related to the described dataset. ",
   "type": "object",
@@ -13,14 +13,22 @@
       "format": "iri"
     },
     "type": {
-      "title": "Type",
-      "description": "A description of the resource. Gets the value from controlled list https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/resourceTypeGeneral/.",
-      "type": "string"
-    },
-    "relationType": {
-      "title": "Relation type",
-      "description": "Type of the relation between Dataset and related resource.",
-      "type": "string"
+      "type": "array",
+      "allOf": [
+        {
+          "contains": {
+            "const": "Resource"
+          }
+        },
+        {
+          "contains": {
+            "const": "Resource"
+          }
+        }
+      ],
+      "items": {
+        "type": "string"
+      }
     },
     "title": {
       "title": "Title",
@@ -44,7 +52,17 @@
       "title": "has time reference",
       "type": "array",
       "items": {
-        "$ref": "../time-reference/schema.json"
+        "anyOf": [
+          {
+            "$ref": "../time_reference/schema.json"
+          },
+          {
+            "$ref": "../time_reference/schema.json"
+          },
+          {
+            "$ref": "../time_reference/schema.json"
+          }
+        ]
       }
     },
     "identifier": {
@@ -54,6 +72,12 @@
       "items": {
         "$ref": "../identifier/schema.json"
       }
+    },
+    "resource_type": {
+      "$ref": "../resource-type/schema.json"
+    },
+    "resource_relation_type": {
+      "$ref": "../resource-relation-type/schema.json"
     }
   }
 }

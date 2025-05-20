@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xmlns:c="https://schemas.dataspecer.com/xsd/core/" xmlns:ns0="http://purl.org/dc/terms/" xmlns:ns1="http://www.w3.org/ns/dcat#">
-  <xsl:import href="../agent/lifting.xslt"/>
+  <xsl:import href="../access-rights/lifting.xslt"/>
   <xsl:output method="xml" version="1.0" encoding="utf-8" media-type="application/rdf+xml" indent="yes"/>
   <xsl:template match="/terms_of_use">
     <rdf:RDF>
@@ -64,16 +64,9 @@
           <xsl:value-of select="."/>
         </ns0:description>
       </xsl:for-each>
-      <xsl:for-each select="license">
-        <ns0:license rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
-          <xsl:apply-templates select="@*"/>
-          <xsl:value-of select="."/>
-        </ns0:license>
-      </xsl:for-each>
       <xsl:for-each select="access_rights">
-        <ns0:accessRights rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
-          <xsl:apply-templates select="@*"/>
-          <xsl:value-of select="."/>
+        <ns0:accessRights>
+          <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1747685414671-e5e1-7f82-b427"/>
         </ns0:accessRights>
       </xsl:for-each>
       <xsl:for-each select="has_contact">
@@ -98,6 +91,11 @@
             </xsl:when>
           </xsl:choose>
         </ns1:contactPoint>
+      </xsl:for-each>
+      <xsl:for-each select="license">
+        <ns0:license>
+          <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1747640270910-1022-e495-9645"/>
+        </ns0:license>
       </xsl:for-each>
     </rdf:Description>
   </xsl:template>

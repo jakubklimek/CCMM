@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://techlib.cz/specification/ccmm/file/schema.json",
+  "$id": "https://model.ccmm.cz/rd/file/schema.json",
   "title": "File",
-  "description": "Downloadable file in given format.",
+  "description": "Resource represents any resource, physical or digital, that is related to the described dataset. ",
   "type": "object",
   "required": [
 
@@ -13,22 +13,20 @@
       "format": "iri"
     },
     "type": {
-      "type": "array",
-      "allOf": [
+      "oneOf": [
         {
-          "contains": {
-            "const": "Resource"
-          }
+          "const": "File"
         },
         {
+          "type": "array",
           "contains": {
-            "const": "Resource"
+            "const": "File"
+          },
+          "items": {
+            "type": "string"
           }
         }
-      ],
-      "items": {
-        "type": "string"
-      }
+      ]
     },
     "label": {
       "title": "Label",

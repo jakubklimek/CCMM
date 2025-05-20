@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://techlib.cz/specification/ccmm/funding-reference/schema.json",
+  "$id": "https://model.ccmm.cz/rd/funding-reference/schema.json",
   "title": "Funding reference",
   "description": "Information about financial support (funding) for the resource being registered.",
   "type": "object",
@@ -48,7 +48,17 @@
       "type": "array",
       "minItems": 1,
       "items": {
-        "$ref": "../funder-identifier/schema.json"
+        "anyOf": [
+          {
+            "$ref": "../agent/schema.json"
+          },
+          {
+            "$ref": "../agent/schema.json"
+          },
+          {
+            "$ref": "../agent/schema.json"
+          }
+        ]
       }
     }
   }

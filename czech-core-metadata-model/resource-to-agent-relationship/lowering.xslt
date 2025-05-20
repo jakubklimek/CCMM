@@ -13,7 +13,7 @@
   <xsl:template match="/sp:sparql">
     <xsl:apply-templates select="sp:results/sp:result"/>
   </xsl:template>
-  <xsl:template match="sp:result[sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;http://www.w3.org/ns/dcat#Relationship&#34;]">
+  <xsl:template match="sp:result[sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;https://techlib.cz/vocabulary/ccmm/ResourceToAgentRelationship&#34;]">
     <resource_to_agent_relationship>
       <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742235557653-64a2-513a-97fe">
         <xsl:with-param name="id">
@@ -52,20 +52,42 @@
       <xsl:value-of select="c:id-key($id/*)"/>
     </xsl:variable>
     <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://www.w3.org/ns/dcat#hadRole&#34;]">
-      <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742235606195-b8fa-9b2f-a5cf">
-        <xsl:with-param name="id">
-          <xsl:copy-of select="sp:binding[@name=$obj]/*"/>
-        </xsl:with-param>
-        <xsl:with-param name="no_iri" select="true()"/>
-      </xsl:call-template>
-    </xsl:for-each>
-    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://purl.org/dc/terms/relation&#34;]">
-      <relation>
-        <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742234312711-3b17-2e3d-91b1">
+      <role>
+        <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742235606195-b8fa-9b2f-a5cf">
           <xsl:with-param name="id">
             <xsl:copy-of select="sp:binding[@name=$obj]/*"/>
           </xsl:with-param>
         </xsl:call-template>
+      </role>
+    </xsl:for-each>
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://purl.org/dc/terms/relation&#34;]">
+      <relation>
+        <xsl:choose>
+          <xsl:when test="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(current()/sp:binding[@name=$obj]/*)] and sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;http://xmlns.com/foaf/0.1/Agent&#34;]">
+            <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1744806334636-9353-d66e-89dc">
+              <xsl:with-param name="id">
+                <xsl:copy-of select="sp:binding[@name=$obj]/*"/>
+              </xsl:with-param>
+              <xsl:with-param name="type_name" select="&#34;agent&#34;"/>
+            </xsl:call-template>
+          </xsl:when>
+          <xsl:when test="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(current()/sp:binding[@name=$obj]/*)] and sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;http://www.w3.org/ns/prov#Organization&#34;]">
+            <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1744806345521-602d-5078-a2c5">
+              <xsl:with-param name="id">
+                <xsl:copy-of select="sp:binding[@name=$obj]/*"/>
+              </xsl:with-param>
+              <xsl:with-param name="type_name" select="&#34;organization&#34;"/>
+            </xsl:call-template>
+          </xsl:when>
+          <xsl:when test="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(current()/sp:binding[@name=$obj]/*)] and sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;http://www.w3.org/ns/prov#Person&#34;]">
+            <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1744806350501-735b-f599-9019">
+              <xsl:with-param name="id">
+                <xsl:copy-of select="sp:binding[@name=$obj]/*"/>
+              </xsl:with-param>
+              <xsl:with-param name="type_name" select="&#34;person&#34;"/>
+            </xsl:call-template>
+          </xsl:when>
+        </xsl:choose>
       </relation>
     </xsl:for-each>
   </xsl:template>

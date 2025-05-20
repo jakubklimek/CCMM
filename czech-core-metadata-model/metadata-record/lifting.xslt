@@ -56,6 +56,7 @@
         </id>
       </xsl:variable>
       <xsl:copy-of select="$id//@*"/>
+      <rdf:type rdf:resource="http://www.w3.org/ns/dcat#CatalogRecord"/>
       <xsl:copy-of select="$arc"/>
       <xsl:for-each select="date_updated">
         <ns0:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">
@@ -68,12 +69,6 @@
           <xsl:apply-templates select="@*"/>
           <xsl:value-of select="."/>
         </ns0:created>
-      </xsl:for-each>
-      <xsl:for-each select="language">
-        <ns0:language rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
-          <xsl:apply-templates select="@*"/>
-          <xsl:value-of select="."/>
-        </ns0:language>
       </xsl:for-each>
       <xsl:for-each select="original_repository">
         <ns1:originalRepository>
@@ -89,6 +84,11 @@
         <ns2:qualifiedRelation>
           <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742235557653-64a2-513a-97fe"/>
         </ns2:qualifiedRelation>
+      </xsl:for-each>
+      <xsl:for-each select="language">
+        <ns0:language>
+          <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1747685830295-de50-b2ac-bb47"/>
+        </ns0:language>
       </xsl:for-each>
     </rdf:Description>
   </xsl:template>

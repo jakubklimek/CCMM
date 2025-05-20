@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://techlib.cz/specification/ccmm/subject-scheme/schema.json",
+  "$id": "https://model.ccmm.cz/rd/subject-scheme/schema.json",
   "title": "Subject scheme",
   "description": "Collection of subjects (keywords, concepts, classification codes) curated by a single source.",
   "type": "object",

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://techlib.cz/specification/ccmm/metadata-record/schema.json",
+  "$id": "https://model.ccmm.cz/rd/metadata-record/schema.json",
   "title": "Metadata Record",
   "description": "Description of the metadata record of the dataset. ",
   "type": "object",
@@ -8,6 +8,26 @@
     "qualified_relation"
   ],
   "properties": {
+    "id": {
+      "type": "string",
+      "format": "iri"
+    },
+    "type": {
+      "oneOf": [
+        {
+          "const": "Katalogizační záznam"
+        },
+        {
+          "type": "array",
+          "contains": {
+            "const": "Katalogizační záznam"
+          },
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
     "date_updated": {
       "title": "Date updated",
       "description": "Date on which the resource was changed.",
@@ -23,15 +43,6 @@
       "description": "The date on which the metadata record was created.",
       "type": "string",
       "format": "date"
-    },
-    "language": {
-      "title": "Language",
-      "description": "Language of the metadata record",
-      "type": "array",
-      "items": {
-        "title": "String",
-        "type": "string"
-      }
     },
     "original_repository": {
       "title": "original repository",
@@ -56,6 +67,14 @@
       "minItems": 1,
       "items": {
         "$ref": "../resource-to-agent-relationship/schema.json"
+      }
+    },
+    "language": {
+      "title": "language",
+      "description": "A language used in the textual metadata describing titles, descriptions of the metadata record.",
+      "type": "array",
+      "items": {
+        "$ref": "../language-system/schema.json"
       }
     }
   }

@@ -1,11 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://techlib.cz/specification/ccmm/terms-of-use/schema.json",
+  "$id": "https://model.ccmm.cz/rd/terms-of-use/schema.json",
   "title": "Terms of use",
   "description": "Terms of use defines overall conditions and rights regarding access and usage  of dataset. ",
   "type": "object",
   "required": [
-    "access_rights"
+    "access_rights",
+    "license"
   ],
   "properties": {
     "id": {
@@ -37,19 +38,8 @@
         "type": "string"
       }
     },
-    "license": {
-      "title": "License",
-      "description": "Information about licensing details of the resource.",
-      "type": "array",
-      "items": {
-        "title": "String",
-        "type": "string"
-      }
-    },
     "access_rights": {
-      "title": "Access rights",
-      "description": "Information about who access the resource or an indication of its security status.",
-      "type": "string"
+      "$ref": "../access-rights/schema.json"
     },
     "has_contact": {
       "title": "has contact",
@@ -68,6 +58,9 @@
           }
         ]
       }
+    },
+    "license": {
+      "$ref": "../license-document/schema.json"
     }
   }
 }

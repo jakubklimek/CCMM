@@ -7,18 +7,18 @@
       "@id": "http://purl.org/dc/terms/description",
       "@type": "xsd:string"
     },
-    "license": {
-      "@id": "http://purl.org/dc/terms/license",
-      "@type": "xsd:string"
-    },
     "access_rights": {
       "@id": "http://purl.org/dc/terms/accessRights",
-      "@type": "xsd:string"
+      "@context": "../access-rights/context.jsonld"
     },
     "has_contact": {
       "@id": "http://www.w3.org/ns/dcat#contactPoint",
       "@container": "@set",
       "@context": "../agent/context.jsonld"
+    },
+    "license": {
+      "@id": "http://purl.org/dc/terms/license",
+      "@context": "../license-document/context.jsonld"
     },
     "Terms of use": {
       "@id": "https://techlib.cz/vocabulary/datacite/Rights",

@@ -1,13 +1,33 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://techlib.cz/specification/ccmm/repository/schema.json",
+  "$id": "https://model.ccmm.cz/rd/repository/schema.json",
   "title": "Repository",
-  "description": "A curated collection of metadata about resources.",
+  "description": "A catalogue or repository that hosts the Datasets or Data Services being described.",
   "type": "object",
   "required": [
 
   ],
   "properties": {
+    "id": {
+      "type": "string",
+      "format": "iri"
+    },
+    "type": {
+      "oneOf": [
+        {
+          "const": "Katalog"
+        },
+        {
+          "type": "array",
+          "contains": {
+            "const": "Katalog"
+          },
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
     "label": {
       "title": "Label",
       "description": "Repository label",

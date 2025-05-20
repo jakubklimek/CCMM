@@ -13,7 +13,7 @@
   <xsl:template match="/sp:sparql">
     <xsl:apply-templates select="sp:results/sp:result"/>
   </xsl:template>
-  <xsl:template match="sp:result[sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;null&#34;]">
+  <xsl:template match="sp:result[sp:binding[@name=$pred]/sp:uri/text()=$type and sp:binding[@name=$obj]/sp:uri/text()=&#34;http://www.w3.org/ns/dcat#CatalogRecord&#34;]">
     <metadata_record>
       <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742339770114-2bc2-3bdc-a309">
         <xsl:with-param name="id">
@@ -61,11 +61,6 @@
         <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
       </date_created>
     </xsl:for-each>
-    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://purl.org/dc/terms/language&#34;]">
-      <language>
-        <xsl:apply-templates select="sp:binding[@name=$obj]/sp:literal"/>
-      </language>
-    </xsl:for-each>
     <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;https://techlib.cz/vocabulary/ccmm/originalRepository&#34;]">
       <original_repository>
         <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742339809761-c64b-cd69-80de">
@@ -92,6 +87,15 @@
           </xsl:with-param>
         </xsl:call-template>
       </qualified_relation>
+    </xsl:for-each>
+    <xsl:for-each select="//sp:result[sp:binding[@name=$subj]/*[$id_test = c:id-key(.)] and sp:binding[@name=$pred]/sp:uri/text()=&#34;http://purl.org/dc/terms/language&#34;]">
+      <language>
+        <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1747685830295-de50-b2ac-bb47">
+          <xsl:with-param name="id">
+            <xsl:copy-of select="sp:binding[@name=$obj]/*"/>
+          </xsl:with-param>
+        </xsl:call-template>
+      </language>
     </xsl:for-each>
   </xsl:template>
   <xsl:template match="@*|*"/>

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://techlib.cz/specification/ccmm/contact-details/schema.json",
+  "$id": "https://model.ccmm.cz/rd/contact-details/schema.json",
   "title": "Contact details",
   "description": "Contact details such as telephone, e-mail address etc.",
   "type": "object",

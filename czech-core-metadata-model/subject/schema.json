@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://techlib.cz/specification/ccmm/subject/schema.json",
+  "$id": "https://model.ccmm.cz/rd/subject/schema.json",
   "title": "Subject",
   "description": "Subject, keyword, classification code, or key phrase describing the resource.",
   "type": "object",

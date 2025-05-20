@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1" elementFormDefault="unqualified" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
-  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/XML/1998/namespace"/>
-  <xs:complexType name="alternate_title" sawsdl:modelReference="https://techlib.cz/vocabulary/ccmm/AlternateTitle">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1"
+  elementFormDefault="unqualified" xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace"
+    schemaLocation="http://www.w3.org/XML/1998/namespace"/>
+  <xs:include schemaLocation="../alternate-title-type/schema.xsd"/>
+  <xs:complexType name="alternate_title"
+    sawsdl:modelReference="https://techlib.cz/vocabulary/ccmm/AlternateTitle">
     <xs:annotation>
       <xs:documentation xml:lang="en">
         Alternate title - Alternate title of the resource.
@@ -9,10 +14,11 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element minOccurs="0" name="iri" type="xs:anyURI"/>
-      <xs:element name="title">
+      <xs:element name="title" sawsdl:modelReference="http://www.w3.org/2000/01/rdf-schema#label"
+        maxOccurs="unbounded">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            Title - Alternate title name.
+            notation
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -23,10 +29,11 @@
           </xs:simpleContent>
         </xs:complexType>
       </xs:element>
-      <xs:element minOccurs="0" name="type" type="xs:string" sawsdl:modelReference="http://purl.org/dc/terms/type">
+      <xs:element minOccurs="0" name="alternate_title_type" type="alternate_title_type"
+        sawsdl:modelReference="https://techlib.cz/vocabulary/ccmm/hasType">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            Type - Type of alternate title.
+            has alternate title type - Reference to the alternate title type codelist.
           </xs:documentation>
         </xs:annotation>
       </xs:element>

@@ -55,6 +55,7 @@
         </id>
       </xsl:variable>
       <xsl:copy-of select="$id//@*"/>
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
       <xsl:copy-of select="$arc"/>
     </rdf:Description>
   </xsl:template>

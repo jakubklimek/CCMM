@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xmlns:c="https://schemas.dataspecer.com/xsd/core/" xmlns:ns0="http://www.w3.org/ns/dcat#" xmlns:ns1="http://purl.org/dc/terms/" xmlns:ns2="r" xmlns:ns3="http://www.w3.org/ns/locn#" xmlns:ns4="h">
-  <xsl:import href="../geometry/lifting.xslt"/>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xmlns:c="https://schemas.dataspecer.com/xsd/core/" xmlns:ns0="http://www.w3.org/ns/dcat#" xmlns:ns1="http://purl.org/dc/terms/" xmlns:ns2="https://techlib.cz/vocabulary/ccmm/" xmlns:ns3="http://www.w3.org/ns/locn#">
+  <xsl:import href="../location-relation-type/lifting.xslt"/>
   <xsl:output method="xml" version="1.0" encoding="utf-8" media-type="application/rdf+xml" indent="yes"/>
   <xsl:template match="/location">
     <rdf:RDF>
@@ -56,7 +56,7 @@
         </id>
       </xsl:variable>
       <xsl:copy-of select="$id//@*"/>
-      <rdf:type rdf:resource="http://purl.org/dc/terms/Location"/>
+      <rdf:type rdf:resource="https://techlib.cz/vocabulary/datacite/Geolocation"/>
       <xsl:copy-of select="$arc"/>
       <xsl:for-each select="bbox">
         <ns0:bbox rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">
@@ -70,21 +70,20 @@
           <xsl:value-of select="."/>
         </ns1:title>
       </xsl:for-each>
-      <xsl:for-each select="dataset_relations">
-        <ns2:elationType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
-          <xsl:apply-templates select="@*"/>
-          <xsl:value-of select="."/>
-        </ns2:elationType>
+      <xsl:for-each select="location_relation_type">
+        <ns2:hasType>
+          <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1747685228117-d1d5-c203-b159"/>
+        </ns2:hasType>
       </xsl:for-each>
       <xsl:for-each select="geometry">
         <ns3:geometry>
           <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742340936467-5d87-fae6-b5c7"/>
         </ns3:geometry>
       </xsl:for-each>
-      <xsl:for-each select="related_object_identifier">
-        <ns4:asRelatedResource>
+      <xsl:for-each select="related_object">
+        <ns2:hasRelatedResource>
           <xsl:call-template name="_https_003a_002f_002fofn.gov.cz_002fclass_002f1742234428662-255b-ab44-995e"/>
-        </ns4:asRelatedResource>
+        </ns2:hasRelatedResource>
       </xsl:for-each>
     </rdf:Description>
   </xsl:template>

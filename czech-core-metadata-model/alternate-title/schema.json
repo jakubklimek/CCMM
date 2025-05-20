@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://techlib.cz/specification/ccmm/alternate-title/schema.json",
+  "$id": "https://model.ccmm.cz/rd/alternate-title/schema.json",
   "title": "Alternate title",
   "description": "Alternate title of the resource.",
   "type": "object",
@@ -13,13 +13,23 @@
       "format": "iri"
     },
     "type": {
-      "title": "Type",
-      "description": "Type of alternate title.",
-      "type": "string"
+      "oneOf": [
+        {
+          "const": "Alternate title"
+        },
+        {
+          "type": "array",
+          "contains": {
+            "const": "Alternate title"
+          },
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
     },
     "title": {
-      "title": "Title",
-      "description": "Alternate title name.",
+      "title": "notation",
       "type": "object",
       "required": [
         "@value",
@@ -35,6 +45,9 @@
           "type": "string"
         }
       }
+    },
+    "alternate_title_type": {
+      "$ref": "../alternate-title-type/schema.json"
     }
   }
 }

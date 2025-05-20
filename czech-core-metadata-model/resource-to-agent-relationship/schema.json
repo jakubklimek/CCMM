@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://techlib.cz/specification/ccmm/resource-to-agent-relationship/schema.json",
+  "$id": "https://model.ccmm.cz/rd/resource-to-agent-relationship/schema.json",
   "title": "Resource to agent relationship",
   "description": "An association class for attaching additional information to a relationship between Dataset and Agent.",
   "type": "object",

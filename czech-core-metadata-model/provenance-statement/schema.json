@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://techlib.cz/specification/ccmm/provenance-statement/schema.json",
+  "$id": "https://model.ccmm.cz/rd/provenance-statement/schema.json",
   "title": "Provenance Statement",
   "description": "Any changes in ownership and custody of a resource since its creation that are significant for its authenticity, integrity, and interpretation.",
   "type": "object",
@@ -8,6 +8,26 @@
 
   ],
   "properties": {
+    "id": {
+      "type": "string",
+      "format": "iri"
+    },
+    "type": {
+      "oneOf": [
+        {
+          "const": "Provenance Statement"
+        },
+        {
+          "type": "array",
+          "contains": {
+            "const": "Provenance Statement"
+          },
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
     "label": {
       "title": "Label",
       "description": "Provenance state label",

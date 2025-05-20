@@ -9,6 +9,8 @@
   <xs:include schemaLocation="../data-service/schema.xsd"/>
   <xs:include schemaLocation="../checksum/schema.xsd"/>
   <xs:include schemaLocation="../media-type/schema.xsd"/>
+  <xs:include schemaLocation="../file/schema.xsd"/>
+  <xs:include schemaLocation="../format/schema.xsd"/>
   <xs:complexType name="distribution">
     <xs:choice>
       <xs:element name="distribution_-_data_service">
@@ -50,7 +52,7 @@
               </xs:complexType>
             </xs:element>
             <xs:element minOccurs="0" maxOccurs="unbounded" name="documentation"
-              type="documentation">
+              type="documentation" sawsdl:modelReference="http://xmlns.com/foaf/0.1/page">
               <xs:annotation>
                 <xs:documentation xml:lang="en">
                   documentation - A page or document about this Distribution.
@@ -58,7 +60,7 @@
               </xs:annotation>
             </xs:element>
             <xs:element minOccurs="0" maxOccurs="unbounded" name="specification"
-              type="application_profile">
+              type="application_profile" sawsdl:modelReference="http://purl.org/dc/terms/conformsTo">
               <xs:annotation>
                 <xs:documentation xml:lang="en">
                   specification - An established standard to which the distribution conforms.
@@ -66,7 +68,7 @@
               </xs:annotation>
             </xs:element>
             <xs:element minOccurs="0" maxOccurs="unbounded" name="access_service"
-              type="data_service">
+              type="data_service" sawsdl:modelReference="http://www.w3.org/ns/dcat#accessService">
               <xs:annotation>
                 <xs:documentation xml:lang="cs">
                   služba pro přístup k datům - Umístění či přístupový bod zpřístupňující distribuci datové sady.
@@ -119,15 +121,8 @@
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element name="format" type="xs:anyURI"
-              sawsdl:modelReference="http://purl.org/dc/terms/format">
-              <xs:annotation>
-                <xs:documentation xml:lang="en">
-                  Format - The file format of the Distribution. 
-                </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element minOccurs="0" name="checksum" type="checksum">
+            <xs:element minOccurs="0" name="checksum" type="checksum"
+              sawsdl:modelReference="http://spdx.org/rdf/terms#checksum">
               <xs:annotation>
                 <xs:documentation xml:lang="en">
                   checksum - A mechanism that can be used to verify that the contents of a distribution have not changed.
@@ -135,14 +130,15 @@
               </xs:annotation>
             </xs:element>
             <xs:element minOccurs="0" maxOccurs="unbounded" name="conforms_to_schema"
-              type="application_profile">
+              type="application_profile" sawsdl:modelReference="http://purl.org/dc/terms/conformsTo">
               <xs:annotation>
                 <xs:documentation xml:lang="en">
                   conforms to schema - An established standard to which the distribution conforms.
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="media_type" type="media_type">
+            <xs:element minOccurs="0" name="media_type" type="media_type"
+              sawsdl:modelReference="http://www.w3.org/ns/dcat#mediaType">
               <xs:annotation>
                 <xs:documentation xml:lang="ar">
                   نوع الميديا - يجب استخدام هذه الخاصية إذا كان نوع الملف معرف ضمن IANA
@@ -173,7 +169,8 @@
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="access_url" type="xs:anyURI">
+            <xs:element maxOccurs="unbounded" name="access_url" type="file"
+              sawsdl:modelReference="http://www.w3.org/ns/dcat#accessURL">
               <xs:annotation>
                 <xs:documentation xml:lang="ar">
                   رابط وصول - أي رابط يتيح الوصول إلى البيانات. إذا كان الرابط هو ربط مباشر لملف يمكن تحميله استخدم الخاصية downloadURL
@@ -204,7 +201,8 @@
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="download_url" type="xs:anyURI">
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="download_url" type="file"
+              sawsdl:modelReference="http://www.w3.org/ns/dcat#downloadURL">
               <xs:annotation>
                 <xs:documentation xml:lang="ar">
                   رابط تحميل - رابط مباشر لملف يمكن تحميله. نوع الملف يتم توصيفه باستخدام الخاصية dcterms:format dcat:mediaType 
@@ -232,6 +230,14 @@
                 </xs:documentation>
                 <xs:documentation xml:lang="ja">
                   ダウンロードURL - dcat:downloadURLはdcat:accessURLの特定の形式です。しかし、DCATプロファイルが非ダウンロード・ロケーションに対してのみaccessURLを用いる場合には、より強い分離を課すことを望む可能性があるため、この含意を強化しないように、DCATは、dcat:downloadURLをdcat:accessURLのサブプロパティーであると定義しません。
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="format" type="format"
+              sawsdl:modelReference="http://purl.org/dc/terms/format">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  has format - The file format of the distribution.
                 </xs:documentation>
               </xs:annotation>
             </xs:element>
