@@ -1,10 +1,19 @@
 CHANGELOG
 ---------------------------------------
+### 2025-06-25 - Official release 1.0.0
+* base IRI changed to https://model.ccmm.cz/research-data/
+* definitions and usage notes updated and synced for the best possible understanding of end-users
+* fixed minor issues 
+* enhanced support for spatial representations 
+* support for both date and date time 
+* JSON schema is not supported at the time due to the technical issues
+
+
 ### 2025-05-20 - Major release
 * probably last publication before official release
 * compact use of indentifiers and agents
 * codelists as separate classes
-* detailed attributes for address (accordfing to INSPIRE core location ontology)
+* detailed attributes for address (according to INSPIRE core location ontology)
 * minor bug fixes
 
 ### 2025-04-24 - Bug fixes
