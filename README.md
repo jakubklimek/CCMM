@@ -29,7 +29,5 @@ Each subdirectory contains strucutured models formalized in XSD (schema.xsd). Ro
 | - | - | 
 |Dataset|https://eosc-cz.github.io/CCMM/dataset/schema.xsd|
 
-On the directory level, there is also [documentation](https://eosc-cz.github.io/CCMM/czech-core-metadata-model/en) of data structures. 
-
 [Project to open in DataSpecer](https://github.com/EOSC-CZ/CCMM/blob/main/Czech%20Core%20Metadata%20Model-Backup.zip) is also part of the repository. You may import it into your instance of Dataspecer.
 
