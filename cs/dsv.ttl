@@ -30,21 +30,6 @@
     a dsv:DatatypePropertyProfile;
     dsv:datatypePropertyRange <http://www.w3.org/2001/XMLSchema#string>.
 
-<https://model.ccmm.cz/research-data/Dataset.description> dsv:domain :Dataset;
-    dct:isPartOf <https://model.ccmm.cz/research-data/>;
-    a dsv:TermProfile;
-    skos:prefLabel "description"@en;
-    skos:scopeNote "Description of a data set other than abstract, e.g. purpose of creation, sources, preferred usage etc."@en;
-    dsv:reusesPropertyValue [
-  a dsv:PropertyValueReuse;
-  dsv:reusedProperty skos:definition;
-  dsv:reusedFromResource dct:description
-];
-    dsv:cardinality cardinality:0n;
-    dsv:property dct:description;
-    a dsv:DatatypePropertyProfile;
-    dsv:datatypePropertyRange <https://ofn.gov.cz/zdroj/základní-datové-typy/2020-07-01/text>.
-
 <https://model.ccmm.cz/research-data/Dataset.version> dsv:domain :Dataset;
     dct:isPartOf <https://model.ccmm.cz/research-data/>;
     a dsv:TermProfile;
@@ -162,6 +147,7 @@
     skos:prefLabel "qualified relation"@en;
     skos:definition "Link to a description of a relationship between dataset and an agent with the specification of the role of agent in this relationship."@en;
     skos:scopeNote "Description of relationship between dataset and agent (e.g. creator, publisher, etc.). Role in a relationship is given by the Resource agent role type. Use a value from vocabulary https://vocabs.ccmm.cz/registry/codelist/AgentRole/. Each dataset shall have at least two qualified relations: one with role \"Creator\" and second with role \"Publisher\". If metadata manager is the same for dataset and metadata, it shall also have at least one qualified relation with role \"data manager\"."@en;
+    dsv:cardinality cardinality:1n;
     dsv:property <https://model.ccmm.cz/vocabulary/ccmm#qualifiedRelation>;
     a dsv:ObjectPropertyProfile;
     dsv:objectPropertyRange :ResourceToAgentRelationship.
@@ -261,6 +247,21 @@
     dsv:cardinality cardinality:01;
     a dsv:ObjectPropertyProfile;
     dsv:objectPropertyRange :ResourceType.
+
+<https://model.ccmm.cz/research-data/Dataset.hasDescription> dsv:domain :Dataset;
+    dct:isPartOf <https://model.ccmm.cz/research-data/>;
+    a dsv:TermProfile;
+    skos:definition "Relation to the description of a dataset."@en;
+    skos:scopeNote "Description may have various type from the codelist https://vocabs.ccmm.cz/registry/codelist/DescriptionType/. "@en;
+    dsv:reusesPropertyValue [
+  a dsv:PropertyValueReuse;
+  dsv:reusedProperty skos:prefLabel;
+  dsv:reusedFromResource <https://model.ccmm.cz/vocabulary/datacite#hasDescription>
+];
+    dsv:cardinality cardinality:0n;
+    dsv:property <https://model.ccmm.cz/vocabulary/datacite#hasDescription>;
+    a dsv:ObjectPropertyProfile;
+    dsv:objectPropertyRange :Description.
 :Agent dct:isPartOf <https://model.ccmm.cz/research-data/>;
     a dsv:TermProfile;
     dsv:profileOf <https://mff-uk.github.io/specifications/dcat-ap#Agent>;
@@ -657,7 +658,7 @@
     a dsv:TermProfile;
     skos:prefLabel "Resource to agent relationship"@en;
     skos:definition "An association class for attaching additional information to a relationship between Resource and Agent."@en;
-    skos:scopeNote "Use to characterize a relationship between datasets and agents, where the nature of the relationship is known but is not adequately characterized by the standard DCTERMS properties (dcterms:hasPart, dcterms:isPartOf, dcterms:conformsTo, dcterms:isFormatOf, dcterms:hasFormat, dcterms:isVersionOf, dcterms:hasVersion, dcterms:replaces, dcterms:isReplacedBy, dcterms:references, dcterms:isReferencedBy, dcterms:requires, dcterms:isRequiredBy) or PROV-O properties (prov:wasDerivedFrom, prov:wasInfluencedBy, prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource, prov:alternateOf, prov:specializationOf). Roles of the agent in the relation are specified using had role relation."@en;
+    skos:scopeNote "Use to characterize a relationship between resources and agents, where the nature of the relationship is known but is not adequately characterized by the standard DCTERMS properties (dcterms:hasPart, dcterms:isPartOf, dcterms:conformsTo, dcterms:isFormatOf, dcterms:hasFormat, dcterms:isVersionOf, dcterms:hasVersion, dcterms:replaces, dcterms:isReplacedBy, dcterms:references, dcterms:isReferencedBy, dcterms:requires, dcterms:isRequiredBy) or PROV-O properties (prov:wasDerivedFrom, prov:wasInfluencedBy, prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource, prov:alternateOf, prov:specializationOf). Roles of the agent in the relation are specified using had role relation."@en;
     a dsv:ClassProfile;
     dsv:class <https://model.ccmm.cz/vocabulary/ccmm#ResourceToAgentRelationship>.
 
@@ -671,9 +672,10 @@
     a dsv:ObjectPropertyProfile;
     dsv:objectPropertyRange :Agent.
 
-<https://model.ccmm.cz/research-data/DatasetToAgentRelationship.hadRole> dsv:domain :ResourceToAgentRelationship;
+<https://model.ccmm.cz/research-data/ResourceToAgentRelationship.hadRole> dsv:domain :ResourceToAgentRelationship;
     dct:isPartOf <https://model.ccmm.cz/research-data/>;
     a dsv:TermProfile;
+    skos:scopeNote "May be used in a qualified-attribution to specify the role of an Agent with respect to an Entity. It is recommended that the value be taken from a controlled vocabulary of agent roles."@en;
     dsv:profileOf <https://mff-uk.github.io/specifications/dcat-ap#Relationship.hadRole>;
     dsv:reusesPropertyValue [
   a dsv:PropertyValueReuse;
@@ -682,10 +684,6 @@
 ], [
   a dsv:PropertyValueReuse;
   dsv:reusedProperty skos:definition;
-  dsv:reusedFromResource <https://mff-uk.github.io/specifications/dcat-ap#Relationship.hadRole>
-], [
-  a dsv:PropertyValueReuse;
-  dsv:reusedProperty skos:scopeNote;
   dsv:reusedFromResource <https://mff-uk.github.io/specifications/dcat-ap#Relationship.hadRole>
 ];
     dsv:cardinality cardinality:11;
@@ -901,6 +899,7 @@
     skos:prefLabel "conforms to standard"@en;
     skos:definition "An established standard to which the metadata record conforms."@en;
     skos:scopeNote "This property SHOULD be used to indicate the standard or profile that was used to describe cataloged resource content."@en;
+    dsv:profileOf <https://mff-uk.github.io/specifications/dcat-dap#CatalogRecord.conformsTo>;
     dsv:cardinality cardinality:0n;
     a dsv:ObjectPropertyProfile;
     dsv:objectPropertyRange :ApplicationProfile.
@@ -1860,3 +1859,75 @@
     dsv:property rdfs:label;
     a dsv:DatatypePropertyProfile;
     dsv:datatypePropertyRange rdf:langString.
+:Description dct:isPartOf <https://model.ccmm.cz/research-data/>;
+    a dsv:TermProfile;
+    skos:scopeNote "Description of the resource may have also a description type."@en;
+    dsv:reusesPropertyValue [
+  a dsv:PropertyValueReuse;
+  dsv:reusedProperty skos:prefLabel;
+  dsv:reusedFromResource <https://model.ccmm.cz/vocabulary/datacite#Description>
+], [
+  a dsv:PropertyValueReuse;
+  dsv:reusedProperty skos:definition;
+  dsv:reusedFromResource <https://model.ccmm.cz/vocabulary/datacite#Description>
+];
+    a dsv:ClassProfile;
+    dsv:class <https://model.ccmm.cz/vocabulary/datacite#Description>.
+
+<https://model.ccmm.cz/research-data/Description.descriptionText> dsv:domain :Description;
+    dct:isPartOf <https://model.ccmm.cz/research-data/>;
+    a dsv:TermProfile;
+    dsv:reusesPropertyValue [
+  a dsv:PropertyValueReuse;
+  dsv:reusedProperty skos:prefLabel;
+  dsv:reusedFromResource <https://model.ccmm.cz/vocabulary/datacite#descriptionText>
+], [
+  a dsv:PropertyValueReuse;
+  dsv:reusedProperty skos:definition;
+  dsv:reusedFromResource <https://model.ccmm.cz/vocabulary/datacite#descriptionText>
+];
+    dsv:cardinality cardinality:11;
+    dsv:property <https://model.ccmm.cz/vocabulary/datacite#descriptionText>;
+    a dsv:DatatypePropertyProfile;
+    dsv:datatypePropertyRange <http://www.w3.org/2001/XMLSchema#string>.
+
+<https://model.ccmm.cz/research-data/Description.hasDescriptionType> dsv:domain :Description;
+    dct:isPartOf <https://model.ccmm.cz/research-data/>;
+    a dsv:TermProfile;
+    skos:scopeNote "Type of the description from the codelist https://vocabs.ccmm.cz/registry/codelist/DescriptionType/."@en;
+    dsv:reusesPropertyValue [
+  a dsv:PropertyValueReuse;
+  dsv:reusedProperty skos:prefLabel;
+  dsv:reusedFromResource <https://model.ccmm.cz/vocabulary/datacite#hasDescriptionType>
+], [
+  a dsv:PropertyValueReuse;
+  dsv:reusedProperty skos:definition;
+  dsv:reusedFromResource <https://model.ccmm.cz/vocabulary/datacite#hasDescriptionType>
+];
+    dsv:cardinality cardinality:01;
+    dsv:property <https://model.ccmm.cz/vocabulary/datacite#hasDescriptionType>;
+    a dsv:ObjectPropertyProfile;
+    dsv:objectPropertyRange :DescriptionType.
+:DescriptionType dct:isPartOf <https://model.ccmm.cz/research-data/>;
+    a dsv:TermProfile;
+    skos:scopeNote "Use value from codelist https://vocabs.ccmm.cz/registry/codelist/DescriptionType/."@en;
+    dsv:reusesPropertyValue [
+  a dsv:PropertyValueReuse;
+  dsv:reusedProperty skos:prefLabel;
+  dsv:reusedFromResource <https://model.ccmm.cz/vocabulary/datacite#DescriptionType>
+], [
+  a dsv:PropertyValueReuse;
+  dsv:reusedProperty skos:definition;
+  dsv:reusedFromResource <https://model.ccmm.cz/vocabulary/datacite#DescriptionType>
+];
+    a dsv:ClassProfile;
+    dsv:class <https://model.ccmm.cz/vocabulary/datacite#DescriptionType>.
+
+<https://model.ccmm.cz/research-data/DescriptionType.label> dsv:domain :DescriptionType;
+    dct:isPartOf <https://model.ccmm.cz/research-data/>;
+    a dsv:TermProfile;
+    skos:prefLabel "label"@en;
+    skos:definition "Label of the description type."@en;
+    dsv:property rdfs:label;
+    a dsv:DatatypePropertyProfile;
+    dsv:datatypePropertyRange <http://www.w3.org/2001/XMLSchema#string>.
