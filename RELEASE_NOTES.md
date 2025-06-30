@@ -1,6 +1,6 @@
 CHANGELOG
 ---------------------------------------
-### 2025-06-25 - Official release 1.0.0
+### 2025-06-30 - Official release 1.0.0
 * base IRI changed to https://model.ccmm.cz/research-data/
 * definitions and usage notes updated and synced for the best possible understanding of end-users
 * fixed minor issues 
