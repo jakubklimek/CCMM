@@ -9,11 +9,11 @@ The structure of the repository is as follows. For the documenattion and publica
 
 ## cs
 
-Directory /cs contains Czech version of CCMM Application Profile specification. Specification is available on https://eosc-cz.github.io/CCMM/cs/.
+Directory /cs contains Czech version of CCMM Application Profile specification. Specification is available on [https://techlib.github.io/CCMM/cs/](https://techlib.github.io/CCMM/cs/).
 
 ## en
 
-Directory /en contains English version of CCMM Application Profile specification. Specification is available on https://eosc-cz.github.io/CCMM/en/.
+Directory /en contains English version of CCMM Application Profile specification. Specification is available on [https://techlib.github.io/CCMM/cs/](https://techlib.github.io/CCMM/en/).
 
 ## Resources
 
