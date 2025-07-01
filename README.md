@@ -1,11 +1,11 @@
 # Czech Core Metadata Model specification
 
-This repository contains specification of Czech Core Metadata Model modelled in and generated from DataSpecer.
+This repository contains the specification of the Czech Core Metadata Model for research data description modelled in and generated from DataSpecer.
 Changes are described in [RELEASE_NOTES](RELEASE_NOTES.md).
-DataSpecer generates schema diagram in bad resolution, therefore we generated diagram image in better quality.
+DataSpecer generates a schema diagram in bad resolution; therefore, we generated a diagram image in better quality.
 ![CCMM schema diagram](CCMM-model.png)
 
-The structure of the repository is as follows. For the documenattion and publication purposes were created GitHub pages. In each section, there is a link to the published specifications.
+The structure of the repository is as follows. For the documentation and publication purposes were created GitHub pages. In each section, there is a link to the published specifications.
 
 ## cs
 
@@ -15,15 +15,11 @@ Directory /cs contains Czech version of CCMM Application Profile specification. 
 
 Directory /en contains English version of CCMM Application Profile specification. Specification is available on [https://techlib.github.io/CCMM/cs/](https://techlib.github.io/CCMM/en/).
 
-## Resources
+## XSD representation
 
-Directory resources/ contains data specification in json format. It also contained file with the full content of the Dataspecer project, which is too large for GitHub repository, therefore it is not part of the directory.
+The root directory also contains all structured artifacts generated from Dataspecer. There are many subdirectories, one per each element of the data structures. 
 
-## Czech core metadata model
-
-Root directory contains also all structured artifacts generated from Dataspecer. There are many subdirectories, one per each element of the data structures. 
-
-Each subdirectory contains strucutured models formalized in XSD (schema.xsd). Root element for the whole profile is **Dataset**
+Each subdirectory contains structured models formalized in XSD (schema.xsd). The root element for the whole profile is **Dataset**
 
 |Root element|XSD schema|
 | - | - | 
